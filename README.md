@@ -1,6 +1,7 @@
 # Deep Learning Project
 
-![alt text](https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/IU_logo.svg/1280px-IU_logo.svg.png "Innopolis University")
+![alt text](https://sun1-92.userapi.com/c845417/v845417961/18db8/3ahGJUU5Y54.jpg?ava=1 "Innopolis University")
+
 
 
 ## Agile artifacts
