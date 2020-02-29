@@ -14,3 +14,5 @@
 * python
 2. Tools for testing:
 * pytest
+3. Tools for technical documentation:
+* PyDoc
