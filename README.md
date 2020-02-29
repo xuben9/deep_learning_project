@@ -15,10 +15,10 @@
 Language 
 * **python 3.7**
 
-Tools for testing:
+Tools for testing
 * **pytest**
  
-Tools for technical documentation:
+Tools for technical documentation
 * **PyDoc**
 
 ***
