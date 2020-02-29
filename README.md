@@ -11,7 +11,7 @@
 ## Development of a tool for sentence-level classification in natural language software requirements specifications
 
 1. Language used: 
-* **python**
+* **python** 3.7
 2. Tools for testing:
 * **pytest**
 3. Tools for technical documentation:
