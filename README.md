@@ -1,4 +1,4 @@
-# Deep Learning Project
+# Deep Learning Project (Extracting software requirements from the natural language text)
 
 ![alt text](https://sun1-92.userapi.com/c845417/v845417961/18db8/3ahGJUU5Y54.jpg?ava=1 "Innopolis University")
 
