@@ -1,0 +1,154 @@
+This might be necessary to back up local users expertise and to help in case of problems.,,,,,,,,,,,,,,,,,1
+Distributed access to the Gemini 8m Telescopes software.,,,,,,,,,,,,,,,,,1
+A special case of service observing.,,,,,,,,,,,,,,,,,1
+where a science observer is present on site and the client astronomer is remotely connected. is considered here.,,,,,,,,,,,,,,,,,1
+The requirements speci?c to service observing are: .,,,,,,,,,,,,,,,,,2
+The observing program must be automated. requiring little human interaction during the observation.,,,,,,,,,,,,,,,,,2
+The means that the Gemini software must include a suf?ciently rich pro? gramming environment to make this feasible.,,,,,,,,,,,,,,,,,2
+This programming environment should be available both to the astronomer.,,,,,,,,,,,,,,,,,2
+This access may or may not be done concurrently on a shared environment. C .,,,,,,,,,,,,,,,,,2
+The programming environment should allow for the communication of special notes. instructions. and comments from the astronomer to the observer.,,,,,,,,,,,,,,,,,2
+The use of this feature would.,,,,,,,,,,,,,,,,,2
+But interactive observing is perhaps.,,,,,,,,,,,,,,,,,1
+It will be done on his behalf at a conve? nient moment that is not exactly prede?ned and may be intermixed with programs from other users.,,,,,,,,,,,,,,,,,1
+Gemini Software Software Requirements Specification 2 ? 17 GENERAL DESCRIPTION,,,,,,,,,,,,,,,,,1
+OBSERVING SUPPORT Planned Observing Service observing requires switching during the night among telescope modes and instruments.,,,,,,,,,,,,,,,,,1
+This might typically be a few times (2) per night.,,,,,,,,,,,,,,,,,1
+when sky conditions change.,,,,,,,,,,,,,,,,,1
+It requires also that the observing program is so well speci?ed that it can be executed by someone else.,,,,,,,,,,,,,,,,,1
+For these reasons it can only be applied to the Gemini 8m Telescopes once the Classical observing requirement has been ful?lled and been in operation for a while.,,,,,,,,,,,,,,,,,1
+which still requires compe? tent monitoring at the Gemini 8m Telescopes site or remotely. At the same time.,,,,,,,,,,,,,,,,,1
+one does not want to lose the advantages and the extra ?exibility of ground?based astronomy.,,,,,,,,,,,,,,,,,1
+So whichever scheme is adopted to perform automatic sequences.,,,,,,,,,,,,,,,,,1
+only on error conditions. any time the user is allowed to break a sequence.,,,,,,,,,,,,,,,,,1
+It will require the use of service and/or remote observing.,,,,,,,,,,,,,,,,,1
+"This can be comple? So?wore Requirements Specification ? August 18, 1994 9:39 om GENERAL DESCRIPTION GENERAL SOFTWARE REQUIREMENTS CONTROL INFORMATION FLOW mented by remote monitoring.",,,,,,,,,,,,,,,,,1
+Flexible scheduling requires the possibility to change telescope scheduling quickly. exchanging observing programs.,,,,,,,,,,,,,,,,,1
+This can be achieved only with the help of appropriate scheduling software.,,,,,,,,,,,,,,,,,2
+which must adVise the operations team on the best choice to make which is compatible with the relative priorities of the various observing programs.,,,,,,,,,,,,,,,,,1
+Thus ?exible scheduling is a superset of queue scheduling.,,,,,,,,,,,,,,,,,1
+These requirements apply to the commands and replies between sub?systems (including status information requests and replies).,,,,,,,,,,,,,,,,,1
+information ?ow to and from on?line databases. and commands and software for the IOCs. 0 Requirements A .,,,,,,,,,,,,,,,,,1
+The syntax of control ?ow commands is to be consistent across the system.,,,,,,,,,,,,,,,,,1
+whether accessing workstation software or IOC software.,,,,,,,,,,,,,,,,,1
+All subsystems must respond to a common set of commands to test operational status. inquiries as to version.,,,,,,,,,,,,,,,,,1
+The support structure for communicating commands must be reliable.,,,,,,,,,,,,,,,,,1
+This is the Software Requirements Specification for GAMMA?J?s Web Store.,,,,,,,,,,,,,,,,,1
+This Web Store is designed to allow new online store owners a quick and easy means to setup and perform sales and other core business overthe internet.,,,,,,,,,,,,,,,,,1
+"Intended Audience, Reading Suggestions This document is intended to ?ush out the requirements by the customer GAMMA?J.",,,,,,,,,,,,,,,,,1
+The customer can review this document to ensure their needs along with the needs of their user?s are being met in their new Web Store program.,,,,,,,,,,,,,,,,,1
+The development team will also use this document for guidance on overall design and implementation of the Web Store system.,,,,,,,,,,,,,,,,,1
+The test and verification team can reference this to ensure the requirements are being meet for the customer.,,,,,,,,,,,,,,,,,1
+"Finally, the tech writer will use this to assist with user documentation.",,,,,,,,,,,,,,,,,1
+"This document is designed to be review from beginning to end; however, readers who are new to technical documentation may want to refer to Appendix E: Data Dictionary first. 1.4 Project Scope",,,,,,,,,,,,,,,,,1
+The initial inventory will be 100 items.,,,,,,,,,,,,,,,,,1
+"Expandable with unique codes, the owners can purchase to expand the inventory.",,,,,,,,,,,,,,,,,1
+This software will contain all of the basic needs to manage an online store.,,,,,,,,,,,,,,,,,1
+"Advanced needs can be added in the future via ?plug-ins."" More detail on the functionality of the Web Store can be found in part 3.",,,,,,,,,,,,,,,,,1
+System Features and in the function Needs statement.,,,,,,,,,,,,,,,,,1
+"This document draws insight from the Web Store System Overview, Functional Needs Statement, and Stakeholder Goals List. Web Store is a new system designed for users new to the online E-commerce.",,,,,,,,,,,,,,,,,1
+This will be a plug and play device with its own CPU and operating system.,,,,,,,,,,,,,,,,,1
+The Web Store will be a quick and easy means to setup and operate an online Web Store.,,,,,,,,,,,,,,,,,2
+It also allows the user to login/out of the system. Search Engine (SE) (Medium Priority): SE is the tool that assists the user in finding a specific item in the database.,,,,,,,,,,,,,,,,,2
+System Administrator: ls generally the owner that takes care of maintenance for the Web Store system.,,,,,,,,,,,,,,,,,2
+The administrator will be in charge of assigning privileges of accounts. Suggested more than one individual can have administrator privilege to ensure advisability.,,,,,,,,,,,,,,,,,1
+Full documentation will be provided to the Administrator to assist with this process.,,,,,,,,,,,,,,,,,1
+Sales Personnel: ls generally the owner of the Web Store tasked with updating inventory and product line descriptions.,,,,,,,,,,,,,,,,,2
+"Once added, sales personnel can add, delete and change descriptions, pictures, prices, and when ready ?ag items for customers to buy.",,,,,,,,,,,,,,,,,1
+Customer: A customer is an individual wishing to purchase inventory from GAMMA?J?s Web Store.,,,,,,,,,,,,,,,,,2
+The Web store will have a variety of clientele depending upon the inventory loaded on the Key.,,,,,,,,,,,,,,,,,1
+When creating a new account on Web Store it will default as a customer account.,,,,,,,,,,,,,,,,,1
+The operating system is designed by the Yoggie Corporation.,,,,,,,,,,,,,,,,,1
+OE-3: The system shall use SQL based database to store inventory information. OE-4: USB interface and divers are provided by Yoggie Corporation. 2.5,,,,,,,,,,,,,,,,,1
+Design and Implementation Constraints CO-1: Must use a SQL based database.,,,,,,,,,,,,,,,,,1
+SQL standard is the most widely used database format.,,,,,,,,,,,,,,,,,2
+"Restricting to SQL allows easy of use and compatibility for Web Store. CO-2: Compatibility is only tested and verified for Microsoft Internet Explorer version 6 and 7, Netscape Communicator Version 4 and 5.",,,,,,,,,,,,,,,,,1
+Other versions may not be 100% compatible.,,,,,,,,,,,,,,,,,2
+Also other browsers such as Mozilla or Firefox may not be 100% compatible. 2.6 User Documentation,,,,,,,,,,,,,,,,,1
+This is a high priority system feature.,,,,,,,,,,,,,,,,,1
+"Customers will be able to register, log in, and log out of their accounts.",,,,,,,,,,,,,,,,,2
+"Furthermore, Customer pro?les will also include payment information, such as the ability to store credit card information, and address information. 3.2 Inventory Management",,,,,,,,,,,,,,,,,2
+And Priority Inventory management will allow for the placement of products into multi-tiered categories.,,,,,,,,,,,,,,,,,1
+"The shopping cart will clearly display the number of items in the cart, along with the total cost.",,,,,,,,,,,,,,,,,1
+The customer will also be able to add to or remove products from the shopping cart prior to checkout and order con?rmation. Order confirmation will allow the customer to review their order after checkout prior to confirmation.,,,,,,,,,,,,,,,,,2
+This is a medium priority system feature. Customers will be able to confirm the order after checkout.,,,,,,,,,,,,,,,,,1
+"If the order is incorrect, the customer will be able to revise and update their order.",,,,,,,,,,,,,,,,,1
+The customer will then receive a confirmation email with the specific order details.,,,,,,,,,,,,,,,,,2
+The interface will be presented to the customer in a web browser.,,,,,,,,,,,,,,,,,2
+The interface must remain consistent among various web browsers and be intuitive to the customer.,,,,,,,,,,,,,,,,,2
+This is a medium priority system feature. Customers will be presented with an unambiguous interface to assist in browsing the categories and products.,,,,,,,,,,,,,,,,,1
+Customers will be able to search for products matching their search criteria.,,,,,,,,,,,,,,,,,1
+"The interface will be compatible with all major web browsers such as Internet Explorer, Mozilla Navigator, Mozilla Firefox, Opera, and Safari.",,,,,,,,,,,,,,,,,2
+The system will feature an API to allow customers to build custom plug-ins to be able to meet their needs.,,,,,,,,,,,,,,,,,2
+The system will implement an Application Interface to allow for various plug-ins to interact with the system.,,,,,,,,,,,,,,,,,2
+Order number is Shipping addres W III Gredil Card,,,,,,,,,,,,,,,,,1
+WebOrder Browser Interface Sl-1.1: The order database of WebOrder will communicate with the account system through a programmatic interface forthe billing operations.,,,,,,,,,,,,,,,,,1
+"Through programmatic interface, WebOrder will transmit information of items ordered by customers to the Inventory management system.",,,,,,,,,,,,,,,,,1
+Cl-2: The WebOrder system shall send an e-mail to System Administrator regarding any technical queries from customers or sales people. GAM MA?J Web Store 5.,,,,,,,,,,,,,,,,,1
+Quality Attribute Requirements 5.1 Performance Requirements Upon the USB being plugged in the system shall be able to be deployed and operational in less than 1 minute.,,,,,,,,,,,,,,,,,1
+The system shall be able to handle 1000 customers logged in concurrently at the same time.,,,,,,,,,,,,,,,,,2
+The system shall be able to add product to shopping cart in less than 2ms. The system shall be able to search for a speci?ed product in less than 1 second.,,,,,,,,,,,,,,,,,2
+The system shall be able to email customer and vendor in less than 1 second.,,,,,,,,,,,,,,,,,2
+The system shall be able to validate credit card in less than 2 seconds. The system shall be able to acquire shipping charges in less than 2 seconds.,,,,,,,,,,,,,,,,,2
+The system shall encrypt all sensitive information via https.,,,,,,,,,,,,,,,,,2
+The system shall encrypt all customer data in database.,,,,,,,,,,,,,,,,,2
+The system shall auto detect lP DOS attacks and block lP automatically.,,,,,,,,,,,,,,,,,2
+The system shall detect consecutive failed login attempts.,,,,,,,,,,,,,,,,,2
+The system shall validate email address existence. 5.6 Usability Requirements GAM MA?J Web Store,,,,,,,,,,,,,,,,,2
+"The system shall be easy to use The system shall be easy to learn The system shall utilize help bubbles to assist managers, customers, and administrators The system shall employ easy to locate buttons",,,,,,,,,,,,,,,,,2
+The system shall prompt customer with friend easy to read error messages.,,,,,,,,,,,,,,,,,2
+The system shall utilize consistent symbols and colors for clear noti?cations. 5.7 Maintainability Requirements,,,,,,,,,,,,,,,,,2
+The system shall be extremely portable via the usb drive.,,,,,,,,,,,,,,,,,2
+The system shall be easy to migrate or backed up via another usb drive. 5.9 Testability Requirements,,,,,,,,,,,,,,,,,2
+The system should be able to run under debug mode.,,,,,,,,,,,,,,,,,2
+The system should be able to run test credit card transactions.,,,,,,,,,,,,,,,,,2
+The system should be able to run test shipping orders.,,,,,,,,,,,,,,,,,2
+The system should be able to create test environment of weborder system. 6.,,,,,,,,,,,,,,,,,2
+The system hardware shall be fixed and patched via an internet connection. Yoggie shall coordinate on future enhancement and features with our organization.,,,,,,,,,,,,,,,,,2
+The system shall adhere to the following hardware requirements: - 4GB Flash ram chip - 128MB SDRAM - lntel XScale PXA270 520-MHz chipset - 08: Apache web server - Database:,,,,,,,,,,,,,,,,,2
+"SDRAM: Short for Synchronous DRAM, a type of DRAM that can run at much higher clock speeds than conventional memory.",,,,,,,,,,,,,,,,,2
+"They will expertly produce the documentation products needed such as user manuals, Installation guides.",,,,,,,,,,,,,,,,,1
+IEEE: The Institute of Electrical and Electronics Engineers. Nonfunctional requirements: A description of a property or characteristic that the system should exhibit.,,,,,,,,,,,,,,,,,2
+Process: A sequence of activities performed for a given purpose.,,,,,,,,,,,,,,,,,1
+A process description is a documented definition of those activities. Project Manager: A project manager is a professional in the field of project management.,,,,,,,,,,,,,,,,,1
+They have the responsibility of planning and execution of any project.,,,,,,,,,,,,,,,,,1
+GAM MA?J Web Store Quality attribute: A kind of nonfunctional requirement that describe a quality or property of a system.,,,,,,,,,,,,,,,,,1
+"Customer Weborder System Preconditions: Customer must be able to access the web order system via a web browser with HTTPS. Triggers: Customer clicks button or link to ""Register"" Basic Scenario: 1.",,,,,,,,,,,,,,,,,2
+Customer first clicks on the button or link to initiate registration process. 2.,,,,,,,,,,,,,,,,,1
+"System prompts the customer to ?ll out his/her first name, last name, billing address, shipping address, email address, and their password. 3.",,,,,,,,,,,,,,,,,2
+System validates the customer's information. 5.,,,,,,,,,,,,,,,,,2
+System creates a new account for the Customer. 6.,,,,,,,,,,,,,,,,,2
+System creates a session cookie. 7.,,,,,,,,,,,,,,,,,2
+System displays an account home page to Customer.,,,,,,,,,,,,,,,,,2
+System recognizes Customer's cookie. A2.,,,,,,,,,,,,,,,,,2
+Go to Step 7 (Basic Scenario). Postconditions:,,,,,,,,,,,,,,,,,1
+The Customer registers and creates a new customer account with the system. Login Customer,,,,,,,,,,,,,,,,,1
+Goal: Login to a customer account with the system. Actors:,,,,,,,,,,,,,,,,,1
+System prompts the customer for his/her email and password. 3.,,,,,,,,,,,,,,,,,1
+The Customer is logged into the system.,,,,,,,,,,,,,,,,,1
+Edit Customer Details Goal: Edit the customer account details. Actors:,,,,,,,,,,,,,,,,,1
+"Customer Weborder System Preconditions: Customer must be logged-in on the system. Triggers: Customer clicks on the button or link to ""Edit Account"" Basic Scenario: 1.",,,,,,,,,,,,,,,,,2
+Customer clicks the button or link to initiate the process to edit the account. 2.,,,,,,,,,,,,,,,,,2
+System displays the account home page to the Customer. 3.,,,,,,,,,,,,,,,,,2
+Customer clicks the button or link in order to edit the account details. 4.,,,,,,,,,,,,,,,,,2
+System veri?es the changes. 5.,,,,,,,,,,,,,,,,,2
+System stores new account information. Alternative Scenario:,,,,,,,,,,,,,,,,,1
+The Customer has changed the account details.,,,,,,,,,,,,,,,,,1
+Logout Customer Goal: Logout the customer account on the system.,,,,,,,,,,,,,,,,,1
+"Customer must be logged-in on the system. Triggers: Customer clicks on the button or link to ""Logout"" Basic Scenario: 1.",,,,,,,,,,,,,,,,,2
+Customer clicks the button or link in orderto initiate logout process. 2.,,,,,,,,,,,,,,,,,2
+System terminates the session cookie. 3.,,,,,,,,,,,,,,,,,1
+The Customer is logged out of the system.,,,,,,,,,,,,,,,,,1
+Add Item To Cart Goal: Customer adds item(s) in the cart Actors:,,,,,,,,,,,,,,,,,1
+Customer System Preconditions:,,,,,,,,,,,,,,,,,1
+The customer must be logged-in on the system. Triggers:,,,,,,,,,,,,,,,,,1
+"Customer clicks the button or link to ""Add To Cart"". Basic Scenario: 1.",,,,,,,,,,,,,,,,,2
+Customer clicks the button or link in order to add to the cart with specified quantity. 2.,,,,,,,,,,,,,,,,,2
+System adds the item(s) to the cart. 3.,,,,,,,,,,,,,,,,,2
+System prompts the Customer to edit the quantity or remove the item from cart.,,,,,,,,,,,,,,,,,2
+Customer confirms the items in the cart. 5.,,,,,,,,,,,,,,,,,2
+Customer returns to product listings. Alternative Scenario: A1.,,,,,,,,,,,,,,,,,2
+System recognizes cookie and goes to step 6 (Basic Scenario) with existing items in cart. Postconditions:,,,,,,,,,,,,,,,,,1
+The Customer has added item(s) to the shopping cart.,,,,,,,,,,,,,,,,,1
+An Order Goal: Customer places and con?rms an order for the checkout process. Actors:,,,,,,,,,,,,,,,,,1
+Customer Weborder System Preconditions:,,,,,,,,,,,,,,,,,2

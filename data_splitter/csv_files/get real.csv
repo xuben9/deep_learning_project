@@ -1,0 +1,155 @@
+"short delivery, damaged goods, underperformance of service etc.",,,,,,,,,,,,,,,,,1
+Proposed Remedy is the Buyer?s suggested solution to the variance.,,,,,,,,,,,,,,,,,1
+This may be in response to a Receipt Advice that contains variance.,,,,,,,,,,,,,,,,,1
+"For example, the Seller may instruct the Buyer to return the goods, await collection of the goods (by the Seller or his carrier) or destroy the goods.",,,,,,,,,,,,,,,,,1
+Rectification Advice is the Buyer?s cost code reference (in cases where this has actually been communicated to the Seller).,,,,,,,,,,,,,,,,,2
+"4.10 Self Billed Invoice A Self Billed Invoice is sent by Accounts Payable (Buyer) to Accounts Receivable (Seller), obviating the need for an Invoice as described above.",,,,,,,,,,,,,,,,,1
+"Self Billed Invoice Credit Note is sent by Accounts Receivable (Seller) to Accounts Payable (Buyer), confirming that the Buyer owes money to the Seller.",,,,,,,,,,,,,,,,,1
+It may be used to rectify errors and/or variances in the invoicing process.,,,,,,,,,,,,,,,,,1
+"Figure 19. Credit Note Debit Note is sent from Accounts Payable (Buyer) to Accounts Receivable (Seller), specifying that the Seller owes money to the Buyer.",,,,,,,,,,,,,,,,,1
+A Debit Note obviates the need for the Seller to create a Credit Note.,,,,,,,,,,,,,,,,,1
+Debit Note DebitNote Remittance Advice is sent by Accounts Payable (Buyer) to Accounts Receivable (Seller) notifying payment.,,,,,,,,,,,,,,,,,1
+It provides the recipient with a reference for payments made i.e.,,,,,,,,,,,,,,,,,1
+Remittance Advice Payment Reference is the reference for the payment transaction made via BACS or SWIFT.,,,,,,,,,,,,,,,,,1
+Payment Reference Date is the date of the payment reference.,,,,,,,,,,,,,,,,,1
+Payment Expected Date is the date on which payment is expected to be made.,,,,,,,,,,,,,,,,,1
+Abbreviation Meaning BACS Banks Automated Clearing System.,,,,,,,,,,,,,,,,,1
+D&B D&B (formerly Dun & Bradstreet).,,,,,,,,,,,,,,,,,2
+EFT Electronic Funds Transfer.,,,,,,,,,,,,,,,,,2
+GDSC Government Data Standards Catalogue.,,,,,,,,,,,,,,,,,2
+GLN Global Location Number.,,,,,,,,,,,,,,,,,2
+GPC Government Procurement Card.,,,,,,,,,,,,,,,,,2
+GTIN Global Trade Identification Number.,,,,,,,,,,,,,,,,,2
+GUID Globally Unique Identifier.,,,,,,,,,,,,,,,,,2
+HMCE Her Majesty?s Customs and Excise.,,,,,,,,,,,,,,,,,2
+HTML Hypertext Markup Language.,,,,,,,,,,,,,,,,,2
+INCOTERM International Commercial Term.,,,,,,,,,,,,,,,,,2
+ISO International Standards Organisation.,,,,,,,,,,,,,,,,,2
+OeE Office of the e-Envoy (as was).,,,,,,,,,,,,,,,,,2
+OEM Original Equipment Manufacturer.,,,,,,,,,,,,,,,,,2
+OGC Office of Government Commerce.,,,,,,,,,,,,,,,,,2
+PO Purchase Order.,,,,,,,,,,,,,,,,,2
+RFQ Request For Quotation.,,,,,,,,,,,,,,,,,2
+SVVI FT Society of Worldwide Interbank Financial Telecommunications.,,,,,,,,,,,,,,,,,2
+T&C Terms and Conditions.,,,,,,,,,,,,,,,,,2
+UML Universal Modelling Language.,,,,,,,,,,,,,,,,,2
+UN United Nations.,,,,,,,,,,,,,,,,,2
+UNSPSC United Nations Standard Product and Services Code.,,,,,,,,,,,,,,,,,2
+URI Universal Resource Identifier.,,,,,,,,,,,,,,,,,2
+UUID Universally Unique Identi?er.,,,,,,,,,,,,,,,,,2
+VAT Value Added Tax.,,,,,,,,,,,,,,,,,2
+W30 World V\?de Web Consortium.,,,,,,,,,,,,,,,,,2
+XML extensible Markup Language.,,,,,,,,,,,,,,,,,2
+These requirements are not limited to any industry sector.,,,,,,,,,,,,,,,,,1
+The approach provides a common ?Ianguage? for describing eProcurement documents that is modular and extensible to specialised business contexts.,,,,,,,,,,,,,,,,,1
+This speci?cation does not include the XML schema to be used.,,,,,,,,,,,,,,,,,1
+No assumptions are made (other than good business practice) about how the internal systems at the Buyer and the Seller are designed or work; these systems are treated as ?black boxes?.,,,,,,,,,,,,,,,,,1
+"carriers, banks and fiscal authorities; - message transport and security; - data protection and retention rules; - the application of public sector purchasing policy.",,,,,,,,,,,,,,,,,1
+eProcurement is a many-to-many electronic data interchange (EDI) problem on a large scale and requires both the sender and the receiver to interpret each and every data element in precisely the same way.,,,,,,,,,,,,,,,,,1
+"In practice, these Documents are likely to be introduced incrementally, starting with one or two Documents, such as Purchase Order and/or Invoice, and adding additional services as required.",,,,,,,,,,,,,,,,,1
+Such an incremental approach demands that all Documents (those adopted earlier and later) represent the same things in a common way.,,,,,,,,,,,,,,,,,1
+"0 Note: for a revision, the whole Document may need to be re-issued and manual intervention may be required; ?cancellation? o cancellation of original Document in its entirety.",,,,,,,,,,,,,,,,,1
+"1.2 Benefits These requirements support several Government initiatives, including: .",,,,,,,,,,,,,,,,,1
+The greatest benefits accrue when information persists through the purchasing cycle without re- keying and with manual intervention only where needed for business reasons.,,,,,,,,,,,,,,,,,1
+"One example is the ?three-way match? between Purchase Order, goods receipt and Invoice, usually performed in the accounts payable function before an Invoice is paid.",,,,,,,,,,,,,,,,,1
+Automating the three-way match may reduce substantially the end-to-end costs of in the Buyer?s back of?ce.,,,,,,,,,,,,,,,,,1
+"Cross-Government eProcurement standards also benefit Sellers, particularly small to medium- sized enterprises (SMEs).",,,,,,,,,,,,,,,,,1
+"This speci?cation provides a clear ?stake in the ground? for Sellers, for their trade with Government and, potentially, for trade across the private sector.",,,,,,,,,,,,,,,,,1
+"Similarly, a common Government standard reduces the need for software and service providers to cater for multiple speci?cations.",,,,,,,,,,,,,,,,,1
+"A working group compiled the basic requirements with representation from across Government, local authorities and the National Health Service.",,,,,,,,,,,,,,,,,1
+"These requirements have been re?ned through public consultation, meetings with IT suppliers and experts involved in relevant international standards and trade associations.",,,,,,,,,,,,,,,,,1
+The method used is based on the OeE?s e-Service Development Framework (e-SDF); see www.qovtalk.gov.uk/schemastandards/eservices.as|o.,,,,,,,,,,,,,,,,,1
+It is assumed that the reader is familiar with UML.,,,,,,,,,,,,,,,,,1
+"- classes are colour coded for convenience, with colours indicating the parent Package of each class: 0 Party pink 0 Document cyan 0 Line green 0 Item purple.",,,,,,,,,,,,,,,,,2
+chapter 3 of this specification covers common classes which are re-used in more than one Document.,,,,,,,,,,,,,,,,,1
+- chapter 4 covers individual Document speci?cations.,,,,,,,,,,,,,,,,,1
+"For this reason, each Document specification description contains only descriptions of the attributes that are specific to that Document.",,,,,,,,,,,,,,,,,1
+"All other elements are optional, although some may be required to support certain business processes.",,,,,,,,,,,,,,,,,1
+The scope for this specification is the procurement of goods and services for public sector organisations.,,,,,,,,,,,,,,,,,1
+Ordering includes Purchase Orders and responses.,,,,,,,,,,,,,,,,,1
+"Ful?lment includes delivery/despatch notification, receipt (including variances) and Seller's proposed rectification of any problems.",,,,,,,,,,,,,,,,,1
+"Accounting includes Invoices (including Self Billed Invoices) Credit Notes, Debit Notes, Statements and Remittance Advice.",,,,,,,,,,,,,,,,,1
+"2.1 Interactions Each business process involves the exchange of information between the Buyer and the Seller, using a number of Documents (see Table 1).",,,,,,,,,,,,,,,,,1
+RFQ is a request from the Buyer to the Seller to quote terms and conditions (Request for Quotation) under which the Seller is willing to supply specific goods or services.,,,,,,,,,,,,,,,,,1
+2.1.2 Ordering The Documents included are: Purchase Order is sent by the Buyer to tell the Seller that the sender wishes to purchase goods and/or services.,,,,,,,,,,,,,,,,,2
+"|t acknowledges that the Purchase Order has been received and that it will be fulfilled in total, in part or not at all.",,,,,,,,,,,,,,,,,2
+It may also give additional information about specific delivery.,,,,,,,,,,,,,,,,,2
+The Seller may use this Document to notify the Buyer of shipping details via a third party carrier and to notify partial or complete delivery of a Purchase Order.,,,,,,,,,,,,,,,,,2
+Invoice is a Value Added Tax (VAT) Document.,,,,,,,,,,,,,,,,,2
+"For more information regarding HMCE requirements for self billing, see www.hmce.qov.uk/forms/notices/700-62.htm Self Billed Invoice is a VAT Document.",,,,,,,,,,,,,,,,,2
+Credit Note is a VAT Document.,,,,,,,,,,,,,,,,,2
+A Debit Note precludes the need for a Sellerto raise a Credit Note.,,,,,,,,,,,,,,,,,2
+Debit Note is a VAT Document.,,,,,,,,,,,,,,,,,2
+"2.2 Parties A Party is any person, organisation or computer system that sends or receives goods, services or information.",,,,,,,,,,,,,,,,,1
+A role is a job done by a particular Party.,,,,,,,,,,,,,,,,,2
+One Party may play a number of roles in a Document.,,,,,,,,,,,,,,,,,2
+"Every Document has a sender and receiver, one of which is a Buyer role, the other a Seller role.",,,,,,,,,,,,,,,,,1
+"The Party types, ro|es names and Documents sent and received are shown in Table 2.",,,,,,,,,,,,,,,,,1
+"The Purchasing Manager is not involved in other transactions; if the Purchasing Manager requests or makes a purchase, that individual adopts the role of Originator or Order Point respectively.",,,,,,,,,,,,,,,,,2
+"Originator also known as requisitioner, has the original demand for each Item of goods and/or services.",,,,,,,,,,,,,,,,,1
+"If Originator subsequently places a Purchase Order, the Originator adopts the role of Order Point.",,,,,,,,,,,,,,,,,1
+Order Point raises Purchase Order.,,,,,,,,,,,,,,,,,1
+Purchase Card (credit or debit card) information may be associated with the Order Point.,,,,,,,,,,,,,,,,,1
+"Delivery Point also known as goods inwards, is where the goods or services are delivered and variances in receipt are identified.",,,,,,,,,,,,,,,,,1
+"Accounts Payable also known as accounts payable, is responsible for Invoice processing and payment and, in some circumstances, the issuing of Self Billed Invoices.",,,,,,,,,,,,,,,,,1
+2.2.2 Seller Roles Seller ro|es include: Sales Point the acceptance of a Purchase Order.,,,,,,,,,,,,,,,,,1
+Despatch Point performance of services.,,,,,,,,,,,,,,,,,2
+Accounts Receivable is responsible for invoicing and credit control.,,,,,,,,,,,,,,,,,2
+It may include Electronic Funds Transfer (EFT) information i.e.,,,,,,,,,,,,,,,,,2
+2.2.3 Third Party Roles Third Party ro|es include: Carrier is assigned by the Seller or the Buyer to deliver or return goods.,,,,,,,,,,,,,,,,,1
+"commodity classi?cation, and identi?ed at individual or Catalogue |tem level as appropriate.",,,,,,,,,,,,,,,,,2
+Examples include: 0 Company registration number .,,,,,,,,,,,,,,,,,2
+VAT reference number Specified in this developed for this speci?cation including: Document .,,,,,,,,,,,,,,,,,2
+Seller reference for Buyer 0 Buyer reference for Seller locally specified identifiers for instances of: 0 Quotation Purchase Order Ful?lment Notification Invoice other document identifiers .,,,,,,,,,,,,,,,,,2
+"consignment - Item 0 0 0 0 Because, such schemes are application-specific they can never be relied on to be 100% unique.",,,,,,,,,,,,,,,,,1
+Universally Unique Identi?er (UUID) is an instance identifier generated on the fly as speci?ed in ISO 11587.,,,,,,,,,,,,,,,,,1
+It is also known as a Globally Unique Identifier (GUID).,,,,,,,,,,,,,,,,,1
+UUID is a 128 bit string usua||y formatted as 32 characters alphanumeric.,,,,,,,,,,,,,,,,,1
+In this speci?cation UUID is used for matching instances of Document and Line between Documents and for referring to multiple ro|e instances of the same Party within a single Document.,,,,,,,,,,,,,,,,,1
+"UUIDs provide an effective means to ensure exact matching of identi?ers at machine level, but are not well suited to visual matching, which is why existing ID data are also required.",,,,,,,,,,,,,,,,,2
+"Each Document is made up of a common set of elements, which are described below.",,,,,,,,,,,,,,,,,1
+The descriptions are illustrated with UML class diagrams.,,,,,,,,,,,,,,,,,1
+A specialisation inherits all of the properties of its parent class.,,,,,,,,,,,,,,,,,1
+"Some knowledge of UML is needed to understand the model fully, but the text is intended to be understandable to those who are not familiar with the UML notation.",,,,,,,,,,,,,,,,,2
+A sender and a receiver are included in every Document.,,,,,,,,,,,,,,,,,1
+summary Document Line Package contains information about Document Lines.,,,,,,,,,,,,,,,,,1
+Every Document has at least one Line.,,,,,,,,,,,,,,,,,1
+quantified Line 0 priced Line I VAT Line 0 unpriced Line .,,,,,,,,,,,,,,,,,1
+Catalogue Line - summary Line Item Package Data Types Package -1_ 3.2 Party contains information about products and services and their instances.,,,,,,,,,,,,,,,,,1
+"|tem specialisations include: priced Item 0 priced |tem validity contains the data types, including enumerations for codes defined within this specification.",,,,,,,,,,,,,,,,,1
+"A Party is any person, organisation or computer system that sends or receives information, goods or services.",,,,,,,,,,,,,,,,,1
+A role is a job done by a particular Party.,,,,,,,,,,,,,,,,,1
+One Party may play a number of roles in a is a universally unique identi?er for an instance of Party.,,,,,,,,,,,,,,,,,1
+This may be useful in providing references within a Document to the same Party in several different places.,,,,,,,,,,,,,,,,,1
+The full details of any PaIty only need to be provided once and other occurences of the same PaIty may be cross-referenced using Party UUID.,,,,,,,,,,,,,,,,,1
+Unstructured name is typically entered manua||y at the time of the transaction.,,,,,,,,,,,,,,,,,1
+Address may be unstructured or structured.,,,,,,,,,,,,,,,,,1
+"When an unstructured address is used, it must have 1 to 5 Lines.",,,,,,,,,,,,,,,,,1
+The UK Post Code is a combination of between five and seven letters and numbers which define four different levels of geographic unit.,,,,,,,,,,,,,,,,,1
+"Although Post Code cannot be made mandatory in all circumstances, it should be present if known.",,,,,,,,,,,,,,,,,1
+This needs to be coded to enable collection of management data on source of imports and exports.,,,,,,,,,,,,,,,,,1
+VAT Identifier includes Country Code (as above) and VAT number.,,,,,,,,,,,,,,,,,1
+It is a speci?c Internet identifier that contains a locally interpreted string followed by the ?at? sign (@) followed by an Internet domain.,,,,,,,,,,,,,,,,,1
+The full details of any PaIty only need to be provided once and other occurences of the same PaIty may be cross-referenced using Party UUID.,,,,,,,,,,,,,,,,,1
+Where an industrial estate contains streets it is de?ned as a locality in its own right.,,,,,,,,,,,,,,,,,1
+3.2.3 Extended Electronic Address eAddress eAddress Channel eAddress Use is the number or string of the electronic address or telephone number.,,,,,,,,,,,,,,,,,2
+3.2.7 Seller Buyer Ref For Seller is the Buyer?s reference for the Seller; supplier number.,,,,,,,,,,,,,,,,,2
+3.2.8 Order Point Card Number is the (Purchase) Card number.,,,,,,,,,,,,,,,,,2
+Mandatory only where Purchase Card is used.,,,,,,,,,,,,,,,,,2
+Cardholder Name is the individual?s name on card and may include the name of the organisation.,,,,,,,,,,,,,,,,,2
+Mandatory only where Purchase Card is used.,,,,,,,,,,,,,,,,,2
+Expiry Month is the last month/year that the card is valid.,,,,,,,,,,,,,,,,,2
+Mandatory only where Purchase Card is used.,,,,,,,,,,,,,,,,,2
+Valid -From Month is the first month/year that the card is valid.,,,,,,,,,,,,,,,,,2
+Optional only where Purchase Card is used.,,,,,,,,,,,,,,,,,2
+Card Verification Value is the 3 (or 4 in the case of American Express) digit number (CW) suffixing the card number on the card signature strip.,,,,,,,,,,,,,,,,,2
+Optional only where Purchase Card is used.,,,,,,,,,,,,,,,,,2
+Issue Number is the issue number of the card.,,,,,,,,,,,,,,,,,2
+Optional only where Purchase Card is used.,,,,,,,,,,,,,,,,,2
+3.2.9 Sales Point Preferred Payment is the Seller?s preferred method of payment e.g BACS or Method Purchase Card.,,,,,,,,,,,,,,,,,1
+Merchant Capability is the Seller?s capability to send invoice data via the Purchase Card provider (VISA/MasterCard/American Express): .,,,,,,,,,,,,,,,,,1
+Level 1 ? no invoice data .,,,,,,,,,,,,,,,,,2
+Level 2 ? summary invoice data 0 Level 3 ? line level invoice data.,,,,,,,,,,,,,,,,,2
+3.2.10 Accounts Receivable Account Number is the Bank account number.,,,,,,,,,,,,,,,,,1
+Account Name is the name of the organisation?s bank account.,,,,,,,,,,,,,,,,,2
+Branch ID is the Sort Code of the bank branch.,,,,,,,,,,,,,,,,,2

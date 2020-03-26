@@ -1,0 +1,60 @@
+KeePass asks to save any changes that may have been made in the database and restarts 6.,,,,,,,,,,,,,,,,,1
+User selects get more languages,,,,,,,,,,,,,,,,,1
+The browser opens in KeePass website were translations are located 4.,,,,,,,,,,,,,,,,,2
+User selects a language he wants 5.,,,,,,,,,,,,,,,,,2
+The user defines the sequences which can be sent to any other open window like browsers or login accounts.,,,,,,,,,,,,,,,,,2
+By default the sent keystroke sequence is {USERNAME} {TAB } {PASSWORD} {ENTER}.,,,,,,,,,,,,,,,,,2
+There is the ability for the user to define his own auto-type sequence in the notes field of each entry.,,,,,,,,,,,,,,,,,1
+The sequence must be prefixed with ?Auto-Type? and length of one line.,,,,,,,,,,,,,,,,,1
+If a sequence is more than a line it cannot be used and in case of two sequences in one note?s field only the first one is used.,,,,,,,,,,,,,,,,,1
+There are 3 methods to invoke auto-type.,,,,,,,,,,,,,,,,,1
+Software Requirements Specification for KeePass Password Safe Page 22 0,,,,,,,,,,,,,,,,,1
+The first method is to use the context menu command and perform auto-type while the entry is selected. 0,,,,,,,,,,,,,,,,,2
+The second method is to select an entry and press Ctrl+V 0,,,,,,,,,,,,,,,,,2
+The third method is to use the system?wide auto-type hot key so that KeePass can search all entries in the database for matching sequences. 3.,,,,,,,,,,,,,,,,,2
+15 .2 Functional Requirements REQ?l9: The prefix ?Auto-Typez? is required in front of each sequence REQ?20: Sequence?s length must not be more than a line (59 characters),,,,,,,,,,,,,,,,,2
+The database file location is passed as argument in the command line.,,,,,,,,,,,,,,,,,1
+This feature is a composition of master password and key files and all its composites are required so that the database can be unlocked. 3.17.1 Description,,,,,,,,,,,,,,,,,1
+"The database can be unlocked with a master password, a key file or both of them.",,,,,,,,,,,,,,,,,1
+But the same composition of them must be used always.,,,,,,,,,,,,,,,,,2
+A master key is a password the user creates.,,,,,,,,,,,,,,,,,2
+"Once a master key is created for a database, it is always required.",,,,,,,,,,,,,,,,,1
+"In case the user forgets it, the database can never be opened again by any way. A key file is a file that locks the database.",,,,,,,,,,,,,,,,,1
+The database opens when this file is present.,,,,,,,,,,,,,,,,,1
+"If the file is lost and there are no copies of it, all data are gone forever and database never unlocks again. Software Requirements Specification for KeePass Password Safe Page 23 3.17.2 Functional Requirements REQ?24:",,,,,,,,,,,,,,,,,1
+"Import/Export If a master password is required to unlock the database, the database doesn?t open unless the password is entered",,,,,,,,,,,,,,,,,2
+"If a key file is required to unlock the database, the database doesn?t open unless",,,,,,,,,,,,,,,,,1
+"In case of lost master password or key file, the database never unlocks again.",,,,,,,,,,,,,,,,,1
+"Despite that, almost all support exporting to CSV or XML files.",,,,,,,,,,,,,,,,,1
+This feature allows switching back from an application to KeePass. 3.19.1 Description,,,,,,,,,,,,,,,,,1
+The global hot key takes the user back from one window to KeePass.,,,,,,,,,,,,,,,,,1
+In case of multiple databases running of KeePass the global hot key restores the window which was opened first of all.,,,,,,,,,,,,,,,,,2
+This password may contain letters (big and small) and numbers.,,,,,,,,,,,,,,,,,2
+The user can keep it or he can put his own in the field.,,,,,,,,,,,,,,,,,1
+"The generation can be based on character sets, patterns or can be created according by rules.",,,,,,,,,,,,,,,,,1
+This feature can be disabled if user wants it by selecting 0 as password length in the password generator dialog.,,,,,,,,,,,,,,,,,1
+More about characters sets and patterns can be found at KeePass Help Files including directions and examples.,,,,,,,,,,,,,,,,,1
+They can be added to user?s database by using TAN wizard and can contain all letters and numbers.,,,,,,,,,,,,,,,,,1
+"When TAN are created, they appear as typical entries which in the field title contain ?",,,,,,,,,,,,,,,,,1
+"? so that KeePass will know it?s a TAN. In TAN entries, user cannot change the title, user name or URL but notes can be added.",,,,,,,,,,,,,,,,,1
+"When a TAN is used, its expiration time is set to that current time and the entry expires automatically. Functional Requirements REQ?32: Title, username or URL cannot be changed in a TAN entry.",,,,,,,,,,,,,,,,,1
+"When a TAN is used, it expires automatically and can never be used again. Software Requirements Specification for KeePass Password Safe Page 25 4.",,,,,,,,,,,,,,,,,2
+External Interface Requirements 4.1 User Interfaces User interface includes various forms and windows.,,,,,,,,,,,,,,,,,1
+"The main database window consists of the main menu bar with file, edit, View, tools and help.",,,,,,,,,,,,,,,,,1
+Under main menu there is a toolbar with shortcuts to most used functions of KeePass.,,,,,,,,,,,,,,,,,1
+"Those are: new, open, save, add entry, edit/View entry, delete entry, copy username to clipboard, copy password to clipboard, find in database and lock workspace.",,,,,,,,,,,,,,,,,2
+On the main database window are appeared entries from a selected group.,,,,,,,,,,,,,,,,,1
+Groups and subgroups can be found at a side bar.,,,,,,,,,,,,,,,,,1
+"When a function is performed like adding, editing or deleting, the active window is the one performing the action.",,,,,,,,,,,,,,,,,1
+Other Nonfunctional Requirements 5.1 Performance Requirements,,,,,,,,,,,,,,,,,1
+"When a password is copied, it remains on memory for only 10 seconds.",,,,,,,,,,,,,,,,,1
+"If in the meanwhile it is not pasted anywhere, it must be copied again.",,,,,,,,,,,,,,,,,1
+"That happens so that if user copies a password and not paste it anywhere, the password cannot be found by anyone later. 5 .2 Safety Requirements",,,,,,,,,,,,,,,,,2
+"When a USB which contains the database is removed from a computer while changes haven?t been completely saved, the database is damaged and cannot be opened.",,,,,,,,,,,,,,,,,1
+In this case the repair functionality can help by repairing KeePass database file from tools menu.,,,,,,,,,,,,,,,,,1
+"In case the user forgets or loses the Master Password, the repair functionality won?t help.",,,,,,,,,,,,,,,,,1
+KeePass is a small and light proj ect,,,,,,,,,,,,,,,,,1
+so it does not need to be installed.,,,,,,,,,,,,,,,,,1
+All it takes is unpacking from the Zip package.,,,,,,,,,,,,,,,,,1
+It can be transferred also in a USB stick with no additional configuration needed. 0,,,,,,,,,,,,,,,,,1
+"KeePass is a project that once uninstalled from a computer, leaves no trace behind.",,,,,,,,,,,,,,,,,1

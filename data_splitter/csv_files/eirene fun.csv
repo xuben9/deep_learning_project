@@ -1,0 +1,365 @@
+This should not have any contents.,,,,,,,,,,,,,,,,,1
+Narrative (M): This field identifies the error code and the corresponding tag name.,,,,,,,,,,,,,,,,,1
+The format is: ? 4!n/3c ? Sub-field1 indicates the error code and sub-field 2 indicates the tag name.,,,,,,,,,,,,,,,,,1
+(This can be repeatable 5times)(The error codes are still to be defined between the IOR and the NNA) 5.,,,,,,,,,,,,,,,,,1
+Date and Time (M): This field gives the preparation date and time of the message.,,,,,,,,,,,,,,,,,1
+Related Reference (M): This field identifies the Transaction reference (tag 20) of the original message.,,,,,,,,,,,,,,,,,2
+"12.3 Message Content Rejection ? MT598-902 On receipt of the message (MT598-150-NEWM) from the MMI Engine, NNA will perform basic validations.",,,,,,,,,,,,,,,,,1
+"If the validation is not successful, then NNA will generate a rejection message (MT598-902) to the MMI Engine.",,,,,,,,,,,,,,,,,1
+The layout of the MT598-902 is given below: 1.,,,,,,,,,,,,,,,,,1
+Transaction reference (M): This field identifies the transaction reference of the message.,,,,,,,,,,,,,,,,,1
+Sub-message Type (M): This field identifies the sub-message type involved in the proprietary message.,,,,,,,,,,,,,,,,,1
+The valid value is: ? 902 ? Rejection Message.,,,,,,,,,,,,,,,,,1
+Proprietary Message (M): This field identifies that this is a proprietary message.,,,,,,,,,,,,,,,,,1
+This should not have any contents.,,,,,,,,,,,,,,,,,2
+Related Reference (M): This field identifies the transaction reference of the original message.,,,,,,,,,,,,,,,,,1
+Error Details (M): This field identifies the validation error details.,,,,,,,,,,,,,,,,,2
+The error code will be of the format 4!n and maximum of 5 error codes can be accommodated in the message.,,,,,,,,,,,,,,,,,2
+(The error codes are still to be defined between the IOR and the NNA) 7.,,,,,,,,,,,,,,,,,1
+End of GENL block (M): This field identifies the end of the General block and it should have a value of GENL.,,,,,,,,,,,,,,,,,1
+Appendix D Confirmation of ISIN by NNA 13.1 ISIN Confirmation from NNA (MT598-151) 1.,,,,,,,,,,,,,,,,,2
+Transaction reference (M): This field identifies the transaction reference of the message.,,,,,,,,,,,,,,,,,1
+Sub-message Type (M): This field identifies the sub-message type involved in the proprietary message.,,,,,,,,,,,,,,,,,2
+The valid value is: ? 151 ? ISIN Confirmation 3.,,,,,,,,,,,,,,,,,2
+Proprietary Message (M): This field identifies that this is a proprietary message.,,,,,,,,,,,,,,,,,2
+This should not have any contents.,,,,,,,,,,,,,,,,,2
+Start of GENL block (M): This field identifies the start of GENL block and it should have a value of GENL.,,,,,,,,,,,,,,,,,1
+Function of the message (M): This field identifies the function of the message.,,,,,,,,,,,,,,,,,2
+The valid value is: ? NEWM ? For new message.,,,,,,,,,,,,,,,,,2
+Preparation date and time (O): This field gives the preparation date and time of the message.,,,,,,,,,,,,,,,,,2
+Type of confirmation indicator (M): This field identifies the instruction indicator.,,,,,,,,,,,,,,,,,2
+The valid value is: ? ISSU ?ISIN Issue Request.,,,,,,,,,,,,,,,,,2
+Start of link block (M): This field identifies the start of linkage block and it should have a value of LINK.,,,,,,,,,,,,,,,,,1
+This block is mandatory for ISIN Confirmation 9.,,,,,,,,,,,,,,,,,2
+Number Identification (M): This field identifies the Sub-Message Type of the linked transaction.,,,,,,,,,,,,,,,,,1
+The valid value is 150.,,,,,,,,,,,,,,,,,2
+Related Reference (M): This field identifies the transaction reference of the original message.,,,,,,,,,,,,,,,,,1
+End of link block (M): This field identifies the end of linkage block and it should have a value of LINK.,,,,,,,,,,,,,,,,,2
+End of GENL block (M): This field identifies the end of GENL block and it should have a value of GENL.,,,,,,,,,,,,,,,,,2
+Start of MMID block (M): This field identifies the start of the MMI Details block and it should have a value of MMID.,,,,,,,,,,,,,,,,,2
+This should match with the original MT598-150 sent by STRATE.,,,,,,,,,,,,,,,,,2
+Identification of securities (M): This field identifies the ISIN information.,,,,,,,,,,,,,,,,,1
+"? Sub-field 1 is Mandatory, and will contain the newly assigned ISIN.",,,,,,,,,,,,,,,,,2
+"? Sub-field 2, if present, must match with the original MT598-150.",,,,,,,,,,,,,,,,,1
+Quantity Issued (M): This field identifies the Issued amount of a financial instrument.,,,,,,,,,,,,,,,,,1
+This should match with the original MT598-150 sent by STRATE.,,,,,,,,,,,,,,,,,2
+(Down to 3 Decimals) 17.,,,,,,,,,,,,,,,,,1
+Start of FIA block (M): This field identifies financial instrument attributes block and should have a value of FIA.,,,,,,,,,,,,,,,,,1
+Coupon Payment Frequency (C): This field identifies the Payment Frequency of the MMI.,,,,,,,,,,,,,,,,,2
+Coupon Payment Day (C): This field identifies the Coupon Payment Day of the MMI.,,,,,,,,,,,,,,,,,2
+"The valid values are 01-31 (Mandatory for Category 2/3/4) (If present, this should match with the original MT598-150 sent by STRATE) 20.",,,,,,,,,,,,,,,,,2
+Generic Category (M): This field identifies the Generic Category of the instrument.,,,,,,,,,,,,,,,,,1
+Maturity date (C): This field identifies the maturity date of a financial instrument.,,,,,,,,,,,,,,,,,2
+"If present, this should match with the original MT598-150 sent by STRATE.",,,,,,,,,,,,,,,,,2
+Issue date (M): This field identifies the date of issue of a financial instrument.,,,,,,,,,,,,,,,,,1
+"If present, this should match with the original MT598-150 sent by STRATE 24.",,,,,,,,,,,,,,,,,2
+Coupon Rate (C): This field identifies the Coupon Rate of a financial instrument.,,,,,,,,,,,,,,,,,1
+"It is optional for Category 1 but mandatory for Categories 2, 3 and 4.",,,,,,,,,,,,,,,,,2
+"If present, this should match with the original MT598-150 sent by STRATE.",,,,,,,,,,,,,,,,,1
+End of FIA block (M): This field identifies the end of financial instrument attributes block and should have a value of FIA.,,,,,,,,,,,,,,,,,1
+End of MMID block (M): This field identifies the end of the MMI Details block and should have a value of MMID.,,,,,,,,,,,,,,,,,1
+Appendix E ISIN Confirmation Rejection from STRATE 14.1 ISIN Confirmation Rejection from STRATE The rejection from STRATE can be of two types: Format Rejection (MT598-901).,,,,,,,,,,,,,,,,,2
+Message Content Rejection (MT598-902).,,,,,,,,,,,,,,,,,1
+"14.2 Format Rejection ? MT598-901 On receipt of the message (MT598-151) from NNA, STRATE will perform basic validations.",,,,,,,,,,,,,,,,,1
+"If the format of the message is not as per ?Interface Specification ? Volume A?, then STRATE will generate a rejection message (MT598-901) to NNA.",,,,,,,,,,,,,,,,,1
+"The layout of the MT598-901 is given in Appendix C. 14.3 Message Content Rejection ? MT598-902 On receipt of the message (MT598-151) from NNA, STRATE will perform basic validations.",,,,,,,,,,,,,,,,,1
+"If the validation is not successful, then STRATE will generate a rejection message (MT598-902) to NNA.",,,,,,,,,,,,,,,,,1
+The layout of the MT598-902 is given in Appendix C. 15.,,,,,,,,,,,,,,,,,1
+Appendix F Request for Cancellation/De-issue of ISIN 15.1 ISIN Cancellation / De-Issue Request to NNA (MT598-150) The MMI Engine will forward the validated MMI Cancellation / De-Issue Request (MT598-150) to NNA.,,,,,,,,,,,,,,,,,1
+The layout of the MT598-150 for MMI Cancellation / De-Issue is given below: Format Specifications 1.,,,,,,,,,,,,,,,,,1
+Transaction reference (M): This field identifies the transaction reference of the message.,,,,,,,,,,,,,,,,,2
+Sub-message Type (M): This field identifies the sub-message type involved in the proprietary message.,,,,,,,,,,,,,,,,,2
+The valid value is: ? 150 ? ISIN Cancellation / De-Issue Request 3.,,,,,,,,,,,,,,,,,1
+Proprietary Message (M): This field identifies that this is a proprietary message.,,,,,,,,,,,,,,,,,2
+This should not have any contents.,,,,,,,,,,,,,,,,,1
+Start of GENL block (M): This field identifies the start of GENL block and it should have a value of GENL.,,,,,,,,,,,,,,,,,1
+The valid value is: ? NEWM ? New Message.,,,,,,,,,,,,,,,,,1
+Preparation date and time (O): This field gives the preparation date and time of the message.,,,,,,,,,,,,,,,,,2
+Type of instruction indicator (M): This field identifies the instruction indicator.,,,,,,,,,,,,,,,,,2
+The valid value is: ? DISS ?De-Issue of ISIN.,,,,,,,,,,,,,,,,,2
+End of GENL block (M): This field identifies the end of GENL block and it should have a value of GENL.,,,,,,,,,,,,,,,,,1
+Start of MMID block (M): This field identifies the start of the MMI Details block and it should have a value of MMID.,,,,,,,,,,,,,,,,,2
+Issuer's Participant Code (M): This field identifies the Participant Code of the Issuer.,,,,,,,,,,,,,,,,,2
+Identification of securities (M): This field identifies the ISIN information.,,,,,,,,,,,,,,,,,2
+Quantity Cancelled / De-Issued (M): This field identifies the cancelled / De-Issued amount of a financial instrument.,,,,,,,,,,,,,,,,,2
+(To match with the original default amount notified by STRATE)(Down to 3 Decimals) 13.,,,,,,,,,,,,,,,,,2
+End of MMID block (M): This field identifies the end of the MMI Details block and should have a value of MMID.,,,,,,,,,,,,,,,,,1
+Appendix G ISIN Cancellation/De-issue Request Rejection from NNA 16.1 ISIN Cancellation Request Rejection from NNA The rejection from NNA can be of two types: Format Rejection (MT598-901).,,,,,,,,,,,,,,,,,2
+Message Content Rejection (MT598-902).,,,,,,,,,,,,,,,,,1
+"16.2 Format Rejection ? MT598-901 On receipt of the message (MT598-150) from STRATE, NNA will perform basic validations.",,,,,,,,,,,,,,,,,1
+"If the format of the message is not as per ?Interface Specification ? Volume A?, then NNA will generate a rejection message (MT598-901) to STRATE.",,,,,,,,,,,,,,,,,1
+"The layout of the MT598-901 is given in Appendix C. 16.3 Message Content Rejection ? MT598-902 On receipt of the message (MT598-150) from STRATE, NNA will perform basic validations.",,,,,,,,,,,,,,,,,1
+"If the validation is not successful, then NNA will generate a rejection message (MT598-902) to STRATE.",,,,,,,,,,,,,,,,,1
+The layout of the MT598-902 is given in Appendix C. 17.,,,,,,,,,,,,,,,,,1
+"Appendix H ISIN Cancellation/De-issue Confirmation from NNA 17.1 ISIN Cancellation/De-issue Confirmation from NNA On receipt of the message (MT598-150) from the MMI Engine, NNA will perform the basic validations.",,,,,,,,,,,,,,,,,1
+"If the validation is successful, then NNA will cancel the ISIN in question and generate an ISIN Cancellation Confirmation message (MT598-151) to the MMI Engine.",,,,,,,,,,,,,,,,,1
+Transaction reference (M): This field identifies the transaction reference of the message.,,,,,,,,,,,,,,,,,1
+Sub-message Type (M): This field identifies the sub-message type involved in the proprietary message.,,,,,,,,,,,,,,,,,2
+Proprietary Message (M): This field identifies that this is a proprietary message.,,,,,,,,,,,,,,,,,1
+This should not have any contents.,,,,,,,,,,,,,,,,,2
+Start of GENL block (M): This field identifies the start of GENL block and it should have a value of GENL.,,,,,,,,,,,,,,,,,1
+Function of the message (M): This field identifies the function of the message.,,,,,,,,,,,,,,,,,2
+The valid value is: ? NEWM ? New Message.,,,,,,,,,,,,,,,,,1
+Preparation date and time (O): This field gives the preparation date and time of the message.,,,,,,,,,,,,,,,,,2
+Type of confirmation indicator (M): This field identifies the instruction indicator.,,,,,,,,,,,,,,,,,2
+The valid value is: ? DISS ? De-Issue.,,,,,,,,,,,,,,,,,2
+Start of link block (M): This field identifies the start of linkage block and it should have a value of LINK.,,,,,,,,,,,,,,,,,1
+This block is mandatory for ISIN Cancellation.,,,,,,,,,,,,,,,,,2
+Number Identification (M): This field identifies the Sub-Message Type of the linked transaction.,,,,,,,,,,,,,,,,,1
+Related Reference (M): This field identifies the transaction reference of the original message.,,,,,,,,,,,,,,,,,2
+End of link block (M): This field identifies the end of linkage block and it should have a value of LINK.,,,,,,,,,,,,,,,,,1
+End of GENL block (M): This field identifies the end of GENL block and it should have a value of GENL.,,,,,,,,,,,,,,,,,2
+Start of MMID block (M): This field identifies the start of the MMI Details block and it should have a value of MMID.,,,,,,,,,,,,,,,,,1
+Issuer's Participant Code (M): This field identifies the Participant Code of the Issuer.,,,,,,,,,,,,,,,,,2
+Identification of securities (M): This field identifies the ISIN information.,,,,,,,,,,,,,,,,,1
+Quantity Cancelled / De-Issued (M): This field identifies the Cancelled / De-Issued amount of a financial instrument.,,,,,,,,,,,,,,,,,2
+This should match with the original MT598-150 sent by STRATE.,,,,,,,,,,,,,,,,,1
+End of MMID block (M): This field identifies the end of the MMI Details block and should have a value of MMID.,,,,,,,,,,,,,,,,,2
+Appendix I ISIN Cancellation/De-issue Confirmation Rejection from STRATE 18.1 ISIN Cancellation Confirmation Rejection from STRATE The rejection from STRATE can be of two types: Format Rejection (MT598-901).,,,,,,,,,,,,,,,,,1
+"If the format of the message is not as per ?Interface Specification ? Volume A?, then STRATE will generate a rejection message (MT598-901) to NNA.",,,,,,,,,,,,,,,,,2
+"The layout of the MT598-901 is given in Appendix C. 18.3 Message Content Rejection ? MT598-902 On receipt of the message (MT598-151) from NNA, STRATE will perform basic validations.",,,,,,,,,,,,,,,,,2
+"If the validation is not successful, then STRATE will generate a rejection message (MT598-902) to NNA.",,,,,,,,,,,,,,,,,2
+The layout of the MT598-902 is given in Appendix C. 19.,,,,,,,,,,,,,,,,,1
+"Appendix J Request for Cancellation of ISIN on Maturity 19.1 ISIN Cancellation on Maturity to NNA (MT598-150) On Maturity Date, the MMI Engine will generate a MMI Cancellation Request (MT598-150) to NNA.",,,,,,,,,,,,,,,,,2
+The layout of the MT598-150 for MMI Cancellation on Maturity is given below: 1.,,,,,,,,,,,,,,,,,2
+Transaction reference (M): This field identifies the transaction reference of the message.,,,,,,,,,,,,,,,,,1
+The valid value is: ? 150 ? ISIN Cancellation Request on Maturity 3.,,,,,,,,,,,,,,,,,1
+Proprietary Message (M): This field identifies that this is a proprietary message.,,,,,,,,,,,,,,,,,1
+This should not have any contents.,,,,,,,,,,,,,,,,,2
+Start of GENL block (M): This field identifies the start of GENL block and it should have a value of GENL.,,,,,,,,,,,,,,,,,1
+Function of the message (M): This field identifies the function of the message.,,,,,,,,,,,,,,,,,2
+The valid value is: ? NEWM ? New Message.,,,,,,,,,,,,,,,,,2
+Preparation date and time (O): This field gives the preparation date and time of the message.,,,,,,,,,,,,,,,,,2
+Type of instruction indicator (M): This field identifies the instruction indicator.,,,,,,,,,,,,,,,,,2
+The valid value is: ? MATU ? Maturity of ISIN.,,,,,,,,,,,,,,,,,2
+End of GENL block (M): This field identifies the end of GENL block and it should have a value of GENL.,,,,,,,,,,,,,,,,,1
+Start of MMID block (M): This field identifies the start of the MMI Details block and it should have a value of MMID.,,,,,,,,,,,,,,,,,2
+Issuer's Participant Code (M): This field identifies the Participant Code of the Issuer.,,,,,,,,,,,,,,,,,2
+Identification of securities (M): This field identifies the ISIN information.,,,,,,,,,,,,,,,,,2
+Quantity Issued (M): This field identifies the Issued amount of a financial instrument.,,,,,,,,,,,,,,,,,2
+(To match with the original default amount notified by STRATE)(Down to 3 Decimals) 13.,,,,,,,,,,,,,,,,,1
+End of MMID block (M): This field identifies the end of the MMI Details block and should have a value of MMID.,,,,,,,,,,,,,,,,,1
+Appendix K ISIN Cancellation on Maturity Rejection from NNA 20.1 ISIN Cancellation on Maturity Rejection from NNA The rejection from NNA can be of two types: Format Rejection (MT598-901).,,,,,,,,,,,,,,,,,1
+Message Content Rejection (MT598-902).,,,,,,,,,,,,,,,,,1
+"20.2 Format Rejection ? MT598-901 On receipt of the message (MT598-150) from STRATE, NNA will perform basic validations.",,,,,,,,,,,,,,,,,1
+"If the format of the message is not as per ?Interface Specification ? Volume A?, then NNA will generate a rejection message (MT598-901) to STRATE.",,,,,,,,,,,,,,,,,1
+"The layout of the MT598-901 is given in Appendix C. 20.3 Message Content Rejection ? MT598-902 On receipt of the message (MT598-150) from STRATE, NNA will perform basic validations.",,,,,,,,,,,,,,,,,1
+"If the validation is not successful, then NNA will generate a rejection message (MT598-902) to STRATE.",,,,,,,,,,,,,,,,,1
+The layout of the MT598-902 is given in Appendix C. 21.,,,,,,,,,,,,,,,,,1
+Refer my previous e-mail to STRATE.,,,,,,,,,,,,,,,,,1
+21.3 Rejections JSE to STRATE A screen which reflects the rejections from the JSE to STRATE for the previous day.,,,,,,,,,,,,,,,,,1
+21.4 Rejections STRATE to JSE A screen which reflects the rejections from STRATE to the JSE for the previous day.,,,,,,,,,,,,,,,,,1
+Tarrant County Integrated Justice Information System.,,,,,,,,,,,,,,,,,1
+Manage Indigent Defense Services.,,,,,,,,,,,,,,,,,1
+Software Requirements Specification.,,,,,,,,,,,,,,,,,1
+"The Integrated Justice Information System (IJIS) is an initiative being undertaken by Tarrant County, Texas.",,,,,,,,,,,,,,,,,1
+The vision for IJIS is to define and develop enhanced business processes and supporting technology solutions that result in a more effective and efficient administration of justice in Tarrant County.,,,,,,,,,,,,,,,,,1
+"When complete, IJIS will facilitate rapid sharing of information across the Criminal Justice Community while providing each stakeholder with advanced justice management capabilities.",,,,,,,,,,,,,,,,,1
+The goal of the current phase of the initiative is to define IJIS business requirements shared by the Criminal Justice Community.,,,,,,,,,,,,,,,,,1
+"To reach agreement on the business requirements, a three-stage approach will be been used: 1.",,,,,,,,,,,,,,,,,1
+A baseline of use cases has been prepared to provide a starting point for discussions with the Criminal Justice Community.,,,,,,,,,,,,,,,,,1
+The baseline represents a compilation of requirements identified during review of background materials obtained from various sources.,,,,,,,,,,,,,,,,,1
+Workshops will be held to collect requirements from the Criminal Justice Community.,,,,,,,,,,,,,,,,,1
+"The baseline requirements, documented here, will be reviewed, and requirements added, removed and refined.",,,,,,,,,,,,,,,,,1
+"The material provided during the workshops will be consolidated into a single model, and reviewed at a final workshop with representatives from the Criminal Justice Community.",,,,,,,,,,,,,,,,,1
+? Presenting the Business Use Cases for managing indigent defense services .,,,,,,,,,,,,,,,,,1
+? Listing any outstanding issues.,,,,,,,,,,,,,,,,,1
+Term/Acronym/Abbreviation.,,,,,,,,,,,,,,,,,2
+CCP Texas Code of Criminal Procedure.,,,,,,,,,,,,,,,,,2
+ECFS District Attorney Electronic Case Filing System.,,,,,,,,,,,,,,,,,2
+IDOL Indigent Defense On-Line.,,,,,,,,,,,,,,,,,2
+IJIS Integrated Justice Information System.,,,,,,,,,,,,,,,,,2
+LEA Law Enforcement Agency.,,,,,,,,,,,,,,,,,2
+OCA Office of Court Administration.,,,,,,,,,,,,,,,,,2
+PALM Public Appointment List Management System.,,,,,,,,,,,,,,,,,2
+SAP Commercial off the shelf software package used by the Auditor to manage County Financial Information.,,,,,,,,,,,,,,,,,2
+TFID Task Force on Indigent Defense.,,,,,,,,,,,,,,,,,2
+Commissioners Court The governing body of the County.,,,,,,,,,,,,,,,,,1
+Consists of County Judge and four (4) Commissioners Court Case Management System External system used by the Criminal Justice community to manage case information from initial arrest through final disposition.,,,,,,,,,,,,,,,,,1
+Court Coordinator Person responsible for managing the schedule of a County or District Court.,,,,,,,,,,,,,,,,,1
+County Court Judge Person elected and/or appointed to preside over a trial court with misdemeanor criminal jurisdiction.,,,,,,,,,,,,,,,,,1
+Defendant Person arrested and/or charged with a criminal offense but not yet convicted.,,,,,,,,,,,,,,,,,1
+Defense Attorney Person qualified and appointed to represent a Defendant in an adversarial judicial proceeding Detention Facility Officer Person responsible for processing a Defendant into custody.,,,,,,,,,,,,,,,,,1
+District Attorney Person responsible for representing the State of Texas in an adversarial judicial proceeding District Court Judge Person elected and/or appointed to preside over a trial court with felony criminal jurisdiction.,,,,,,,,,,,,,,,,,1
+Filing Agency Law Enforcement Agency investigating and presenting charges to District Attorney against Defendant.,,,,,,,,,,,,,,,,,1
+Magistrate Person responsible for informing the Defendant of their right to an appointed counsel and determination of indigent status.,,,,,,,,,,,,,,,,,1
+Office of Attorney Appointments Person responsible for managing the Indigent Defense appointment process.,,,,,,,,,,,,,,,,,1
+Presiding Administrative Judge Person appointed by the Governor to preside over the administrative judicial region.,,,,,,,,,,,,,,,,,1
+Task Force on Indigent Defense Standing committee of the Texas Judicial Council responsible for establishing standards for Indigent Defense Services.,,,,,,,,,,,,,,,,,1
+Description The purpose of this use case is to describe the activities involved in submitting a Request for Appointed Counsel to the Office of Attorney Appointments.,,,,,,,,,,,,,,,,,1
+Supports Objective(s) Enable law enforcement agencies to capture defendant and incident information along with supporting paper documents within 48 hours of arrest.,,,,,,,,,,,,,,,,,1
+Enable magistrates to electronically review request(s) for counsel and submit request(s) for counsel within 24 hours of the indigency hearing.,,,,,,,,,,,,,,,,,1
+Actors ? Defendant ? Detention Facility Officer ? Magistrate ? Office of Attorney Appointments ? City Clerk ? Notary Flow of Events Basic Path This use case starts after the Defendant has been arrested and transported to a Detention Facility.,,,,,,,,,,,,,,,,,1
+"Detention Facility Officer captures Defendant, Incident, and Financial Information.",,,,,,,,,,,,,,,,,1
+Defendant swears to and signs Financial Affidavit.,,,,,,,,,,,,,,,,,2
+Detention Facility Officer witnesses and signs Financial Affidavit.,,,,,,,,,,,,,,,,,2
+Detention Facility Officer schedules Indigency Hearing.,,,,,,,,,,,,,,,,,2
+Magistrate informs Defendant of right to request appointment of counsel and asks whether Defendant wants a Court Appointed Attorney.,,,,,,,,,,,,,,,,,1
+Defendant requests appointment of a Court Appointed Attorney.,,,,,,,,,,,,,,,,,1
+Magistrate reviews Financial Affidavit.,,,,,,,,,,,,,,,,,2
+Magistrate interviews/questions Defendant.,,,,,,,,,,,,,,,,,2
+Magistrate makes determination that Defendant is indigent.,,,,,,,,,,,,,,,,,2
+Defendant and Magistrate sign Request for Appointed Counsel.,,,,,,,,,,,,,,,,,2
+Magistrate submits Request for Appointed Counsel to the Office of Attorney Appointments.,,,,,,,,,,,,,,,,,1
+Alternative Path 1 Defendant waives right to Court Appointed Attorney This alternative path replaces the basic path beginning at step 6.,,,,,,,,,,,,,,,,,1
+Defendant waives right to Court Appointed Attorney.,,,,,,,,,,,,,,,,,2
+Defendant signs Waiver of Appointed Counsel.,,,,,,,,,,,,,,,,,2
+Magistrate submits Waiver of Appointed Counsel to the Office of Attorney Appointment Alternative Path 2 Magistrate determines Defendant is not indigent This alternative path replaces the basic path beginning at step 9.,,,,,,,,,,,,,,,,,1
+Magistrate makes determination that Defendant is not indigent.,,,,,,,,,,,,,,,,,1
+Magistrate submits notice of indigency determination to the Office of Attorney Appointments.,,,,,,,,,,,,,,,,,1
+CCP Article 1.051 ? Right to representation by Counsel.,,,,,,,,,,,,,,,,,1
+CCP Article 15.17 ? Duties of arresting officer and magistrate.,,,,,,,,,,,,,,,,,1
+Texas Uniform Commercial Code 1.,,,,,,,,,,,,,,,,,1
+Chapter 43 Uniform Electronic Transactions Act (UETA).,,,,,,,,,,,,,,,,,1
+Technical: Texas Department of Information Resources 1.,,,,,,,,,,,,,,,,,1
+Guidelines for the Management of Electronic Transactions and Signed Records.,,,,,,,,,,,,,,,,,1
+Enable law enforcement agencies to be notified that the request for counsel has been denied within 24 hours of the denial.,,,,,,,,,,,,,,,,,1
+Enable the appointed attorney and Defendant to be notified that an appointment has been made within 24 hours of the appointment.,,,,,,,,,,,,,,,,,1
+This use case starts after a Magistrate has submitted a Request for Appointed Counsel to the Office of Attorney Appointments.,,,,,,,,,,,,,,,,,1
+Office of Attorney Appointments receives/reviews the Request for Appointed Counsel.,,,,,,,,,,,,,,,,,2
+Office of Attorney Appointments researches Defendant/Incident information in Court Case Management System.,,,,,,,,,,,,,,,,,2
+Office of Attorney Appointments confirms Defendant has not been released from custody.,,,,,,,,,,,,,,,,,2
+Office of Attorney Appointments confirms Defendant does not have a Defense Attorney appointed on a pending case.,,,,,,,,,,,,,,,,,2
+Office of Attorney Appointments determines the appropriate appointment rotation list based upon the highest level and degree of offense Defendant is accused of committing.,,,,,,,,,,,,,,,,,2
+Office of Attorney Appointments selects next Defense Attorney in the appointment rotation list.,,,,,,,,,,,,,,,,,2
+"Office of Attorney Appointments notifies Defendant, Defense Attorney and Detention Facility Officer of appointment by facsimile and/or electronic mail.",,,,,,,,,,,,,,,,,2
+Alternative Path 1 Defendant has been released from custody This alternative path replaces the basic path beginning at step 3.,,,,,,,,,,,,,,,,,1
+The approach provides a common ?Ianguage? for describing eProcurement documents that is modular and extensible to specialised business contexts.,,,,,,,,,,,,,,,,,1
+This speci?cation does not include the XML schema to be used.,,,,,,,,,,,,,,,,,1
+No assumptions are made (other than good business practice) about how the internal systems at the Buyer and the Seller are designed or work; these systems are treated as ?black boxes?.,,,,,,,,,,,,,,,,,1
+The following aspects of procurement are out of scope: 0 Seller discovery.,,,,,,,,,,,,,,,,,1
+0 on-Iine negotiation and e-auctions.,,,,,,,,,,,,,,,,,2
+0 e-tendering; 0 negotiation of terms and conditions of trade.,,,,,,,,,,,,,,,,,2
+0 communication with third parties and intermediaries e.g.,,,,,,,,,,,,,,,,,2
+"carriers, banks and fiscal authorities.",,,,,,,,,,,,,,,,,1
+0 message transport and security.,,,,,,,,,,,,,,,,,2
+0 data protection and retention rules.,,,,,,,,,,,,,,,,,2
+0 the application of public sector purchasing policy.,,,,,,,,,,,,,,,,,2
+eProcurement is a many-to-many electronic data interchange (EDI) problem on a large scale and requires both the sender and the receiver to interpret each and every data element in precisely the same way.,,,,,,,,,,,,,,,,,2
+"In practice, these Documents are likely to be introduced incrementally, starting with one or two Documents, such as Purchase Order and/or Invoice, and adding additional services as required.",,,,,,,,,,,,,,,,,1
+"This specification is not prescriptive regarding Document variants and, in particular, the business rules that may be required to provide automated support for the provision of copies, revisions and cancellations.",,,,,,,,,,,,,,,,,1
+"These requirements support several Government initiatives, including.",,,,,,,,,,,,,,,,,1
+0 the generation of value for money efficiency savings.,,,,,,,,,,,,,,,,,2
+0 the wish from ministerial level for the UK to be the best place to do e-business.,,,,,,,,,,,,,,,,,2
+0 that 100% of interactions between Government and business be available electronically by 2005.,,,,,,,,,,,,,,,,,2
+The greatest bene?ts accrue when information persists through the purchasing cycle without re-keying and with manual intervention only where needed for business reasons.,,,,,,,,,,,,,,,,,2
+"One example is the ?three-way match? between Purchase Order, goods receipt and Invoice, usually performed in the accounts payable function before an Invoice is paid.",,,,,,,,,,,,,,,,,1
+Automating the three-way match may reduce substantially the end-to-end costs of in the Buyer?s back office.,,,,,,,,,,,,,,,,,1
+"Cross?Government eProcurement standards also benefit Sellers, particularly small to medium-sized enterprises (SMEs).",,,,,,,,,,,,,,,,,1
+"This specification provides a clear ?stake in the ground? for Sellers, for their trade with Government and, potentially, for trade across the private sector.",,,,,,,,,,,,,,,,,1
+"Similarly, a common Government standard reduces the need for software and service providers to cater for multiple specifications.",,,,,,,,,,,,,,,,,1
+"This work has been undertaken within the e-Commerce team in the Of?ce of Government Commerce (OGC), reporting to a joint eProcurement Interoperability Working Group of the OGC and the Office of the e-Envoy (OeE).",,,,,,,,,,,,,,,,,2
+"Aworking group compiled the basic requirements with representation from across Government, local authorities and the National Health Service.",,,,,,,,,,,,,,,,,1
+"These requirements have been re?ned through public consultation, meetings with IT suppliers and experts involved in relevant international standards and trade associations.",,,,,,,,,,,,,,,,,1
+The method used is based on the OeE?s e-Service Development Framework (e-SDF); see www.qovtalk.qov.uk/schemastandards/eservices.asp.,,,,,,,,,,,,,,,,,1
+The scope for this speci?cation is the procurement of goods and services for public sector organisations.,,,,,,,,,,,,,,,,,1
+This broad domain is broken down into four main business processes.,,,,,,,,,,,,,,,,,1
+"Sourcing includes activity prior to placing a formal order, including the exchange of Catalogue information, Requests For Quotation (RFQ) and Quotations.",,,,,,,,,,,,,,,,,1
+Ordering includes Purchase Orders and responses.,,,,,,,,,,,,,,,,,2
+"Fulfilment includes delivery/despatch noti?cation, receipt (including variances) and Seller's proposed recti?cation of any problems.",,,,,,,,,,,,,,,,,1
+"Accounting includes Invoices (including Self Billed Invoices) Credit Notes, Debit Notes, Statements and Remittance Advice.",,,,,,,,,,,,,,,,,2
+"Each business process involves the exchange of information between the Buyer and the Seller, using a number of Documents.",,,,,,,,,,,,,,,,,1
+Documents Produced in Each Business Process.,,,,,,,,,,,,,,,,,2
+Sourcing Request for Quotation Catalogue.,,,,,,,,,,,,,,,,,2
+Ordering Purchase Order Purchase Order Response.,,,,,,,,,,,,,,,,,2
+Fulfilment Receipt Advice Ful?lment Notification.,,,,,,,,,,,,,,,,,2
+Accounting Self Billed Invoice Invoice.,,,,,,,,,,,,,,,,,2
+Debit Note Credit Note.,,,,,,,,,,,,,,,,,2
+Remittance Advice Statement.,,,,,,,,,,,,,,,,,2
+The Documents included are: Catalogue RFQ (Request for Quotation) Quotation is sent from the Seller to the Buyer to provide Item price and other information for use in locally held Catalogues.,,,,,,,,,,,,,,,,,1
+Is a request from the Buyer to the Seller to quote terms and conditions under which the Seller is willing to supply speci?c goods or services.,,,,,,,,,,,,,,,,,1
+"Variants may support revision or cancellation of the Purchase Order either in content (Items ordered or quantity of Items) and/or in terms of fulfilment (changed delivery details, required by date etc).",,,,,,,,,,,,,,,,,2
+"|t acknowledges that the Purchase Order has been received and that it will be ful?lled in total, in part or not at all.",,,,,,,,,,,,,,,,,1
+It may also give additional information about specific delivery.,,,,,,,,,,,,,,,,,1
+The Documents included are: Fulfilment Notification is sent by the Seller to tell the Buyer that goods have been despatched or delivered or that a service has been performed.,,,,,,,,,,,,,,,,,2
+The Seller may use this Document to notify the Buyer of shipping details via a third party carrier and to notify partial or complete delivery of a Purchase Order.,,,,,,,,,,,,,,,,,2
+Receipt Advice is sent by the Buyer to the Seller to acknowledge receipt in full or in part and to describe discovered variances e.g.,,,,,,,,,,,,,,,,,1
+"un-noti?ed under?delivery, over?delivery, wrong Items delivered or damaged goods.",,,,,,,,,,,,,,,,,1
+Rectification Advice is sent from the Seller to the Buyer to tell the Buyer of action to be taken regarding the goods or services at variance from the actual requirement e.g.,,,,,,,,,,,,,,,,,1
+"the Seller may ask the Buyer to return the goods, await collection of the goods (by the Seller or his carrier) or destroy the goods.",,,,,,,,,,,,,,,,,1
+2.1.4 Accounting The Documents included are: Invoice is sent from the Seller to the Buyer to request payment for goods delivered or services performed.,,,,,,,,,,,,,,,,,2
+Invoice is a Value Added Tax (VAT) Document.,,,,,,,,,,,,,,,,,1
+Self Billed Invoice is an Invoice sent from the Buyer to the Seller where the two have a self billing arrangement.,,,,,,,,,,,,,,,,,1
+"For more information regarding HMCE requirements for self billing, see WWW.hmce.qov.uk/forms/notices/700-62.htm Self Billed Invoice is a VAT Document.",,,,,,,,,,,,,,,,,1
+"Credit Note is sent from the Seller to the Buyer, confirming that the Seller owes money to the Buyer.",,,,,,,,,,,,,,,,,1
+It may be used to rectify errors and/or variances in the invoicing process.,,,,,,,,,,,,,,,,,1
+Credit Note is a VAT Document.,,,,,,,,,,,,,,,,,1
+"Debit Note is sent from the Buyer to the Seller, stating that Buyer has deducted amounts from a Seller?s Invoice.",,,,,,,,,,,,,,,,,2
+A Debit Note precludes the need for a Seller to raise a Credit Note.,,,,,,,,,,,,,,,,,2
+Debit Note is a VAT Document.,,,,,,,,,,,,,,,,,1
+"Remittance Advice is sent from the Buyer to the Seller, notifying payment and stating what Invoices, Credit and Debit Notes have been accounted for.",,,,,,,,,,,,,,,,,2
+"Statement is sent from the Seller to the Buyer summarising the status of the Buyer?s account and the Invoices, Remittances, Debit and Credit Notes submitted within a speci?c time period.",,,,,,,,,,,,,,,,,2
+"2.2 Parties A Party is any person, organisation or computer system that sends or receives goods, services or information.",,,,,,,,,,,,,,,,,1
+A role is a job done by a particular Party.,,,,,,,,,,,,,,,,,2
+One Party may play a number of roles in a Document.,,,,,,,,,,,,,,,,,2
+"Every Document has a sender and receiver, one of which is a Buyer role, the other a Seller role.",,,,,,,,,,,,,,,,,1
+"The Party types, ro|es names and Documents sent and received are shown in Table 2.",,,,,,,,,,,,,,,,,1
+"Seller ro|es include: Sales Point Despatch Point Customer Service Accounts Receivable is responsible for the arrangement and maintenance of trading agreements with suppliers, including Catalogue data.",,,,,,,,,,,,,,,,,2
+"The Purchasing Manager is not involved in other transactions; if the Purchasing Manager requests or makes a purchase, that individual adopts the role of Originator or Order Point respectively.",,,,,,,,,,,,,,,,,2
+"If Originator subsequently places a Purchase Order, the Originator adopts the role of Order Point.",,,,,,,,,,,,,,,,,1
+Purchase Card (credit or debit card) information may be associated with the Order Point.,,,,,,,,,,,,,,,,,1
+It may include Electronic Funds Transfer (EFT) information i.e.,,,,,,,,,,,,,,,,,1
+Note: Messages to and from banks are out of scope.,,,,,,,,,,,,,,,,,1
+2.2.3 Third Party Roles Third Party ro|es include: Carrier is assigned by the Seller or the Buyer to deliver or return goods.,,,,,,,,,,,,,,,,,2
+Note: Messages to and from carriers are out of scope.,,,,,,,,,,,,,,,,,1
+2.3 Codes and Identifiers Semantic interoperability depends on the ability of computers to match identi?ers and codes.,,,,,,,,,,,,,,,,,1
+Identifiers and codes are needed to enable: 0 the Seller to identify the Buyer.,,,,,,,,,,,,,,,,,1
+"commodity classification, and identi?ed at individual or Catalogue |tem level as appropriate.",,,,,,,,,,,,,,,,,1
+"The identi?ers, coding and classification schemes used in this specification fall into five groups: International used and maintained internationally, including: 0 country codes (ISO 3166).",,,,,,,,,,,,,,,,,1
+0 International Commercial Terms (INCOTERMS - International Chambers of Commerce).,,,,,,,,,,,,,,,,,2
+0 Units of Measure (UN Recommendation No.,,,,,,,,,,,,,,,,,2
+"National used and maintained nationally, including the OeE Government.",,,,,,,,,,,,,,,,,1
+Data Standards Catalogue (GDSC).,,,,,,,,,,,,,,,,,1
+Examples include: 0 Company registration number.,,,,,,,,,,,,,,,,,1
+Speci?ed in this developed for this speci?cation including: Document 0 Document status 0 payment method Application-speci?c a variety of application-speci?c identification schemes are supported.,,,,,,,,,,,,,,,,,1
+0 Buyer reference for Seller.,,,,,,,,,,,,,,,,,2
+0 locally specified identifiers for instances of: o Quotation.,,,,,,,,,,,,,,,,,2
+0 Purchase Order.,,,,,,,,,,,,,,,,,2
+0 Fulfilment Notification.,,,,,,,,,,,,,,,,,2
+Universally Unique Universally Unique Identifier (UUID) is an instance identifier Identi?ers generated on the fly as speci?ed in ISO 11587.,,,,,,,,,,,,,,,,,1
+UUID is a 128 bit string usua||y formatted as 32 characters alphanumeric.,,,,,,,,,,,,,,,,,1
+In this specification UUID is used for matching instances of Document and Line between Documents and for referring to multiple ro|e instances of the same Party within a single Document.,,,,,,,,,,,,,,,,,1
+"UUIDs provide an effective means to ensure exact matching of identifiers at machine level, but are not well suited to visual matching, which is why existing ID data are also required.",,,,,,,,,,,,,,,,,2
+"Common Elements Each Document is made up of a common set of elements, which are described below.",,,,,,,,,,,,,,,,,1
+The descriptions are illustrated with UML class diagrams.,,,,,,,,,,,,,,,,,1
+A specialisation inherits all of the properties of its parent class.,,,,,,,,,,,,,,,,,1
+"Some knowledge of UML is needed to understand the model fully, but the text is intended to be understandable to those who are not familiar with the UML notation.",,,,,,,,,,,,,,,,,2
+"contains information about each Party including organisation and person details, postal and electronic addresses.",,,,,,,,,,,,,,,,,1
+A sender and a receiver are included in every Document.,,,,,,,,,,,,,,,,,2
+"3.2 Party A Party is any person, organisation or computer system that sends or receives information, goods or services.",,,,,,,,,,,,,,,,,1
+A role is a job done by a particular Party.,,,,,,,,,,,,,,,,,1
+One Party may play a number of roles in a Document.,,,,,,,,,,,,,,,,,1
+This may be useful in providing references within a Document to the same Party in several different places.,,,,,,,,,,,,,,,,,1
+The full details of any Party only need to be provided once and other occurences of the same Party may be cross-referenced using Party UUID.,,,,,,,,,,,,,,,,,2
+is the unstructured name of an individual within an organisation.,,,,,,,,,,,,,,,,,1
+Unstructured name is typically entered manua||y at the time of the transaction.,,,,,,,,,,,,,,,,,1
+"When an unstructured address is used, it must have 1 to 5 Lines.",,,,,,,,,,,,,,,,,1
+The UK Post Code is a combination of between five and seven letters and numbers which define four different levels of geographic unit.,,,,,,,,,,,,,,,,,2
+"Although Post Code cannot be made mandatory in all circumstances, it should be present if known.",,,,,,,,,,,,,,,,,1
+This needs to be coded to enable collection of management data on source of imports and exports.,,,,,,,,,,,,,,,,,1
+"For companies registered in England and Wales, this is the company Registration Number issued by Companies House, Cardiff.",,,,,,,,,,,,,,,,,1
+VAT Identifier includes Country Code (as above) and VAT number.,,,,,,,,,,,,,,,,,2
+It is a specific Internet identifier that contains a locally interpreted string followed by the ?at? sign (@) followed by an Internet domain.,,,,,,,,,,,,,,,,,1
+This may be useful in providing references within a Document to the same Party in several different places.,,,,,,,,,,,,,,,,,1
+The full details of any Party only need to be provided once and other occurences of the same Party may be cross-referenced using Party UUID.,,,,,,,,,,,,,,,,,1
+"(PAON) is the premise number and/or premise name, or where neithe rof these exist it is the name of the organisation in occupation or a description of the addressable object e.g.",,,,,,,,,,,,,,,,,2
+Where an industrial estate contains streets it is defined as a locality in its own right.,,,,,,,,,,,,,,,,,1
+UK |nterna| Code is used if the Country Code is GB.,,,,,,,,,,,,,,,,,1
+"3.2.3 Extended Electronic Address eAddress XE ""URL""eAddress Channel eAddress Use is the number or string of the electronic address or telephone number.",,,,,,,,,,,,,,,,,2
+3.2.4 Person Structured Name Title Forename Surname Name Suffix Job Title Department Known As is an individual?s address tit|e e.g.,,,,,,,,,,,,,,,,,1
+Merchant Capability is the Seller?s capability to send invoice data via the Purchase Card provider (VISA/MasterCard/American Express): 0 Level 1 ? no invoice data 0 Level 2 ? summary invoice data 0 Level 3 ? line level invoice data.,,,,,,,,,,,,,,,,,2
+3.2.10 Accounts Receivable Account Number is the Bank account number.,,,,,,,,,,,,,,,,,1
+"DigitalHome Software Requirements Specification This document specifies the requirements for the development of a ?Smart House?, called DigitalHome (DH), by the DigitalHomeOwner Division of HomeOwner Inc.",,,,,,,,,,,,,,,,,1
+The DigitalHome Software Requirements Specification (SRS) is based on the DigitalHome Customer Need Statement.,,,,,,,,,,,,,,,,,1
+It is made up of a list of the principal features of the system.,,,,,,,,,,,,,,,,,1
+"This initial version of DigitalHome will be a limited prototype version, which will be used by HomeOwner management to make business decisions about the future commercial development of DigitalHomeOwner products and services.",,,,,,,,,,,,,,,,,1
+"Hence, the SRS is not intended as a comprehensive or complete specification of DigitalHome requirements.",,,,,,,,,,,,,,,,,1
+There is a supplementary document that provides additional detail and information about the DigitalHome requirements: the Digital Home Use Case Model [HO2010].,,,,,,,,,,,,,,,,,1
+"These document were prepared by the DigitalHomeOwner Division, in consultation with the Marketing Division of HomeOwner Inc.",,,,,,,,,,,,,,,,,1
+"The Digital Home system, for the purposes of this document, is a system that will allow a home user to manage devices that control the environment of a home.",,,,,,,,,,,,,,,,,1
+The user communicates through a personal web page on the DigitalHome web server or on a local home server.,,,,,,,,,,,,,,,,,1
+"The DH web server communicates, through a home wireless gateway device, with the sensor and controller devices in the home.",,,,,,,,,,,,,,,,,1
+"The product is based on the Digital Home High Level Requirements Definition [HLRD 2010] is intended as a prototype, which will allow business decisions to be made about future development of a commercial product.",,,,,,,,,,,,,,,,,1
+"The scope of the project will be limited to the management of devices which control temperature, humidity, security, and power to small appliances and lighting units, through the use of a web-ready device.",,,,,,,,,,,,,,,,,1
+The prototype DH software system will be situated in a simulated environment.,,,,,,,,,,,,,,,,,1
+"For example, a Master User shall be able to add a user account or change the default parameter settings.",,,,,,,,,,,,,,,,,1

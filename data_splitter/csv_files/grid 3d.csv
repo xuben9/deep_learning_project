@@ -1,0 +1,108 @@
+Approve and rej ect submissions,,,,,,,,,,,,,,,,,1
+Forward request to different registry 2.,,,,,,,,,,,,,,,,,1
+A consumer examines a registry to,,,,,,,,,,,,,,,,,1
+select a tag structure for reuse in one or more applications that will exchange data according to a pre-de?ned agreement. 1.,,,,,,,,,,,,,,,,,1
+View the XML Tags with the following relationships: 1.,,,,,,,,,,,,,,,,,1
+Uses/Used by relationship: Provide the capability to View a complex Container Tag?s parent/child relationship 3.,,,,,,,,,,,,,,,,,2
+Data type information: Provide the capability to View a tag?s data type and related information. 4.,,,,,,,,,,,,,,,,,2
+Versioning relationship: Provide the capability to View an Information resource?s versions 5.,,,,,,,,,,,,,,,,,2
+Reference Sets: Provide the capability to View text related to the domain values or the related reference set 6.,,,,,,,,,,,,,,,,,2
+"Amplifying information: Provide the capability to View other information resources such as ERwin models, DTDs, documents, etc., which describe or otherwise provide amplifying information. 7.",,,,,,,,,,,,,,,,,2
+View the XML Tags Via a tree/hierarchy structure or tabular format. 8.,,,,,,,,,,,,,,,,,2
+View the XML Tags by giving the user multiple search options to ?nd a speci?c Tag. 9.,,,,,,,,,,,,,,,,,2
+View the XML tags by giving the user the search option to ?nd all tags of a given subscriber/author. 3.,,,,,,,,,,,,,,,,,2
+"Each Information Resource will have its own web page to allow the user to View all pertinent information, according to its information resource type- 4.",,,,,,,,,,,,,,,,,2
+Display an XML Tag Speci?cation form to the author of a given information resource.,,,,,,,,,,,,,,,,,2
+This XML Tag Spec will be used for inputting the requesting information for a speci?c Information Resource.,,,,,,,,,,,,,,,,,1
+Provide capabilities to download the XML Tags or other selected Information Resources. 7.,,,,,,,,,,,,,,,,,1
+"Catalog entities and attributes within servers to enable browsing, searching, retrieving of data related to XML sources. 8.",,,,,,,,,,,,,,,,,1
+Process ANSI standard SQL as speci?ed in FIPS PUB 127-2 9.,,,,,,,,,,,,,,,,,1
+2. Establish acceptable naming convention not to be in con?ict with the DOD data standards convention and establish a relationship to other naming conventions. 3.,,,,,,,,,,,,,,,,,1
+Create a naming structure within the COE architecture to express the context and relationship of the naming convention to other naming conventions speci?ed in the I&RTS. 4.,,,,,,,,,,,,,,,,,1
+"De?ne a set of metadata tags, information attributed to metadata tags (meta?metadata) and other related terms for the maintenance and control of XML tags. 5.",,,,,,,,,,,,,,,,,1
+Review/approve submission 6.,,,,,,,,,,,,,,,,,1
+Monitor changes to data models recorded in Registry pass request off to (per explicit federation agreements) 2.,,,,,,,,,,,,,,,,,1
+Design the schema for an XML document,,,,,,,,,,,,,,,,,1
+"Record structure 2. Check against standard (e.g., style guide wizard for tags) 1.",,,,,,,,,,,,,,,,,1
+Use and reference existing tags and associated semantic structures 2.,,,,,,,,,,,,,,,,,1
+Use & reference existing tags & associated semantic structures (extracted from Registry) 1.,,,,,,,,,,,,,,,,,1
+create new tags & associated semantic structures 2.,,,,,,,,,,,,,,,,,1
+Record semantic structure in JTA-compliant formalism,,,,,,,,,,,,,,,,,1
+"Extract semantically-valid Views from an XML document (e.g., XSL) 5. Disassemble hierarchical View to relational representation 6.",,,,,,,,,,,,,,,,,1
+REGISTRY SERVICES EXTERNAL INTERFACE REQUIREMENTS,,,,,,,,,,,,,,,,,1
+The Registry shall provide standard APIs as speci?ed in Appendix B. .,,,,,,,,,,,,,,,,,2
+DATA ACCESS SERVICES INTERNAL INTERFACE REQUIREMENTS,,,,,,,,,,,,,,,,,1
+The XS function shall provide standard APIs as speci?ed in Appendix C. .,,,,,,,,,,,,,,,,,2
+DATA ACCESS SERVICES INTERNAL DATA REQUIREMENTS 1.,,,,,,,,,,,,,,,,,1
+"The XS shall internally interface (transparent to the operator) with the existing data elements of the DBIF, DAC, and COTS RDBMS products. .",,,,,,,,,,,,,,,,,2
+REGISTRY SERVICES ENVIRONMENT REQUIREMENTS 1.,,,,,,,,,,,,,,,,,1
+The Registry software shall be portable and required to execute on COE-compliant platforms. .,,,,,,,,,,,,,,,,,2
+PERSONNEL-RELATED REQUIREMENTS Not applicable.,,,,,,,,,,,,,,,,,1
+Personnel requirements shall be determined by the developers of the system in which the XS module is embedded. .,,,,,,,,,,,,,,,,,1
+TRAINING-RELATED REQUIREMENTS Not applicable.,,,,,,,,,,,,,,,,,1
+Training requirements shall be determined by the developers of the system in which the XS module is embedded.,,,,,,,,,,,,,,,,,1
+"LOGISTICS-RELATED REQUIREMENTS The XS developer is responsible for software maintenance, software support, and software updates.",,,,,,,,,,,,,,,,,2
+The DISA Con?guration Manager (CM) is responsible for distribution of the XS product to system developers. 11.0THER REQUIREMENTS None. 12.,,,,,,,,,,,,,,,,,1
+"The Quali?cation Methods applied to the software shall include test, demonstration, analysis, and inspection (T, D, A, I).",,,,,,,,,,,,,,,,,1
+An example of accumulated data is the compilation of data obtained from other quali?cation methods.,,,,,,,,,,,,,,,,,1
+Examples of the processing of accumulated data are interpretations or extrapolations made from the data.,,,,,,,,,,,,,,,,,1
+"The information / parameters may be data dependent, or application dependent, or dependent on a manual process/human intervention.",,,,,,,,,,,,,,,,,1
+It will include controls qualifying the processing involved. Business Rule:,,,,,,,,,,,,,,,,,1
+"A narrative description of policies, procedures, or principles within an organization.",,,,,,,,,,,,,,,,,1
+"Business rules can be divided in to four categories: de?nitions, facts, constraints, and derivations. De?nitions are business rules that de?ne entities and attributes.",,,,,,,,,,,,,,,,,1
+They are the integrity rules that protect the data in the eventual database. Derivations are business rules that materialize a new piece of information (often attribute values) from other pieces of information.,,,,,,,,,,,,,,,,,2
+"For example, a mathematical derivation might specify that you can obtain a person's age by subtracting his or her birth date from the current date.",,,,,,,,,,,,,,,,,1
+Commit/Rollback: An individual transaction is processed (commit) or discarded (rollback) by the proponent maintainer of the data items involved. Discretionary Access Controls (DAC):,,,,,,,,,,,,,,,,,1
+A means of restricting access to obj ects based on the identity of subjects or groups to which they belong.,,,,,,,,,,,,,,,,,1
+"The information/parameters may be data dependent, or application dependent, or dependent on a manual process/human intervention.",,,,,,,,,,,,,,,,,1
+It will include controls qualifying the processing involved. Location Transparency: occurs when the physical location of data is transparent to the applications and users of the database system.,,,,,,,,,,,,,,,,,2
+Access to an obj ect potentially implies access to the information it contains.,,,,,,,,,,,,,,,,,1
+It refers to proponency at the source and record level.,,,,,,,,,,,,,,,,,1
+"Redundant Array of Inexpensive Disks (RAID): A RAID system appears asone very large, reliable disk to the CPU.",,,,,,,,,,,,,,,,,1
+The main reason for using RAID storage is its reliability.,,,,,,,,,,,,,,,,,1
+RAID has the same advantages as shadowing and striping at a lower cost.,,,,,,,,,,,,,,,,,2
+RAID 4 intended to overcome performance penalties of RAID 3 for small transfers.,,,,,,,,,,,,,,,,,2
+"RAID 5 (in which parity over RAID 3 or RAID 4 implementations), and RAID 6 ( in which two parity disks in addition to data disks are used in an attempt to further improve performance).",,,,,,,,,,,,,,,,,2
+"In a RAID 5 implementation, the data is stored as are check sums and other information about the contents of each disk in the array.",,,,,,,,,,,,,,,,,2
+"If one disk is lost, the others can use the check sums and other stored information to recreate the lost data.",,,,,,,,,,,,,,,,,1
+Storage system vendors may provide additional enhancements to RAID level implementations to improve performance and reliability.,,,,,,,,,,,,,,,,,1
+RDA de?nes a set of client and server standards and a mapping of SQL commands to these services.,,,,,,,,,,,,,,,,,1
+Supports queries of spatial data where the selection criteria are de?ned by spatial attributes.,,,,,,,,,,,,,,,,,1
+APPENDIX A The metadata and procedures are described for the current Information Resource Submittal Package . Metadata and Related Information,,,,,,,,,,,,,,,,,1
+An XML tag may be described as any obj ect and is easily created by anyone using a text editor.,,,,,,,,,,,,,,,,,1
+"So far, the burgeoning sets of XML tags have created redundancy and irrelevancy, and they lack validity. XML Registry.",,,,,,,,,,,,,,,,,1
+"To ensure interoperability, this registry provides a baseline set of tags developed through coordination and approval among the Community.",,,,,,,,,,,,,,,,,1
+"The Registry allows a user to browse, search, and retrieve data that satisfy your requirements.",,,,,,,,,,,,,,,,,1
+"Document Type De?nition (DTD)) or existing tags, you may submit your proposed tag to a Community of Interest (C01) and provide amplifying information for all to understand the semantics for its proper use.",,,,,,,,,,,,,,,,,1
+The COE Chief Engineer will approve a single Point of Contact (POC) for a COI to manage the tags within that C01.,,,,,,,,,,,,,,,,,1
+Please consult the Registry for the most authoritative list of information resources types.) The FCC responsibilities will include the transitioning of information resources from one status to another.,,,,,,,,,,,,,,,,,1
+Include amplifying info associated with speci?c Tag(s) Zip and attach submission package to e-mail message to: Rules and Convensions. Establishing a new Information Resource.,,,,,,,,,,,,,,,,,1
+Follow these conventions for creating new information resources for the Registry,,,,,,,,,,,,,,,,,1
+"If the term is well recognized outside its container term, designate it as an element.",,,,,,,,,,,,,,,,,1
+"Example: CTRY_CD, CTRY_NM, CTRY_ABBRD_NM, CTRY_OFF_NM, CTRY_SCP_NT_TX, and CTRY_PSTL_NM are all characteristics (ER?attributes) for the entity CTRY.",,,,,,,,,,,,,,,,,1
+"In the relational world, they are columns within the table ctry, attributes of the entity ctry in er-modeling, and member attributes in obj ect modeling.",,,,,,,,,,,,,,,,,1
+It would be expected that a submitter would identify them as attributes rather than elements.,,,,,,,,,,,,,,,,,1
+"But if they were identi?ed as attributes of the element ctry, then the additional baggage (other attributes) must be carried, or submitted as separate elements.",,,,,,,,,,,,,,,,,1
+"We wish to limit the proliferation of tags, so we strongly urge folks to use XML_Attributes sparingly. Include descriptive de?nitions AND synonyms for the Information Resource De?nition.",,,,,,,,,,,,,,,,,1
+At this time such detailed information is unavailable. The Internal Interfaces for the XS SRS are de?ned as interfaces to COE components.,,,,,,,,,,,,,,,,,1
+"In third quarter 2004, ABC Paint will migrate to a new paint numbering scheme.",,,,,,,,,,,,,,,,,1
+This migration comes at a time that ABC Paint will be adding and discontinuing a number of paints and collections.,,,,,,,,,,,,,,,,,1
+"For ABC Paint customers to remain loyal and happy, we will create an easy to use system, allowing conversion to the new paints and collections.",,,,,,,,,,,,,,,,,1
+"The new system must be in place by the second quarter of 2004, allowing customers the time to adjust to the new scheme before they will not be able to order the discontinued products.",,,,,,,,,,,,,,,,,1
+"The use of the application will be long-term, used for the immediate transition and in the future when previous customers may return for more paint with old-scheme numbers.",,,,,,,,,,,,,,,,,1
+This stand- alone product includes features to enable ABC Paint to easily and seamlessly include the application in their current website.,,,,,,,,,,,,,,,,,1
+1.2 Document Conventions Two primary typographical conventions were followed in the generation of this specification paper.,,,,,,,,,,,,,,,,,1
+"First, all acronyms are fully defined in their first use and then identified.",,,,,,,,,,,,,,,,,1
+"They are also redundantly defined in the glossary, Appendix A.",,,,,,,,,,,,,,,,,1
+Any bold italicized item in the specification is also briefly defined in the Appendix A glossary.,,,,,,,,,,,,,,,,,1
+"You may find it helpful to review the list of documents related to the project as referenced in the references section, section 1.5, of this specification.",,,,,,,,,,,,,,,,,1
+"These readers will find that this document is a product specification only, not a design document.",,,,,,,,,,,,,,,,,1
+It is recommended that all readers complete the introduction section before continuing onto the other sections.,,,,,,,,,,,,,,,,,1
+The introduction section that you are now reading provides a broad overview of the entire project and serves as a guide to the other sections.,,,,,,,,,,,,,,,,,1
+"Developers will find sections two, four most useful to them while sections three and five will most likely be paid the most attention by project managers.",,,,,,,,,,,,,,,,,1
+Sections two and four provide both overall descriptions of the project and the product itself.,,,,,,,,,,,,,,,,,1
+"Sections three and five present an outline of the product interface requirements and other non- functional or performance requirements, which the final product must meet.",,,,,,,,,,,,,,,,,1
+"The project manager will find these requirements most enlightening to peruse, as they will help guide decisions and performance choices throughout the entire product development process.",,,,,,,,,,,,,,,,,1
+This system must enable a smooth transition to the new paint numbers and scheme.,,,,,,,,,,,,,,,,,2
+The system will be designed for use as long as the hardware and operating systems specified in this document remain available.,,,,,,,,,,,,,,,,,2
+The product will be highly accessible to ABC Paint clients and distributors.,,,,,,,,,,,,,,,,,2

@@ -1,0 +1,80 @@
+So we must be able to support this wide (and growing) range of interfacing capabilities of our Vetronics hardware in our UI-Editor as kind of PIug-Ins.,,,,,,,,,,,,,,,,,2
+This will also solve our maintainability issue.,,,,,,,,,,,,,,,,,1
+Adaptivity related specifications The generated User Interface is only off-Iine adaptive.,,,,,,,,,,,,,,,,,1
+Which means the UI is modified on a separate computer and then reloaded into the Vector System.,,,,,,,,,,,,,,,,,1
+"The Vector system has some agents inside to prioritize the information available (UI- information, system status, Environment data, ...).",,,,,,,,,,,,,,,,,1
+"Though using off-Iine adaptivity, the running Vetronics application (based on code realized by means of the UI Editor) can demonstrate ?intelligent? behavior to some extent.",,,,,,,,,,,,,,,,,1
+"The User Interface has access to its own data (directly UI-related), but also to data provided by the firmware concerning the current system status and its environment.",,,,,,,,,,,,,,,,,1
+"As a consequence, there is a need for a kind of decision algorithm (=agent) in order to decide whether the UI is more important than the system/environment data or vice-versa, depending on the actual content.",,,,,,,,,,,,,,,,,1
+This will re?ect in the information the user gets to see.,,,,,,,,,,,,,,,,,2
+It is possible that in dangerous conditions the environmental data force the defined UI to be overruled by some buiIt-in UI elements (e.g.,,,,,,,,,,,,,,,,,1
+The UI-Editor itself enables us to create and modify the User Interface off-Iine and then reload it.,,,,,,,,,,,,,,,,,1
+In the definite program we can implement wizards in orderto guide the user through several tasks or warn him for contradictory situations.,,,,,,,,,,,,,,,,,1
+These self- Iearning wizards will recognize the user?s behavior and identify occasions to interfere and help.,,,,,,,,,,,,,,,,,1
+"In this case, we need a kind of user pro?le and a behavior database in order to take the right decisions/predictions.",,,,,,,,,,,,,,,,,1
+"In this context, we will use the reference model in which we collaborated with the other members of WP2 for the Deliverable 3.",,,,,,,,,,,,,,,,,1
+This reference model will be used in the agent approach of both the ?rmware and editor.,,,,,,,,,,,,,,,,,1
+"Although extension will be rather limited in ?rst, we want to do some research about extending its implementation in both the Firmware and UI-Editor.",,,,,,,,,,,,,,,,,1
+BEYOND Public Deliverable 8 Functional Specifications and Architecture 27 February 2001 ITEA 99002 BEYOND 6.4.4.,,,,,,,,,,,,,,,,,1
+Multimodality related specifications The relation of this project to multimodality is rather limited.,,,,,,,,,,,,,,,,,1
+"However, our Vector system should be able to communicate with all kinds of peripherals.",,,,,,,,,,,,,,,,,1
+"In Vetronics markets, probably due to the heavy environmental conditions (temperature, vibrations, noise, ...) we cannot really use fine multimodal devices.",,,,,,,,,,,,,,,,,1
+"However, auditive information is one of the most used feedback methods in train applications.",,,,,,,,,,,,,,,,,1
+Also Touch Input devices are rather frequently used because they do not require additional place.,,,,,,,,,,,,,,,,,1
+"Currently, support for a touch screen is provided in the UI-Editor.",,,,,,,,,,,,,,,,,1
+"As a consequence, the Vector system does not have to be available while developing and testing the UI.",,,,,,,,,,,,,,,,,1
+This is a very important demand because the systems are mostly built in into consoles where they are not easily accessible for downloading etc.,,,,,,,,,,,,,,,,,1
+An important result of the simulation may be the ability to certify the generated UI for use in life critical conditions.,,,,,,,,,,,,,,,,,2
+This can be achieved when using an identical Virtual Machine in both the simulator and firmware.,,,,,,,,,,,,,,,,,2
+This is to be investigated after the finalization of our application and is certainly beyond the context of this BEYOND project.,,,,,,,,,,,,,,,,,1
+"Architectural issues Because this new approach demands flexible functionality by using PIug-Ins, we needed to redesign the framework from a static one to a component based one.",,,,,,,,,,,,,,,,,2
+In order to be sure we can cover all flexibility requirements a lot of effort is now being done in the complete architectural redesign of the UI-Editor.,,,,,,,,,,,,,,,,,1
+This architecture is thus considered as a very open framework (the base application) where we can easily plug in all PIug-Ins we need.,,,,,,,,,,,,,,,,,1
+"To accomplish this, we have chosen to use an component based approach by using the latest SW?technologies that are usable within this type of application/platform, namely COM & COM+.",,,,,,,,,,,,,,,,,1
+Accident analysis has shown that 65% of all aircraft incidents are caused by human error.,,,,,,,,,,,,,,,,,2
+"Two kinds of human errors can be distinguished: slips and mistakes [Reason, 1987].",,,,,,,,,,,,,,,,,1
+"A slip occurs when the intention is right, but a deviation of that intention occurs.",,,,,,,,,,,,,,,,,1
+"A mistake occurs when the actions are according to the intended plan, but the plan is inadequate to achieve the intended goal.",,,,,,,,,,,,,,,,,1
+It is expected that slips and mistakes in aircraft operation can be avoided by an intelligent adaptive flight deck that assists the ?ight crew in performing theirtasks.,,,,,,,,,,,,,,,,,1
+An intelligent system that knows the human intentions and the actual and predicted flight status can detect slips from the intended plan.,,,,,,,,,,,,,,,,,1
+"Ifthe system is aware of the goals of the operation, the intelligent system can even give a recommendation to the pilot to correct for the error.",,,,,,,,,,,,,,,,,1
+"In most cases, mistakes are not simply due to a bad knowledge of the theory or procedure, but are rather a logical consequence of a lack of situation awareness.",,,,,,,,,,,,,,,,,1
+"The flight deck communicates to the pilot information about the ?ight status (flight plan, position, velocity, etc.",,,,,,,,,,,,,,,,,1
+"To form an internal representation of the flight situation, the crew has to integrate all this information presented to them on numerous head-down cockpit displays in different formats.",,,,,,,,,,,,,,,,,1
+"In addition, the auditory channel is used to present advice, warnings and alerts to the crew.",,,,,,,,,,,,,,,,,2
+"Especially during critical situations, where the situation awareness is of greatest importance, pilots have difficulties building up a representation of the ?ight situation.",,,,,,,,,,,,,,,,,1
+"At the same time, several buttons can lighten up, various alerts can be given, and information is highlighted on the display.",,,,,,,,,,,,,,,,,2
+Mistakes can be prevented by assisting the pilot in building situation awareness.,,,,,,,,,,,,,,,,,1
+Another contributorto the high workload during critical situations in the cockpit is the task ofdecision making.,,,,,,,,,,,,,,,,,1
+"Even if the flight crew is able to determine a good resolution to solve the problem, they have too little overview to optimize it.",,,,,,,,,,,,,,,,,1
+An intelligent ?ight deck can help the pilot by proposing optimized alternatives out of which the pilot can choose one.,,,,,,,,,,,,,,,,,1
+"In such a co-operation, the pilot and intelligent ?ight deck share their knowledge and capabilities to improve the safety and efficiency of the overall system.",,,,,,,,,,,,,,,,,1
+BEYOND Public Deliverable 8 Functional Specifications and Architecture 30 February 2001 ITEA 99002 BEYOND 7.1.2.,,,,,,,,,,,,,,,,,1
+"Levels of the adaptation process Four stages can be distinguished in the adaptation process: initiation, proposal, decision, and execution [Dieterich et al., 1993].",,,,,,,,,,,,,,,,,1
+The agents performing or controlling these stages are the pilot of the automation.,,,,,,,,,,,,,,,,,2
+This adaptation is contradicting with the human-centered design philosophy and seems therefore unacceptable.,,,,,,,,,,,,,,,,,1
+"In certain time-critical, high workload situations, however, it may be necessary or even mandatory to automatically adapt the interface to draw the crew?s attention and to allow an immediate but sound response.",,,,,,,,,,,,,,,,,1
+"Because the adaptation is unexpected and may cause confusion, its occurrence must be well known and trained by the cockpit crew.",,,,,,,,,,,,,,,,,2
+"User?controlled self-adaptation: the decision to adapt is taken by the user, while all other tasks are automated.",,,,,,,,,,,,,,,,,1
+"If the automation thinks that for the current situation a different presentation may be more ef?cient, it may suggest an adaptation that has to be agreed upon by the pilot.",,,,,,,,,,,,,,,,,2
+" User?initiated self-adaptation: the user takes the initiative, the automation proposes, decides and executes.",,,,,,,,,,,,,,,,,1
+"This is in fact self-adaptation, but allowing the pilot to take the initiative.",,,,,,,,,,,,,,,,,1
+" Computer?aided adaptation: on a user?s initiative, the automation proposes an adaptation, which it will execute afterthe user?s approval.",,,,,,,,,,,,,,,,,1
+" Svstem-initiated adaptation: on a system?s initiative, the user proposes, decides and executes the adaptation.",,,,,,,,,,,,,,,,,1
+The pilot is then informed if it seems reasonable to tailor the system.,,,,,,,,,,,,,,,,,2
+Adagtation: the user performs the tasks on all stages of the adaptation.,,,,,,,,,,,,,,,,,1
+The management of [company name]. has identified a potential need for re-writing its core Laboratory Information System (LIS) to improve the performance.,,,,,,,,,,,,,,,,,2
+"In general, this project will provide a stable environment, automate decisions, streamline work?ows, and employ industry standard coding and documentation practices.",,,,,,,,,,,,,,,,,1
+All functionalities for the new [system name] system would be documented in this FRS.,,,,,,,,,,,,,,,,,1
+Any undocumented requirements will be considered out of scope and will not be implemented duiing this phase of Re-WIiting. ,,,,,,,,,,,,,,,,,2
+The existing functionalities in the core [system name] will remain same.,,,,,,,,,,,,,,,,,1
+The project team has decided that system development will occur on module by module basis. ,,,,,,,,,,,,,,,,,1
+The system shall display the desired operational page for the user after clicking the hyperlink.,,,,,,,,,,,,,,,,,1
+A user with admin privileges shall be able to Add/Create a new user and associate the user with specified ro|e(s) in the system.,,,,,,,,,,,,,,,,,1
+The system shall display an error message if the new user is found in the [system name] system. ,,,,,,,,,,,,,,,,,1
+The system shall display an error message if the new user is not active in the Active Directory.,,,,,,,,,,,,,,,,,2
+The user shall be able to create/add a new user manually or from a template.,,,,,,,,,,,,,,,,,2
+ The system shall display the xxx tab as the default tab.,,,,,,,,,,,,,,,,,2
+The user record shall inherit all speci?ed ro|e(s) settings in the template when the user record is created from the user template,,,,,,,,,,,,,,,,,2
+The user shall be able to add additional roles manually while creating/adding a new user from a user template.,,,,,,,,,,,,,,,,,1
+The system shall save the user info to the database with specified roles associated with divisions for the newly created/added user.,,,,,,,,,,,,,,,,,2

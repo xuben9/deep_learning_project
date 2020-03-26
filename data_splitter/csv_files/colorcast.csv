@@ -1,0 +1,75 @@
+So there is no way passwords and other data in the database to be found later. 0,,,,,,,,,,,,,,,,,1
+KeePass is developed under GNU General Public License version 2 or later (copy from http://www.gnu.org/licenses/gplhtml) and can be distributed under those terms. 0,,,,,,,,,,,,,,,,,1
+KeePass can be found and downloaded from www.sourceforge.com and the proj ect?s official website at http://keepass.info/ for free.,,,,,,,,,,,,,,,,,1
+Computer Science & Software Engineering,,,,,,,,,,,,,,,,,1
+This document presents the business requirement of Unified University Inventory System (U UIS) in Technology-independent manner.,,,,,,,,,,,,,,,,,1
+A11 attempts have been made in using mostly business terminology and business language while describing the requirements in this document.,,,,,,,,,,,,,,,,,1
+Very minimal and commonly understood Technical terminology is used.,,,,,,,,,,,,,,,,,1
+Use case approach is used in modeling the business requirements in this document. 2.,,,,,,,,,,,,,,,,,1
+Inventory assets Assets in the inventory are classified in 3 types 0,,,,,,,,,,,,,,,,,1
+University structure University organizational hierarchy is represented by the following University I,,,,,,,,,,,,,,,,,1
+Name: Modify Use Case Identifier: MODUC Description,,,,,,,,,,,,,,,,,1
+The use case describes the modification that the Inventory Admin can do.,,,,,,,,,,,,,,,,,1
+Goal The Inventory Admin initiates the use case.,,,,,,,,,,,,,,,,,1
+The use case presents all the modification that can be done by the Inventory Admin. Preconditions 1.,,,,,,,,,,,,,,,,,1
+The Inventory Admin is authenticated Assumptions 1.,,,,,,,,,,,,,,,,,2
+We assume that use Knows the results of each operation there is no go back actions Basic Course 1.,,,,,,,,,,,,,,,,,2
+Use case begins when Inventory Admin start searching for an asset 2.,,,,,,,,,,,,,,,,,1
+Inventory Admin Edit the asset 3.,,,,,,,,,,,,,,,,,2
+Inventory Admin modify asset properties Alternate Course A:,,,,,,,,,,,,,,,,,2
+Condition: administrator or authorised inventory user is working on waiting for approval list or waiting for execution list 1.,,,,,,,,,,,,,,,,,2
+Inventory user or Admin Edit the asset 2.,,,,,,,,,,,,,,,,,2
+Inventory user or Admin modify asset properties Exceptional Course : 1. .,,,,,,,,,,,,,,,,,1
+Inventory Admin search for asset .,,,,,,,,,,,,,,,,,2
+Inventory Admin edit asset .,,,,,,,,,,,,,,,,,2
+Inventory Admin asset out of inventory .,,,,,,,,,,,,,,,,,2
+Message error because asset cannot be modified 4;me .,,,,,,,,,,,,,,,,,2
+Inventory Admin search for asset .,,,,,,,,,,,,,,,,,2
+Inventory Admin search for asset 2.,,,,,,,,,,,,,,,,,2
+no asset found .,,,,,,,,,,,,,,,,,2
+Message error is displayed U.) Post conditions 1.,,,,,,,,,,,,,,,,,1
+The system state change according to modification Description The use case describes the edit operation that the Inventory Admin can do.,,,,,,,,,,,,,,,,,1
+The Inventory Admin initiates the use case.,,,,,,,,,,,,,,,,,1
+The use case presents the edit done by the Inventory Admin. Preconditions 1.,,,,,,,,,,,,,,,,,1
+The Inventory Admin is authenticated Assumptions 1.,,,,,,,,,,,,,,,,,2
+We assume that use Knows the results of each operation there is no go back actions Basic Course 1.,,,,,,,,,,,,,,,,,2
+Use case begins when Inventory Admin start searching for an asset 2.,,,,,,,,,,,,,,,,,2
+Inventory Admin Edit the asset Alternate Course A:,,,,,,,,,,,,,,,,,1
+Condition: administrator or authorised inventory user is working on waiting for approval list or waiting for execution list 1.,,,,,,,,,,,,,,,,,1
+Inventory user or Admin Edit the asset Exceptional Course : 1. 1.,,,,,,,,,,,,,,,,,1
+Inventory Admin search for asset 2.,,,,,,,,,,,,,,,,,1
+Inventory Admin edit asset 3.,,,,,,,,,,,,,,,,,1
+Inventory Admin does not have sufficient privileges to edit asset 4.,,,,,,,,,,,,,,,,,1
+Inventory Admin search for asset 2.,,,,,,,,,,,,,,,,,1
+Message error is displayed Post conditions 1.,,,,,,,,,,,,,,,,,1
+"The system state change according to modification Actors Inventory Admin, Inventory system, Authentication system 10 Included Use Cases 1.",,,,,,,,,,,,,,,,,1
+"We suppose that Hosting system and servers support all the operations Authentica?o . V- . , l x I / (< U 58/56) / Authentication System * | to Ad ' ?V5? W mm InventorySystem EDT.UC",,,,,,,,,,,,,,,,,2
+Name: Add New Asset Use Case Identifier: ANI.UC Description The use case describes the operation of adding a new asset to the inventory.,,,,,,,,,,,,,,,,,2
+The Inventory Admin initiates the use case.,,,,,,,,,,,,,,,,,1
+The use case presents how Inventory Admin can add new inventory asset. Preconditions 1.,,,,,,,,,,,,,,,,,1
+The Inventory Admin is authenticated Assumptions 1.,,,,,,,,,,,,,,,,,2
+We assume that use Knows the results of each operation there is no go back actions Basic Course 1.,,,,,,,,,,,,,,,,,2
+Use case begins when Administrator start a new asset Administrator select asset type Administrator select asset location Administrator select owner Administrator fill all asset properties 9%?!? Alternate Course,,,,,,,,,,,,,,,,,2
+A: None Exceptional Course: 1.,,,,,,,,,,,,,,,,,2
+Use case begins when Administrator start a new asset,,,,,,,,,,,,,,,,,1
+Administrator send exception request to IT to add the new type and the common properties Post conditions 1.,,,,,,,,,,,,,,,,,1
+The User initiates the use case.,,,,,,,,,,,,,,,,,1
+The use case presents request process that can be done by User. Preconditions 1.,,,,,,,,,,,,,,,,,1
+The User is authenticated Assumptions 1.,,,,,,,,,,,,,,,,,1
+We assume that use Knows the results of each operation,,,,,,,,,,,,,,,,,1
+Only basic request form is available for level 0 3.,,,,,,,,,,,,,,,,,2
+"Requests forrns provide search facilities to users levels 1, 2 and 3 Basic Course 1.",,,,,,,,,,,,,,,,,2
+User select basic request form 2.,,,,,,,,,,,,,,,,,2
+"User type a small request text specifying asset (s) location,.. 3.",,,,,,,,,,,,,,,,,2
+User click on submit Alternate Course A: 1. User select advanced request form 2.,,,,,,,,,,,,,,,,,2
+User enter asset serial number and location 3.,,,,,,,,,,,,,,,,,1
+User enter small text describing operation to be done 4.,,,,,,,,,,,,,,,,,2
+User click on submit Alternate Course B: 1.,,,,,,,,,,,,,,,,,2
+User select advanced request form 2.,,,,,,,,,,,,,,,,,1
+User enter asset serial number and location 3.,,,,,,,,,,,,,,,,,2
+User enter small text describing operation to be done 4 User can add as many assets as he wants to the list by clicking add another asset button 5.,,,,,,,,,,,,,,,,,2
+User click on submit Alternate Course C: 1.,,,,,,,,,,,,,,,,,2
+User select exception request form 2.,,,,,,,,,,,,,,,,,1
+User enter a text message describing the exception that occurs 3.,,,,,,,,,,,,,,,,,2
+User click on submit Exceptional Course : 1.,,,,,,,,,,,,,,,,,2
+User search for asset 2.,,,,,,,,,,,,,,,,,1

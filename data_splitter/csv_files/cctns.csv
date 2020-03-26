@@ -1,0 +1,146 @@
+The System must allow persistent defaults for data entry where desirable.,,,,,,,,,,,,,,,,,1
+"These defaults should include: 7 0 user?de?nable values; 0 values same as previous item; 0 values derived from context, e.g.",,,,,,,,,,,,,,,,,1
+"Where the System employs a graphical user interface, it must allow users to customise it.",,,,,,,,,,,,,,,,,2
+"Customisation should include, but need not be limited to the following changes: Usability 1.",,,,,,,,,,,,,,,,,1
+The user interfaces should be designed to make them user?intuitive.,,,,,,,,,,,,,,,,,1
+The user interfaces of the system should comply with Standard ISO 9241.,,,,,,,,,,,,,,,,,1
+ICT accessibility: ISO 9241?20 shall be the standard for guidance on ICT accessibility.,,,,,,,,,,,,,,,,,1
+Application user interfaces to meet its requirements and recommendations.,,,,,,,,,,,,,,,,,1
+User interfaces should meet its requirements and recommendations.,,,,,,,,,,,,,,,,,1
+Content accessibility WCAG 1.0 shall be the standard used for guidance on content accessibility.,,,,,,,,,,,,,,,,,1
+General guidance on achieving self?descriptiveness is given in ISO 9241?110.,,,,,,,,,,,,,,,,,1
+Offering altemative access paths: Alternative access paths for navigating to a speci?c unit of content should be offered to support different navigation strategies.,,,,,,,,,,,,,,,,,1
+"If a splash screen is used, a navigation option to skip it should be offered.",,,,,,,,,,,,,,,,,2
+Avoiding opening unnecessary windows: Additional windows such as new browser windows or pop?up windows should only be opened if this supports the user?s task.,,,,,,,,,,,,,,,,,1
+"Opening new windows can distract, confuse or impede users for a variety of reasons.",,,,,,,,,,,,,,,,,2
+They could make it cognitively more dif?cult to understand the navigation structure with negative effects on both usability and accessibility.,,,,,,,,,,,,,,,,,1
+They also require additional user actions for closing unwanted windows.,,,,,,,,,,,,,,,,,1
+This may be done by placing important information at the top and providing links to information that is further down the page.,,,,,,,,,,,,,,,,,1
+Horizontal scrolling should be avoided wherever possible.,,,,,,,,,,,,,,,,,1
+Designing for input device independence: User interfaces should be designed to allow activation of controls by a variety of input devices.,,,,,,,,,,,,,,,,,1
+"The ability to choose between different input devices for activating controls such as links, ?elds and buttons is important both for users who prefer a certain input mode, mobile users and users with disabilities.",,,,,,,,,,,,,,,,,2
+"In general, device independence can be achieved if the functionality is operable Via a keyboard.",,,,,,,,,,,,,,,,,1
+Making user interfaces robust: User interfaces should be designed to be as robust as possible in the face of changing technology.,,,,,,,,,,,,,,,,,2
+This encompasses being able to present content containing newer technologies by older user agents as well as designing content to be usable with future technologies.,,,,,,,,,,,,,,,,,2
+"This is particularly important for frequently accessed pages or pages that are important for user navigation and exploration, such as the home page.",,,,,,,,,,,,,,,,,1
+Minimizing user errors: Potential user errors as well as the effort needed to recover from errors should be minimized.,,,,,,,,,,,,,,,,,1
+Users expect error messages to be in the same language as the user interface.,,,,,,,,,,,,,,,,,1
+"Making text resizable by the user: Text should be able to be resized by the user, using functions provided by the user agent or other appropriate means i.e.",,,,,,,,,,,,,,,,,1
+Text quality: The quality of textual content with respect to spelling and grammar should be suf?cient so as not to impede readability.,,,,,,,,,,,,,,,,,2
+"Supporting text skimming: Fast skimming of text should be supported by the provision of clear links, bulleted lists, highlighted keywords, logical headings, and short phrases and sentences.",,,,,,,,,,,,,,,,,1
+Readability of text: Text presented on the pages should be readable taking into account the expected display characteristics and spatial arrangement.,,,,,,,,,,,,,,,,,2
+Distinguishable within?page links: Within?page links should be clearly distinguishable from other links that lead to a different page.,,,,,,,,,,,,,,,,,1
+Within?page links are shown with dashed rather than solid underlines 24.,,,,,,,,,,,,,,,,,2
+Avoiding link overload: Text pages containing large proportions of links should be formatted so that the presence of links does not impede the readability of the text.,,,,,,,,,,,,,,,,,1
+Using appropriate terminology speci?c to the user?s tasks and information needs is important for making the content easy to understand.,,,,,,,,,,,,,,,,,2
+Marking links opening new windows: Links that open new browser windows or pop?up windows should be clearly marked.,,,,,,,,,,,,,,,,,1
+Distinguishing navigation links from controls: Navigation links should be clearly distinguishable from controls activating some action.,,,,,,,,,,,,,,,,,2
+space ?lled only with the background color should be used in such a way that it does not impair the Visual skimming of the page.,,,,,,,,,,,,,,,,,2
+Selecting appropriate page lengths The length of a page should be selected so as to support the primary purpose and use of the page.,,,,,,,,,,,,,,,,,1
+"Short pages are generally more appropriate for homepages, navigation pages, or overview pages that need to be read quickly.",,,,,,,,,,,,,,,,,1
+Longer pages can be more appropriate when users want to read the content without interruptions or when the page needs to match a paper counterpart.,,,,,,,,,,,,,,,,,1
+"Using colour: Colour should be used with care, taking into account human capabilities and restrictions in perceiving colour, and not as the only means of conveying information.",,,,,,,,,,,,,,,,,2
+Color should never be the only means of coding.,,,,,,,,,,,,,,,,,2
+"When frames are used, it is important to title each frame, and to describe its purpose and how frames relate to one another other.",,,,,,,,,,,,,,,,,1
+"Providing altematives to frame?based presentation: If frames are used, an alternative way of presenting relevant information without frames should be provided.",,,,,,,,,,,,,,,,,1
+"Consistent page layout: Pages should be designed using consistent layout schemes, supporting the user in ?nding similar information at the same position on different pages.",,,,,,,,,,,,,,,,,2
+Overall layout schemes apply to all pages and are preferable when all pages have a similar structure.,,,,,,,,,,,,,,,,,2
+"Frequently, however, different pages have different purposes and types of content.",,,,,,,,,,,,,,,,,1
+"In such cases, pages can usually be grouped in different categories, using one layout scheme for each category consistently.",,,,,,,,,,,,,,,,,1
+Placing title information consistently: Page titles should be placed in a consistent location on the different pages.,,,,,,,,,,,,,,,,,1
+"Observing principles of human perception When designing application pages, the general principles of human perception should be taken into account.",,,,,,,,,,,,,,,,,2
+The Intemational Standards mentioned below shall be consulted for guidance.,,,,,,,,,,,,,,,,,1
+Guidance on selecting and using different forms of interaction techniques is to be found in ISO 9241?14 to ISO 9241?17.,,,,,,,,,,,,,,,,,1
+"ISO 9241?14 gives guidance about menus, ISO 9241?15 about command dialogues, ISO 9241?16 about direct manipulation and ISO 9241?17 about forms.",,,,,,,,,,,,,,,,,1
+"In addition, when designing multimedia information presentations, the design principles and recommendations described in ISO 14915?1 to ISO 14915?3 should be taken into account.",,,,,,,,,,,,,,,,,1
+Appropriate content presentation also plays a key role in accessibility.,,,,,,,,,,,,,,,,,1
+Linking back to the home page or landmark pages: Each page should contain a link leading to the home page of the application or to a landmark page that is easy to recognize for the user.,,,,,,,,,,,,,,,,,1
+Providing a site map: A separate navigation overview such as a site map should be provided for application showing the structure of the site in an overview form.,,,,,,,,,,,,,,,,,2
+Placing navigation components consistently: Navigation components should be 41' placed consistently on the pages or in the framesets in the pages of the application.,,,,,,,,,,,,,,,,,2
+User adaptation can also be important for making the user interface more accessible.,,,,,,,,,,,,,,,,,2
+"Different approaches can be used for achieving these goals, like providing users with means for customizing the user interface to their personal needs i.e.",,,,,,,,,,,,,,,,,1
+individualization designing content and navigation differently for varying user groups or roles i.e.,,,,,,,,,,,,,,,,,1
+Making individualization and adaptation evident: It should be made evident to the 44' user when individualization and/ or adaptation are used.,,,,,,,,,,,,,,,,,1
+"Making user pro?les evident: If prede?ned user pro?les or user?speci?ed pro?les 45 are used for individualizing or adapting content, the pro?le currently used should ' be made evident.",,,,,,,,,,,,,,,,,2
+"If pro?les are used, it is important to provide users with information about this concept and its implications.",,,,,,,,,,,,,,,,,2
+"46 Allowing users to see and change pro?les: If user?speci?ed pro?les are used, users ' should be able to see, modify and delete that pro?le on demand.",,,,,,,,,,,,,,,,,1
+Unplanned downtime for the System must not exceed per 3' .,,,,,,,,,,,,,,,,,1
+4 The number of incidents of unplanned downtime for the System must not exceed ' per .,,,,,,,,,,,,,,,,,1
+"5 In the event of any software or hardware failure, it must be possible to restore the System (with inline synchronization) within no more than hours.",,,,,,,,,,,,,,,,,1
+"In this context, performing a search means returning a result list.",,,,,,,,,,,,,,,,,1
+It does not include retrieving the records themselves.,,,,,,,,,,,,,,,,,1
+"The System must be able to retrieve and display within 5?8 seconds the case which has been accessed within the previous 2 months, regardless of storage capacity or 3. number of cases in the system.",,,,,,,,,,,,,,,,,1
+"This requirement is intended to allow for rapid retrieval of frequently?used cases, on the understanding that frequency of use is typically correlated with recent use.",,,,,,,,,,,,,,,,,1
+"The System be scaleable and must not have any features which would preclude use in small or large police stations, with varying numbers of cases handled.",,,,,,,,,,,,,,,,,1
+The proposed functional architecture is modeled around centralized deployment to facilitate ease of maintenance and leverage advancement in open standards and web technologies.,,,,,,,,,,,,,,,,,1
+The 3 C?s (Core?Con?guration?Customization) forms the guiding principle for the architecture.,,,,,,,,,,,,,,,,,1
+The functional architecture of the CCTNS solution is given in the ?gure below.,,,,,,,,,,,,,,,,,2
+The functional architecture is composed of 4 major components based on SOA principles.,,,,,,,,,,,,,,,,,1
+Each of the components contains multiple services as de?ned by Service De?nition.,,,,,,,,,,,,,,,,,1
+"The core services, support layer and security and access control components can be deployed as standard components with necessary con?guration changes.",,,,,,,,,,,,,,,,,1
+The customization layer can override and add to the core services based on the speci?c state requirements and can be plugged with the core services.,,,,,,,,,,,,,,,,,2
+The deployment of the application will be at state level and will be con?gured and customized as per the state speci?c extensions.,,,,,,,,,,,,,,,,,1
+Central trading System.,,,,,,,,,,,,,,,,,1
+The central trading system (CTS) is to complete the trading of stock.,,,,,,,,,,,,,,,,,1
+It analyses the instructions that enter the central trading system and diVides them into several kinds of instructions.,,,,,,,,,,,,,,,,,1
+The system will make a match between them under specifical prescripts.,,,,,,,,,,,,,,,,,1
+"Also, the central trading system provides some interfaces to send messages to other modules.",,,,,,,,,,,,,,,,,1
+The CTS is just a subsystem of the whole stock trading system (STS) system.,,,,,,,,,,,,,,,,,1
+"There are mainly siX subsystems involved, stock account operation, ?nancing account operation, trade client serve, network message promulgating, central trading system and trading system manage.",,,,,,,,,,,,,,,,,1
+Communications exist among these subsystems which complicates the relationships between subsystems. The CTS receive instructions from trade client serve.,,,,,,,,,,,,,,,,,1
+Then the CTS produces new messages which to be sent to network message promulgating after dealing with the instructions from trade client serve.,,,,,,,,,,,,,,,,,1
+"Also, the system manager is authorized to access the information in CTS. There are mainly two kinds of users.",,,,,,,,,,,,,,,,,1
+"The CTS provides the terminal users easy Operations that are con?ned to a series of mouse clicks and keyboard, which compared to other systems are really much simpli?ed.",,,,,,,,,,,,,,,,,1
+"However, for another user, things are different .",,,,,,,,,,,,,,,,,1
+the maintainers of this CTS must be familiar with java programming and the socket.,,,,,,,,,,,,,,,,,1
+"When the system crashes down, they can find the cause and ?x it.",,,,,,,,,,,,,,,,,1
+"When new requirements should be supported, they can modify the program to make it ?t.",,,,,,,,,,,,,,,,,1
+"As the instruction is frequently operated in CTS such as fetch, deal with, repeal and so on, the CTS is heavily transferred.",,,,,,,,,,,,,,,,,1
+The program must take this into consideration.,,,,,,,,,,,,,,,,,2
+The maintainers of CTS should have good strategies to overcome crash of the system when overhead exceeds the capacity of it.,,,,,,,,,,,,,,,,,1
+"There are mainly five kinds of actors, which here consist of other related sub-systerns, involved with our Central Trading System.",,,,,,,,,,,,,,,,,2
+"Often, user-scenario is considered the same to use-case.",,,,,,,,,,,,,,,,,1
+They both can help our team understand how system functions and features will be used by different classes of end-users (actors).,,,,,,,,,,,,,,,,,1
+"However, I prefer to understand it like this: a user scenario is a particular environment within a specified use case.",,,,,,,,,,,,,,,,,1
+"So, I will specify user-scenarios going along with developing use cases in the next session. Preconditions . . 1nformat10n Trigger",,,,,,,,,,,,,,,,,1
+central trading system: save the buy instruction 3 central trading system: match the instructions with the Scenario same stock id 4.,,,,,,,,,,,,,,,,,1
+central trading system: make a trade by matching 5.,,,,,,,,,,,,,,,,,2
+central trading system: modify the information of matched instructions 1.,,,,,,,,,,,,,,,,,2
+Should the trade information return to Transaction User Interface immediately when the deal is done?,,,,,,,,,,,,,,,,,2
+Should the failure of trade return to Transaction User Interface the next day? 3.,,,,,,,,,,,,,,,,,2
+"If exception happens, is exception log needed? 4.",,,,,,,,,,,,,,,,,2
+central trading system: save the sell instruction 3.,,,,,,,,,,,,,,,,,1
+central trading system: match the instructions with the Scenario same stock id,,,,,,,,,,,,,,,,,2
+central trading system: make a trade by matching 5.,,,,,,,,,,,,,,,,,2
+central trading system: modify the information of matched instructions 1.,,,,,,,,,,,,,,,,,2
+all the operations have been suspended Exception 2.,,,,,,,,,,,,,,,,,2
+"some deal exceptions come up 3 no matched stock with the buy instruction Priority Essential, must be implemented",,,,,,,,,,,,,,,,,2
+Should the trade information return to Transaction User Interface immediately when the deal is done? 2.,,,,,,,,,,,,,,,,,1
+Should the failure of trade return to Transaction User Interface the next day? 3.,,,,,,,,,,,,,,,,,2
+"If exception happens, is exception log needed? 4.",,,,,,,,,,,,,,,,,1
+security issue Open issues Preconditions . . cancel 1nformatlon Trigger,,,,,,,,,,,,,,,,,1
+The ?cancel? button on UI been clicked l. transaction user interface: give the cancel in struction Scenario 2.,,,,,,,,,,,,,,,,,2
+central trading system: save the cancel instruction 3.,,,,,,,,,,,,,,,,,2
+central trading system: cancel the correlative instruction 1.,,,,,,,,,,,,,,,,,2
+Is it necessary to return the status of cancel transaction? 2.,,,,,,,,,,,,,,,,,2
+"If exception happens, is exception log needed? 3.",,,,,,,,,,,,,,,,,2
+"The correlative trade transactions have been successfully happens, is exception log needed? 2.",,,,,,,,,,,,,,,,,2
+central trading system: implement the query cenano 3.,,,,,,,,,,,,,,,,,2
+central trading system: structuralize the queried data 4.,,,,,,,,,,,,,,,,,2
+central trading system: send the data to release 1.,,,,,,,,,,,,,,,,,2
+Then the instructions will go to the instructions manager modular.,,,,,,,,,,,,,,,,,1
+This modular will deal with all the three kinds of instructions.,,,,,,,,,,,,,,,,,1
+Then it will send the results to the Trading client serve and information releasing modular as well as keep a log file. The instructions analysis will identify the kind of the instructions.,,,,,,,,,,,,,,,,,1
+Then it will deal with the illegal instructions like the raising limit and freezing the fund in the Data Base.,,,,,,,,,,,,,,,,,2
+"In addition, it will keep log file about the instructions. In this level the three kinds of instructions will go to three different modules.",,,,,,,,,,,,,,,,,1
+The query instruction will refer to the Data Base or the instructions list.,,,,,,,,,,,,,,,,,1
+The cancel instruction will delete the instruction the instruction in the instructions list.,,,,,,,,,,,,,,,,,2
+Include the query and writing and modifying DB 1nstruct10n Data Base(1nput) instructions to the Data Base newest trading CTS(output) Information,,,,,,,,,,,,,,,,,2
+Freeze the fund ofuser?s account instruction . . . . . . . . . deal the 1nstruct10n 1n detall.,,,,,,,,,,,,,,,,,2
+"There are several states in the diagram, which are decoding, researching, canceling, analyzing, rej ecting, queuing, storing, matching, queue modifying, responding.",,,,,,,,,,,,,,,,,1
+The ?ow between the adjacent states goes their way according to specific conditions which are displayed on the ?ow line. Class: PretreatmentO?nstruction,,,,,,,,,,,,,,,,,2
+"ManagementOfInstruction Class: ManagementOfDealing Deal business following the key rules, and some operations are executed after the deals 15 Version 1.0 Deal the business",,,,,,,,,,,,,,,,,1
+The central trading system has relation with three modules that are trading client serve.,,,,,,,,,,,,,,,,,2
+These modules have contact with CTS usin g the interface supplied by CTS. 7.1.1 Transaction User Interface,,,,,,,,,,,,,,,,,1
+The Transaction User Interface has to input the instructions.,,,,,,,,,,,,,,,,,1
+"This instruction should have ?ve parameters: user ID, stock ID, quantity, respected price, tirnestarnp.",,,,,,,,,,,,,,,,,1

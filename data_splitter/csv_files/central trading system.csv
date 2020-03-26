@@ -1,0 +1,108 @@
+This instruction can be divided into two kinds: user query instruction and the stock query instruction.,,,,,,,,,,,,,,,,,2
+"The user query instruction should have three Version 1.0 parameters: user ID, query content, some restrict parameters.",,,,,,,,,,,,,,,,,2
+"The stock query instruction should has three parameters: stock ID, query content, some restrict pararnetera 7.1.2 Information Releasing Module",,,,,,,,,,,,,,,,,1
+The information releasing module use the interface to ?nd the price of the stocks.,,,,,,,,,,,,,,,,,2
+The input should has two parameters including the stock name and the restrict parameter. 7.1.3 Trading manager system,,,,,,,,,,,,,,,,,1
+The trading manager system uses the interface to ?nd the user?s trading instruction.,,,,,,,,,,,,,,,,,2
+"The input should has two parameters including the trading instruction type(buy or sell),and the restrict parameter. 7.2 Function Criteria",,,,,,,,,,,,,,,,,1
+"The CTS deals with trading instruction, query instruction and some cancel instruction.",,,,,,,,,,,,,,,,,2
+The functions are as follows: I) instruction matching,,,,,,,,,,,,,,,,,1
+"When the client serve get a trading instruction, it will send the instruction to the CTS to trade with other trading instructions.",,,,,,,,,,,,,,,,,2
+The process of the trading includes the following two main principles: price ?rst principle and the time ?rst principle.,,,,,,,,,,,,,,,,,1
+"If the trading fails when these two principles have been applied, we should refer to another principle.",,,,,,,,,,,,,,,,,1
+The trading states are diVided into two kinds: totally ?nished and the partially ?nished. 4) outdated instruction,,,,,,,,,,,,,,,,,1
+"If a instruction haven?t ?nished it?s trading in one day, then it will be removed form the CTS for out of date. 17 Version 1.0",,,,,,,,,,,,,,,,,2
+Software Requirements Specification for KeePass Password Safe,,,,,,,,,,,,,,,,,1
+"This document includes software requirements for KeePass Password Safe, release number 1.10.",,,,,,,,,,,,,,,,,1
+KeePass Password Safe is an OSI Certified Open Source Software distributed under the terms of the GNU General Public License Version 2 or under.,,,,,,,,,,,,,,,,,1
+The system gives resolution to memorizing passwords problem.,,,,,,,,,,,,,,,,,1
+"Its purpose is to keep all of the user?s passwords, data, email accounts, usernames and URLs stored in a very secure, encrypted database, protected by a Master Password.",,,,,,,,,,,,,,,,,1
+The system is very small so it can be easily transferred from one computer to another.,,,,,,,,,,,,,,,,,1
+It provides several functionalities on the already encrypted data and the new ones to be inserted.,,,,,,,,,,,,,,,,,1
+"The database produced, is protected by a Master Password only known by its inventor with no backup if lost. 1.2 Document Conventions 0",,,,,,,,,,,,,,,,,1
+"This requirement document contains general information about KeePass, main classes and use cases, functions, features and special technologies.",,,,,,,,,,,,,,,,,1
+It describes in detail all that KeePass needs to work properly and with safety.,,,,,,,,,,,,,,,,,1
+The rest of the document is divided into chapters for better understanding. 0,,,,,,,,,,,,,,,,,1
+In chapter 2 an overall description of KeePass is provided.,,,,,,,,,,,,,,,,,1
+First product perspective is presented with product features and main functions.,,,,,,,,,,,,,,,,,1
+"Then follow user classes and characteristics, operating environments that KeePass supports as well as design and implementation constraints.",,,,,,,,,,,,,,,,,1
+After all that user documentation is presented and will provide you with more details about each feature?s technology. 0,,,,,,,,,,,,,,,,,1
+In chapter 5 requirements about safety and performance are presented.,,,,,,,,,,,,,,,,,1
+"So it provides you a very secure, encrypted database where you can keep inside all your passwords, usernames, email accounts, URLs, notes without any risk for others to find them.",,,,,,,,,,,,,,,,,1
+That is because KeePass Password Safe can lock every database with only one Master Password and/or key file.,,,,,,,,,,,,,,,,,1
+"There are no duplicates, anywhere in your computer, of this Master Password and/or key file so in case of lost database cannot be opened by anyone.",,,,,,,,,,,,,,,,,1
+Those are analyzed in the following pages. More about KeePass you can find out at http://keepass.info/ 1.5 References More about KeePass can be found at 0 http://soarcef0rge.net/proiects/keepass/,,,,,,,,,,,,,,,,,1
+In this website you can find out more about the project and discuss any questions in the forums.,,,,,,,,,,,,,,,,,1
+"You can go back and look at preVious releases, code and problems that have been solved.",,,,,,,,,,,,,,,,,1
+There you can also find information about the developers as well as the project?s main characteristics such as programming language and algorithms 0,,,,,,,,,,,,,,,,,1
+Overall Description 2.1 Product Perspective KeePass consists of a database which contains data for one or more users.,,,,,,,,,,,,,,,,,1
+Each user?s data are diVided into groups and subgroups so that they are organized in a form that serves right the user.,,,,,,,,,,,,,,,,,1
+Every user has a unique Master Key which can be simple or composite and its combination opens uniquely the database.,,,,,,,,,,,,,,,,,1
+If lost there is no recovery.,,,,,,,,,,,,,,,,,1
+"Groups and subgroups contain entries with usernames, passwords URLs etc that can be sent or copied to websites, application and accounts.",,,,,,,,,,,,,,,,,1
+There is also the ability for a onetime key creation to be used once in a transaction without the risk of reused by others for any reason.,,,,,,,,,,,,,,,,,1
+"In the diagram below there are the main components of the system, subsystem interconnections and external interfaces to help you understand the main idea of KeePass.",,,,,,,,,,,,,,,,,1
+The database can be opened and closed whenever user wants it.,,,,,,,,,,,,,,,,,1
+Changes on the data are permitted and the changes can be saved.,,,,,,,,,,,,,,,,,2
+The user also can print all data in order to keep them with him even when a computer is not available.,,,,,,,,,,,,,,,,,2
+Also the user can search the database using key words through a search engine provided with the software.,,,,,,,,,,,,,,,,,1
+"Last but not least, the database can be imported and/or exported from/to the Internet. 0 Group/Subgroup ?",,,,,,,,,,,,,,,,,1
+New groups and subgroups can be added easily and can be deleted the same way.,,,,,,,,,,,,,,,,,1
+"The feature of searching can be applied in just one group and not in the whole database if wanted. 0 Entry ? Add, View/Edit, Duplicate, Delete",,,,,,,,,,,,,,,,,1
+"A new entry can be added in any group or subgroup and it contains title, username, password, URL and notes.",,,,,,,,,,,,,,,,,1
+Not all fields are required for an entry.,,,,,,,,,,,,,,,,,1
+An entry can be duplicated and deleted in the click of a button. 0 Change Language,,,,,,,,,,,,,,,,,1
+At KeePass website there are available language translations that can be downloaded and applied easily. 0,,,,,,,,,,,,,,,,,1
+The user can select a sequence of keypresses that KeePass will be able to perform and send them to any window or browser. 0 Command Line Options,,,,,,,,,,,,,,,,,1
+All these together form the Composite Master Key and are all required in order to open the database.,,,,,,,,,,,,,,,,,2
+So the user cannot use a combination of them to unlock the database. 0 Configuration,,,,,,,,,,,,,,,,,1
+There are available generations based on character sets and based on patterns the first for generating random passwords and the second for creating passwords which require specific patterns.,,,,,,,,,,,,,,,,,1
+There is also available generating passwords that follow rules which are determined further down on this document.,,,,,,,,,,,,,,,,,2
+Then there are security-reducing options which reduce the security of the passwords they are applied to.,,,,,,,,,,,,,,,,,1
+"When this option is turned on, secure edit controls stronger than the ones of Windows are protecting your data and no one can access them, see them or steal them. 0",,,,,,,,,,,,,,,,,1
+TAN Support KeePass uses TAN-Transaction Authentication Numbers for even more security.,,,,,,,,,,,,,,,,,1
+"This feature can be used for generating one time passwords so that there won?t be any chance, for anyone to access e.g. your bank account even if he finds out that password.",,,,,,,,,,,,,,,,,2
+That is because when the password is entered one time it becomes useless.,,,,,,,,,,,,,,,,,1
+TANs can be added using the TANs wizard. 0 URL Field,,,,,,,,,,,,,,,,,1
+The URL field supports various special protocols and placeholders and can be used for Standard capabilities where URL field can execute valid URLs for which a protocol handler is defined.,,,,,,,,,,,,,,,,,2
+"In addition to that, KeePass supports all registered protocols that Internet Explorer supports.",,,,,,,,,,,,,,,,,2
+URL field also offers the ability of executed command lines instead of URLs.,,,,,,,,,,,,,,,,,1
+"Also, placeholders can be used that will be automatically replaced when the URL is executed. 0",,,,,,,,,,,,,,,,,1
+Using Stored Passwords Passwords that are stored in the database can be copied to website accounts and applications with security and without retyping them again.,,,,,,,,,,,,,,,,,1
+"This can be done by several methods such us ConteXt-Sensitive Password List, Drag and Drop, Auto-Type and KeeForm.",,,,,,,,,,,,,,,,,1
+All of them are explained better further down. Software Requirements Specification for KeePass Password Safe Page 6 0 Lock Workspace Last but not least at all is the locking workspace feature.,,,,,,,,,,,,,,,,,1
+This feature is turned on and locks the database when minimized.,,,,,,,,,,,,,,,,,1
+So to unlock it the Master Key is required again.,,,,,,,,,,,,,,,,,2
+The workspace can be locked manually as well by selecting this option from File menu. 2.3 User Classes and Characteristics 0,,,,,,,,,,,,,,,,,2
+"The user interfaces used are: NET/Mono, Win32 (MS Windows)",,,,,,,,,,,,,,,,,2
+"When a password is copied for any reason, (e.g. copy to an application, account, and website) it remains in the memory for only 10 seconds.",,,,,,,,,,,,,,,,,1
+After 10 seconds pass there is nothing to paste and you have to recopy again.,,,,,,,,,,,,,,,,,1
+That provides security in a case a password is copied and not pasted anywhere so no one can find it out by pasting later. Language Requirements in KeePass Password Safe:,,,,,,,,,,,,,,,,,1
+Not in all translations translated help files and tutorials are available. Specific Technologies used in KeePass Password Safe: 0,,,,,,,,,,,,,,,,,1
+"In order to keep the user?s data fully protected, 2 very secure algorithms are used: Cipher Block Size Key Size Advanced Encryption Standard (AES / Rijndael) 128 bits 256 bits Twofish 128 bits 256 bits",,,,,,,,,,,,,,,,,1
+"In both algorithms every time the user saves a database, a random 128-bit initialization vector is generated. 0",,,,,,,,,,,,,,,,,1
+"For the creation of the 256-bit key the Cipher uses, the Secure Hash Algorithm SHA-256 is used. 0",,,,,,,,,,,,,,,,,1
+A compiled HTML Help file with a tutorial and full help on all features provided 0,,,,,,,,,,,,,,,,,1
+"A KeePass Internet shortcut which take the user in the system?s official website where are available downloads, translations, plug-ins and extensions. Software Requirements Specification for KeePass Password Safe Page 8 3.",,,,,,,,,,,,,,,,,1
+System Features System features are organized by use cases and functional hierarchy so that the main functions of the system will be understandable. 3.1 New Database,,,,,,,,,,,,,,,,,2
+It is the first thing a user must do to begin using KeePass.,,,,,,,,,,,,,,,,,1
+Its main function is the determination of the master password that will unlock the database from now on Stimulus/Response Sequences Data Flow 3.1.2.1 Basic Data Flow 1.,,,,,,,,,,,,,,,,,1
+User opens KeePass and select New->Database 2.,,,,,,,,,,,,,,,,,1
+User writes his private Master Password and/or selects Key File 3.,,,,,,,,,,,,,,,,,2
+Master Password confirmation: the user retypes Master Password 5.,,,,,,,,,,,,,,,,,2
+The user does not determines a Master Password 2b.,,,,,,,,,,,,,,,,,1
+A message is appeared which prompts him to enter a password or key file Functional Requirements REQ?l: KeePass must be downloaded and installed REQ?2: Master Password has no limits in length.,,,,,,,,,,,,,,,,,2
+A whole sentence can be used with more than 100 characters. Software Requirements Specification for KeePass Password Safe Page 9 3.2,,,,,,,,,,,,,,,,,2
+"When the database is found, the master password is wanted so that the database will be unlocked.",,,,,,,,,,,,,,,,,1
+Once this is done the user is free to access his data. 3.2.2.,,,,,,,,,,,,,,,,,2
+Stimulus/Response Sequences Data Flow 3.2.2.1 Basic Data Flow 1.,,,,,,,,,,,,,,,,,1
+User opens KeePass and select Open->Database 2.,,,,,,,,,,,,,,,,,1
+User navigates through his folders 3.,,,,,,,,,,,,,,,,,2
+User selects a database 4.,,,,,,,,,,,,,,,,,2
+User types Master Password 5.,,,,,,,,,,,,,,,,,2
+User selects a type of folder non suitable for database 3b.,,,,,,,,,,,,,,,,,2
+A message ?file not found? appears 3c.,,,,,,,,,,,,,,,,,2
+Master Password is wrong 4b.,,,,,,,,,,,,,,,,,2
+invalid/wrong key? appears 4c.,,,,,,,,,,,,,,,,,1
+User chooses cancel,,,,,,,,,,,,,,,,,2
+"But when it is time for the database to close or during his working on the database, he can save the changes made. 3.3.2.",,,,,,,,,,,,,,,,,2

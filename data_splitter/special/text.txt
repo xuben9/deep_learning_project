@@ -1,0 +1,80 @@
+System validates the Category deletion
+System removes the Category from the inventory 3.8.
+User is taken back to the parent Department or Category of the deleted Category
+User navigates to a Department or Category (see View Inventory) 4.2.
+System displays the Move Categories button 4.3.
+User clicks the Move Categories button 4.4.
+System displays the Move Categories screen 4.5.
+User selects Categories to move 4.6.
+System validates the entered data
+During data validation, data is deemed invalid and an error message is presented to the user 2. Edit Category 2.1.
+User cancels the Category edit and is taken back to Category screen
+During data validation, data is deemed invalid and an error message is presented to the user 3. Delete Category 3.1.
+User cancels the Category deletion and is taken back to the Category screen 3.2.
+During deletion validation, deletion is deemed invalid and an error message is presented to the user
+User cancels the Category move and is taken back to the parent Department or Category screen
+During move validation, move is deemed invalid and an error message is presented to the user 3.3.6. Business Rules: 1.
+The Category Name must be unique across the inventory 1.3.
+The Category?s Unique Tag must be unique across the inventory 1.4.
+The Unique Tag must be at most 18 characters long 1.5.
+There must be at least one slot available in the Category matrix at the level the new Category will be created to hold the new Category 1.6.
+The available options in the Material, Finish, Color and Features selectors should be the ones defined for the selected department (see Manage Attributes and Details) 1.7.
+The Category Name must be unique across the inventory 2.3.
+The Category?s Unique Tag must be unique across the inventory 2.4.
+The Unique Tag must be at most 18 characters long 2.5.
+The available options in the Material, Finish, Color and Features selectors should be the ones defined for the selected department (see Manage Attributes and Details) 2.6.
+Generic categories and Under $5 item categories are generated automatically by the system and cannot be modified
+When a Category is deleted, all of its items should be moved to the parent category
+The system must ask for confirmation before deleting a Category 3.3.
+Generic item categories and Under $5 item categories are generated automatically by the system and cannot be deleted 4.
+The Categories to Move selector is populated with the categories seen on the matrix at the level where the Move Categories button was pressed. 4.2.
+User must select at least one Category to move 4.3.
+User must select either an existing or new target Department or Category 4.4.
+User cannot move categories to any Departments or Categories that don?t have enough slots available in the matrix to hold the moved categories 4.5.
+User cannot move categories to any of their subcategories (cannot create loops in the inventory hierarchy) 4.6.
+User cannot select a Stock Item, Under $5 Category or Generic Category as the target Category 4.8.
+When a Category is moved it keeps its assigned Item Details 4.9.
+When the option to merge the contents of the selected Categories is selected, the Item Details assigned to the selected Categories are combined and assigned to the target Department or Category 4.10.
+When the option to merge the contents of the selected Categories is selected, the moved items must be updated in QuickBooks POS
+If the ?move categories and make them children? option is selected, the selected Categories are moved to the selected target location
+The system should allow inventory administrators to customize the attributes and details available for each inventory item.
+Attributes can be defined for each department, and details can be defined for each department and/or category 3.4.1. Actor(s):
+User accesses the main inventory screen 1.2.
+System displays the Edit Attributes button 1.3.
+User clicks the Edit Attributes button 1.4.
+System displays the Edit Attributes screen which displays all existing item attributes and their attribute x department assignments 1.5.
+Optionally, user filters view by attribute status (active, inactive, all) 1.6.
+User clicks the Done button 1.7.
+User is taken back to the main inventory screen
+User accesses the main inventory screen 2.2.
+System displays the Edit Details button 2.3.
+User clicks the Edit Details button 2.4.
+Optionally, user filters view by detail status (active, inactive, all) 2.6.
+User clicks the Done button 2.7.
+User is taken back to the main inventory screen
+3. Edit Item Attributes 3.1.
+User accesses the main inventory screen 3.2.
+System displays the Edit Attributes button 3.3.
+System displays the Edit Attributes screen which displays all existing item attributes and their attribute x department assignments 3.5.
+Optionally, user filters view by attribute status (active, inactive, all) 3.6.
+User clicks the Done button 3.8.
+User is taken back to the main inventory screen
+4. Edit Item Details 4.1.
+User accesses the main inventory screen 4.2.
+System displays the Edit Details button 4.3.
+User clicks the Edit Details button 4.4.
+System displays the Edit Details screen which displays all existing item details and their detail x department and category assignments 4.5.
+Optionally, user filters view by detail status (active, inactive, all) 4.6.
+User clicks the Done button 4.8.
+User is taken back to the main inventory screen
+User cancels the Item Attribute edit and is taken back to the main inventory screen
+During data validation, data is deemed invalid and an error message is presented to the user
+User cancels the Item Detail edit and is taken back to the main inventory screen
+The Item Attribute Name must be unique across the inventory 3.3.
+The De-Activate Attribute button is replaced with an Activate Attribute button when the attribute is inactive 3.4.
+Material and Features attributes can be assigned to any combination of departments 3.5.
+Material and Features attributes can be assigned to ?All? departments 3.6.
+Color and Finish attributes can only be set to ?All? departments 3.7.
+If the Type is set to ?Selection?, then the selection list must contain at least one item 4.4.
+The Item Detail Name must be unique across the inventory 4.5.
+The De-Activate Detail button is replaced with an Activate Detail button when the detail is inactive 4.6.

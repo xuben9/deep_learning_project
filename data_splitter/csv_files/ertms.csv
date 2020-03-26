@@ -1,0 +1,171 @@
+Access to the Gemini system is provided during science planning.,,,,,,,,,,,,,,,,,2
+Actual access to the telescope is not permitted in this mode.,,,,,,,,,,,,,,,,,2
+Test access allows full.,,,,,,,,,,,,,,,,,1
+All features of the sub? system are available in this mode.,,,,,,,,,,,,,,,,,1
+Under no circumstances should testing affect the per? formance of an ongoing observation. F .Adminislmlive.,,,,,,,,,,,,,,,,,1
+It is possible to inquire about system utilization.,,,,,,,,,,,,,,,,,1
+No control is available in this mode.,,,,,,,,,,,,,,,,,1
+only status and scheduling information is accessible.,,,,,,,,,,,,,,,,,1
+Under no circumstances should administrative access affect the performance of an ongoing observation.,,,,,,,,,,,,,,,,,1
+It is entirely possible for a single user to be accessing the system through several modes simultaneously.,,,,,,,,,,,,,,,,,1
+who is often concurrently accessing the system through the observer.,,,,,,,,,,,,,,,,,1
+There are times when an astronomer might be using both observer and monitor modes. 2.4 LOCATIONS OF USERS OF THE SYSTEM Users of the system will be located at one or more facilities.,,,,,,,,,,,,,,,,,1
+These are referred to in gen? eral as Gemini 8m Telescopes operations facilities.,,,,,,,,,,,,,,,,,1
+The Gemini 8m Telescopes enclosure and Gemini 8m Telescopes control facility are referred to collectively as the Gemini 8m Telescopes site.,,,,,,,,,,,,,,,,,2
+This is the enclosure housing the telescope.,,,,,,,,,,,,,,,,,1
+In general such use would be limited to main? tenance and engineering.,,,,,,,,,,,,,,,,,1
+8m Telescopes Control Facility,,,,,,,,,,,,,,,,,1
+This is the facility collocated with the enclosure.,,,,,,,,,,,,,,,,,2
+This is the facility where off duty personnel reside while stationed on the summit.,,,,,,,,,,,,,,,,,2
+This would be the Hale Pohaku facility on Mauna Kea and Cerro Tololo in Chile (assuming no support facility is constructed on Cerro Pachon).,,,,,,,,,,,,,,,,,2
+I 2.4.4 Gemini 8m Telescopes Base Facility,,,,,,,,,,,,,,,,,1
+This is the facility where of?ces.,,,,,,,,,,,,,,,,,1
+On Hawaii this would be with the J ACH in Hilo and in Chile it would be either the La Serena or Cerro Tololo facilities. | 2.4.5,,,,,,,,,,,,,,,,,1
+Gemini 8m Telescopes Remote Operations Facility,,,,,,,,,,,,,,,,,1
+These are super sites.,,,,,,,,,,,,,,,,,1
+which have direct links to the telescopes Via communications lines.,,,,,,,,,,,,,,,,,1
+They may or may not be collocated with any administrative organization associated with the Gemini telescopes.,,,,,,,,,,,,,,,,,2
+These sites have remote operations capability. 2.4.6 Satellite Site Facility,,,,,,,,,,,,,,,,,2
+These are sites with high bandwidth connections to the super sites.,,,,,,,,,,,,,,,,,2
+They have remote operations capability but at a reduced level. Will these high bandwidth connections be private or public: or doesn?t it matter?,,,,,,,,,,,,,,,,,2
+I don?t understand the different between a remote operations facility and a satellite site.,,,,,,,,,,,,,,,,,1
+Why does the satellite site not just connect directly to the telescope?,,,,,,,,,,,,,,,,,1
+Although they have remote operations capability.,,,,,,,,,,,,,,,,,1
+"A voice communication link, compressed digitized video link, FAX, and the ability to log in and examine the status ?les and observing logs.",,,,,,,,,,,,,,,,,2
+"A voice communication link only, plus FAX if a machine is available. ; Integrated Services Digital Network ?",,,,,,,,,,,,,,,,,2
+The general requirements of each user class are summarized below. TABLE 2 - 2 User-level requirements User Class Operation Level Astronomer Observing Science Observer Observing Telescope Opera? Observing.,,,,,,,,,,,,,,,,,1
+controls toring grouped for convenience of observation activity. Same as for astronomer. Organized for ease of control and quick response to unsafe condi? tions.,,,,,,,,,,,,,,,,,1
+ability to monitor all subsystems as needed. Must allow full access to all subsystems. Observing.,,,,,,,,,,,,,,,,,1
+user interfaces for different access leV? els should be uniform across all subsystems.,,,,,,,,,,,,,,,,,1
+all requirements and modes presented are,,,,,,,,,,,,,,,,,1
+I intended to be available to all users of the system.,,,,,,,,,,,,,,,,,1
+It should also be noted that what the system has to guarantee in terms of operations must ful?ll all possible requirements.,,,,,,,,,,,,,,,,,1
+The available capabilities will have to be adapted to the operational needs both locally and remotely and these decisions can only be taken later in the life of the project.,,,,,,,,,,,,,,,,,1
+2.5.9.1 ASTRONOMERS AND OBSERVERS De?nition,,,,,,,,,,,,,,,,,1
+Observing astronomers are the end users of the system.,,,,,,,,,,,,,,,,,1
+They range greatly in experi? ence from occasional users of the system to very experienced users such as staff I astronomers at the Gemini 8m Telescopes site and service observers. Purpose of work Whatever their level of experience.,,,,,,,,,,,,,,,,,2
+observing astronomers will wish to concentrate I on the ef?cient acquisition of astronomical data and on?line assessment of data qual? ity.,,,,,,,,,,,,,,,,,1
+the system must offer to a user an interface which.,,,,,,,,,,,,,,,,,1
+while ful?lling the various operational requirements in the different modes and offering status information both automatically and on request at any required level.,,,,,,,,,,,,,,,,,1
+"‚ Gemini Software Software Requirements Specification ? August 18, 1994 9:39 am AugusT 18, 1994 9:39 am GENERAL DESCRIPTION USER-LEVEL REQ UIREMENTS USERS OF THE SYSTEM",,,,,,,,,,,,,,,,,2
+Observing astronomers shall have no privileges as far as the direct control of the telescope is concerned.,,,,,,,,,,,,,,,,,1
+They shall not be able to send control commands directly but they must be able to enquire about the status of the telescope or any subsystem at any time.,,,,,,,,,,,,,,,,,2
+The intent is not to restrict the capabilities of the observing astronomer in any way but rather to estab? lish a single point of control and responsibility.,,,,,,,,,,,,,,,,,2
+This would allow the observer to cre? ate an observing program which requested a telescope control function but would not allow the observer to enter (for instance) a command to slew the mount.,,,,,,,,,,,,,,,,,2
+Astronomers are typically given control access to instruments. however. Operation mode Traditional interactive operation shall normally be replaced by operation Via an automatic sequencer.,,,,,,,,,,,,,,,,,2
+This is essential to support operational requirements such as service observing and ?exible scheduling (as de?ned later in Section 2.7 on page 2?12).,,,,,,,,,,,,,,,,,1
+A certain degree of interaction shall be provided.,,,,,,,,,,,,,,,,,1
+It must also be possible to break and resequence this queue.,,,,,,,,,,,,,,,,,1
+e.g. as a result of the quality assessment of previous data.,,,,,,,,,,,,,,,,,1
+Operations staff will be able to enable direct interactive operation.,,,,,,,,,,,,,,,,,1
+It is eVident that.,,,,,,,,,,,,,,,,,
+However each instance of such a function should be examined as a candidate for automation ? such as focussing.,,,,,,,,,,,,,,,,,1
+The existence of the scheduling queue shall be transparent to the on?site observer during the initial phases of telescope operation.,,,,,,,,,,,,,,,,,1
+Only after experience has been gained with the system will the existence of the queue become eVident to the on site observer.,,,,,,,,,,,,,,,,,1
+2.5.9.2 OPERATIONS STAFF De?nition,,,,,,,,,,,,,,,,,1
+Depending on the operations implemented on the Gemini 8m Telescopes.,,,,,,,,,,,,,,,,,2
+These users will be very experienced users of the system.,,,,,,,,,,,,,,,,,2
+They will supervise telescope operation and will be able to adVise observing astronomers on what they have to do to use telescope and instruments ef?ciently.,,,,,,,,,,,,,,,,,2
+They shall also monitor general performance and system safety. Privileges Operations staff shall have privileges to access all commands and maintenance pro? cedures in case of problems.,,,,,,,,,,,,,,,,,2
+This includes direct control of physical units. However.,,,,,,,,,,,,,,,,,2
+If they need to access other parts of the system appropriate recon?guration,,,,,,,,,,,,,,,,,1
+At the present time it is not clear how to handle Visitor instrument requirements in this area.,,,,,,,,,,,,,,,,,1
+These users will have a deep understanding of the way the Gemini 8m Telescopes software works. Purpose of work; Software development and maintenance staff intervene when there is a major prob? lem to be solved or an upgrade to be installed.,,,,,,,,,,,,,,,,,1
+They also perform system generation and installation of new software packages or new releases.,,,,,,,,,,,,,,,,,1
+Other parts of the Gemini 8m Telescopes may also need to run in test mode to support integration tests.,,,,,,,,,,,,,,,,,1
+This means that a number of commands are available which allow the hardware concerned to be tested (test commands) and are not accessible to observing astronomers. 2.6 OPERATIONAL CONTEXT,,,,,,,,,,,,,,,,,2
+This section derives directly from Gemini 8m Telescopes program requirements and spec? i?es the operational context.,,,,,,,,,,,,,,,,,2
+which is a direct consequence of the structure of the Gemini 8m Telescopes system.,,,,,,,,,,,,,,,,,1
+The Gemini 8m Telescopes operation has to cope with a complex environment produced by: 0 multi?telescope concept 0 multi?instrument context 0,,,,,,,,,,,,,,,,,1
+Visitor instrument context 0 multi?user context. 2.6.1 Multi-telescope context,,,,,,,,,,,,,,,,,1
+Although there are two telescopes as part of the Gemini system there are no plans to sup? port concurrent use of them as if they were a single facility.,,,,,,,,,,,,,,,,,1
+The Gemini 8m Telescopes are thus characterized all the time as in a multi?instru? ment context. Parallel access to all the mounted instruments shall be provided.,,,,,,,,,,,,,,,,,2
+Feeding two separate instruments Via beam splitters or ?eld splitters and providing separate control nodes is not a requirement.,,,,,,,,,,,,,,,,,2
+Regardless of the status of an inactive instrument.,,,,,,,,,,,,,,,,,1
+The requirement to provide for support.,,,,,,,,,,,,,,,,,1
+Due to the specialized nature of Visitor instrumentation it is unlikely that complete integration into the Gemini environment is either feasible or warranted.,,,,,,,,,,,,,,,,,1
+In this case a subset of the available functionality must be made available through a standardized interface.,,,,,,,,,,,,,,,,,1
+The Gemini Telescopes View all instruments as operating as servers.,,,,,,,,,,,,,,,,,1
+Visitor instruments must be capable of operating in this mode to be adequately supported.,,,,,,,,,,,,,,,,,1
+It should be the goal of this interface that it be a subset of the existing instrumentation interface (rather than a separate system).,,,,,,,,,,,,,,,,,1
+At a minimum this interface should support: I 0 acquisition of status information of instrument by other systems 0 capability to enter preprogrammed observing sequences 0 capability to offset the telescope position and focus,,,,,,,,,,,,,,,,,2
+"om AugusT 18, 1994 9:39 am GENERAL DESCRIPTION OPERATIONAL CONTEXT VISlTOR INSTRUMENT CONTEXT",,,,,,,,,,,,,,,,,1
+Due to the nature of Visitor instrumentation it is unlikely that more complicated function? ality can be supported.,,,,,,,,,,,,,,,,,1
+In particular coordinated motions of the Gemini system compo? nents with those of the Visitor instrument (other than simple raster scans) will not be supported.,,,,,,,,,,,,,,,,,1
+This does not mean that more complicated functionality will not be possible for Visitor instruments that require it.,,,,,,,,,,,,,,,,,1
+Such functionality will not be offered as a standard service but will require a joint effort on the part of Gemini and the Visitor instrument team.,,,,,,,,,,,,,,,,,1
+As more complicated functionality will be supported Via standardized interfaces for the Gemini instruments.,,,,,,,,,,,,,,,,,1
+such as coordinated motions.,,,,,,,,,,,,,,,,,1
+The dif?culty with offering such services as an externally sup? ported standard.,,,,,,,,,,,,,,,,,1
+It is important that the Visitor instrument interface be stable and long?lived.,,,,,,,,,,,,,,,,,2
+The support of Visitor instrumentation is made simpler if the Visitor equipment adheres to the Gemini standards.,,,,,,,,,,,,,,,,,2
+It is much better to establish a subset of Gemini facilities which will be made available to Visitor instruments Via long lived.,,,,,,,,,,,,,,,,,2
+Visitor requirements outside of these would be handled on an as needed basis.,,,,,,,,,,,,,,,,,1
+The support of both Gemini and Visitor instruments would bene?t by the provision of a Gemini observatory simulator.,,,,,,,,,,,,,,,,,1
+The requirements to have instruments operated as single units imply that several user stations will be active at the same time on the Gemini 8m Telescopes.,,,,,,,,,,,,,,,,,1
+In other words. any subsection of the whole Gemini 8m Telescopes system should be accessible and controllable from any single point (but of course with protection ensuring security and safety).,,,,,,,,,,,,,,,,,2
+A particularly simple case of multi?use of the system is multi?point monitoring.,,,,,,,,,,,,,,,,,1
+By this it is meant that.,,,,,,,,,,,,,,,,,1
+while some (active) user is in control of the Gemini 8m Tele? scopes.,,,,,,,,,,,,,,,,,1
+someone else can follow what they are doing by monitoring all the relevant data from telescope and instruments.,,,,,,,,,,,,,,,,,1
+This will typically be needed by the operation supervisor.,,,,,,,,,,,,,,,,,1
+All other users wishing to monitor Gemini 8m Telescopes operations have to go through the procedures set up by Operations and get permission to do so.,,,,,,,,,,,,,,,,,1
+The multi?point monitoring mode might also be important when certain dif?cult or rare problems occur.,,,,,,,,,,,,,,,,,1
+when expert adVice is needed and can only be obtained from colleagues situated remotely.,,,,,,,,,,,,,,,,,1
+Normally executed with the sequencer by providing a computer executable program.,,,,,,,,,,,,,,,,,1
+in order to make ef?cient use of the Gemini telescope. B .,,,,,,,,,,,,,,,,,1
+Interactive operation is supported.,,,,,,,,,,,,,,,,,1
+but always through the Observatory Control System (OCS). C .,,,,,,,,,,,,,,,,,1
+There is a Visual user interface to the OCS to allow for changes to the Viewing program. D .,,,,,,,,,,,,,,,,,1
+It is possible to have more than one station participate in the observing.,,,,,,,,,,,,,,,,,1
+Interactive observing with time allocation for full nights is a ?rst basic requirement of the Gemini 8m Telescopes.,,,,,,,,,,,,,,,,,1
+It is therefore an essential requirement that telescope operation is supported by the software in a smooth and very friendly way in this mode. Interaction will normally be Via an automatic sequencer (see Section 2.5.9 on page 2?6).,,,,,,,,,,,,,,,,,2
+This is clearly a top priority requirement and one which will have to be realized before implementing any other mode.,,,,,,,,,,,,,,,,,1
+While its requirements include all those given below for service observing. it has the following special requirements.,,,,,,,,,,,,,,,,,1
+The observing program must be fully automated. requiring very little human interaction during the observation.,,,,,,,,,,,,,,,,,1
+The means that the Gemini software must include a suf?ciently rich programming environment to make this feasible.,,,,,,,,,,,,,,,,,1
+this should be a Visu? ally?oriented environment providing a simple.,,,,,,,,,,,,,,,,,1
+There should be a full telescope simulator to enable the astronomer to test observing pro? grams for completeness.,,,,,,,,,,,,,,,,,1
+This simulator should function within the Virtual telescope environment of the Gemini system. C .,,,,,,,,,,,,,,,,,1
+All control software must provide support for simulated use within the Virtual telescope. D .,,,,,,,,,,,,,,,,,1
+There is a requirement for software to assist in object selection both within an observing program and across observing programs.,,,,,,,,,,,,,,,,,1
+This software must consider target positions.,,,,,,,,,,,,,,,,,1
+"weather conditions. and instrument con?gura? tions. August 18, 1994 9:39 am Gemini Software Software Requirements Specification 2 ? 13 2 GENERAL DESCRIPTION OBSERVING MODE REQUIREMENTS Remote operoTions E .",,,,,,,,,,,,,,,,,1
+There must be software to support the ?exible scheduling.,,,,,,,,,,,,,,,,,1
+To maximize the use of the available observing time it must be possible to queue all of the observing that is possible with the currently available instruments.,,,,,,,,,,,,,,,,,2
+These would be in the form of preprogrammed observing sequences.,,,,,,,,,,,,,,,,,2
+It should be possible to resort the queue so that the next observation to take place comes to the front of the queue.,,,,,,,,,,,,,,,,,2
+This sorting will be based on properties of the individual observing sequences. current site conditions.,,,,,,,,,,,,,,,,,2
+Thus queue scheduling is a superset of preprogrammed observing. with similar I requirements.,,,,,,,,,,,,,,,,,2
+As the costs of implementing such a scheduler are currently dif?cult to estimate it may prove necessary to implement it in a future phase of the project.,,,,,,,,,,,,,,,,,2
+It also covers remote eavesdropping.,,,,,,,,,,,,,,,,,1
+(There will always be support staff on?site during observations. however.),,,,,,,,,,,,,,,,,1
+The requirements for supporting remote operations are:,,,,,,,,,,,,,,,,,1
+All software should be developed to permit remote operations.,,,,,,,,,,,,,,,,,2
+There should be no conceptual difference between software working on?site and remotely. I B .,,,,,,,,,,,,,,,,,1
+All observing facilities should work both on?site and off?site.,,,,,,,,,,,,,,,,,2
+It should be possible to do full operations remotely. C .,,,,,,,,,,,,,,,,,2
+It must be possible to restrict speci?c operations to speci?c remote sites.,,,,,,,,,,,,,,,,,2
+For exam? ple.,,,,,,,,,,,,,,,,,1
+"The method used to restrict such operations should be independent of the operations themselves. and dynamic. 2 ? 14 Gemini Software Software Requirements Specification ? August 18, 1994 9:39",,,,,,,,,,,,,,,,,1
+However. we will take advantage of commercially available protocols such as ISDN. TCP/IP. Internet.,,,,,,,,,,,,,,,,,1
+The choice of the name remote operations is meant to suggest an entire category of opera? tions.,,,,,,,,,,,,,,,,,1
+In this sense it is more general than pure remote observing.,,,,,,,,,,,,,,,,,1
+Despite the obvious limitations introduced by the link bandwidths available at the differ? ent locations.,,,,,,,,,,,,,,,,,1
+It is only nec? essary that the functionality of the system be transparent.,,,,,,,,,,,,,,,,,1
+it is accepted that the speed of the link will determine the perceived transparency of the system.,,,,,,,,,,,,,,,,,1
+However the system design should minimize the impact of link bandwidth on transparency. Security of operation shall be considered and might imply different operation levels and privileges at different sites.,,,,,,,,,,,,,,,,,2
+It is required that the remote operations software be considered from the beginning in the Gemini 8m Telescopes software design.,,,,,,,,,,,,,,,,,1
+This should reduce the amount of speci?c software needed for remote operations.,,,,,,,,,,,,,,,,,1
+The philosophy behind this is that.,,,,,,,,,,,,,,,,,1
+OBSERVING Remote observing means that users shall be able to observe from a remote site such as Cerro Tololo.,,,,,,,,,,,,,,,,,1
+This possibility has to be provided on the Gemini 8m Telescopes.,,,,,,,,,,,,,,,,,1
+The extent to which realistic observing conditions can be reproduced depends.,,,,,,,,,,,,,,,,,1
+Experience with previous telescopes at other Gemini Software Software Requirements Specification 2 ? 15 2 ? 16 Gemini Software GENERAL DESCRIPTION OBSERVING MODE REQUIREMENTS Remote operoTions observatories shows.,,,,,,,,,,,,,,,,,1
+It is a requirement for the Gemini 8m Telescopes operation and will complement service observing. making it friendlier for users.,,,,,,,,,,,,,,,,,2
+Remote monitoring coincides to a large extent with multipoint monitoring.,,,,,,,,,,,,,,,,,2
+There is no requirement that the remote screen be a duplicate of the local screen.,,,,,,,,,,,,,,,,,2
+The remote key? board will have no effect on the local user's environment.,,,,,,,,,,,,,,,,,1
+A remote observer might also need a real?time Video and voice link with the operator in the control room.,,,,,,,,,,,,,,,,,1
+perhaps using a portable Video camera which the operator can position as necessary.,,,,,,,,,,,,,,,,,1
+It is assumed this facility is provided entirely by hardware.,,,,,,,,,,,,,,,,,1

@@ -1,0 +1,171 @@
+Details can be assigned to any combination of departments and categories,,,,,,,,,,,,,,,,,2
+Details can be assigned to ?All? departments and/or categories 4.8.,,,,,,,,,,,,,,,,,1
+"Alternatively, items can be added during routine inventory maintenance.",,,,,,,,,,,,,,,,,1
+Receiving Associate Pickup Associate Decon Associate Customer Service Representative,,,,,,,,,,,,,,,,,1
+The screen displays all inventory departments in matrix format (see View Inventory) 2.,,,,,,,,,,,,,,,,,1
+User drills down to the appropriate category for the item 2.1.,,,,,,,,,,,,,,,,,1
+"If in donation processing mode, the item entry screen is presented automatically 2.2.",,,,,,,,,,,,,,,,,2
+"If in inventory management mode, the list of existing inventory items in that category is displayed 2.2.1.User clicks the Add Item button 3.",,,,,,,,,,,,,,,,,2
+The appropriate item entry screen is presented,,,,,,,,,,,,,,,,,1
+"At any point, the user may click on a department on the inventory department shortcuts list, which takes the user to the inventory view for that particular department. 2.",,,,,,,,,,,,,,,,,1
+Only unique and stock items are available to be added in inventory management mode,,,,,,,,,,,,,,,,,1
+"When an item is added to the inventory, the system updates QuickBooks POS accordingly and promptly 4.1.",,,,,,,,,,,,,,,,,1
+A new item entry is created in POS for a unique item 4.2.,,,,,,,,,,,,,,,,,2
+The item quantity is updated for a stock item 5. Mandatory fields: 5.1.,,,,,,,,,,,,,,,,,2
+"The available options in the Material, Finish, Color and Features selectors should be the ones defined for the selected department (see Manage Attributes and Details) 8.",,,,,,,,,,,,,,,,,1
+"The fields and available options under the Details section should be the ones defined for the selected category (see Manage Attributes and Details) 9. For Stock Items, all fields are pre-set and disabled, and cannot be changed 10.",,,,,,,,,,,,,,,,,1
+"For Unique Items, all fields with values defined when the Unique Item category was created are pre- set and cannot be changed 11.",,,,,,,,,,,,,,,,,2
+"For unique and stock items, the system makes pricing recommendations to the user on the item entry screen (see Suggest Item Price)",,,,,,,,,,,,,,,,,1
+"For unique items, user can accept the suggested price, enter a different one, or leave it blank 11.1.1.",,,,,,,,,,,,,,,,,1
+The item price can only be left blank during the processing of an acquisition.,,,,,,,,,,,,,,,,,1
+The price has to be set before the item can be added to the inventory 11.2.,,,,,,,,,,,,,,,,,1
+"For stock items, the price is pre-set and the user cannot change it 12.",,,,,,,,,,,,,,,,,1
+The system should allow various management actions to be performed on items existing in the inventory.,,,,,,,,,,,,,,,,,1
+"These include modifying, deleting and splitting an item, and viewing the item?s details and item history.",,,,,,,,,,,,,,,,,1
+These actions are only available for Unique and Stock items. 3.6.1. Actor(s):,,,,,,,,,,,,,,,,,1
+The screen displays all inventory departments in matrix format with option to select and/or edit items to move them to a new department/category 1.3.,,,,,,,,,,,,,,,,,1
+User drills down to the desired existing inventory item (see View Inventory) 1.4.,,,,,,,,,,,,,,,,,2
+The item detail screen is presented 1.5.,,,,,,,,,,,,,,,,,2
+User modifies item information,,,,,,,,,,,,,,,,,2
+The system validates item information,,,,,,,,,,,,,,,,,2
+Item information is updated in the inventory 1.8.,,,,,,,,,,,,,,,,,2
+System gives the option of re-printing then item tag 1.9.,,,,,,,,,,,,,,,,,2
+User optionally re-prints the item tag and attaches it to the item 2. Adjust Item Quantity 2.1.,,,,,,,,,,,,,,,,,2
+User accesses the main inventory screen 2.2.,,,,,,,,,,,,,,,,,2
+The screen displays all inventory departments in matrix format 2.3.,,,,,,,,,,,,,,,,,2
+User drills down to the desired existing inventory item (see View Inventory) 2.4.,,,,,,,,,,,,,,,,,2
+The item detail screen is presented 2.5.,,,,,,,,,,,,,,,,,2
+User changes the item quantity 2.6.,,,,,,,,,,,,,,,,,2
+The system displays a confirmation screen where a reason for the adjustment must be specified by the user 2.7.,,,,,,,,,,,,,,,,,2
+The system validates the item change,,,,,,,,,,,,,,,,,2
+Item information is updated in the inventory 3.,,,,,,,,,,,,,,,,,2
+Split Inventory Item 3.1.,,,,,,,,,,,,,,,,,2
+User accesses the main inventory screen 3.2.,,,,,,,,,,,,,,,,,1
+The screen displays all inventory departments in matrix format 3.3.,,,,,,,,,,,,,,,,,2
+User drills down to the desired existing inventory item (see View Inventory) 3.4.,,,,,,,,,,,,,,,,,2
+The item detail screen is presented 3.5.,,,,,,,,,,,,,,,,,2
+User clicks the Split Item button 3.6.,,,,,,,,,,,,,,,,,2
+The system displays the Item Split screen 3.7.,,,,,,,,,,,,,,,,,2
+"Once the list is complete, user confirms the split 3.9.",,,,,,,,,,,,,,,,,1
+The system validates the split,,,,,,,,,,,,,,,,,2
+3.10. Item information is updated in the inventory 3.10.1.,,,,,,,,,,,,,,,,,1
+The original (split) item is updated in the inventory 3.10.2. Any new items that were added to the split list are added to the inventory maintaining parental history 4. View Inventory Item History 4.1.,,,,,,,,,,,,,,,,,1
+User accesses the main inventory screen 4.2.,,,,,,,,,,,,,,,,,2
+The screen displays all inventory departments in matrix format 4.3.,,,,,,,,,,,,,,,,,1
+User drills down to the desired existing inventory item (see View Inventory) 4.4.,,,,,,,,,,,,,,,,,2
+The item detail screen is presented 4.5.,,,,,,,,,,,,,,,,,2
+User clicks the Item History button 4.6.,,,,,,,,,,,,,,,,,2
+The system displays the Item History screen containing current and historical information about the inventory item 3.6.5. Alternative Flows:,,,,,,,,,,,,,,,,,2
+1. Modify Inventory Item 1.1.,,,,,,,,,,,,,,,,,1
+User cancels the operation and is taken back to the item selection screen,,,,,,,,,,,,,,,,,1
+"During data validation, data is deemed invalid and an error message is presented to the user 2. Adjust Item Quantity 2.1.",,,,,,,,,,,,,,,,,1
+User cancels the operation and is taken back to the item selection screen,,,,,,,,,,,,,,,,,1
+"During data validation, data is deemed invalid and an error message is presented to the user 3.",,,,,,,,,,,,,,,,,2
+"All item properties available when the item was originally added to the inventory can be modified, except for the system-generated item number (see Add Item to Inventory). 1.2.",,,,,,,,,,,,,,,,,2
+The business rules defined for adding a new item into the inventory are also applicable to modifying an existing inventory item (see Add Item to Inventory). 1.3.,,,,,,,,,,,,,,,,,2
+"Once set for the first time in the inventory, the item price can only be modified by a Manager, Director or Administrator, must maintain a history and include an explanation for the price change 1.4.",,,,,,,,,,,,,,,,,2
+Changes to the item in the inventory should be reflected in the corresponding item in QuickBooks POS 2. Adjust Item Quantity 2.1.,,,,,,,,,,,,,,,,,1
+"When an item is updated, the system must automatically detect that the item quantity has been modified and present the adjustment confirmation screen 2.2.",,,,,,,,,,,,,,,,,2
+"If the quantity is increased, the user must enter a comment describing the reason for the change 2.4.",,,,,,,,,,,,,,,,,2
+Changes to an item?s quantity in the inventory should be reflected in the corresponding item in QuickBooks POS,,,,,,,,,,,,,,,,,1
+3. Split Inventory Item 3.1.,,,,,,,,,,,,,,,,,1
+"When building the split item list, at least two items must exist in the list, including the original item 3.2.",,,,,,,,,,,,,,,,,1
+"When building the split item list, the business rules defined for adding a new item into the inventory are also applicable (see Add Item to Inventory). 3.3.",,,,,,,,,,,,,,,,,2
+"Clicking the Clone button on a row adds a new item row with the same item values as the original, except for the item number, which is left blank 3.4.",,,,,,,,,,,,,,,,,2
+Clicking the Add Item button takes the user through the inventory matrix so that a category can be selected for the new item.,,,,,,,,,,,,,,,,,2
+The user is then taken to the View/Update Item screen 3.5.,,,,,,,,,,,,,,,,,2
+Clicking the category name for an item takes the user to the View/Update Item screen for that item 3.6.,,,,,,,,,,,,,,,,,2
+All items in the split item list are saved in the inventory when the user confirms the split 3.6.1.The original item is updated,,,,,,,,,,,,,,,,,2
+Item is updated in QuickBooks POS,,,,,,,,,,,,,,,,,1
+2. Adjust Item Quantity 2.1.,,,,,,,,,,,,,,,,,1
+Item is updated in the inventory 2.2.,,,,,,,,,,,,,,,,,1
+Item is updated in QuickBooks POS,,,,,,,,,,,,,,,,,2
+3. Split Inventory Item 3.1.,,,,,,,,,,,,,,,,,2
+Original item is updated in the inventory 3.2.,,,,,,,,,,,,,,,,,1
+Original item is updated in QuickBooks POS 3.3.,,,,,,,,,,,,,,,,,2
+New items are updated in the inventory 3.4.,,,,,,,,,,,,,,,,,2
+New items are updated in QuickBooks POS,,,,,,,,,,,,,,,,,2
+4. View Inventory Item History None 3.6.8. Open Issues: None,,,,,,,,,,,,,,,,,2
+The system should assist in the task of pricing a new inventory item by making pricing suggestions to the user when adding to or modifying an item in the inventory.,,,,,,,,,,,,,,,,,1
+Use Case Dependencies,,,,,,,,,,,,,,,,,1
+User modifies item data,,,,,,,,,,,,,,,,,1
+The following price suggestion configuration parameters are available: 3.1.,,,,,,,,,,,,,,,,,1
+Number of months of historical price information to include when calculating price recommendations.,,,,,,,,,,,,,,,,,1
+3.7.7. Post-Condition(s): 1. Price suggestion information is displayed on the screen,,,,,,,,,,,,,,,,,1
+Inventory Management users should be able to view all past and current acquisitions. Receiving Associates use this function to locate an expected acquisition when receiving a donation at the loading dock.,,,,,,,,,,,,,,,,,1
+"Pickup and Decon crews may also use this function to initiate the process of receiving items while in the truck, on their way to the receiving dock.",,,,,,,,,,,,,,,,,2
+Off acquisitions are not typically pre-scheduled as Pick Up and Decon acquisitions except for those submitted through the organizational website.,,,,,,,,,,,,,,,,,1
+Administrator Director Manager Customer Service Representative,,,,,,,,,,,,,,,,,1
+1. User accesses the acquisitions screen 2.,,,,,,,,,,,,,,,,,1
+"The screen displays a list of all acquisitions, latest ones at the top of the list 3. User may optionally filter the acquisitions displayed on the screen by changing filtering options",,,,,,,,,,,,,,,,,2
+"4. User clicks on an acquisition record 5. System display the details for that acquisition, including expected items 3.8.5. Alternative Flows:",,,,,,,,,,,,,,,,,2
+User creates new Drop Off acquisition in the CRM system 1.3.,,,,,,,,,,,,,,,,,1
+User returns to the acquisitions screen and sees the newly created Drop Off acquisition 2. User can use a bar code scanner to scan the acquisition ticket generated at customer service 3.8.6. Business Rules: 1.,,,,,,,,,,,,,,,,,1
+The acquisitions screen should display: 1.1.,,,,,,,,,,,,,,,,,2
+Acquisition Number 1.2.,,,,,,,,,,,,,,,,,1
+9. The system should provide a link from the acquisitions view in the Inventory Management System to the acquisition creation screen in CRM for easy access.,,,,,,,,,,,,,,,,,1
+10. Inventory Management users should be granted permission to create new Drop,,,,,,,,,,,,,,,,,2
+Off acquisitions in CRM in order to access that functionality.,,,,,,,,,,,,,,,,,2
+"A donor in possession of a valid acquisition number can proceed to the receiving dock where the items to be donated will be received and processed, and a donation receipt will be generated.",,,,,,,,,,,,,,,,,1
+"Alternatively, a donor may go directly to the receiving dock, in which case a new acquisition is created by the Receiving Associate before items can be received and processed.",,,,,,,,,,,,,,,,,2
+"The screens used for the acquisition process should simplify and expedite the data entry process, allowing the Receiving Associate to enter only the information needed to generate the donation receipt.",,,,,,,,,,,,,,,,,2
+"Additional attributes needed to complete the item information and effectively add the item to the inventory can be added at a second step, after the receipt has been printed and the donor has been served.",,,,,,,,,,,,,,,,,2
+The Receiving Associate can print temporary acquisition labels for items that require further processing.,,,,,,,,,,,,,,,,,2
+"Pick Up and Decon crews may also initiate the receiving process, entering as much detailed information about the donated items as desired, and generating a donation receipt.",,,,,,,,,,,,,,,,,1
+"They cannot, however, add items to the inventory or complete the acquisition process.",,,,,,,,,,,,,,,,,2
+A Receiving Associate is required to review all the acquisition information before those actions can take place.,,,,,,,,,,,,,,,,,1
+1. Donor or Primary Contact arrives at receiving dock with a valid donation number 2.,,,,,,,,,,,,,,,,,1
+Receiving Associate locates donation request in the system (see View Acquisitions),,,,,,,,,,,,,,,,,2
+3. System displays donation request information,,,,,,,,,,,,,,,,,2
+4. Receiving Associate enters information about each donated item into the donation request (see Add Item to Inventory) 4.1.,,,,,,,,,,,,,,,,,2
+A new item can be added to the list by cloning an existing item 4.2.,,,,,,,,,,,,,,,,,2
+A new item can be added by clicking the Add Item button,,,,,,,,,,,,,,,,,1
+The MMF launched a project to establish an electronic money market environment in South Africa.,,,,,,,,,,,,,,,,,1
+"UNEXcor and STRATE tendered for the dematerialisation and settlement of money market instruments and in September 2002, the MMF appointed UNEXcor as the service provider.",,,,,,,,,,,,,,,,,1
+Pursuant to the appointment of UNEXcor as the service provider of the dematerialisation and settlement of money market instruments an agreement to merge STRATE and UNEXcor has been reached effective from 01 August 2003.,,,,,,,,,,,,,,,,,1
+"The new entity, hereinafter referred to as STRATE, will provide the services as originally tendered by UNEXcor.",,,,,,,,,,,,,,,,,1
+"The JSE is a paid-up member of the Association of National Numbering Agents (ANNA), i.e.",,,,,,,,,,,,,,,,,1
+an authorised National Numbering Agent (NNA) - an entity authorised to issue ISINs in accordance with ISO and ANNA rules and guidelines.,,,,,,,,,,,,,,,,,1
+"In terms of the requirements of ANNA, only one NNA may be authorised per country.",,,,,,,,,,,,,,,,,1
+The JSE issues and disseminates ISINs for equities when a new equity is loaded in the mainframe programme - EQUITY MASTER DATA (EMD).,,,,,,,,,,,,,,,,,1
+All equity master data is managed and maintained by the JSE's Listings Division.,,,,,,,,,,,,,,,,,1
+"The JSE's Market Information Division also maintains and issues ISINs for bonds, as a service to BESA, in the mainframe programme GILT MASTER DATA (MDGL), which is a manual process.",,,,,,,,,,,,,,,,,1
+"The scope of this project is to provide an electronic method to enable the MMF participants via STRATE to create, amend and delete ISIN codes for money market instruments.",,,,,,,,,,,,,,,,,1
+This document sets out the business requirements for the issuing of money market instruments ISIN codes by the JSE.,,,,,,,,,,,,,,,,,1
+"The costs will be forwarded to STRATE for their review and approval and only thereafter, subject to NMPG approval of the SWIFT messages to be used and message content, will design and development start taking place.",,,,,,,,,,,,,,,,,1
+"(Note: -Due to unforeseen complications, the design and development has been completed prior to the costs being approved by STRATE.",,,,,,,,,,,,,,,,,1
+5. Business Requirements 5.1 Current Business Environment Money market instruments are normally traded and settled on the same business day (T+0).,,,,,,,,,,,,,,,,,1
+Settlement is on a gross physical basis between seller and buyer.,,,,,,,,,,,,,,,,,1
+The majority of activity in the money market is undertaken in the primary market (i.e.,,,,,,,,,,,,,,,,,2
+between issuer and buyer) and the typical participants in this market are registered banks.,,,,,,,,,,,,,,,,,1
+The Objectives of the Electronic Money Market are as follows: - ? Reduce the identified risks associated with Money Market practices.,,,,,,,,,,,,,,,,,1
+? Improve liquidity in the Money Market.,,,,,,,,,,,,,,,,,1
+? Improve the tradability of the instruments in the secondary market.,,,,,,,,,,,,,,,,,2
+? Reduce the inherent costs in Money Market processes.,,,,,,,,,,,,,,,,,2
+"? Improve the marketability of instruments, creating a competitive benefit for an institution trading in Money Market instruments.",,,,,,,,,,,,,,,,,2
+? Align South African market practices and procedures with world best practices.,,,,,,,,,,,,,,,,,2
+"? Improve the integrity of the Money Market creating an environment that is safe, secure, structured, formalised and robust.",,,,,,,,,,,,,,,,,2
+The MMF estimates an issuance requirement of approximately 200 to 500 ISINs per day.,,,,,,,,,,,,,,,,,2
+To distinguish money market instruments ISINs from equities (ZAE) and bonds (ZAG) the MMF has requested the use of an ISIN prefix of ZAM.,,,,,,,,,,,,,,,,,1
+The automated ISIN Issuance for Money Market Instruments system will be implemented by the JSE in the 2nd quarter 2004.,,,,,,,,,,,,,,,,,1
+The following assumptions have been made: ? The Custodian and Banker components are incorporated into one entity - CSDP.,,,,,,,,,,,,,,,,,1
+? The Trading component refers to either a system (Trading or Reporting Engine) or the act of reaching a contractual agreement (i.e.,,,,,,,,,,,,,,,,,1
+The JSE?s ASD department will be required to develop a programme for the automatic issuance of ISINs for money market instruments.,,,,,,,,,,,,,,,,,1
+"This will include a programme to ""unstring"" the MT 598 User Defined SWIFT messages and ?string? the MT 598 User Defined SWIFT messages, as detailed in Appendix B to K, for the request and notification of ISINs by/to STRATE.",,,,,,,,,,,,,,,,,1
+To differentiate between the JSEs current SWIFT BIC codes and ensure correct routing and message identification the JSE will apply for a new branch code ?ISN? as an extension of their current BIC address.,,,,,,,,,,,,,,,,,2
+5.3.3 Service Level Agreement The JSE and STRATE will enter into a Service Level Agreement (SLA) that sets out all the arrangements pertaining to the service provided by the JSE and will include a Business Continuity Plan(BCP).,,,,,,,,,,,,,,,,,2
+This will be made available to money market participants for their perusal and reference.,,,,,,,,,,,,,,,,,1
+"Category 2: Yield based, fixed coupon rate and fixed term, where the MMI is bought at nominal value, the coupon is payable at intervals (i.e.",,,,,,,,,,,,,,,,,1
+"Coupon Interval) throughout the term, and the final coupon payment and the nominal value are repayable on maturity.",,,,,,,,,,,,,,,,,2
+"Category 3: Yield based, variable coupon rate and fixed term where the MMI is bought at nominal value, coupon is payable at intervals (i.e.",,,,,,,,,,,,,,,,,2
+"Coupon Interval) throughout the term, and the final coupon payment and the nominal value are repayable on maturity.",,,,,,,,,,,,,,,,,1
+"Category 4: Yield based, variable coupon rate and variable term where the MMI is bought at nominal value, coupon is payable at intervals (i.e.",,,,,,,,,,,,,,,,,2
+"Coupon Interval) throughout the term, the nominal value and coupon for the last interest period are repayable on maturity and the instrument matures on call.",,,,,,,,,,,,,,,,,1
+These generic characteristics together with the approved the MT 598 User Defined SWIFT messages formats and contents will determine the fields required in the Money Market ISIN Issuance programme.,,,,,,,,,,,,,,,,,1
+The table below sets out per generic money market instrument: - ? The data required to be held per MMI by the NNA; and ? The definitive characteristics (i.e.,,,,,,,,,,,,,,,,,1
+the unique combination of characteristics) required for the issuance of ISINs.,,,,,,,,,,,,,,,,,1
+:- Data Required Definitive Characteristics for ISIN Generation per Generic Category Message Type Message Initiator Message Recipients Details.,,,,,,,,,,,,,,,,,1
+1 Request New STRATE JSE Request for issuance of new ISIN.,,,,,,,,,,,,,,,,,1
+2 Reject New JSE STRATE Reject request ? duplication (DUPL) or invalid2/incomplete (INVL) request.,,,,,,,,,,,,,,,,,2
+3 Accept New JSE STRATE Accept request for new ISIN and include ISIN in message.,,,,,,,,,,,,,,,,,2
+4 Request Cancellation STRATE JSE Request for cancellation of existing ISIN.,,,,,,,,,,,,,,,,,2
