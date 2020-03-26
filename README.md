@@ -16,10 +16,10 @@
 [Presentation](https://docs.google.com/presentation/d/1TcYh_MBR9UGKt89rxWrKTFygNzyb4x9bZRcgMkH5jVQ/edit?usp=sharing)
 
 #### Sprint 2
-![Sprint 2 Burndown](/images/sprint2-burndown)
+![Sprint 2 Burndown](/images/sprint2-burndown.png)
 
 #### Sprint 3
-![Sprint 3 Burndown](/images/sprint3-burndown)
+![Sprint 3 Burndown](/images/sprint3-burndown.png)
 
 #### Evaluation
 ![](https://docs.google.com/spreadsheets/d/e/2PACX-1vSHDLY6gFINy8nBgLJb81mLj9IkczivmAyML4zdw_dxAN6vNRxIOuSpkBkKgUA4ixQG_P8MFCwEXwbY/pubchart?oid=821744637&format=image[])
