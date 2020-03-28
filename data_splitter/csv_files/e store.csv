@@ -1,0 +1,109 @@
+5 Reject Cancellation JSE STRATE Reject request ? duplication (DUPL) or invalid/incomplete (INVL) request.,,,,,,,,,,,,,,,,,2
+6 Accept Cancellation JSE STRATE Accept request for cancellation of ISIN and include confirmation of cancellation in message.,,,,,,,,,,,,,,,,,2
+7 Request Deregistration STRATE JSE Request to deregister an ISIN for an instrument that has matured.,,,,,,,,,,,,,,,,,2
+8 Reject Deregistration JSE STRATE Deregistration request rejected.,,,,,,,,,,,,,,,,,2
+"9 Accept Deregistration JSE STRATE Accept request to deregister an ISIN for an instrument that has matured, and include confirmation of deregistration in message.",,,,,,,,,,,,,,,,,2
+Refer Appendix A for the process flows of the above messages.,,,,,,,,,,,,,,,,,2
+Refer Appendix B to K for fields and contents of the MT 598 User Defined SWIFT messages.,,,,,,,,,,,,,,,,,1
+"Cost Recovery All costs for the design, development, testing and implementation of the automatic Money Market ISIN Issuance system will be recovered from STRATE.",,,,,,,,,,,,,,,,,1
+"In addition, a monthly running cost, covering the cost of administration and maintenance of the data and systems will be recovered from STRATE.",,,,,,,,,,,,,,,,,1
+"The monthly running costs and billing methodology will require definition, by the JSE, in the SLA.",,,,,,,,,,,,,,,,,1
+Invoicing will be conducted by the JSE's Finance Division.,,,,,,,,,,,,,,,,,1
+Glossary AM Application Management.,,,,,,,,,,,,,,,,,1
+ANNA Association of National Numbering Agencies.,,,,,,,,,,,,,,,,,2
+BESA Bond Exchange of South Africa.,,,,,,,,,,,,,,,,,2
+BCP Business Continuity Plan.,,,,,,,,,,,,,,,,,2
+BIC Bank Identifier Code.,,,,,,,,,,,,,,,,,2
+BKE Bilateral Key Exchange.,,,,,,,,,,,,,,,,,2
+CREST United Kingdom CSD.,,,,,,,,,,,,,,,,,2
+CSD Central Securities Depository.,,,,,,,,,,,,,,,,,2
+CSDP Central Securities Depository Participant.,,,,,,,,,,,,,,,,,2
+IOR Instrument Ownership Register.,,,,,,,,,,,,,,,,,2
+ISIN International Securities Identification Number designed by the International Organisation for Standardization (ISO) and advocated by G30.,,,,,,,,,,,,,,,,,2
+ISO International Organisation for Standardization.,,,,,,,,,,,,,,,,,1
+JSE JSE Securities Exchange South Africa.,,,,,,,,,,,,,,,,,2
+"MMF Money Market Forum, a body representing the participants in the South African money market.",,,,,,,,,,,,,,,,,2
+MMI Money Market Instrument.,,,,,,,,,,,,,,,,,2
+NMPG National Market Practice Group.,,,,,,,,,,,,,,,,,1
+NNA National Numbering Agent.,,,,,,,,,,,,,,,,,2
+SAFIRES Southern Africa Financial Instrument Real-time Electronic Settlement system.,,,,,,,,,,,,,,,,,1
+SLA Service Level Agreement.,,,,,,,,,,,,,,,,,1
+STRATE STRATE LTD SWIFT Society for Worldwide Interbank Financial Telecommunication.,,,,,,,,,,,,,,,,,1
+UNEXcor Universal Exchange Corporation.,,,,,,,,,,,,,,,,,1
+"Sign-Off All parties signing this document acknowledge that they have read, understood and are committed to this document, including all attached schedules and diagrams.",,,,,,,,,,,,,,,,,1
+Name: Des Davidson Name: Brett Kotze Designation: Designation: Project Role: Project Sponsor Project Role: Project Owner Signature: 1.,,,,,,,,,,,,,,,,,1
+MMI Issue Request to NNA (MT598-150 ? NEWM).,,,,,,,,,,,,,,,,,1
+MMI Issue Request Rejection from NNA (MT598-901/MT598-902).,,,,,,,,,,,,,,,,,2
+MMI Issue Confirmation from NNA (MT598-151 ? NEWM).,,,,,,,,,,,,,,,,,2
+MMI Issue Confirmation Rejection to NNA (MT598-901/MT598-902).,,,,,,,,,,,,,,,,,2
+MMI Cancellation/De-issue Request to NNA (MT598-150 ? NEWM).,,,,,,,,,,,,,,,,,2
+MMI Cancellation/De-issue Request Rejection from NNA (MT598-901/MT598-902).,,,,,,,,,,,,,,,,,1
+MMI Cancellation/De-issue Confirmation from NNA (MT598-151 ? NEWM).,,,,,,,,,,,,,,,,,1
+MMI Cancellation/De-issue Confirmation Rejection to NNA (MT598-901/MT598-902).,,,,,,,,,,,,,,,,,1
+MMI Cancellation Request to NNA on maturity of instrument (MT598-150 ? MATU).,,,,,,,,,,,,,,,,,2
+MMI Cancellation Request Rejection from NNA (MT598-901/MT598-902).,,,,,,,,,,,,,,,,,2
+Appendix B ISIN Request to NNA.,,,,,,,,,,,,,,,,,1
+11.1 ISIN Request to NNA (MT598-150-NEWM).,,,,,,,,,,,,,,,,,1
+The MMI Engine will forward the validated MMI Issue Request (MT598-150 ? NEWM) to NNA.,,,,,,,,,,,,,,,,,1
+The layout of the MT598-150 is given below: Format Specifications Sl.,,,,,,,,,,,,,,,,,2
+No Tag Qualifier Name M/O Options 1.,,,,,,,,,,,,,,,,,1
+20 Transaction Reference M 16x 2.,,,,,,,,,,,,,,,,,1
+12 Sub-Message Type M 3!n Valid Value is: 150 3.,,,,,,,,,,,,,,,,,1
+77E Proprietary Message M. Mandatory Sequence A General Information 4.,,,,,,,,,,,,,,,,,1
+16R Start of block - General.,,,,,,,,,,,,,,,,,1
+23G Function of the message M 4!c Values: NEWM ? New message.,,,,,,,,,,,,,,,,,1
+98C PREP Preparation date and time O //8!n6!n 8.,,,,,,,,,,,,,,,,,1
+16S End of block - General M GENL End of Sequence A General Information Mandatory Sequence B MMI Details .,,,,,,,,,,,,,,,,,1
+16R Start of block - Financial instrument attributes M FIA 14.,,,,,,,,,,,,,,,,,1
+22F PFRE Coupon Payment Frequency (Mandatory for category 2/3/4) C /STRA/4!c See Field Descriptions.,,,,,,,,,,,,,,,,,1
+Transaction reference (M): This field identifies the transaction reference of the message.,,,,,,,,,,,,,,,,,1
+The valid value is: ? 150 ? ISIN Request.,,,,,,,,,,,,,,,,,1
+Proprietary Message (M): This field identifies that this is a proprietary message.,,,,,,,,,,,,,,,,,1
+This should not have any contents.,,,,,,,,,,,,,,,,,2
+Start of GENL block (M): This field identifies the start of General block and it should have a value of GENL.,,,,,,,,,,,,,,,,,1
+Function of the message (M): This field identifies the function of the message.,,,,,,,,,,,,,,,,,2
+The valid value is: ? NEWM ? For new message.,,,,,,,,,,,,,,,,,2
+Preparation date and time (O): This field gives the preparation date and time of the message.,,,,,,,,,,,,,,,,,1
+Type of instruction indicator (M): This field identifies the instruction indicator.,,,,,,,,,,,,,,,,,2
+The valid value is: ? ISSU ?ISIN Issue Request.,,,,,,,,,,,,,,,,,2
+End of GENL block (M): This field identifies the end of General block and it should have a value of GENL.,,,,,,,,,,,,,,,,,1
+Start of MMID block (M): This field identifies the start of the MMI Details block and it should have a value of MMID.,,,,,,,,,,,,,,,,,2
+Issuer's Participant Code (M): This field identifies the Participant Code of the Issuer.,,,,,,,,,,,,,,,,,2
+Identification of securities (M): This field identifies the ISIN information.,,,,,,,,,,,,,,,,,2
+? Sub-field 1 should not be present ? Sub-field 2 is Mandatory 12.,,,,,,,,,,,,,,,,,1
+Quantity Issued (M): This field identifies the Issued amount of a financial instrument.,,,,,,,,,,,,,,,,,1
+Start of FIA block (M): This field identifies the start of the Financial Instrument Attributes block and should have a value of FIA.,,,,,,,,,,,,,,,,,1
+Coupon Payment Frequency (C):This field identifies the Payment Frequency of the MMI.,,,,,,,,,,,,,,,,,1
+The valid values are: ? ANNU ? Annually Payment Cycle ? MNTH ? Monthly Payment Cycle ? QUTR ? Quarterly Payment Cycle ? SEMI ? Half Yearly Payment Cycle ? TERM ? On Maturity of the MMI 15.,,,,,,,,,,,,,,,,,1
+Coupon Payment Day (C): This field identifies the Coupon Payment Day of the MMI.,,,,,,,,,,,,,,,,,1
+Generic Category (M): This field identifies the Generic Category of the instrument.,,,,,,,,,,,,,,,,,1
+The valid values are: 1 ? Generic Category 1 2 ? Generic Category 2 3 ? Generic Category 3 4 ? Generic Category 4 17.,,,,,,,,,,,,,,,,,1
+MMI Type (M): This field identifies the MMI Type.,,,,,,,,,,,,,,,,,1
+The valid values are: Bills EBL Commercial Paper Bills/Capital Project Bills.,,,,,,,,,,,,,,,,,1
+EPN Treasury Bills.,,,,,,,,,,,,,,,,,1
+ETB Bridging Bonds.,,,,,,,,,,,,,,,,,2
+BB Debentures.,,,,,,,,,,,,,,,,,1
+DEB Negotiable Certificates of Deposit.,,,,,,,,,,,,,,,,,1
+NCD NCD NCD Linked Negotiable Certificates of Deposit.,,,,,,,,,,,,,,,,,1
+LNCD Credit Linked Notes.,,,,,,,,,,,,,,,,,1
+CLN Floating Rate Notes.,,,,,,,,,,,,,,,,,1
+FRN Call Bonds.,,,,,,,,,,,,,,,,,1
+CB Zero Bonds.,,,,,,,,,,,,,,,,,1
+ZB Note: This field requires 4 alpha characters to be present.,,,,,,,,,,,,,,,,,1
+"Where the MMI Type is less than 4 alpha characters, the spaces after the MMI Type must be filled with ?X?s?.",,,,,,,,,,,,,,,,,1
+"For example, NOT will be NOTX, ZB will be ZBXX, etc.. 18.",,,,,,,,,,,,,,,,,1
+Maturity date (C): This field identifies the maturity date of a financial instrument.,,,,,,,,,,,,,,,,,2
+Issue date (M): This field identifies the issue date of a financial instrument.,,,,,,,,,,,,,,,,,2
+Coupon Rate (C): This field identifies the Coupon Rate of a financial instrument.,,,,,,,,,,,,,,,,,2
+"It is optional for Category 1 but mandatory for Categories 2, 3 and 4, (7,7 Decimals) 21.",,,,,,,,,,,,,,,,,2
+End of FIA block (M): This field identifies the end of the Financial Instrument Attributes block and should have a value of FIA.,,,,,,,,,,,,,,,,,2
+End of MMID block (M): This field identifies the end of the MMI Details block and should have a value of MMID.,,,,,,,,,,,,,,,,,2
+Appendix C ISIN Request Rejection from NNA 12.1 ISIN Request Rejection from NNA (MT598-901/598-902) The rejection from NNA can be of two types: Format Rejection (MT598-901).,,,,,,,,,,,,,,,,,2
+Message Content Rejection (MT598-902).,,,,,,,,,,,,,,,,,1
+"12.2 Format Rejection ? MT598-901 On receipt of the message (MT598-150-NEWM) from the MMI Engine, NNA will perform basic validations.",,,,,,,,,,,,,,,,,1
+"If the format of the message is not as per the ?Interface Specification ? Volume A?, then NNA will generate a rejection message (MT598-901) to the MMI Engine.",,,,,,,,,,,,,,,,,1
+The layout of the MT598-901 is given below: 1.,,,,,,,,,,,,,,,,,1
+Transaction reference (M): This field identifies the transaction reference of the message.,,,,,,,,,,,,,,,,,1
+Sub-message Type (M): This field identifies the sub-message type involved in the proprietary message.,,,,,,,,,,,,,,,,,2
+The valid value is: ? 901 ? NOK Message.,,,,,,,,,,,,,,,,,2
+Proprietary Message (M): This field identifies that this is a proprietary message.,,,,,,,,,,,,,,,,,1

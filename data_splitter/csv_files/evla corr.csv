@@ -1,0 +1,182 @@
+"Currently, telephonic orders are a significant source of business at Gamma-J which is both expensive and labor extensive.",,,,,,,,,,,,,,,,,1
+The organization has to ?gure out a way to have a smooth transition of orders coming in through telephones to the new online ordering system without loosing business to the competitor. 2.,,,,,,,,,,,,,,,,,1
+Gamma-J depends mainly on Fed-Ex for its tracking number and transportation needs to ship the orders.,,,,,,,,,,,,,,,,,1
+GOG Software Requirements Specification,,,,,,,,,,,,,,,,,1
+"This is the Software Requirement Specification for GOG, which describes in detail the objec- tives of the software simulator and the requirements to be considered on its design and con- struction.",,,,,,,,,,,,,,,,,1
+It will use error models to provide rapid simulations of large amount of data.,,,,,,,,,,,,,,,,,1
+The realism of the simulations depends on the realism of the available error models.,,,,,,,,,,,,,,,,,1
+The schema shown in figure 1 depicts from a high level perspective where GOG will produce its data on the overall current data flow for Gaia:,,,,,,,,,,,,,,,,,1
+The implementation of the instrumental error models is planned to be a gradual process that will be based on the study of the detailed pixel-level simulated data produced by GIBIS.,,,,,,,,,,,,,,,,,1
+The simulation of processed data requires models of the calibration errors that will be provided by the CUs in charge of the calibration algorithms development.,,,,,,,,,,,,,,,,,1
+"In order to simulate data at a pre- cise step of the processing, the addition of the calibration errors is planned to be user-selectable.",,,,,,,,,,,,,,,,,1
+The output format of GOG simulated data will be according to the Interface Control Document for the Gaia Main database (GAIA-C3-SP-ESAC-JH-002 in preparation).,,,,,,,,,,,,,,,,,1
+Note that some of the steps and options described here will have to be revised when the actual ICD will be available.,,,,,,,,,,,,,,,,,1
+GOG is expected to be in continuous evolution depending on the availability of the error mod- els.,,,,,,,,,,,,,,,,,1
+"To allow satisfying all the needs to access specific data, GOG will be entirely modular and configurable through an input configuration file.",,,,,,,,,,,,,,,,,1
+"For the source generation, 2 main options will be available:",,,,,,,,,,,,,,,,,1
+"1. Generation of the data from the Universe model of the GaiaSimu library: the user will specify a sky region (e.g. an HTM, square, circle).",,,,,,,,,,,,,,,,,2
+"Note that the relative positions of the sources with each other will not be used by GOG to add overlapping effects, GOG only works source by source.",,,,,,,,,,,,,,,,,1
+Only the density at the source position could be used to adjust the error models (if they are provided as a function of density).,,,,,,,,,,,,,,,,,1
+The user can ask for only one typical epoch data or for all the transits of the source.,,,,,,,,,,,,,,,,,1
+"Two main types of noises will be simulated: 1. Instrumental noise: noise that will come from the observation process, e.g. on-board detection and tracking or observation dead-time. 2. Reduction noise:",,,,,,,,,,,,,,,,,2
+This will depend on the availability of the models.,,,,,,,,,,,,,,,,,1
+Note that GOG aim will not be to produce raw data but pre-processed data,,,,,,,,,,,,,,,,,1
+The following requirements have been capture thinking on a GOG generic operational,,,,,,,,,,,,,,,,,1
+At this stage some spectations for GOG might changed.,,,,,,,,,,,,,,,,,1
+"The main hurdle GOG has, is that the contents of the main database are not fully completed. For this reason the initial versions of Gog will consider the current specifications and will be based on the restrictions described in section 11.",,,,,,,,,,,,,,,,,2
+On this overview we see GOG as a unique software product.,,,,,,,,,,,,,,,,,1
+From the high level perspective it can be decomposed on the SADT diagram as follows:,,,,,,,,,,,,,,,,,1
+"FIGURE 2: GOG general i/o context diagram Exploding the central box, looking one level deeper, we could distinguish the following main blocks of execution.",,,,,,,,,,,,,,,,,1
+The following pictures shows how the problem is depicted. 2.2 Decomposition,,,,,,,,,,,,,,,,,1
+According to TL-001 a ?Software Product? is composed of several ?Modules?.,,,,,,,,,,,,,,,,,1
+In this section we describe how the system is logically decomposed and mention the modules which will appear from Sect. 3 onward and how they interact. GOG as a software product can be decomposed in software modules.,,,,,,,,,,,,,,,,,1
+We have identified the following main conceptual modules,,,,,,,,,,,,,,,,,1
+This is for high level requirements which apply to all modules.,,,,,,,,,,,,,,,,,1
+These requirements may be removed from this document and appear in a higher level requirements document for CU2or at the DPC level.,,,,,,,,,,,,,,,,,1
+"That is, it will use as other the other simulators the Gaia Simu library and the Gaia Tools library.",,,,,,,,,,,,,,,,,1
+For source generation GOG has 2 main options available: Universe Model from GaiaSimu or a Object Input Catalogue GOG has a source by source processing mechanism GOG must consider noise effects.,,,,,,,,,,,,,,,,,2
+For noise generation those effects should be user- selectable (they can be added or not and the values should be given by users).We classify noises in two groups:,,,,,,,,,,,,,,,,,2
+Main Data base format is defined in [AD1],,,,,,,,,,,,,,,,,2
+Options are to use the Universe Model or a provided user sources Parent: DPAC-CU2-S-FUN-380 GOG-CON-T-FUN-040 1.1 MAN Issued,,,,,,,,,,,,,,,,,1
+The selected scanning law ? Dead time. ? Noise models (including detection noise) Parent: DPAC-CU2-S-FUN-380 GOG-CON-T-FUN-080 1.1 MAN Issued,,,,,,,,,,,,,,,,,1
+The epoch parameters module is in charge of all the epoch parameters settings and calculations of the GOG simulation 4.2 Requirements List here all of the requirements on the module including functional.,,,,,,,,,,,,,,,,,1
+This includes non- functional requirements GOG-EPCH-S-FUN-020 1.1 MAN,,,,,,,,,,,,,,,,,1
+Issued Determine for epoch data the astrometric parameter (with instrumental and reduction er- rors): transit times and field angles in each CCD mean transit time and field angle for the transit.,,,,,,,,,,,,,,,,,2
+Gate activation and signal loss due to window cutoff must be taken into account. GOG-EPCH-S-FUN-040 1.1 MAN,,,,,,,,,,,,,,,,,1
+"Determine the epoch data photometry (with instrumental and reduction errors): G mag (for each CCD and average for the transit), GRP, GBP, GRVS .",,,,,,,,,,,,,,,,,1
+Gate activation and signal loss due to window cutoff must be taken into account. GOG-EPCH-S-FUN-060 1.1 MAN,,,,,,,,,,,,,,,,,1
+Determine the epoch radial velocity (with instrumental and reduction errors) GOG-EPCH-S-FUN-080,,,,,,,,,,,,,,,,,2
+Determine the epoch flags 1.1 MAN Issued GOG-EPCH-S-FUN-100 1.1 MAN Issued,,,,,,,,,,,,,,,,,2
+"Determine the epoch physical parameters (Av, Teff, logg, FeH) 4.3 Input / Output",,,,,,,,,,,,,,,,,2
+The input is the source itself that has a particular transit The output is the epoch data bean 5 Combined Parameters module 5.1 Description and Objectives,,,,,,,,,,,,,,,,,1
+The combined parameters module is in charge of all the combined parameters settings and calculations of the GOG simulation 5.2 Requirements GOG-CMB-S-FUN-020 1.1 MAN Issued ?,,,,,,,,,,,,,,,,,1
+Compute the astrometric combined data using all previous transits: ? Compute parallax and proper motion errors ?,,,,,,,,,,,,,,,,,1
+Determine de covariance matrix ? Determine estimated errors for the astrometric parameters at the mean epoch GOG-CMB-S-FUN-040 1.1 MAN,,,,,,,,,,,,,,,,,2
+"Determine the combined data photometry: mean G, GRP, GBP, GRVS GOG-CMB-S-FUN-060 Determine the mean radial velocity 1.1 MAN Issued GOG-CMB-S-FUN-080 1.1 MAN",,,,,,,,,,,,,,,,,2
+"Determine the final flags (variability, non-single star.) GOG-CMB-S-FUN-100 1.1 MAN Issued",,,,,,,,,,,,,,,,,2
+"Determine the mean physical parameters (classification, Av, Teff , logg, FeH) 5.3 Input / Output",,,,,,,,,,,,,,,,,2
+The output is the combined data bean 6 Spectrum Simulation Module 6.1 Description and Objectives The spectrum module is in charge of all the spectrum settings and calculations of the GOG simulation.,,,,,,,,,,,,,,,,,1
+The input is the source itself.,,,,,,,,,,,,,,,,,1
+The output is the epoch and or combined data bean 7 Output Module 7.1 Description and Objectives,,,,,,,,,,,,,,,,,1
+The output module comunicates GOG flow execution with the filesystem.,,,,,,,,,,,,,,,,,1
+When the flow re- quest a file it obtains it from the system and also it writes the files requested as GOG outputs 7.2 Requirements GOG-IO-T-FUN-020 1.1 MAN Issued,,,,,,,,,,,,,,,,,1
+The universe catalog output data of the simulation has to follow the universe model ICD document.,,,,,,,,,,,,,,,,,1
+Note: GaiaSimu library will allow to write and read this format. GOG-IO-T-FUN-040 1.1 MAN Issued GOG output should be driven by the MDB data model.,,,,,,,,,,,,,,,,,1
+"The output will be used to distribute extracts to the DPC?s Parent: DPAC-CU2-S-FUN-340,DPAC-CU2-S-FUN-360 7.3 Input / Output",,,,,,,,,,,,,,,,,1
+The output data of the simulation has to follow the universe model ICD document.,,,,,,,,,,,,,,,,,1
+UK Fishing Vessel?s Electronic Logbook Functional This document contains the Functional Requirements Specification for UK Fishing vessel?s Electronic Logbook.,,,,,,,,,,,,,,,,,1
+This document is split into the following sections: ? UK Fishing Vessels Electronic Logbook Functional Requirements Specification ?,,,,,,,,,,,,,,,,,1
+The Functional Requirements Specification for a UK fishing vessel?s Electronic Logbook. ? Product Identification ?,,,,,,,,,,,,,,,,,1
+This section captures the version details of the ELSS product being submitted for approval. ? Product Profile ?,,,,,,,,,,,,,,,,,1
+"The product profile is a questionnaire which must be completed by an ELSS supplier to list the mandatory, optional and conditional features supported in their product. ? Product Feature Description ?",,,,,,,,,,,,,,,,,1
+This section allows a ELSS product supplier to provide a commercial description of their ELSS Approved product which will appear on the Approved Product Register,,,,,,,,,,,,,,,,,1
+? Self Declaration Form ?,,,,,,,,,,,,,,,,,1
+A Self-Declaration from the product supplier that they have implemented their product in accordance to the information contained within this document. 1.2,,,,,,,,,,,,,,,,,1
+onboard electronic logbook software systems in order to fulfil the regulatory requirements to report to the UK fisheries administrations.,,,,,,,,,,,,,,,,,1
+All electronic reports from UK fishing vessels are required to be transmitted to the Electronic Recording and Reporting System (ERS) of the UK fisheries administrations as appropriate in order to comply with the applicable fishing regulations.,,,,,,,,,,,,,,,,,11
+The ELSS must capture all data necessary for recording the fishing activities undertaken by a UK fishing vessel.,,,,,,,,,,,,,,,,,2
+The ELSS must output the data as an XML file for transmission to the UK fisheries administrations?,,,,,,,,,,,,,,,,,2
+The ELSS data must be validated against the UK XML/XSD before transmission from the fishing vessel.,,,,,,,,,,,,,,,,,2
+The ELSS data must be transmitted at the required times set out below in Section 2.5.1.,,,,,,,,,,,,,,,,,2
+These Operation Types are: ? Data operation to capture and deliver formatted ELSS data for transmission by a vessel?s communications system(s) to the UK fisheries administrations?,,,,,,,,,,,,,,,,,1
+ERS system (DAT) ? Delete operation to capture and deliver a formatted deletion request for transmission by a vessel?s communications system(s) to the UK fisheries administrations?,,,,,,,,,,,,,,,,,2
+ERS system to delete previously send data (DEL) ? Correction operation to capture and deliver a formatted correction request for transmission by a vessel?s communications system(s) to the UK fisheries administrations?,,,,,,,,,,,,,,,,,2
+ERS system to correct previously send data (COR) ?,,,,,,,,,,,,,,,,,2
+The data definitions for each report type that are required to be transmitted from the ELSS of a UK fishing vessel are to be found in the annex to this specification.,,,,,,,,,,,,,,,,,1
+The data definitions and associated lists of valid codes are incorporated in the UK XML/XSD definitions.,,,,,,,,,,,,,,,,,1
+These are available to all ELSS suppliers from the UK FMC.,,,,,,,,,,,,,,,,,1
+"The data definitions also provide for the capture of data items required for the submission of ELSS data to meet 3?? country requirements, e.g. Norway?s requirements that include haul by haul reporting.",,,,,,,,,,,,,,,,,1
+The ELSS may also provide the means for recording additional data but this must not interfere with the data capture and submission functions as set out below. 2.4 Capture Functions,,,,,,,,,,,,,,,,,2
+"The ELSS must provide data capture screens for the entry of the logbook, transhipment and landing declaration data that is required to be transmitted to the UK fisheries administrations?",,,,,,,,,,,,,,,,,2
+The ELSS must use English (UK) localizations for all UK Electronic Logbook features.,,,,,,,,,,,,,,,,,2
+All dates and times must be UTC.,,,,,,,,,,,,,,,,,1
+The ELSS must provide the ability to print out the ELSS logbook data (including landing declarations) using an onboard printer.,,,,,,,,,,,,,,,,,2
+"Additionally a formatted electronic print file may be generated out of the ELSS. This print file can be made available to a master?s representative on-shore, e.g. by email over the onboard communications system(s).",,,,,,,,,,,,,,,,,1
+The ELSS must provide a means so that electronic print files are protected so that they cannot be modified in any way once generated and distributed.,,,,,,,,,,,,,,,,,2
+The ELSS must provide Electronic Logbook data for transmission to the UK fisheries administrations?,,,,,,,,,,,,,,,,,2
+ERS system in accordance with the frequency requirements defined below (Section 5.1).,,,,,,,,,,,,,,,,,1
+The subject header must consist of a character string containing ?ERS ? ? prefixed to the contents of the GBRRN attribute of the Electronic Logbook data being transmitted.,,,,,,,,,,,,,,,,,1
+The GBRRN attribute is defined in the UK XML/XSD.,,,,,,,,,,,,,,,,,2
+"The GBRRN attribute is defined uniquely as the vessels? RSS Number appended to the current date (in YYYYMMDD format) and a 6 digit sequence number, e.g. RSSNumber+YYYYMMDD+999999.",,,,,,,,,,,,,,,,,2
+An example of the contents of an email subject could be ERS ?,,,,,,,,,,,,,,,,,1
+The RSS Number will require to be padded with trailing X?s to ensure that it is always 6 characters in length.,,,,,,,,,,,,,,,,,1
+"Each file should have the suffix of .xml, e.g. A1234520090623000001.xml.",,,,,,,,,,,,,,,,,1
+All xml documents attached to emails to the UK fisheries administrations?,,,,,,,,,,,,,,,,,1
+ERS system must be encrypted using PGP.,,,,,,,,,,,,,,,,,1
+"It is recognised that communications methods, other than email, are available for data transmission.",,,,,,,,,,,,,,,,,1
+The ELSS must permit the Master of the vessel to generate formatted data for transmission to the UK fisheries administrations?,,,,,,,,,,,,,,,,,1
+"There are 2 categories of transmission, those that must be generated automatically by the ELSS and those that can be generated and transmitted under the control of the Master of the vessel.",,,,,,,,,,,,,,,,,1
+The data transmission categories are specified below: ? Automatically by the ELSS (subject to be overridden by the vessel master),,,,,,,,,,,,,,,,,1
+All corrections must be easily identifiable within the ELSS user interface.,,,,,,,,,,,,,,,,,1
+The ELSS must be able to receive acknowledgement (RET) messages transmitted from the UK fisheries administrations? ERS system.,,,,,,,,,,,,,,,,,2
+"The ELSS must match each acknowledgement message with the appropriate transmitted data operation, deletion or correction report.",,,,,,,,,,,,,,,,,2
+The ELSS must be able to confirm that a transmission has been successfully acknowledged or display any error message should the ELSS receive a negative acknowledgement message. 2.5.5 Test Transmissions,,,,,,,,,,,,,,,,,2
+"Prior to registering a product for approval, a test address for all test email transmissions and test logon details to the UK fisheries administrations?",,,,,,,,,,,,,,,,,1
+ERS system will be provided on request.,,,,,,,,,,,,,,,,,1
+All requests should be made by contacting the Validation Authority by email in the first instance.,,,,,,,,,,,,,,,,,1
+The email address is ERS-Logbook-Approvals@NCCGroup.com.,,,,,,,,,,,,,,,,,1
+Once operational the UK XML/XSD allows for a test message to be sent to the UK fisheries administrations?,,,,,,,,,,,,,,,,,1
+This test facility must be used to send test transmissions to establish that the communications between the vessel and the UK fisheries administrations?,,,,,,,,,,,,,,,,,1
+ERS system are fully operational.,,,,,,,,,,,,,,,,,1
+The UK fisheries administrations?,,,,,,,,,,,,,,,,,1
+ERS system will acknowledge any test messages but will not store any data that has been transmitted. 2.6 Specific High Level Requirements,,,,,,,,,,,,,,,,,1
+Any ELSS software updates must not impact upon the ELSS?s ability to meet the requirements set out in this document and other test documentation .,,,,,,,,,,,,,,,,,1
+This statement will be referred to as the ELSS Product Profile.,,,,,,,,,,,,,,,,,2
+This section defines the ELSS Product Profile for the UK Fishing Vessel?s Electronic Logbook Functional Requirements Specification for the ELSS Approval Programme.,,,,,,,,,,,,,,,,,2
+This section is in the form of a questionnaire to be completed by a supplier for their ELSS product.,,,,,,,,,,,,,,,,,2
+An item is provided for each optional capability and for each major compulsory capability.,,,,,,,,,,,,,,,,,1
+"Each item includes an item number, an item description, a status value specifying the support requirement, and room for a support answer to be provided by the supplier.",,,,,,,,,,,,,,,,,1
+The next section lists the capabilities of the product based on the UK Fishing Boats Electronic Logbook Software Specification.,,,,,,,,,,,,,,,,,1
+This section contains the definitions and conventions used in the tables. ?,,,,,,,,,,,,,,,,,1
+Item: Conformance Requirement item reference definition. ? Ref,,,,,,,,,,,,,,,,,1
+Status: Each question specifies the status value applicable to the capability: Status,,,,,,,,,,,,,,,,,1
+"Compulsory Compulsory if Optional Description Compulsory if required by the Community rules, international or bilateral agreements",,,,,,,,,,,,,,,,,1
+When CIF does not apply then attribute is optional optional support,,,,,,,,,,,,,,,,,1
+"? Support: For each question in the ELSS Product Profile proforma, a support answer should be in the form: Support Symbols: Yes",,,,,,,,,,,,,,,,,1
+No not supported N/A no answer required ? Notes:,,,,,,,,,,,,,,,,,1
+This section allows the submitter of the ELSS Product Profile,,,,,,,,,,,,,,,,,1
+This section describes the UK Fisheries Operation Messages for ELSS Approval Programme.,,,,,,,,,,,,,,,,,1
+No - 02n 03n 04n 04a 05n 06n 07a 07b Feature - Element or attribute name Operations element Country of destination Sending Country Operation,,,,,,,,,,,,,,,,,1
+This is the top level envelope of all operations sent to the WebService function setERS,,,,,,,,,,,,,,,,,1
+The country of destination for this OPS message. Must conform to the ISO alpha-3 country code.,,,,,,,,,,,,,,,,,2
+The country sending this OPS message.,,,,,,,,,,,,,,,,,2
+Must conform to the ISO alpha-3 country code.,,,,,,,,,,,,,,,,,1
+The Record Number of this ERS message.,,,,,,,,,,,,,,,,,2
+The date of sending for this OPS message.,,,,,,,,,,,,,,,,,2
+"Fixed format defined by the pattern: ""YYYY-MM-DD"" (YYYY = Year, MM = Month, DD = Date. Values must conform to UTC standards.)",,,,,,,,,,,,,,,,,1
+The time of sending for this OPS message.,,,,,,,,,,,,,,,,,1
+"Fixed format defined by the pattern: ""HH:MM"" (HH = Hours, MM = Minutes.",,,,,,,,,,,,,,,,,1
+Values must conform to UTC standards.) Version number of the software that transmits the LOG message Reference or serial number of the software that transmits the LOG message,,,,,,,,,,,,,,,,,1
+The message acknowledges the good or bad reception of the message identified by ON,,,,,,,,,,,,,,,,,1
+The Record Number of the ERS message being referred to.,,,,,,,,,,,,,,,,,1
+"Fixed format defined by the pattern: ""AAAYYYYMMDD999999"" (AAA = Alphanumeric String, YYYY = Year, MM = Month, DD = Date, 999999 = Zero-Padded Numeric.)",,,,,,,,,,,,,,,,,1
+The GB Record Number of the ERS message being referred to.,,,,,,,,,,,,,,,,,1
+"Fixed format defined by the pattern: ""RSSNoYYYYMMDD999999"" (RSSNo = RSS Number, YYYY = Year, MM = Month, DD = Date, 999999 = Zero-Padded Numeric.)",,,,,,,,,,,,,,,,,1
+"Example GBRRN: ""A1234520090623000001"" Return status of the message.",,,,,,,,,,,,,,,,,1
+Status code list to be found at the EC ERS web site.,,,,,,,,,,,,,,,,,1
+(http://ec.europa.eu/fisheries/cfp/control_enforce ment/ers_en.htm) Reason for this operation.,,,,,,,,,,,,,,,,,1
+(Free text field.) 4.4 Electronic Logbook Software Specification Supported Features,,,,,,,,,,,,,,,,,1
+This section of the ELSS Product Profile proforma is a questionnaire in tabular form.,,,,,,,,,,,,,,,,,1
+In each item of these tables there is a status value which shall reflect the static conformance requirements of the UK Fishing Vessel?s Electronic Logbook Functional Requirements Specification.,,,,,,,,,,,,,,,,,1
+A supplier must indicate the elements supported by their product in the columns marked in grey. 4.4.1 Electronic Logbook Data Definition,,,,,,,,,,,,,,,,,1
+This section describes the Data Definition for a UK fishing vessels?,,,,,,,,,,,,,,,,,1
+The unique logbook reference number for this specific voyage.,,,,,,,,,,,,,,,,,1
+"Fixed format defined by the pattern: ""RSSNoYYYY0000"" (RSSNo = RSS Number, YYYY = Year, 0000 = Zero-Padded Numeric.)",,,,,,,,,,,,,,,,,1
+A1234520100001.The first voyage of a calendar year will have '0001' as the last four digits of the GBRLOGNO.,,,,,,,,,,,,,,,,,1
+All logbook messages submitted for the same voyage will retain the same four digits.,,,,,,,,,,,,,,,,,1
+"The second voyage of the calendar year will then use '0002' for the final four digits, the third voyage will use '0003' and so on.",,,,,,,,,,,,,,,,,1
+This sequence will always reset at the beginning of each new calendar year.,,,,,,,,,,,,,,,,,1
+The unique voyage-specific sequence number for this logbook message.,,,,,,,,,,,,,,,,,1
+"The first message of a given voyage should use the value '0001', the second message of the same voyage should use the value '0002' and so on.",,,,,,,,,,,,,,,,,1
+The sequence resets for each new voyage undertaken.,,,,,,,,,,,,,,,,,1
+The vessel's Community Fleet Registration number.,,,,,,,,,,,,,,,,,1
+"Fixed format defined by the pattern: ""AAAAAA"" ( AAAAAA = six character alphanumeric code.) International radio call sign Side (hull) registration number of the vessel Name of the vessel",,,,,,,,,,,,,,,,,1
+The name of the vessel's master.,,,,,,,,,,,,,,,,,1
+Any change of vessel master during a voyage must be notified in the next LOG message.,,,,,,,,,,,,,,,,,1
+The address of the vessel's master.,,,,,,,,,,,,,,,,,1
+Any change during a voyage must be notified in the next LOG message.,,,,,,,,,,,,,,,,,1
+The flag state of the vessel's registration. Must conform to the ISO alpha-3 country code. Free form comments ? a maximum of 500 characters Tag Indicating the start of the departure from port declaration,,,,,,,,,,,,,,,,,2
+The departure date of the vessel.,,,,,,,,,,,,,,,,,1
+"Fixed format defined by the pattern: ""YYYY- MM-DD"" (YYYY = Year, MM = Month, DD = Date.",,,,,,,,,,,,,,,,,1
+Values must conform to UTC standards.) The departure time of the vessel.,,,,,,,,,,,,,,,,,1
+"Fixed format defined by the pattern: ""HH:MM"" (HH = Hours, MM = Minutes.",,,,,,,,,,,,,,,,,1

@@ -1,0 +1,207 @@
+"You can type in values by hand, or just use the slider.",,,,,,,,,,,,,,,,,2
+"Then, you define the type of the partition (Primary, Logical, Extended) and select the desired file system to format the partition.",,,,,,,,,,,,,,,,,2
+The list is displayed in the last screenshot.,,,,,,,,,,,,,,,,,2
+You can also leave the partition unformatted if you wish to and format it later.,,,,,,,,,,,,,,,,,1
+"If you wish to label the partition, GParted lets you do so in this dialog.",,,,,,,,,,,,,,,,,1
+Press Add and then Apply to create the partition.,,,,,,,,,,,,,,,,,1
+In this screenshot we have selected this part of the disk as the partition we will create.,,,,,,,,,,,,,,,,,1
+It is shrunk and sits on the start of the disk.,,,,,,,,,,,,,,,,,1
+"In the same way, it can be larger or smaller, and sit in the end, or anywhere else on the disk. 3.11",,,,,,,,,,,,,,,,,1
+Delete a Partition Select the partition you want to delete.,,,,,,,,,,,,,,,,,2
+Then click on Resize/Move from the main functions bar or go to Partition?>Resize/Move.,,,,,,,,,,,,,,,,,1
+"A dialog window appears, with the same slider as in the create partition window.",,,,,,,,,,,,,,,,,1
+You use it in the same way or type in the numbers in Megabytes directly.,,,,,,,,,,,,,,,,,1
+"In this screenshot, it appears that the partition spans the whole drive; we want to shrink it and free up the disk space after it, which will then become unallocated space.",,,,,,,,,,,,,,,,,1
+Press Resize/Move and then Apply. 3.13 Copy Partition Select the partition you would like to copy.,,,,,,,,,,,,,,,,,1
+"This is partition cloning, useful if, for example, you migrate to a larger hard drive and wish to keep your data and operating system (without reformatting). Click on Copy from the main functions bar or go to Partition?>Copy.",,,,,,,,,,,,,,,,,2
+A dialog window opens.,,,,,,,,,,,,,,,,,1
+"As with Resize/Move, there is a slider.",,,,,,,,,,,,,,,,,1
+"You can leave it at the default setting, which the exact same size of the partition being copied, or you can only slide it up for the pasted partition to take up more (free) space than the copied one.",,,,,,,,,,,,,,,,,2
+"You can also move around the pasted partition, it doesn?t have to be at the start of the unallocated space.",,,,,,,,,,,,,,,,,2
+"Here you see the slider which defaults at the size of the partition to copy, but you can change that if you want.",,,,,,,,,,,,,,,,,2
+IMPORTANT: You can paste over an existing partition (whether it?s formatted or unformatted).,,,,,,,,,,,,,,,,,2
+A warning is shown that you will lose all of that partition?s data.,,,,,,,,,,,,,,,,,1
+So paste with caution.,,,,,,,,,,,,,,,,,1
+After you have created a partition (regardless of formatting it or not) you can format it to the file system you like.,,,,,,,,,,,,,,,,,1
+"First, select the partition you want to format.",,,,,,,,,,,,,,,,,2
+"Then, click on Partition?>Format to.",,,,,,,,,,,,,,,,,2
+A list of the supported file systems appears.,,,,,,,,,,,,,,,,,1
+Click on the desired one and then click on Apply. 3.16 Unmount Partition,,,,,,,,,,,,,,,,,1
+"If you have mounted a partition to a specific mount point, you can unmount it by clicking on Partition?>Unmount.",,,,,,,,,,,,,,,,,1
+"Selecting a partition and then clicking on Partition?>Manage Flags, brings up a dialog window with flags and checkboxes. These are functions supported by the partition, like if the partition is bootable, if it is hidden etc.",,,,,,,,,,,,,,,,,2
+"Selecting a partition and then clicking on Partition?>Check, sends in pending mode the check and repair partition errors operation.",,,,,,,,,,,,,,,,,2
+"Click on Apply to have the partition?s file system analyzed, checked for errors and repaired if errors are found. 3.19 Label Partition",,,,,,,,,,,,,,,,,1
+"Selecting a partition and then clicking on Partition?>Label, opens a dialog window asking to name your partition.",,,,,,,,,,,,,,,,,2
+"You could also do that when creating the partition, but if you missed it or didn?t want to do it then, you can label your partition from this option.",,,,,,,,,,,,,,,,,1
+"You cannot label every partition, because some file systems don?t support labeling. 3.20",,,,,,,,,,,,,,,,,1
+"Take a Screenshot of the Desktop or an Active Window Clicking on Screenshot on the desktop, opens a dialog window which informs you that after clicking Yes, a cross?pointer appears and you select the window you want to print?screen.",,,,,,,,,,,,,,,,,2
+"When the cross?hair appears, you can click on any active window to take its screenshot, or click somewhere in the desktop?s wallpaper for a general desktop screenshot.",,,,,,,,,,,,,,,,,1
+"A preview of the screenshot is displayed, and a pop?up message informs you that your screenshot has been saved as gparted.jpeg under /root.",,,,,,,,,,,,,,,,,1
+"For saving screenshots to a device, please refer to 3.21. 3.21 Terminal & Mount Partitions and Save Screenshots to a Device",,,,,,,,,,,,,,,,,1
+"Apart from the main GParted window, you can also launch a command line utility by clicking on Terminal.",,,,,,,,,,,,,,,,,1
+"This is useful for more advanced operations, or if some operations cannot be performed in the main GParted window.",,,,,,,,,,,,,,,,,1
+The supported shell is bash.,,,,,,,,,,,,,,,,,1
+"For example, you can mount a partition to a mount point in the system.",,,,,,,,,,,,,,,,,1
+This can be done only through Terminal.,,,,,,,,,,,,,,,,,1
+It is also used for copying your saved screenshots from the system?s virtual drive to a hard disk or USB flash drive.,,,,,,,,,,,,,,,,,1
+The first option opens Terminal and presents you with a list of packages and libraries installed in GParted.,,,,,,,,,,,,,,,,,1
+"The second option opens resize?windows.txt in Terminal, which shows you some things you should be careful of when resizing Windows XP and Windows Vista partitions.",,,,,,,,,,,,,,,,,1
+You quit by pressing q. 3.23 Screen Resolution Changer Clicking on Screen resolution brings up a window with monitor resolution options.,,,,,,,,,,,,,,,,,1
+Here you can select the resolution that best fits your monitor.,,,,,,,,,,,,,,,,,1
+"This is the first screen of the program that the user sees, and the part where most of the operations take place.",,,,,,,,,,,,,,,,,1
+"On the top, there is the menu bar with each option (GParted, Edit, View, Device, Partition) corresponding to a set of actions you can perform on a disk.",,,,,,,,,,,,,,,,,1
+"Under that, is a bar which contains the most common functions of the program.",,,,,,,,,,,,,,,,,1
+Then the selected drive?s partitions are presented in both graphical and detailed mode. ? Cancel and Apply,,,,,,,,,,,,,,,,,1
+"Every time you try to edit in any way, any partition, a confirmation dialog appears which warns about the potential of data loss.",,,,,,,,,,,,,,,,,1
+"You can either click Cancel or Apply. ? Pasting into an existing partition You can copy a partition, and then paste it on another existing one, whether it is formatted or not.",,,,,,,,,,,,,,,,,1
+This of course leads to loss of data.,,,,,,,,,,,,,,,,,1
+"If that?s fine, click OK on the warning window that is being displayed. ? Quitting GParted You can exit GParted at any time you wish, by clicking on Exit on the upper left corner of the desktop. You can select Reboot, Shutdown, or Logout.",,,,,,,,,,,,,,,,,2
+"For the GParted Live to run, you will need a PC (regardless of its operating system, it can be Windows or Linux) or Mac, with or without an operating system.",,,,,,,,,,,,,,,,,1
+"Since it is not a resource hungry program, it will run on most systems without a problem.",,,,,,,,,,,,,,,,,1
+"A CD/DVD drive is necessary for the application to boot, or at least one USB port if you plan to use the USB version of GParted Live.",,,,,,,,,,,,,,,,,2
+"However, GParted depends on some libraries and tools for its function.",,,,,,,,,,,,,,,,,1
+These packages are already pre?included in the .iso image file you downloaded from GParted?s website.,,,,,,,,,,,,,,,,,1
+Please refer to 2.7 for more details on that matter.,,,,,,,,,,,,,,,,,1
+"Before booting with GParted Live, you have to download the image file and then burn it to a cd.",,,,,,,,,,,,,,,,,1
+"Although network or Internet communication is not obvious, it is available.",,,,,,,,,,,,,,,,,1
+You can configure your network adapter to work with GParted by typing in the Terminal: dhclient eth0.,,,,,,,,,,,,,,,,,2
+You can also use the ifconfig and route commands.,,,,,,,,,,,,,,,,,2
+Please remember to edit /etc/resolve.conf accordingly.,,,,,,,,,,,,,,,,,1
+This enables you to update and add new packages to GParted.,,,,,,,,,,,,,,,,,2
+Its functions and features are not computationally intensive.,,,,,,,,,,,,,,,,,2
+"It does not require a powerful processor or graphics card, much RAM, or disk space, for both the install and Live version, and the program loads and runs fairly quick.",,,,,,,,,,,,,,,,,2
+"It is obvious that when you deal with partition changes, you could lose all your data by human or application error.",,,,,,,,,,,,,,,,,1
+GParted comes with absolute no warranty and cannot be made responsible for any loss of data.,,,,,,,,,,,,,,,,,1
+" 5.3 Security Requirements GParted Live does not deal with any security or privacy issues, as it does not run from within an operating system.",,,,,,,,,,,,,,,,,1
+"Every user has administrator rights and full access which are given from the start of the program, as you are logged in as root.",,,,,,,,,,,,,,,,,2
+ 5.4 Software Quality Attributes The application provides a quite friendly user interface with its operations accessible from the menu bar and the main toolbar.,,,,,,,,,,,,,,,,,1
+Software Requirements Specification For Get Real Website The software described in this document is the httQ:[[getreal.ous.edu website and associated support pages.,,,,,,,,,,,,,,,,,1
+Revl of the website was created on or about summer of 2006.,,,,,,,,,,,,,,,,,1
+"This document describes requirements for Rev2, summer of 2007.",,,,,,,,,,,,,,,,,1
+There may be a need for future updates of the website.,,,,,,,,,,,,,,,,,1
+The remaining sections of this SRS describe the functional requirements for Get Real site. 1.4 Project Scope,,,,,,,,,,,,,,,,,1
+"CS course and other information from OUS campuses o Timely and up to date information that encourages readers to return to the site, may include Q & A .",,,,,,,,,,,,,,,,,1
+"Call to action, and plans for students to follow to prepare for a CS career Related sites visited by students to gain career information include: Google, Yahoo, news.myspace.com, engineergirl.org, etc.",,,,,,,,,,,,,,,,,1
+Be cautious of others modifying pages on the site.,,,,,,,,,,,,,,,,,1
+Always use Dreamweaver check in/out feature.,,,,,,,,,,,,,,,,,1
+Adhere to CSS and other style conventions established in Get Real version 1.,,,,,,,,,,,,,,,,,1
+"These may include user interface style guides, contracts, standards, system requirements speci?cations, use case documents, or a vision and scope document.",,,,,,,,,,,,,,,,,1
+"Provide enough information so that the reader could access a copy of each reference, including title, author, version number, date, and source or ocation.",,,,,,,,,,,,,,,,,1
+"Consider a CS minor"" section could provide helpful in ormation. Oregon High school students from several schools and classes were interviewed to gain their feedback on version 1 of the Get Real site.",,,,,,,,,,,,,,,,,1
+"Common thelmes elmerged in the need to change/update overall site graphic design and rea peop e. Students who are not generally interested in CS, suggested graphic design changes, more white space, pictures, and easier to navigate pages.",,,,,,,,,,,,,,,,,2
+This group was much less tolerant of the site than the CS folks had been.,,,,,,,,,,,,,,,,,1
+"They wanted a site that ?spoke to them"" and felt that if you were not a computer science student, it had very little to offer.",,,,,,,,,,,,,,,,,1
+The suggestion was very strong that the site be broken into more readable chunks of information.,,,,,,,,,,,,,,,,,1
+"The term ?walls of text"" appeared several times.",,,,,,,,,,,,,,,,,1
+The need for more visually attractive information also was a central theme.,,,,,,,,,,,,,,,,,1
+"They wanted color, photos, diagrams, charts, etc.",,,,,,,,,,,,,,,,,1
+to break up the text and make the site attractive.,,,,,,,,,,,,,,,,,1
+"Many of them commented positively on the spinning globe and satellite menu. Students who are interested in CS and engineering suggested changes in the Real People, Resources, and Colleges sections.",,,,,,,,,,,,,,,,,2
+"Most of them spent their time in the college comparison chart, and in the real people part of the site.",,,,,,,,,,,,,,,,,2
+Several commented positively on the sections in each person?s story.,,,,,,,,,,,,,,,,,1
+"One example used on the engineergirl.org site uses an interactive table menu for more detailed information, leaving the main pages short and to the point.",,,,,,,,,,,,,,,,,1
+"User classes may be differentiated based on frequency of use, subset of product functions used, technical expertise, security or privilege levels, educational level, or experience.",,,,,,,,,,,,,,,,,1
+Describe the pertinent characteristics of each user class.,,,,,,,,,,,,,,,,,1
+Certain requirements may pertain only to certain user classes. Distinguish the favored user classes from those who are less important to satisfy.,,,,,,,,,,,,,,,,,1
+> 2.4 Operating Environment The Get Real site runs as an extension of the OUS site e.g. ~getrea|.ous.edu~ Being part of the OUS domain will maximize Google and other search engine hits.,,,,,,,,,,,,,,,,,1
+The site runs on OSU servers. 2.5 Design and Implementation Constraints Constraints for the website include:,,,,,,,,,,,,,,,,,1
+Space Bandwidth for video streaming Limited availability of Chancellor?s Office resources 2.6 User Documentation,,,,,,,,,,,,,,,,,2
+There are no user documents. 2.7 Assumptions and Dependencies There are no development assumptions or dependencies. 3.,,,,,,,,,,,,,,,,,1
+Get Real Pages & Sections,,,,,,,,,,,,,,,,,1
+This section provides more detailed information about each web page. 3.1 Exploring College (existing),,,,,,,,,,,,,,,,,1
+A people section outlining recent CS graduates and more experienced professionals in CS and related careers.,,,,,,,,,,,,,,,,,2
+"A key point is to show real people using their CS knowledge in diverse fields, and not cooped up in a cubicle. Students are interested in two groups of professionals, recent grads, and experienced professionals.",,,,,,,,,,,,,,,,,2
+"A list of focused questions and answers with links inside the Get Real site. topics include: money, people, and colleges. Page 6 0f10 So?ware Requirements Specification for Get Real Website Page 7 3.7 Articles (existing)",,,,,,,,,,,,,,,,,2
+"A list of articles outside the Get Real site including ?50 best jobs in America, Dream Jobs 2007, etc. 3.8 High School Courses (new)",,,,,,,,,,,,,,,,,2
+The intent of this section is to show recommended curricula for high school students interested in CS and related careers.,,,,,,,,,,,,,,,,,1
+This page should provide pointers to curricula recommendations from OUS campuses and other university sources.,,,,,,,,,,,,,,,,,1
+"The ACM has recommended curricula for HS CS students. >UO is working on this area, no other campus has recommended HS courses 3.9 Search for additional information (new)",,,,,,,,,,,,,,,,,1
+"At least two kinds of searches are needed, 1) internal search of the Get Real site, and 2) external search of CS related outside sites such as OUS campuses, articles on CS etc.",,,,,,,,,,,,,,,,,1
+"Google, for example provides tools for internal and external searches.",,,,,,,,,,,,,,,,,1
+The Get Real prototype index page ~getrea|.ous.edu/protoindex.htm| has examples of various search engines. 3.10 Professional Organizations (new),,,,,,,,,,,,,,,,,2
+This feature requires X hours per week of web design resource for editing the URLs to the DSS feed. 3.12 Ask a Grad or Prof ? FAQ (new) Get fast feedback from the Oregon University System on questions asked in a Q and A format.,,,,,,,,,,,,,,,,,2
+Answers are posted in an FAQ section for all to read.,,,,,,,,,,,,,,,,,1
+"A Grad or Prof BLOG on CS careers would also work here. 3.13 Consider a CS Minor (new) Information for students in medicine, law, business, and other professions to provide students visibility of the high value of having a CS minor.",,,,,,,,,,,,,,,,,2
+There are no special communication interface requirements 5.,,,,,,,,,,,,,,,,,2
+Other Nonfunctional Requirements 5.1 Performance Requirements The Get Real site should be hosted on a server that can provide adequate response time.,,,,,,,,,,,,,,,,,1
+"High school students tend to have short attentions spans, so a slow server would not be satisfactory for this application.",,,,,,,,,,,,,,,,,1
+The current OUS (www.ous.edu) site is a good example of rapid response time. 5.2 Security Requirements gopsyright and other security measures for Get Real should be the same as the U site. 5.3,,,,,,,,,,,,,,,,,1
+"There is a need to track and evaluate the ?hits? and time spent on the student-focused website over time; and make content, design, and navigation changes as needed based on evaluation of hits.",,,,,,,,,,,,,,,,,1
+"Some to consider are: adaptability, availability, correctness, ?exibility, interoperability, maintainability, portability, reliability, reusability, robustness, testability, and usability.",,,,,,,,,,,,,,,,,2
+ 5.3 Software Quality Attributes Web design conventions should be consistent with the standards and conventions used on the OUS site. ,,,,,,,,,,,,,,,,,1
+"Write these to be speci?c, quantitative, and veri?able when possible.",,,,,,,,,,,,,,,,,1
+"At the least, clarify the relative preferences for various attributes, such as ease of use over ease of learning.",,,,,,,,,,,,,,,,,1
+Get Real Version 3 Suggestions 6.1 Knowledge base Appendix A: Glossary Appendix B: Analysis Models <,,,,,,,,,,,,,,,,,1
+"Optional/y, include any pertinent analysis models, such as data ?ow diagrams, class diagrams, state-transition diagrams, or entity-re/ationship diagrams.",,,,,,,,,,,,,,,,,1
+De?nition of a GSMT standard for acquisition and storage of detector data.,,,,,,,,,,,,,,,,,1
+See ?Software Interfaces? on page 4?10. The document de?nes the operational requirements for Gemini Control System software.,,,,,,,,,,,,,,,,,1
+The goal of the SRS is to provide a functional tool for guiding the development of controls and data acquisition systems in a manner consistent With their operation Within the Gemini System.,,,,,,,,,,,,,,,,,1
+It establishes both general criteria and speci?c functional requirements for soft? ware and controls design in the Gemini Project.,,,,,,,,,,,,,,,,,1
+It is oriented toward the developers of control and data acquisition systems.,,,,,,,,,,,,,,,,,1
+Which addresses the control of the Gemini system from a more general perspective.,,,,,,,,,,,,,,,,,1
+The impacts of the science requirements.,,,,,,,,,,,,,,,,,1
+This document is based on information found in the following documents: 1 ? 1 Gemini Software Software Requirements Specification ??,,,,,,,,,,,,,,,,,1
+A method of allocation resources that works using both access method and access privileges.,,,,,,,,,,,,,,,,,1
+"For example, the Telescope Operator may be able to issue direct commands to the TCS, even while the TCS is under the control of a planned observing program.",,,,,,,,,,,,,,,,,1
+An on?site observer might have privileges that allow the monitoring of systems that are allocated to others.,,,,,,,,,,,,,,,,,1
+Any compression algorithm that results in the loss of original data (resolu? tion) after uncompression.,,,,,,,,,,,,,,,,,1
+"Typical compression savings from these algo? rithms depend upon the amount of data loss that is acceptable, but can exceed 99%.",,,,,,,,,,,,,,,,,1
+A software protocol where subsystems acknowledge acceptance of a com? mand.,,,,,,,,,,,,,,,,,1
+"Unlike ACK/NAK, handshaking acknowledges acceptance of the message contents. High?level Operations Software Instrument Control Software Input/Output Control",,,,,,,,,,,,,,,,,1
+Module Interprocess Communication Local Area Network,,,,,,,,,,,,,,,,,1
+Any compression algorithm that results in no data loss on uncompression. Typical compression savings with loss?less compression are 25?75%.,,,,,,,,,,,,,,,,,1
+Also see data?loss compression. Network File System,,,,,,,,,,,,,,,,,1
+The ?styles? of observing suppotted by the Gemini Control System Observatory Control Software,,,,,,,,,,,,,,,,,1
+A software?environment for developing observing software Relational DBMS Read?Only memory Remote Procedure Call,,,,,,,,,,,,,,,,,1
+The pottion 0f the Gemini Control System that is responsible for dispatching Science Programs to the Sequencer for execution.,,,,,,,,,,,,,,,,,1
+"A formal description of an observers plan for using the Gemini S?m Tele? scopes, suitable for near?automatic execution.",,,,,,,,,,,,,,,,,1
+Wide?Area Network Gemini Software Software Requirements Specification 1 ?,,,,,,,,,,,,,,,,,1
+3 I INTRODUCTION OVERVIEW 1.5 OVERVIEW Gemini software is all software directly involved in the control of Gemini systems.,,,,,,,,,,,,,,,,,1
+I including commercial packages used for that purpose.,,,,,,,,,,,,,,,,,1
+only the non?com? mercial portions of this soft ware are addressed in detail here.,,,,,,,,,,,,,,,,,1
+Developed software ? non?commercial software developed for the control of the I telescopes and instrumentation.,,,,,,,,,,,,,,,,,1
+This software falls under the speci?cations presented here and this document can be Viewed as a guide to developing that software. B .,,,,,,,,,,,,,,,,,1
+Supported software ? commercial or ?,,,,,,,,,,,,,,,,,2
+software used for telescope I control and instrumentation.,,,,,,,,,,,,,,,,,2
+One of the design goals for Gemini software is to use as much off?the?shelf software as possible. in an effort to decrease life?cycle costs and maintenance concerns.,,,,,,,,,,,,,,,,,2
+External software ? any software available to the Gemini system that is not integral to the system.,,,,,,,,,,,,,,,,,2
+User?supplied data reduction tools.,,,,,,,,,,,,,,,,,1
+Embedded software that does interface With the Gemini system Via software is considered Gemini software and is subject to the requirements presented in this document.,,,,,,,,,,,,,,,,,2
+All software Will be maintained under a version control system.,,,,,,,,,,,,,,,,,1
+This document draws heavily in form and general content from ESO's VLT Software Requirements Speci?cation.,,,,,,,,,,,,,,,,,2
+The users of the Gemini system are classi?ed into the following categories.,,,,,,,,,,,,,,,,,2
+This person is using the Gemini system for the collection of science data.,,,,,,,,,,,,,,,,,2
+The astronomer has worked out.,,,,,,,,,,,,,,,,,2
+With the Gemini system.,,,,,,,,,,,,,,,,,2
+This science plan may include interactive observing. B .,,,,,,,,,,,,,,,,,1
+Science observer.,,,,,,,,,,,,,,,,,1
+This is the 0n?site person responsible for monitoring the data acquisi? tion and validating the data integrity being collected for the astronomer.,,,,,,,,,,,,,,,,,1
+The 0n?site controller of the telescope and instruments.,,,,,,,,,,,,,,,,,1
+This person is responsible for ensuring the integrity of the system and for keeping the system function? ing accurately during observations.,,,,,,,,,,,,,,,,,1
+The Telescope Operator works With the Observer and the science plan to produce as good data as is possible. D .,,,,,,,,,,,,,,,,,1
+On?site (0r near?site) support personnel are responsible for the maintenance of the system.,,,,,,,,,,,,,,,,,1
+Developers are responsible for the designing.,,,,,,,,,,,,,,,,,1
+"August 18, 1994 9:39 am 2 GENERAL DESCRIPTION OPERATIONAL LEVELS F .Admim'slmlor.",,,,,,,,,,,,,,,,,1
+Administrators are responsible for high?level functional control of I the Gemini system as an integrated system.,,,,,,,,,,,,,,,,,1
+They work With other users to determine appropriate observation scheduling changes.,,,,,,,,,,,,,,,,,1
+It is possible that a particular individual would fall into several of the I categories.,,,,,,,,,,,,,,,,,2
+it is not unusual for the astronomer to also be the science observer. 2.2 OPERATIONAL LEVELS,,,,,,,,,,,,,,,,,2
+Access to the system is restricted according to the current level of operation.,,,,,,,,,,,,,,,,,1
+The operational levels are:,,,,,,,,,,,,,,,,,1
+The observing level is the ?,,,,,,,,,,,,,,,,,1
+Maintenance level permits access to all subsystems for routine maintenance and diagnostic work.,,,,,,,,,,,,,,,,,1
+The telescope is typically at maintenance level during daylight (non?obserVing) hours. I C .,,,,,,,,,,,,,,,,,1
+The most primitive operational level.,,,,,,,,,,,,,,,,,1
+I calibration activities. 2.3 ACCESS MODES,,,,,,,,,,,,,,,,,1
+I on the Gemini system a series of access modes.,,,,,,,,,,,,,,,,,1
+These access modes balance ease and convenience of use against ?exibility.,,,,,,,,,,,,,,,,,2
+The access modes provided by the Gemini system are:,,,,,,,,,,,,,,,,,2
+This mode provides simple and safe access to the system for the collec? tion of science data.,,,,,,,,,,,,,,,,,2
+Access to the system is through the sequencer,,,,,,,,,,,,,,,,,1
+With no direct control of telescope and instruments B .Moniloring.,,,,,,,,,,,,,,,,,1
+This is a special.,,,,,,,,,,,,,,,,,1
+"Under no circumstances should monitoring affect the performance of an ongoing observation. 2 ? 2 Gemini Software Software Requirements Specification ? August 18, 1994 9:39 am 2.4.1 Gemini 2.4.2",,,,,,,,,,,,,,,,,1
+"Gemini AugusT 18, 1994 9:39 am GENERAL DESCRIPTION LOCATIONS 0F",,,,,,,,,,,,,,,,,1
+USERS OF THE SYSTEM GEM1N| 8M TELESCOPES ENCLOSURE C .,,,,,,,,,,,,,,,,,1
+This is the access used for direct control of the telescope and instruments. typically during observation level operation.,,,,,,,,,,,,,,,,,2
+It is normally available only to the Telescope Operator and the science program sequencer when at operation level. D .,,,,,,,,,,,,,,,,,2

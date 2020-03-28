@@ -1,0 +1,86 @@
+Stimulus/Response Sequences Data Flow 3.3.2.1 Basic Data Flow 1.,,,,,,,,,,,,,,,,,1
+User opens KeePass and changes his data 2.,,,,,,,,,,,,,,,,,1
+User selects save database 3.,,,,,,,,,,,,,,,,,2
+User gives a new database name 2c.,,,,,,,,,,,,,,,,,1
+User wants to exit KeePass 2b.,,,,,,,,,,,,,,,,,2
+A message is appeared asking if he wants to save the database 2c.,,,,,,,,,,,,,,,,,2
+Users minimizes the database 2b.,,,,,,,,,,,,,,,,,2
+This can be done by selecting print.,,,,,,,,,,,,,,,,,1
+"When this happens, a list of data types that can be printed are shown and the user can select the data to be printed.",,,,,,,,,,,,,,,,,2
+User selects print from file menu 3.,,,,,,,,,,,,,,,,,1
+"The list of options opens with checked the fields: password groups, title, user name, password, URL, notes 4.",,,,,,,,,,,,,,,,,1
+User unselects all fields 3b.,,,,,,,,,,,,,,,,,1
+This is very useful when the user needs to find out very quickly which password is required in one account or what username he has put on another account.,,,,,,,,,,,,,,,,,1
+It is not necessary to write in the search field all characters.,,,,,,,,,,,,,,,,,1
+By writing just one character the database will present all data which contains it or are related with it. 3.5.2.,,,,,,,,,,,,,,,,,1
+"User types a password, user name, URL, word of notes, title or group that exist in the database 3.",,,,,,,,,,,,,,,,,1
+User types two or more words in the search field 3.,,,,,,,,,,,,,,,,,2
+User does not type anything 3.,,,,,,,,,,,,,,,,,2
+User types data not related with the database 3.,,,,,,,,,,,,,,,,,2
+All data related to the word must be shown.,,,,,,,,,,,,,,,,,2
+"For example if user types ?abc? and abc is part of a password and of a username, both entries must be shown 3.6",,,,,,,,,,,,,,,,,1
+Add Group/Subgroup,,,,,,,,,,,,,,,,,1
+The user can create a new group or subgroups into an existing group.,,,,,,,,,,,,,,,,,1
+When creating a group/subgroup the user must select a name and then he can add entries into it. 3.6.2.,,,,,,,,,,,,,,,,,1
+User opens KeePass and selects to add new group/subgroup,,,,,,,,,,,,,,,,,1
+User types a name and has the option to select an image 3.,,,,,,,,,,,,,,,,,2
+The group/subgroup is created 5.,,,,,,,,,,,,,,,,,2
+User leaves the group/subgroup name field empty,,,,,,,,,,,,,,,,,2
+User selects Cancel,,,,,,,,,,,,,,,,,1
+User opens KeePass and selects modify group/subgroup,,,,,,,,,,,,,,,,,1
+User types the new name and has the option to select an image 3.,,,,,,,,,,,,,,,,,1
+The group/subgroup changes name 5.,,,,,,,,,,,,,,,,,2
+The group/subgroup?s name remains the same 5.,,,,,,,,,,,,,,,,,2
+"In order for that to happen, he must have chosen first a group/subgroup. Stimulus/Response Sequences Data Flow 3.8.2.1 Basic Data Flow 1.",,,,,,,,,,,,,,,,,1
+User opens KeePass and selects a group/subgroup 2.,,,,,,,,,,,,,,,,,2
+User selects to delete the group/subgroup 3.,,,,,,,,,,,,,,,,,2
+A message is appeared to confirm the delete 4.,,,,,,,,,,,,,,,,,2
+The group/subgroup is deleted 6.,,,,,,,,,,,,,,,,,2
+The group/subgroup is not deleted Functional Requirements Not exists. 3.9,,,,,,,,,,,,,,,,,2
+The user selects a group/subgroup and then he chooses ?find in this group? from file menu.,,,,,,,,,,,,,,,,,2
+Then a window appears which prompts the user to write a sequence of characters (letters and numbers) from one character to 200 (or more).,,,,,,,,,,,,,,,,,1
+"After that a menu of options to choose from appears and the user can select to search for: title, user name, password, URL, notes, group name.",,,,,,,,,,,,,,,,,1
+Search results appear in the main window. Stimulus/Response Sequences Software Requirements Specification for KeePass Password Safe Page 16 Data Flow 3.9.2.1 Basic Data Flow 1.,,,,,,,,,,,,,,,,,1
+User opens KeePass and selects to find something in a selected group/subgroup,,,,,,,,,,,,,,,,,2
+User types the word to search for 3.,,,,,,,,,,,,,,,,,2
+User selects the fields which will be searched 4.,,,,,,,,,,,,,,,,,2
+User leaves the find field empty 5.,,,,,,,,,,,,,,,,,2
+User leaves all search in boxes unchecked 5.,,,,,,,,,,,,,,,,,2
+User leaves the find field empty 3.,,,,,,,,,,,,,,,,,2
+User leaves all search in boxes unchecked 5.,,,,,,,,,,,,,,,,,2
+In order to find something in a group a word must be placed in the find field 3.10 Add Entry,,,,,,,,,,,,,,,,,2
+"When he does this, a window opens which is actually a form.",,,,,,,,,,,,,,,,,1
+In this form the user completes the fields he wants.,,,,,,,,,,,,,,,,,1
+Not all fields are required for an entry to be created.,,,,,,,,,,,,,,,,,1
+In fact an entry can be added with no fields at all.,,,,,,,,,,,,,,,,,2
+By selecting OK the entry is created in the group selected. Stimulus/Response Sequences Data Flow 3.10.2.1 Basic Data Flow 1.,,,,,,,,,,,,,,,,,2
+User opens KeePass and selects to add an entry,,,,,,,,,,,,,,,,,1
+"User fills in the form, as many fields as he wants, from 1 to 9 3.",,,,,,,,,,,,,,,,,1
+User fills in the password field 2b.,,,,,,,,,,,,,,,,,1
+The repeat password field is not identical with the password field 2c.,,,,,,,,,,,,,,,,,1
+This feature allows the user to change or modify an existing entry. Software Requirements Specification for KeePass Password Safe 3.11.1 3.11.2. 3.11.3 Page 18 Description,,,,,,,,,,,,,,,,,1
+The user can modify the context of an entry he already has added.,,,,,,,,,,,,,,,,,1
+This can be done by selecting View/edit entry.,,,,,,,,,,,,,,,,,1
+"In order for that to happen, the user must select an entry first.",,,,,,,,,,,,,,,,,1
+"Then the user can change the group, title, user name, password, URL, notes, expiration date and attachment file.",,,,,,,,,,,,,,,,,1
+His changes are saved by clicking OK. Stimulus/Response Sequences Data Flow 3.11.2.1 Basic Data Flow 1.,,,,,,,,,,,,,,,,,1
+User opens KeePass and selects to View/edit an existing entry 2.,,,,,,,,,,,,,,,,,1
+User changes the fields he wants in the form 3.,,,,,,,,,,,,,,,,,2
+User changes the password field 2b.,,,,,,,,,,,,,,,,,2
+The repeat password field is not identical with the password field 2c.,,,,,,,,,,,,,,,,,1
+A message appears ?the repeated password must be identical with the password 3.11.2.2.2 Alternative Data Flow 2 3.,,,,,,,,,,,,,,,,,1
+The user can create an exact copy of an entry.,,,,,,,,,,,,,,,,,1
+This can be done by selecting an entry and clicking duplicate entry.,,,,,,,,,,,,,,,,,2
+When this is done the new entry is added in the same group were the first was. 3.12.2.,,,,,,,,,,,,,,,,,1
+User opens KeePass and selects an existing entry,,,,,,,,,,,,,,,,,1
+The user can delete an existing entry by selecting it and then by clicking delete entry.,,,,,,,,,,,,,,,,,2
+When this is done a message appears and informs the user that if he deletes the entry he won?t be able to restore it back. 3.13.2.,,,,,,,,,,,,,,,,,1
+User opens KeePass and selects to delete an existing entry Software Requirements Specification for KeePass Password Safe Page 20 3.13.3 2.,,,,,,,,,,,,,,,,,2
+The user can select between a number of translations that are available at KeePass website.,,,,,,,,,,,,,,,,,2
+All the user has to do is to select change language from the View menu and then the language he wants.,,,,,,,,,,,,,,,,,2
+If he already has download languages packets he can choose one of them.,,,,,,,,,,,,,,,,,1
+If he wants another language pack he can select get more language.,,,,,,,,,,,,,,,,,1
+Doing this he will be transferred at KeePass website and choose the language he wants for downloading. Stimulus/Response Sequences Data Flow 3.14.2.1 Basic Data Flow 1.,,,,,,,,,,,,,,,,,1
+User opens KeePass and selects to change language from the View menu,,,,,,,,,,,,,,,,,1
+The user selects a language to load from the list that appears 3.,,,,,,,,,,,,,,,,,2
+A message appears that informs user that the installation has been done and in order for the changes to take place KeePass must be restarted Software Requirements Specification for KeePass Password Safe Page 21 4.,,,,,,,,,,,,,,,,,2

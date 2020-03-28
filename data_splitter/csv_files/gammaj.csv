@@ -1,0 +1,160 @@
+"The BE shall receive, via M&C, data and parameters speci?c to the current E VIA Observational Mode needed for processing the C or'relatorLag values. 3.1.2.8 Meta?data 7",,,,,,,,,,,,,,,,,2
+"The BE shall receive, via M &C, all meta-data necessary to format BE results for delivery to the E2E. 3.1.2.9 Operational Status and Control 7",,,,,,,,,,,,,,,,,2
+The BE shall provide operational status data to and receive control data?om the M&C System.,,,,,,,,,,,,,,,,,2
+This includes Lag Frame destination addresses and address changes. 3.1.2.10 Error and Warning 7,,,,,,,,,,,,,,,,,1
+The BE shall provide error and warning reports to M &C as operating conditions warrant. 3.1.2.11 Debug/Te st Messages 7,,,,,,,,,,,,,,,,,2
+The BE shall provide several optionally selectable levels ofprinted messages detailing operational parameters at critical locations in the system. Description Formatted Output 7,,,,,,,,,,,,,,,,,2
+The BE shall deliver formatted ?nal results to the e2e System.,,,,,,,,,,,,,,,,,2
+The BE shall produce all data needed by the e2e System for archiving and further processing.,,,,,,,,,,,,,,,,,2
+The output is currently expected to be in a form compatible With AIPS++ Measurement Sets. 3.2 Functional Requirements 3.2.1 Information and data flows Req.,,,,,,,,,,,,,,,,,1
+ID Description 3.2.1.1 Monitor and Control System 7,,,,,,,,,,,,,,,,,1
+The BE shall acknowledge receipt of all data received from M &C . 3.2.1.2 Correlator System 7,,,,,,,,,,,,,,,,,2
+The BE shall notify M&C of any detected interruptions ofdata delivery?om the C or'relator.,,,,,,,,,,,,,,,,,2
+The BE shall verify successful delivery afoutput t0 the e2e. 3.2.1.4 Internal Data 7,,,,,,,,,,,,,,,,,2
+The BE shall guarantee safe delivery of all internal messages. 3.2.1.5 Lag Frames 7,,,,,,,,,,,,,,,,,2
+The BE shall receive incoming data packets from the Correlator t0 Backend network interface.,,,,,,,,,,,,,,,,,2
+This network is a part of the BE System. 3.2.2.2,,,,,,,,,,,,,,,,,1
+The BE shall verify the successful receipt ofincoming data from the Correlator.,,,,,,,,,,,,,,,,,1
+Report any buffer over?ow conditions. 3.2.2.4 Proce ssing Management 7,,,,,,,,,,,,,,,,,1
+"The BE shall respond to incoming correlator made changes, user optional processing sequence achor parameter changes, and other external inputs that a?ect the data processing pipeline.",,,,,,,,,,,,,,,,,2
+Update internal parameter tables and synchronize data processing pipeline EVLA Operations System SRS 10 With new operational conditions. 3.2.2.5 Time Series Assembly 7,,,,,,,,,,,,,,,,,1
+The BE shall assemble the received input data into continuous time series (lag sets). 3.2.2.6 Data Integrity Veri?cation 7,,,,,,,,,,,,,,,,,2
+The BE shall ensure that time series data is correctly ordered and contains valid data values along its entire extent.,,,,,,,,,,,,,,,,,2
+Compare against tolerances and report all out of tolerance conditions. 3.2.2.7 Data Invalid 7,,,,,,,,,,,,,,,,,1
+The BE shall be able to make time stamp acb?ustments as required by the observational mode and correlator output parameters.,,,,,,,,,,,,,,,,,2
+The BE shall be able to perform windowing operations prior and subsequent to F ourier T ransform.,,,,,,,,,,,,,,,,,2
+This Will be needed for narrow band RFI mitigation.,,,,,,,,,,,,,,,,,1
+Post Fourier Transform windowing,,,,,,,,,,,,,,,,,1
+The BE shall be able to apply user selected time domain processes.,,,,,,,,,,,,,,,,,1
+"These processes should be constructed to be chainable (output of any time domain process can be piped to input of any other, including replica of self and Fourier Transform) and repeatable in the chain.",,,,,,,,,,,,,,,,,2
+The BE shall be able to perform F ourier T ransform the lag set time series.,,,,,,,,,,,,,,,,,1
+A power-of?two compleX-to-compleX Fast Fourier Transform,,,,,,,,,,,,,,,,,1
+With retention of all output positive and negative frequencies Will be used.,,,,,,,,,,,,,,,,,1
+The BE shall be able to apply user selected?equency domain processes.,,,,,,,,,,,,,,,,,2
+"The BE shall be able to sum the frequency domain, spectral results.",,,,,,,,,,,,,,,,,2
+The amount (time duration) of summation Will be controlled by an observational mode parameter obtained Via M&C.,,,,,,,,,,,,,,,,,1
+"The BE shall keep track of the number ofsamples/dumps integrated in each spectral channel The summation Will occur after all optional frequency domain processing, or if none, after the Fourier Transform.",,,,,,,,,,,,,,,,,2
+Integration for long periods of time is What Will throttle the output of the Correlator to a rate manageable by the E2E. 3.2.2.17 Output Formatting 7,,,,,,,,,,,,,,,,,1
+The BE shall combine the ?nished spectra with meta- and auxiliary data tofomi suitablyformatted output data sets.,,,,,,,,,,,,,,,,,1
+AIPS++ Measurement Sets are the expected entities. 3.2.2.18 Output Data Management 7,,,,,,,,,,,,,,,,,1
+The BE shall storeformatted output data records in a memory bu?er with backup disk baf?ing.,,,,,,,,,,,,,,,,,2
+Store data ready for transmission to the e2e System until successful transfer has occurred. Report any errors and buffer over?ow conditions that occur. 3.2.2.19 Data Send 7,,,,,,,,,,,,,,,,,1
+The BE shall veri?) that all sent data was successfully received.,,,,,,,,,,,,,,,,,2
+Report all errors. 3.2.2.21 Monitor I/O Performance 7,,,,,,,,,,,,,,,,,1
+The BE shall monitor data transfer rates?om EVLA Operations System SRS 11 the Correlator and t0 the e2e.,,,,,,,,,,,,,,,,,2
+Accumulate data transfer statistics and compare against tolerances.,,,,,,,,,,,,,,,,,1
+"Compare against tolerances and report all out of tolerance conditions. 3.2.2.23 Monitor Compute Errors 7 The BE shall trap, flag and repair inf?s, NaN ?s, undeij?lows, over?ows and other computation errors.",,,,,,,,,,,,,,,,,2
+Accumulate computation error statistics and compare against tolerances.,,,,,,,,,,,,,,,,,2
+Report all out of tolerance conditions. 3.2.2.24 Monitor Processes 7,,,,,,,,,,,,,,,,,2
+The BE shall periodically or upon request check PID ?s and assure that all started tasks are alive and running.,,,,,,,,,,,,,,,,,1
+"Report missing, stopped, defunct and other damaged processes. 3.2.2.25 Monitor Processors 7",,,,,,,,,,,,,,,,,1
+The BE shallperiodically or upon request check B ackend physical processors and assure that all neededprocessors are alive and responding.,,,,,,,,,,,,,,,,,2
+Report all non-functioning components. 3.2.2.27 Start Process 7,,,,,,,,,,,,,,,,,1
+The BE shall be able to initiate a processing task on any B ackend processor. 3.2.2.28 Stop Process 7,,,,,,,,,,,,,,,,,2
+The BE shall be able to initiate a reboot of any B ackend a physical processor. 3.2.2.31 Reboot network 7,,,,,,,,,,,,,,,,,2
+The BE shall be able to initiate a reboot of any internal network. 3.2.2.32 Of?oad 7,,,,,,,,,,,,,,,,,2
+The BE shall be able to redistribute internal workload among its processors.,,,,,,,,,,,,,,,,,2
+All processes shall be reversible; the raw unconverted input always being recoverable from the output. 3.2.3 Data Construct Specifications Req.,,,,,,,,,,,,,,,,,1
+ID Description 3.2.3.1 Input Data Queue 7 a memory buffer of lag frames.,,,,,,,,,,,,,,,,,1
+Data entry status queue to track each record in the buffer.,,,,,,,,,,,,,,,,,1
+These Will be converted to output AIPS++ Measurement Set entities prior to transfer to the e2e.,,,,,,,,,,,,,,,,,1
+"This includes, but is not limited to, partial data, zero data, under?ows, over?ows, in?nities, and NaN?s",,,,,,,,,,,,,,,,,1
+Whether obtained on input or arising during processing. 3.3.2,,,,,,,,,,,,,,,,,1
+The BE System shall be capable of accepting an aggregate data input stream from the C orrelator of a minimum of I. 6 Gbytes/sec.,,,,,,,,,,,,,,,,,2
+"This must be done simultaneously With the output stream, but not necessarily over the same interconnects.",,,,,,,,,,,,,,,,,1
+This is an initial deployment speci?cation and Will be increased over time. 3.3.2.2 Output 7,,,,,,,,,,,,,,,,,1
+The BE System shall be capable of delivering an output data stream to the e2e System of a minimum of 25 MBytes/sec.,,,,,,,,,,,,,,,,,2
+This includes resends and simultaneous transfer of data stored due to a previous e2e connection outage.,,,,,,,,,,,,,,,,,1
+"This must be done simultaneously With the output stream, but not necessarily over the same interconnects.",,,,,,,,,,,,,,,,,1
+This is an initial deployment speci?cation and Will be increased over time. 3.3.2.3 CPU 7,,,,,,,,,,,,,,,,,1
+Availability of source code for the OS will be very important 3.4 Reliability/Availability 3.4.1 Auto-correction 7 the BackendSystem shall be self-monitoring.,,,,,,,,,,,,,,,,,1
+Software Accessibility 7 all systems and application source code shall be available to or on the systems that execute it.,,,,,,,,,,,,,,,,,1
+The Backend System needs a robust security mechanism in place so that unauthorized users are not allowed access.,,,,,,,,,,,,,,,,,1
+"Authorized users are expected to be restricted to software and hardware development, testing, maintenance and operations personnel.",,,,,,,,,,,,,,,,,1
+All users of the Backend System must be uniquely identi?ed.,,,,,,,,,,,,,,,,,1
+"If a user cannot be identi?ed, they will not be given access.",,,,,,,,,,,,,,,,,1
+"In order to monitor all past access to the system, all attempts to access the system should be logged. Users? needs and expectations from the system will be different.",,,,,,,,,,,,,,,,,1
+Systems operations should be given unrestricted access to all aspects of the system and should have the authority to grant and revoke privileges on a per-user basis.,,,,,,,,,,,,,,,,,1
+3.8.1 All users of the system shall login using some form of unique identification.,,,,,,,,,,,,,,,,,1
+Software shall be written in a style that is easily readable and using practices that allow for minimal confusion.,,,,,,,,,,,,,,,,,1
+The aim of this document is to gather and analyze and give an in?depth insight of the complete Marvel Electronics and Home Entertainment software system by de?ning the problem statement in detail.,,,,,,,,,,,,,,,,,1
+"Nevertheless, it also concentrates on the capabilities required by stakeholders and their needs while defining high?level product features.",,,,,,,,,,,,,,,,,1
+The detailed requirements of the Marvel Electronics and Home Entertainment are provided in this document.,,,,,,,,,,,,,,,,,1
+"1.1 Purpose The purpose of the document is to collect and analyze all assorted ideas that have come up to de?ne the system, its requirements with respect to consumers.",,,,,,,,,,,,,,,,,1
+"In short, the purpose of this SRS document is to provide a detailed overview of our software product, its parameters and goals.",,,,,,,,,,,,,,,,,1
+"This document describes the project's target audience and its user interface, hardware and software requirements.",,,,,,,,,,,,,,,,,1
+"It defines how our client, team and audience see the product and its functionality.",,,,,,,,,,,,,,,,,1
+"Nonetheless, it helps any designer and developer to assist in software delivery lifecycle (SDLC) processes.",,,,,,,,,,,,,,,,,1
+"1.2 Scope Primarily, the scope pertains to the E-Store product features for making Marvel Electronics and Home Entertainment project live.",,,,,,,,,,,,,,,,,1
+"It focuses on the company, the stakeholders and applications, which allow for online sales, distribution and marketing of electronics.",,,,,,,,,,,,,,,,,1
+This SRS is also aimed at specifying requirements of software to be developed but it can also be applied to assist in the selection of in-house and commercial software products.,,,,,,,,,,,,,,,,,2
+The standard can be used to create software requirements specifications directly or can be used as a model for de?ning a organization or project speci?c standard.,,,,,,,,,,,,,,,,,2
+"It does not identify any specific method, nomenclature or tool for prepan'ng an SRS.",,,,,,,,,,,,,,,,,1
+General descn'ption of the project is discussed in section 2 of this document.,,,,,,,,,,,,,,,,,1
+"Section 3 gives the functional requirements, data requirements and constraints and assumptions made while designing the E-Store.",,,,,,,,,,,,,,,,,1
+It also gives the user Viewpoint of product.,,,,,,,,,,,,,,,,,1
+Section 3 also gives the specific requirements of the product.,,,,,,,,,,,,,,,,,2
+Section 3 also discusses the external interface requirements and gives detailed descn'ption of functional requirements.,,,,,,,,,,,,,,,,,2
+Section 4 is for supporting information.,,,,,,,,,,,,,,,,,2
+Overall Description This document contains the problem statement that the current system is facing which is hampen'ng the growth opportunities of the company.,,,,,,,,,,,,,,,,,1
+It also illustrates the needs and wants of the stakeholders that were identified in the brainstorming exercise as part of the requirements workshop.,,,,,,,,,,,,,,,,,2
+It further lists and ine?y describes the major features and a inef descn'ption of each of the proposed system.,,,,,,,,,,,,,,,,,2
+The following SRS contains the detail product perspective from different stakeholders.,,,,,,,,,,,,,,,,,1
+"It provides the detail product functions of E-Store with user characteIistics permitted constraints, assumptions and dependencies and requirements subsets.",,,,,,,,,,,,,,,,,2
+"Con?dential ?, 2020 Page 6 This subsection contains the requirements for the e-store.",,,,,,,,,,,,,,,,,1
+These requirements are organized by the features discussed in the Vision document.,,,,,,,,,,,,,,,,,1
+Features from Vision documents are then refined into use case diagrams and to sequence diagram to best capture the functional requirements of the system.,,,,,,,,,,,,,,,,,1
+All these functional requirements can be traced using tractability matrix.,,,,,,,,,,,,,,,,,1
+3.1.1 Sell Configured to Ordered Products.,,,,,,,,,,,,,,,,,1
+3.1.1.1 The system shall display all the products that can be configured.,,,,,,,,,,,,,,,,,2
+3.1.1.2 The system shall allow user to select the product to configure.,,,,,,,,,,,,,,,,,2
+3.1.1.3 The system shall display all the available components of the product to configure 3.1.1.4 The system shall enable user to add one or more component to the configuration.,,,,,,,,,,,,,,,,,2
+3.1.1.5 The system shall notify the user about any con?ict in the current configuration.,,,,,,,,,,,,,,,,,2
+3.1.1.6 The system shall allow user to update the configuration to resolve con?ict in the current configuration.,,,,,,,,,,,,,,,,,2
+3.1.1.7 The system shall allow user to confirm the completion of current configuration 3.1.2 Provide comprehensive product details.,,,,,,,,,,,,,,,,,2
+3.1.2.1 The system shall display detailed information of the selected products.,,,,,,,,,,,,,,,,,2
+3.1.2.2 The system shall provide browsing options to see product details.,,,,,,,,,,,,,,,,,2
+3.1.3 Detailed product Categorizations The system shall display detailed product categon'zation to the user.,,,,,,,,,,,,,,,,,2
+3.1.4 Provide Search facility.,,,,,,,,,,,,,,,,,1
+The system shall enable user to select multiple options on the screen to search.,,,,,,,,,,,,,,,,,2
+The system shall display all the matching products based on the search The system shall display only 10 matching result on the current screen.,,,,,,,,,,,,,,,,,2
+The system shall enable user to navigate between the search results.,,,,,,,,,,,,,,,,,2
+The system shall notify the user when no matching product is found on the search.,,,,,,,,,,,,,,,,,2
+3.1.5 Maintain customer profile.,,,,,,,,,,,,,,,,,1
+The system shall allow user to create pro?le and set his credential.,,,,,,,,,,,,,,,,,2
+The system shall authenticate user credentials to View the profile.,,,,,,,,,,,,,,,,,2
+The system shall allow user to update the profile information.,,,,,,,,,,,,,,,,,2
+3.1.6 Provide personalized pro?le The system shall display both the active and completed order history in the customer pro?le.,,,,,,,,,,,,,,,,,1
+The system shall allow user to select the order from the order history.,,,,,,,,,,,,,,,,,1
+The system shall display the detailed information about the selected order.,,,,,,,,,,,,,,,,,2
+The system shall display the most frequently searched items by the user in the profile.,,,,,,,,,,,,,,,,,2
+The system shall allow user to register for newsletters and surveys in the profile.,,,,,,,,,,,,,,,,,2
+3.1.7 Provide Customer Support.,,,,,,,,,,,,,,,,,1
+"The system shall provide online help, FAQ?s customer support, and sitemap options for customer support.",,,,,,,,,,,,,,,,,2
+The system shall allow user to select the support type he wants.,,,,,,,,,,,,,,,,,2
+The system shall allow user to enter the customer and product information for the support.,,,,,,,,,,,,,,,,,2
+The system shall display the customer support contact numbers on the screen.,,,,,,,,,,,,,,,,,2
+The system shall display the online help upon request.,,,,,,,,,,,,,,,,,2
+The system shall display the FAQ?s upon request.,,,,,,,,,,,,,,,,,1
+3.1.8 Email confirmation.,,,,,,,,,,,,,,,,,1
+The system shall maintain customer email information as a required part of customer profile.,,,,,,,,,,,,,,,,,2
+The system shall send an order con?rmation to the user through email.,,,,,,,,,,,,,,,,,2
+3.1.9 Detailed invoice for customer.,,,,,,,,,,,,,,,,,1
+The system shall display detailed invoice for current order once it is confirmed.,,,,,,,,,,,,,,,,,2
+The system shall optionally allow user to pIint the invoice.,,,,,,,,,,,,,,,,,2
+3.1.10 Provide shopping cart facility.,,,,,,,,,,,,,,,,,1
+The system shall provide shopping cart duIing online purchase.,,,,,,,,,,,,,,,,,2
+The system shall allow user to add/remove products in the shopping cart.,,,,,,,,,,,,,,,,,2
+3.1.11 Provide multiple shipping methods.,,,,,,,,,,,,,,,,,1
+The system shall display different shipping options provided by shipping department.,,,,,,,,,,,,,,,,,2
+The system shall enable user to select the shipping method duIing payment process.,,,,,,,,,,,,,,,,,2
+The system shall display the shipping charges.,,,,,,,,,,,,,,,,,2
+The system shall display tentative duration for shipping.,,,,,,,,,,,,,,,,,2
+3.1.12 Online tracking of shipments The system shall allow user to enter the order information for tracking.,,,,,,,,,,,,,,,,,1
+3.1.14 Allow multiple payment methods.,,,,,,,,,,,,,,,,,1
+The system shall display available payment methods for payment.,,,,,,,,,,,,,,,,,2
+The system shall allow user to select the payment method for order.,,,,,,,,,,,,,,,,,2
+3.1.15 Allow online change or cancellation of order.,,,,,,,,,,,,,,,,,1
+The system shall display the orders that are eligible to change.,,,,,,,,,,,,,,,,,2
+The system shall allow user to select the order to be changed.,,,,,,,,,,,,,,,,,2
+"The system shall allow user to cancel the order The system shall allow user to change shipping, payment method.",,,,,,,,,,,,,,,,,2

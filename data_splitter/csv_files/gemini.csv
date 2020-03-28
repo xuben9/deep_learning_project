@@ -1,0 +1,158 @@
+Receipt Advice is sent by the Buyer to the Seller to acknowledge receipt in full or in part and to describe discovered variances e.g.,,,,,,,,,,,,,,,,,1
+"un-noti?ed under?delivery, over?delivery, wrong Items delivered or damaged goods.",,,,,,,,,,,,,,,,,1
+Rectification Advice is sent from the Seller to the Buyer to tell the Buyer of action to be taken regarding the goods or services at variance from the actual requirement e.g.,,,,,,,,,,,,,,,,,1
+"the Seller may ask the Buyer to return the goods, await collection of the goods (by the Seller or his carrier) or destroy the goods.",,,,,,,,,,,,,,,,,1
+2.1.4 Accounting The Documents included are: Invoice is sent from the Seller to the Buyer to request payment for goods delivered or services performed.,,,,,,,,,,,,,,,,,1
+Invoice is a Value Added Tax (VAT) Document.,,,,,,,,,,,,,,,,,2
+Self Billed Invoice is an Invoice sent from the Buyer to the Seller where the two have a self billing arrangement.,,,,,,,,,,,,,,,,,1
+"For more information regarding HMCE requirements for self billing, see WWW.hmce.qov.uk/forms/notices/700-62.htm Self Billed Invoice is a VAT Document.",,,,,,,,,,,,,,,,,1
+"Credit Note is sent from the Seller to the Buyer, confirming that the Seller owes money to the Buyer.",,,,,,,,,,,,,,,,,1
+It may be used to rectify errors and/or variances in the invoicing process.,,,,,,,,,,,,,,,,,1
+Credit Note is a VAT Document.,,,,,,,,,,,,,,,,,2
+"Debit Note is sent from the Buyer to the Seller, stating that Buyer has deducted amounts from a Seller?s Invoice.",,,,,,,,,,,,,,,,,1
+A Debit Note precludes the need for a Seller to raise a Credit Note.,,,,,,,,,,,,,,,,,2
+Debit Note is a VAT Document.,,,,,,,,,,,,,,,,,1
+"Remittance Advice is sent from the Buyer to the Seller, notifying payment and stating what Invoices, Credit and Debit Notes have been accounted for.",,,,,,,,,,,,,,,,,1
+"Statement is sent from the Seller to the Buyer summarising the status of the Buyer?s account and the Invoices, Remittances, Debit and Credit Notes submitted within a speci?c time period.",,,,,,,,,,,,,,,,,1
+"2.2 Parties A Party is any person, organisation or computer system that sends or receives goods, services or information.",,,,,,,,,,,,,,,,,1
+A role is a job done by a particular Party.,,,,,,,,,,,,,,,,,2
+One Party may play a number of roles in a Document.,,,,,,,,,,,,,,,,,1
+"Every Document has a sender and receiver, one of which is a Buyer role, the other a Seller role.",,,,,,,,,,,,,,,,,1
+"The Party types, ro|es names and Documents sent and received are shown in Table 2.",,,,,,,,,,,,,,,,,
+"Seller ro|es include: Sales Point Despatch Point Customer Service Accounts Receivable is responsible for the arrangement and maintenance of trading agreements with suppliers, including Catalogue data.",,,,,,,,,,,,,,,,,2
+"The Purchasing Manager is not involved in other transactions; if the Purchasing Manager requests or makes a purchase, that individual adopts the role of Originator or Order Point respectively.",,,,,,,,,,,,,,,,,2
+"If Originator subsequently places a Purchase Order, the Originator adopts the role of Order Point.",,,,,,,,,,,,,,,,,1
+Purchase Card (credit or debit card) information may be associated with the Order Point.,,,,,,,,,,,,,,,,,1
+It may include Electronic Funds Transfer (EFT) information i.e.,,,,,,,,,,,,,,,,,1
+Note: Messages to and from banks are out of scope.,,,,,,,,,,,,,,,,,1
+Note: Messages to and from carriers are out of scope.,,,,,,,,,,,,,,,,,1
+2.3 Codes and Identifiers Semantic interoperability depends on the ability of computers to match identi?ers and codes.,,,,,,,,,,,,,,,,,1
+0 Documents and Lines need to be referenced in subsequent transactions in the procurement cycle.,,,,,,,,,,,,,,,,,2
+0 internal instance identifiers may be used to avoid repetition of the same set of information many times within the same Document e.g.,,,,,,,,,,,,,,,,,2
+Delivery Point.,,,,,,,,,,,,,,,,,1
+"0 Parties need to be identi?ed for fiscal purposes (VAT No., Company Registration No.",,,,,,,,,,,,,,,,,2
+0 Documents need to be uniquely identifiable for audit purposes.,,,,,,,,,,,,,,,,,2
+0 Items are classified for management information e.g.,,,,,,,,,,,,,,,,,2
+"commodity classification, and identi?ed at individual or Catalogue |tem level as appropriate.",,,,,,,,,,,,,,,,,1
+"The identi?ers, coding and classification schemes used in this specification fall into five groups: International used and maintained internationally, including: 0 country codes (ISO 3166).",,,,,,,,,,,,,,,,,1
+"National used and maintained nationally, including the OeE Government.",,,,,,,,,,,,,,,,,1
+Data Standards Catalogue (GDSC).,,,,,,,,,,,,,,,,,1
+Examples include: 0 Company registration number.,,,,,,,,,,,,,,,,,1
+Speci?ed in this developed for this speci?cation including: Document 0 Document status 0 payment method Application-speci?c a variety of application-speci?c identification schemes are supported.,,,,,,,,,,,,,,,,,2
+These include: 0 Seller reference for Buyer.,,,,,,,,,,,,,,,,,1
+0 Buyer reference for Seller.,,,,,,,,,,,,,,,,,2
+0 locally specified identifiers for instances of: o Quotation.,,,,,,,,,,,,,,,,,2
+"Because, such schemes are application-speci?c they can never be relied on to be 100% unique.",,,,,,,,,,,,,,,,,1
+Universally Unique Universally Unique Identifier (UUID) is an instance identifier Identi?ers generated on the fly as speci?ed in ISO 11587.,,,,,,,,,,,,,,,,,1
+It is also known as a Globally Unique Identi?er (GUID).,,,,,,,,,,,,,,,,,1
+UUID is a 128 bit string usua||y formatted as 32 characters alphanumeric.,,,,,,,,,,,,,,,,,1
+In this specification UUID is used for matching instances of Document and Line between Documents and for referring to multiple ro|e instances of the same Party within a single Document.,,,,,,,,,,,,,,,,,2
+"UUIDs provide an effective means to ensure exact matching of identifiers at machine level, but are not well suited to visual matching, which is why existing ID data are also required.",,,,,,,,,,,,,,,,,2
+The descriptions are illustrated with UML class diagrams.,,,,,,,,,,,,,,,,,1
+A specialisation inherits all of the properties of its parent class.,,,,,,,,,,,,,,,,,1
+"Some knowledge of UML is needed to understand the model fully, but the text is intended to be understandable to those who are not familiar with the UML notation.",,,,,,,,,,,,,,,,,1
+"contains information about each Party including organisation and person details, postal and electronic addresses.",,,,,,,,,,,,,,,,,1
+A sender and a receiver are included in every Document.,,,,,,,,,,,,,,,,,1
+"3.2 Party A Party is any person, organisation or computer system that sends or receives information, goods or services.",,,,,,,,,,,,,,,,,1
+A role is a job done by a particular Party.,,,,,,,,,,,,,,,,,2
+One Party may play a number of roles in a Document.,,,,,,,,,,,,,,,,,2
+Figure 2. shows the common elements of Party.,,,,,,,,,,,,,,,,,1
+Direct Line is a universally unique identifier for an instance of Party.,,,,,,,,,,,,,,,,,1
+This may be useful in providing references within a Document to the same Party in several different places.,,,,,,,,,,,,,,,,,1
+The full details of any Party only need to be provided once and other occurences of the same Party may be cross-referenced using Party UUID.,,,,,,,,,,,,,,,,,2
+Unstructured name is typically entered manua||y at the time of the transaction.,,,,,,,,,,,,,,,,,1
+Address may be unstructured or structured.,,,,,,,,,,,,,,,,,1
+"When an unstructured address is used, it must have 1 to 5 Lines.",,,,,,,,,,,,,,,,,1
+The UK Post Code is a combination of between five and seven letters and numbers which define four different levels of geographic unit.,,,,,,,,,,,,,,,,,1
+"Although Post Code cannot be made mandatory in all circumstances, it should be present if known.",,,,,,,,,,,,,,,,,1
+This needs to be coded to enable collection of management data on source of imports and exports.,,,,,,,,,,,,,,,,,1
+"For companies registered in England and Wales, this is the company Registration Number issued by Companies House, Cardiff.",,,,,,,,,,,,,,,,,1
+VAT Identifier includes Country Code (as above) and VAT number.,,,,,,,,,,,,,,,,,1
+It is a specific Internet identifier that contains a locally interpreted string followed by the ?at? sign (@) followed by an Internet domain.,,,,,,,,,,,,,,,,,1
+This may be useful in providing references within a Document to the same Party in several different places.,,,,,,,,,,,,,,,,,1
+Where an industrial estate contains streets it is defined as a locality in its own right.,,,,,,,,,,,,,,,,,1
+UK |nterna| Code is used if the Country Code is GB.,,,,,,,,,,,,,,,,,1
+"3.2.3 Extended Electronic Address eAddress XE ""URL""eAddress Channel eAddress Use is the number or string of the electronic address or telephone number.",,,,,,,,,,,,,,,,,2
+3.2.4 Person Structured Name Title Forename Surname Name Suffix Job Title Department Known As is an individual?s address tit|e e.g.,,,,,,,,,,,,,,,,,2
+"Mr, Ms, Dr. is an individual?s forename or first name.",,,,,,,,,,,,,,,,,1
+3.2.5 Party Specialisations Figure 3.,,,,,,,,,,,,,,,,,1
+Party Specialisations and Attributes Preferred Payment is the Seller?s preferred method of payment e.g BACS or Method Purchase Card.,,,,,,,,,,,,,,,,,1
+Account Name is the name of the organisation?s bank account.,,,,,,,,,,,,,,,,,1
+Branch ID is the Sort Code of the bank branch.,,,,,,,,,,,,,,,,,1
+Bank Name is the name of the bank.,,,,,,,,,,,,,,,,,1
+SWIFT Code is the bank code allocated by the Society of Worldwide Interbank Financial Telecommunications (SVVI FT).,,,,,,,,,,,,,,,,,1
+3.3 Document Document is the main container for information sent from a sender to a recipient.,,,,,,,,,,,,,,,,,1
+All Documents have two or more Parties and one or more Lines.,,,,,,,,,,,,,,,,,2
+A single Line contains information about one |tem.,,,,,,,,,,,,,,,,,2
+"Each Document is identified with a Document identifier, date and status e.g.",,,,,,,,,,,,,,,,,1
+"original, copy or test and includes details of the sender and intended recipient as well as metadata (information about the Document itself).",,,,,,,,,,,,,,,,,1
+Linkage at the Line level between Documents allows a many-to-many relationship between Documents such as Purchase Order and Invoice.,,,,,,,,,,,,,,,,,1
+"If the original Document is revised, it may keep the original Document ID, but the Document status and UUID will be different.",,,,,,,,,,,,,,,,,1
+"Note: for a copy, revision or cancellation, the Document date is the date of the revised Document, not the original.",,,,,,,,,,,,,,,,,1
+"|f value is ?true?, the Document is intended for test purposes only and does not to constitute a contractual commitment.",,,,,,,,,,,,,,,,,1
+URI is used to ensure unique naming.,,,,,,,,,,,,,,,,,1
+This should be the same as the value of the version attribute in the schema element of both the XML message instance and the schema.,,,,,,,,,,,,,,,,,1
+"This identifier is optional, but is recommended to be sent.",,,,,,,,,,,,,,,,,2
+"The format may be manufacturer specific, but could be a UUID.",,,,,,,,,,,,,,,,,2
+"This is used for non-structured header?Ievel Document information, which is intended to be human readable.",,,,,,,,,,,,,,,,,1
+This information is should be sent if it is known to the sender.,,,,,,,,,,,,,,,,,1
+"This string may include details of the payment trigger event, the period between trigger event and payment and any agreed settlement terms.",,,,,,,,,,,,,,,,,1
+This does not include delivery terms which may be |tem-speci?c.,,,,,,,,,,,,,,,,,1
+In an XML Document it is recommended that the Digital Signature be the final element of the payload.,,,,,,,,,,,,,,,,,1
+3.3.2 Document Specialisations and Attributes Figure 5.,,,,,,,,,,,,,,,,,1
+Document Specialisations and Attributes Document attributes specific to individual types of Document are illustrated and explained in Section 4.,,,,,,,,,,,,,,,,,2
+Total lchAT Total Ex VAT VAT Evidence (mandatory) Paid In Full is the Document total including VAT.,,,,,,,,,,,,,,,,,1
+Tax Point is the date on which the VAT is calculated.,,,,,,,,,,,,,,,,,1
+Cash Discount is the percentage cash discount offered.,,,,,,,,,,,,,,,,,1
+3.4 Line Each Document contains one or more Lines.,,,,,,,,,,,,,,,,,1
+Each Line relates to a single type of Item.,,,,,,,,,,,,,,,,,1
+Line Full?lment <? Notification Line Line UUID is a unique instance identifierfor Line.,,,,,,,,,,,,,,,,,1
+This is used for non-structured Line-Ievel information; intended to be human readable.,,,,,,,,,,,,,,,,,1
+Limit to one line 70 characters text.,,,,,,,,,,,,,,,,,1
+The code is 2 or 3 characters.,,,,,,,,,,,,,,,,,1
+No restriction of length or format.,,,,,,,,,,,,,,,,,1
+"3.5.2 Priced Item Unit Price (mandatory) Commodity Class (mandatory) Most GTINs are 8, 12,13 or 14 character.",,,,,,,,,,,,,,,,,1
+Leading spaces in a 14- character string may be packed with zeroes.,,,,,,,,,,,,,,,,,1
+"Price includes a currency code expressed using ISO 4217 3-character codes, e.g.",,,,,,,,,,,,,,,,,1
+This is needed for management information.,,,,,,,,,,,,,,,,,1
+The format of UNSPSC is four pairs of characters (28).,,,,,,,,,,,,,,,,,1
+The first two pairs of digits (levels 1 and 2) are mandatory; the next two pairs (levels 3 and 4) are required.,,,,,,,,,,,,,,,,,1
+3.5.3 Priced Item Validity This class states the Item price validity in terms of quantity range and date range.,,,,,,,,,,,,,,,,,1
+Quantity From Quantity To Price Valid From Price Valid To 3.5.4 Item Instance is the lower value for the number of units that this unit price applies to.,,,,,,,,,,,,,,,,,1
+"Extended Item ID is any ""part number"" of the Item other than the Seller Item ID or (mandatory) GTIN e.g.",,,,,,,,,,,,,,,,,1
+Each |tem may have any number of Extended |tem IDs.,,,,,,,,,,,,,,,,,1
+Extended Item ID Extended Item ID Source qualifies the Extended Item ID by Source specifying its origin.,,,,,,,,,,,,,,,,,1
+This should be a unique identifierforthe (mandatory) source.,,,,,,,,,,,,,,,,,1
+Aspect Name is the name of the aspect.,,,,,,,,,,,,,,,,,1
+"Only the main classes and associations are shown, along with the package to which they belong.",,,,,,,,,,,,,,,,,1
+"Full details of each class are shown in Section 3 (Common Elements), organised according to Package.",,,,,,,,,,,,,,,,,1
+4.1 Catalogue Catalogue is sent by the Sales Point (Seller) to the Purchasing Manager (Buyer) to provide Item price and other information for use in locally held Catalogues.,,,,,,,,,,,,,,,,,1
+"Each Catalogue Line references a single priced Item, which may be associated with a quantity range and date interval.",,,,,,,,,,,,,,,,,1
+Catalogue is the date/time by which a respose to the RFQ is required.,,,,,,,,,,,,,,,,,1
+Quotation is sent by the Sales Point (Seller) to Originator (Buyer) to inform the Buyer of the terms and conditions under which the Seller is willing or able to supply goods or services.,,,,,,,,,,,,,,,,,2
+Quotation is also used as the response Document from the Sales Point (Seller) when the Originator (Buyer) has purchased directly from the Seller?s web site (also known as ?punch out?).,,,,,,,,,,,,,,,,,2
+"Each Quotation Line references a single priced Item, a quantity, Line value and Delivery Point.",,,,,,,,,,,,,,,,,2
+It may also reference a corresponding RFQ.,,,,,,,,,,,,,,,,,2
+Quotation is the date up to which the Quotation is valid.,,,,,,,,,,,,,,,,,2
+Purchase Order is sent by the Order Point (Buyer) to inform the Sales Point (Seller) that the Buyer wishes to purchase goods or services.,,,,,,,,,,,,,,,,,2
+It is a promise to buy.,,,,,,,,,,,,,,,,,2
+"Variants may support cancellation or revision of the Purchase Order either in content (Items ordered or quantity of Items) and/or in terms of fu|fi|ment (changed delivery details, required by date etc.).",,,,,,,,,,,,,,,,,1
+This is used when the Buyer wishes to be invoiced in a currency other than that used for the Purchase Order.,,,,,,,,,,,,,,,,,2
+Customer Reference Identi?er (CRI) Required By Date (mandatory) is the data element transmitted by the Seller?s point of sale information with a card transaction.,,,,,,,,,,,,,,,,,2
+application used to enable transmission of Buyer speci?c is the date/time at which the goods or services are required.,,,,,,,,,,,,,,,,,2
+Note: this attribute is required for Seller performance measurement.,,,,,,,,,,,,,,,,,2
+Delivery Terms is the INCOTERMS associated with delivery of the goods e.g.,,,,,,,,,,,,,,,,,2
+"FOB (Free On Board ? carrier?s responsibility to destination), CIF (Carriage Insured Freight - Seller to insure to destination).",,,,,,,,,,,,,,,,,2
+4.5 PO Response PO (Purchase Order) Response is sent by the Sales Point (Seller) to inform the Order Point (Buyer) of the intention to supply goods or perform services in response to a Purchase Order.,,,,,,,,,,,,,,,,,1
+"|t acknowledges that the Purchase Order has been received and that it will be ful?lled in total, in part or not at all.",,,,,,,,,,,,,,,,,1
+Sales Order Reference is the Seller?s own reference for the order.,,,,,,,,,,,,,,,,,1
+Expected Delivery Date is the expected date/time for delivery of goods or performance of a service.,,,,,,,,,,,,,,,,,1
+Fulfilment Noti?cation is the quantity unit associated with the shipping of the goods; the is the date/time at which the goods are despatched.,,,,,,,,,,,,,,,,,1
+is the consignment reference of the goods being shipped (usually assigned by the Carrier).,,,,,,,,,,,,,,,,,2
+is the date/time at which the goods are estimated to be delivered.,,,,,,,,,,,,,,,,,2
+is the unit of measure qualifying the shipped weight.,,,,,,,,,,,,,,,,,2
+is the undelivered quantity [to be delivered at a later date].,,,,,,,,,,,,,,,,,2
+"un-noti?ed under?delivery, over?delivery, wrong Items delivered, damaged goods etc.",,,,,,,,,,,,,,,,,1
+Receipt Advice Actual Delivery Date is the date/time at which goods are actually delivered or a service is performed.,,,,,,,,,,,,,,,,,1
+Variance Quantity is the difference between the ordered quantity and the delivered quantity.,,,,,,,,,,,,,,,,,2
+Variance Condition is a description of the variance e.g.,,,,,,,,,,,,,,,,,2

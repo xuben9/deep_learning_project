@@ -1,0 +1,164 @@
+The ?prototype? version of the DigitalHome System (as specified in this document) must be completed within twelve months of inception. 3.3.2,,,,,,,,,,,,,,,,,1
+The development team will consist of five engineers.,,,,,,,,,,,,,,,,,1
+The DigitalHomeOwner Director will provide management and communication support. 3.3.3,,,,,,,,,,,,,,,,,1
+"Because of potential market competition for DigitalHome products, the cost of DigitalHome elements (sensors, controllers, server, tools, etc.), for this project should be minimized.",,,,,,,,,,,,,,,,,2
+There will be no actual physical home and all sensors and controllers will be simulated.,,,,,,,,,,,,,,,,,1
+The home system shall require an Internet Service Provider (ISP).,,,,,,,,,,,,,,,,,2
+This server will provide a. Interaction with and control of the DH elements b. Storage of DH plans and data. c. Ability to establish and maintain DH User Accounts d.,,,,,,,,,,,,,,,,,2
+The Gateway device shall operate up to a 1000-foot range for indoor transmission. 3.4.4 Sensors and Controllers 3.4.4.1,,,,,,,,,,,,,,,,,1
+"The system shall include digital programmable thermostats, which shall be used to monitor and regulate the temperature of an enclosed space. a.",,,,,,,,,,,,,,,,,2
+The thermostat shall provide a reading of the current temperature in the space where the thermostat is located. b.,,,,,,,,,,,,,,,,,1
+The controller part of thermostat shall provides a ?set point? temperature that is used to control the flow of heat energy (by switching heating or cooling devices on or off as needed) to achieve the set point temperature. c.,,,,,,,,,,,,,,,,,2
+The sensor part of the thermostat has a sensitivity range between 14§F and 104§F (-10§C and 40§C).,,,,,,,,,,,,,,,,,1
+"The system shall include digital programmable humidistats, which shall be used to monitor and regulate the humidity of an enclosed space. a.",,,,,,,,,,,,,,,,,1
+The humidistat shall provide a reading of the current humidity in the space where the humidistat is located. b.,,,,,,,,,,,,,,,,,1
+The humidistat shall provide a ?set point?,,,,,,,,,,,,,,,,,1
+The system shall include magnetic alarm contact switches which shall be used to monitor entry through a door or window when the switch is active. 3.4.4.4,,,,,,,,,,,,,,,,,2
+"The system shall include security sound and light alarms, which can be activated when DigitalHome senses a security breach from a magnetic contact.",,,,,,,,,,,,,,,,,2
+This section provides a description of the functional requirements.,,,,,,,,,,,,,,,,,1
+"There is a DH Use Case Model in the Appendix, which provides an overview of the system functionality and shows the relationships between the DigitalHome System entities. 4.1 General Requirements 4.1.1",,,,,,,,,,,,,,,,,1
+"The DigitalHome System shall allow a web-ready computer, cell phone or PDA to control a home's temperature, humidity, lights, security, and the state of small appliances. 4.1.2",,,,,,,,,,,,,,,,,1
+"The communication center of the DH system shall be a DH home web server, through which a user shall be able to monitor and control home devices and systems. 4.1.3",,,,,,,,,,,,,,,,,1
+"A thermostat unit shall communicate, through wireless signals, with the master control unit. 4.2.4",,,,,,,,,,,,,,,,,1
+The system shall support Fahrenheit and Celsius temperature values. 4.2.5,,,,,,,,,,,,,,,,,2
+"The system shall be compatible with a centralized HVAC (Heating, Ventilation and Air Conditioning) systems: gas, oil, electricity, solar, or a combination of two or more.",,,,,,,,,,,,,,,,,2
+"The system shall adhere to the standards, policies and procedures of the American Society of Heating, Refrigerating and Air-Conditioning Engineers [ASHRAE 2010]. 4.3 Humidistat Requirements 4.3.1",,,,,,,,,,,,,,,,,2
+"A DigitalHome system shall be able to activate both light and sound alarms: one sound alarm and one light alarm subsystem, with multiple lights. 4.4.2",,,,,,,,,,,,,,,,,1
+"A user shall be able to override planned parameter values, through the DH website, or if available, through manual switches on household devices 4.6.3",,,,,,,,,,,,,,,,,1
+"For a given month and year, in the past two years, DigitalHome shall be able to provide a report on the management and control of the home. 4.6.3.1",,,,,,,,,,,,,,,,,1
+"The month report shall contain daily average, maximum (with time) and minimum (with time) values of temperature and humidity for each thermostat and humidistat, respectively. 4.6.3.2",,,,,,,,,,,,,,,,,2
+"The month report shall provide the day and time for which any security breaches occurred, that is, when the security alarms were activated. 4.6.3.3",,,,,,,,,,,,,,,,,2
+The month report shall provide a section that indicates the periods of time when the DH System was not in operation.. 5.,,,,,,,,,,,,,,,,,2
+"An environmental sensor or controller device shall have to be within 1000 feet of the master control device, in order to be in communication with the system. 5.2 Reliability 5.2.1",,,,,,,,,,,,,,,,,1
+"The DigitalHome System must be highly reliable with no more than 1 failure per 10,000 hours of operation. 5.2.2",,,,,,,,,,,,,,,,,2
+The Digital Home System shall incorporate backup and recovery mechanisms. 5.2.2.1,,,,,,,,,,,,,,,,,2
+The DigitalHome System shall provide users with online documentation about the DigitalHome system installed in their home.,,,,,,,,,,,,,,,,,2
+The user documentation shall include the following: 5.7.1.1,,,,,,,,,,,,,,,,,1
+An FAQ section ? a set of ?,,,,,,,,,,,,,,,,,1
+"Frequently Asked Questions? about use and maintenance of the DigitalHome System (e.g., ?",,,,,,,,,,,,,,,,,1
+How do I change my password?,,,,,,,,,,,,,,,,,1
+Where to I go to get DigitalHome support??). 5.7.1.2,,,,,,,,,,,,,,,,,1
+A section that explains how DH parameters are set and sensor values are read.,,,,,,,,,,,,,,,,,2
+This typically involves submission and verification of a username and a password.,,,,,,,,,,,,,,,,,1
+Software Requirements Specification for the Grid-BGC Application Version 1.0 This project is to develop a grid-based software infrastructure to support bio-geo- chemical modeling.,,,,,,,,,,,,,,,,,1
+The application will use the Daymet surface weather interpolation engine for generating gridded surface weather datasets from observation data records.,,,,,,,,,,,,,,,,,1
+The Biome-BGC model will be used to perform BGC modeling activities.,,,,,,,,,,,,,,,,,1
+The system shall provide a graphical user interface to all functions of the system.,,,,,,,,,,,,,,,,,1
+Grid technologies shall be utilized to provide secure and reliable communications to remote computing resources.,,,,,,,,,,,,,,,,,1
+Scientific users are the favored and primary user class for the system.,,,,,,,,,,,,,,,,,1
+"Scientific users will use the system to manage input data, run simulations, visualize results, and manage output data.",,,,,,,,,,,,,,,,,1
+2.2.2 Portal Administrator The portal administrator will be in charge of managing the day to day operations of the system.,,,,,,,,,,,,,,,,,1
+"This user will be responsible for managing user accounts, managing user runs if needed, and general portal settings and monitoring.",,,,,,,,,,,,,,,,,2
+2.2.3 Data Users (Lowest Priority) Data users are researchers who need to use simulation output but who do not have the ability to initiate simulations.,,,,,,,,,,,,,,,,,1
+"This is the primary goal, do we need to address the issue where the first thing the user does is setup the supporting data?",,,,,,,,,,,,,,,,,2
+2.3.2 BiomeBGC Modeling Run Scenario where the user goes to the portal to run a BiomeBGC run.,,,,,,,,,,,,,,,,,1
+"This is the primary goal, do we need to address the issue where the first thing the user does is setup the supporting data?",,,,,,,,,,,,,,,,,2
+2.5 Design and Implementation Constraints 2.5.1 The system shall use the Globus toolkit.,,,,,,,,,,,,,,,,,2
+2.5.2 NCAR Security policies and constraints.,,,,,,,,,,,,,,,,,2
+Major sections listed in TOC 2.6.2 Context sensitive online help manual 1.,,,,,,,,,,,,,,,,,2
+Each page will have a context sensitive link to the help system 2.,,,,,,,,,,,,,,,,,1
+2.7 Assumptions and Dependencies 2.7.1 The system will use the NCAR Mass Storage System for all file based storage.,,,,,,,,,,,,,,,,,2
+3 System Features 3.1 User Accounts Access to the functional areas of the system will be controlled by user accounts.,,,,,,,,,,,,,,,,,1
+All GridBGC users shall be required to have valid NCAR Gatekeeper accounts to use the system.,,,,,,,,,,,,,,,,,1
+Not all Gatekeeper account holders will have access to the GridBGC system.,,,,,,,,,,,,,,,,,1
+NCAR Gatekeeper password policies will be governed by the NCAR Gatekeeper tools and policies.,,,,,,,,,,,,,,,,,2
+Enforcement of these policies and procedures will NOT be enforced through the GridBGC portal.,,,,,,,,,,,,,,,,,1
+Users must use the existing Gatekeeper tools to manage their passwords.,,,,,,,,,,,,,,,,,1
+Administrator ? Has additional permissions to administer the operation of the system.,,,,,,,,,,,,,,,,,1
+The user must enter their NCAR Gatekeeper username.,,,,,,,,,,,,,,,,,1
+3.1.5.2 View account details The user can view their current account details 1.,,,,,,,,,,,,,,,,,1
+User must be logged in to the portal 2.,,,,,,,,,,,,,,,,,2
+Display all the account properties 3.,,,,,,,,,,,,,,,,,2
+Password will not be displayed 3.1.5.3 Delete account 1.,,,,,,,,,,,,,,,,,2
+The system shall provide a means to request that the user account be deleted from the system.,,,,,,,,,,,,,,,,,2
+"The user shall be prompted at the beginning of the session for their credentials, once logged in they will not be prompted for additional or different credentials.",,,,,,,,,,,,,,,,,2
+All login actions shall be protected by using secure data channels 3.,,,,,,,,,,,,,,,,,1
+The system shall lock the account after 3 login attempts.,,,,,,,,,,,,,,,,,1
+This will require portal admin action to unlock the account.,,,,,,,,,,,,,,,,,1
+Admin users will be authenticated against the portal database.,,,,,,,,,,,,,,,,,2
+Portal Admin(s) will receive e-mail notification when new accounts are ready for review.,,,,,,,,,,,,,,,,,2
+Display a list of all accounts pending review 3.,,,,,,,,,,,,,,,,,1
+The system shall allow portal administrators the ability to control template submissions rights.,,,,,,,,,,,,,,,,,1
+3.1.6.3 List Accounts The portal admin shall have the ability to list the user accounts in the system 1.,,,,,,,,,,,,,,,,,1
+List all user accounts 2.,,,,,,,,,,,,,,,,,2
+List accounts pending approval 3.,,,,,,,,,,,,,,,,,2
+List all account deletion requests 4.,,,,,,,,,,,,,,,,,2
+List all locked accounts 3.1.6.4 Delete Accounts 1.,,,,,,,,,,,,,,,,,1
+Delete a specific user account 2.,,,,,,,,,,,,,,,,,2
+There operation will not be reversible 3.,,,,,,,,,,,,,,,,,2
+Data removal 3.1.,,,,,,,,,,,,,,,,,1
+Templates 3.1.1: All user submitted templates will NOT be deleted from disk 3.2.,,,,,,,,,,,,,,,,,1
+Shared Objects 3.2.1: All shared object that have NOT been referenced by dependant projects will be deleted.,,,,,,,,,,,,,,,,,1
+All other objects/projects 3.3.1: Will be deleted completely from the system.,,,,,,,,,,,,,,,,,1
+3.1.6.5 Lock/Unlock accounts 1.,,,,,,,,,,,,,,,,,1
+The admin can lock accounts 1.1.,,,,,,,,,,,,,,,,,2
+The user will be notified via e-mail 1.2.,,,,,,,,,,,,,,,,,2
+Further logins will not be permitted until unlocked 1.3.,,,,,,,,,,,,,,,,,2
+Currently executing jobs will continue to run until the job ends or terminated by the portal admin 2.,,,,,,,,,,,,,,,,,1
+The admin can unlock accounts 2.1.,,,,,,,,,,,,,,,,,1
+Once unlocked the user can login to the system and resume use 3.1.6.6 Job Management 1.,,,,,,,,,,,,,,,,,1
+The portal admin will have a display of all running jobs sorted by user 2.,,,,,,,,,,,,,,,,,2
+The status of each job and tile will be visible to the portal admin 3.,,,,,,,,,,,,,,,,,1
+The portal admin shall have the ability to terminate any user?s running jobs.,,,,,,,,,,,,,,,,,1
+The system shall assign all user accounts to the scientist role by default.,,,,,,,,,,,,,,,,,2
+The system shall allow the portal admin to change a user?s role in the system.,,,,,,,,,,,,,,,,,2
+3.1.6.8 Resource Quotas (Lowest Priority) Review the need to implement resource quotas if time permits at the end of the project.,,,,,,,,,,,,,,,,,1
+3.2 Data Organization The system will organize the system in to types of logical grouping elements: 1.,,,,,,,,,,,,,,,,,1
+Projects 3.2.1 Objects Objects will be elements the group related data elements in the system.,,,,,,,,,,,,,,,,,1
+Objects will be the mechanism by which data is shared and reused throughout the system.,,,,,,,,,,,,,,,,,1
+3.2.2 Projects Projects will be elements that group specific objects together to perform a unit of work.,,,,,,,,,,,,,,,,,2
+3.2.3 Data Element Relationships 3.2.4 Data Integrity 1.,,,,,,,,,,,,,,,,,2
+The system shall prevent the user from changing object/project values once that project has been used in a model run.,,,,,,,,,,,,,,,,,2
+This is to preserve the input values that produced a certain set of output values.,,,,,,,,,,,,,,,,,1
+Each object/project will have states which control when the user can change product values.,,,,,,,,,,,,,,,,,1
+The system shall support the following states 3.1.,,,,,,,,,,,,,,,,,1
+Unlocked ? The user can make changes as desired.,,,,,,,,,,,,,,,,,2
+Locked ? The user can not make any changes 3.3.,,,,,,,,,,,,,,,,,2
+Invalidated ? A dependency has been modified in someway and object/project may no longer have valid inputs or outputs.,,,,,,,,,,,,,,,,,1
+NOTE: See specific object/project details for the logic rules for each type.,,,,,,,,,,,,,,,,,1
+"Go through the whole locked/invalidation sequence, try to do it at a very generic level.",,,,,,,,,,,,,,,,,1
+3.3 Objects Objects will manage datasets and references to other logically related datasets.,,,,,,,,,,,,,,,,,1
+List objects will contain arbitrary points of data 2.,,,,,,,,,,,,,,,,,2
+Grid objects will contain rectangular grid datasets.,,,,,,,,,,,,,,,,,2
+3.3.1.3 Parameterization Objects 1.,,,,,,,,,,,,,,,,,1
+Parameterization projects will contain model specific parameter data 3.3.2 Sharing 1.,,,,,,,,,,,,,,,,,1
+Users can select to share specific objects with other users.,,,,,,,,,,,,,,,,,2
+Users can specify which users to share the object with: 2.1.,,,,,,,,,,,,,,,,,2
+When a shared project is referenced in the system the underlying datasets will NOT be copied.,,,,,,,,,,,,,,,,,1
+Once a shared project has been referenced elsewhere in the system it will be in a locked state.,,,,,,,,,,,,,,,,,2
+3.3.3 Merging Objects Users can create new dataset project by merging existing objects 1.,,,,,,,,,,,,,,,,,2
+Merging operation will always be used to create new datasets from two existing datasets.,,,,,,,,,,,,,,,,,1
+Will not check for missing values 5.,,,,,,,,,,,,,,,,,1
+Full copies of the source datasets will be made during the creation of the merged dataset.,,,,,,,,,,,,,,,,,1
+The system shall display dataset metadata to allow users to screen data prior to merging operations.,,,,,,,,,,,,,,,,,1
+3.4 Projects Project will have two main functions within the system; contain references to supporting datasets and serve as the simulation run control element.,,,,,,,,,,,,,,,,,1
+The user shall specify the type of project during initial setup; either List or Grid 2.,,,,,,,,,,,,,,,,,1
+The system shall only allow the user to reference datasets of the same type as specified in the project 3.4.2 Collaboration 1.,,,,,,,,,,,,,,,,,1
+Grid projects 3.4.4 Referenced Objects 1.,,,,,,,,,,,,,,,,,1
+List and Grid types matching shall be enforced.,,,,,,,,,,,,,,,,,1
+3.5 Template Objects System templates will provide a means of sharing expert knowledge within the portal.,,,,,,,,,,,,,,,,,1
+"Not all Object types shall support templates, see specific object details for more details.",,,,,,,,,,,,,,,,,1
+Only users with template submission privileges can submit new templates.,,,,,,,,,,,,,,,,,2
+Once a template has been submitted it can no longer be edited.,,,,,,,,,,,,,,,,,2
+The system shall allow the following users to delete templates from the system: 1.1.,,,,,,,,,,,,,,,,,1
+The system shall provide portal admin(s) with a list of all system templates by project type.,,,,,,,,,,,,,,,,,2
+The system shall provide users with a list of their templates in the system.,,,,,,,,,,,,,,,,,2
+Any time a template is used the user shall get their own full private copy of the data 2.,,,,,,,,,,,,,,,,,1
+The user must supply a new project name when using a template before saving the project.,,,,,,,,,,,,,,,,,1
+If the template references a non-shared data resource the user must choose a new dataset before saving the project.,,,,,,,,,,,,,,,,,1
+Daymet Specific Objects and Projects 3.6 Projection Object This object defines the projection parameters for a dataset.,,,,,,,,,,,,,,,,,1
+3.6.2 Support Projection Types The system shall support the following projection types 1.,,,,,,,,,,,,,,,,,1
+Interrupted Mollweide 3.6.3 Creation 1.,,,,,,,,,,,,,,,,,1
+New Blank 2.,,,,,,,,,,,,,,,,,2
+Copied from system template.,,,,,,,,,,,,,,,,,2
+View List of projection projects 2.,,,,,,,,,,,,,,,,,2
+View Projection Details 3.6.5 Update 1.,,,,,,,,,,,,,,,,,2
+The project must be in an unlocked state 2.,,,,,,,,,,,,,,,,,2
+The user can change the parameter values 3.,,,,,,,,,,,,,,,,,2
+The user can NOT change the projection type 3.6.6 Delete 1.,,,,,,,,,,,,,,,,,2
+If the project is in an unlocked state 1.1.,,,,,,,,,,,,,,,,,2
+The project and all related data can be deleted.,,,,,,,,,,,,,,,,,2
+If the project is in a locked state 2.1.,,,,,,,,,,,,,,,,,2
+The user shall be prompted to delete all projects that reference this project following the candidate project deletion rules.,,,,,,,,,,,,,,,,,1
+This information will not be downloadable by the user.,,,,,,,,,,,,,,,,,1
+The user shall be prompted to delete all projects that reference this object following the candidate object deletion rules.,,,,,,,,,,,,,,,,,1

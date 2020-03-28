@@ -1,0 +1,249 @@
+"As such D8 is a so-called common deliverable, beyond workpackage borders.",,,,,,,,,,,,,,,,,1
+1 Introduction This section provides an oveIView of this project.,,,,,,,,,,,,,,,,,1
+1.1 Purpose The putpose of this document is to describe functionality and behavior of the new agentMom fiamework.,,,,,,,,,,,,,,,,,1
+This document is intended to be Viewed only by project advisor and committee members.,,,,,,,,,,,,,,,,,1
+1.2 Scope This document covers the software requirements for the project?,,,,,,,,,,,,,,,,,1
+App1ying Broadcasting/Multicasting/Secured Communication to agentMom in Multi? Agent Systems?.,,,,,,,,,,,,,,,,,1
+"1.3 Definitions, Acronym & Abbreviations agentMom 1.2 refers to current implementation of agentMom New agentMom refers to this project, including agentMom with capability of broadcasting, multicasting and secured communication. ",,,,,,,,,,,,,,,,,1
+"Unicast refers to one-to-one communication in such a way that a packet originates from a single Intemet host, and it is destined to a unique location of another Intemet host.",,,,,,,,,,,,,,,,,1
+"Multicast refers to one-to-many communication in such a way that a packet Oiiginates from a single Intemet host, and it is destined to multiple receivers within the same multicast address.",,,,,,,,,,,,,,,,,1
+"Broadcast refers to one-to-many communication in such a way that a packet Oiiginates from a single Internet host, and it is destined to all receivers within the same local network.",,,,,,,,,,,,,,,,,1
+Orgagigtion refers to a set of agents.,,,,,,,,,,,,,,,,,1
+Reorgagigtion refers to a situation where the previous organization structure is not ef?cient to succeed the mission Group refers to a set of agents who agiee to use the same multicast address to subscribe group message.,,,,,,,,,,,,,,,,,1
+There is no ambition to strive for completeness in this document.,,,,,,,,,,,,,,,,,1
+Time-To -Live (TIL) refers to the number of hops that multicast message is allowed to remain in the network before it is discarded by the router.,,,,,,,,,,,,,,,,,1
+1.5 Overview The remainder of this document provides a greater detail functionality and requirement of the software.,,,,,,,,,,,,,,,,,1
+"Section 2 desolibes product perspective, oveIall functionality, intended users, constraints and assumption of this software.",,,,,,,,,,,,,,,,,1
+Section 3 provides general Use Cases and speci?c requirement of this software.,,,,,,,,,,,,,,,,,1
+2 Overall Description This section provides an oveIView of the proj ect functionality and factors that affect this project and its requirements.,,,,,,,,,,,,,,,,,1
+2.1 Product Perspective This project will be a fIaInework that provides reusability of agents communication .,,,,,,,,,,,,,,,,,1
+"It is implemented in J ava and provides the basic building blocks for building agents, conversations between agents, and the message that are passed in the conversations.",,,,,,,,,,,,,,,,,1
+2.1.1 Software InteIface ? java version 1.4.0 is required to use the software.,,,,,,,,,,,,,,,,,1
+2.1.2 Communication Interface ? TCP/IP is used in order to send unicast message.,,,,,,,,,,,,,,,,,1
+Multicast protocol is used in order to send multicast message.,,,,,,,,,,,,,,,,,1
+UDP is used in order to send broadcast message.,,,,,,,,,,,,,,,,,2
+2.2 Product Functions 2.2.1 Enable agents to broadcast a message to all the agents within the same local network.,,,,,,,,,,,,,,,,,2
+2.2.2 Enable agents to multicast a message to all the agents within the same multicast address.,,,,,,,,,,,,,,,,,2
+2.2.3 Enable agents to unicast a message to other agents within organization.,,,,,,,,,,,,,,,,,2
+"2.2.4 Allow agents to choose among unicast, multicast and broadcast communication.",,,,,,,,,,,,,,,,,2
+2.2.5 Allow agents to join and leave multicast group.,,,,,,,,,,,,,,,,,2
+2.2.6 Provide message enc1yption and deCIyption techniques for secured communication. ,,,,,,,,,,,,,,,,,2
+2.2.7 Allow agents to choose to encrypt or not to encrypt message.,,,,,,,,,,,,,,,,,1
+"2.3 User Characteristics Users who want to implement multi? agent systems based on this framework are expected to have general knowledge of Java programming, object-on'ented programming and Multi? Agent Systems Engine eIing Methodology.",,,,,,,,,,,,,,,,,2
+2.4.1 Reliable message deliver ? multicast/broadcast packets are delivered with best effort.,,,,,,,,,,,,,,,,,2
+"Thus, a packet may be delivered to all speci?ed agents or none.",,,,,,,,,,,,,,,,,1
+2.4.2 Security ? we provide some basic mechanisms for secu1ity such as message enCIyption.,,,,,,,,,,,,,,,,,1
+"However, there is no guaIantee that the others cannot decrypt the enc1ypted messages.",,,,,,,,,,,,,,,,,2
+"2.4.3 Multicast Protocol ? in order to send multicast message, netw01k environment such as router, netw01k card and operating systems must support multicast protocol.",,,,,,,,,,,,,,,,,2
+"2.4.4 Broadcast Message ? in many network, only system administrator is allowed to send broadcast message.",,,,,,,,,,,,,,,,,1
+2.5 Assumptions and Dependencies ,,,,,,,,,,,,,,,,,1
+.2.5.1 We assume that each agent knows the address of destinating agents in order to send unicast message.,,,,,,,,,,,,,,,,,1
+2.5.2 We assume that each agent has enough knowledge to decide the best way to communicate with the other agents.,,,,,,,,,,,,,,,,,1
+"2.5.3 In the case of using secured multicast communication, we assume that there is an agent whom each agent can request for the same enc1yption and deCIyption key.",,,,,,,,,,,,,,,,,2
+This agent should maintain a list of agents who are allowed to get the keys.,,,,,,,,,,,,,,,,,1
+2.5.4 We assume that each agent knows the multicast address in order to send multicast message.,,,,,,,,,,,,,,,,,1
+3 Specific Requirements This section provides all of the project requirements in detail.,,,,,,,,,,,,,,,,,1
+Message is enCIypted or Message is not enc1ypted.,,,,,,,,,,,,,,,,,2
+An agent sends notify to join/leave multicast group.,,,,,,,,,,,,,,,,,1
+Message is deCIypted only if Message is enc1ypted.,,,,,,,,,,,,,,,,,1
+"For example, Agent_B and Agent_D belong to the same group, and then Agent_B wants to leave the group and Agent_A wants to join the group.",,,,,,,,,,,,,,,,,2
+"In this situation, when reorganization occurs, Agent_A who is previously not pan of the group may send notify message to join the group, and Agent_B who is previously part of the group, may send notify message to leave the group.",,,,,,,,,,,,,,,,,1
+"For instance, Agent_B suffers a failure in one of its capabilities and does not want to receive any further message from the group.",,,,,,,,,,,,,,,,,2
+Agent_A who may have capability to substitute Agent_B is needed to be pan of the group.,,,,,,,,,,,,,,,,,2
+This involves sending notify of join and leave the group.,,,,,,,,,,,,,,,,,1
+Message is encrypted or Message is not encrypted.,,,,,,,,,,,,,,,,,1
+An agent sends multicast message to the group (multicast address).,,,,,,,,,,,,,,,,,1
+Other agents in the group receive message.,,,,,,,,,,,,,,,,,2
+"Message 1s decrypted only if Message 1s encrypted I11 this situation, Agent_ A wants to send a message to everyone within the group, assuming that Agent_A, Agent_B and Agent_C subscribe to the same multicast address.",,,,,,,,,,,,,,,,,1
+This involves the multicast communication since other agents who do not belong to the group carmot receive this message.,,,,,,,,,,,,,,,,,2
+"For instance, an agent may want to inform everyone in the group when the assigned tasks are completed.",,,,,,,,,,,,,,,,,1
+This is more effective than in unicast communication since only one copy is sent.,,,,,,,,,,,,,,,,,1
+"Also, using biddmgmarket-based protocols ?t well with this kind of communication An agent may request a bid from other agents for doing some tasks.",,,,,,,,,,,,,,,,,1
+An agent sends message to everyone in the same local network.,,,,,,,,,,,,,,,,,1
+Other agent in the same local network receive message.,,,,,,,,,,,,,,,,,1
+"In this situation, Agent_A wants to send a message to everyone within the same local network that agent A belongs to.",,,,,,,,,,,,,,,,,1
+This involves the broadcast communication since any agent in the same local network as Agent_A can receive this message.,,,,,,,,,,,,,,,,,1
+"For instance, when a new agent who does not previously exist in that local network wants to armounce the existence to other agents.",,,,,,,,,,,,,,,,,1
+3.2 Speci?c Requirement.,,,,,,,,,,,,,,,,,1
+ 3.2.1 Unicast Communication ,,,,,,,,,,,,,,,,,2
+3.2.1.1 *agentMom shall support the ability to send unicast message.,,,,,,,,,,,,,,,,,2
+3.2.1.2 *agentMom shall support the ability to receive unicast message.,,,,,,,,,,,,,,,,,2
+3.2.1.3 Unicast message shall only be received by the speci?ed address.,,,,,,,,,,,,,,,,,2
+3.2.1.4 Unicast message shall arrive at the speci?ed address and in order.,,,,,,,,,,,,,,,,,2
+3.2.2 Multicast Communication.,,,,,,,,,,,,,,,,,1
+ 3.2.2.1 *agentMom shall support the ability to send multicast message.,,,,,,,,,,,,,,,,,2
+3.2.2.2 *agentMom shall support the ability to receive multicast message.,,,,,,,,,,,,,,,,,2
+3.2.2.3 *agentMom shall support the ability to send request to join multicast group.,,,,,,,,,,,,,,,,,2
+3.2.2.4 *agentMom shall support the ability to send request to leave multicast group.,,,,,,,,,,,,,,,,,2
+3.2.2.5 agentMom shall not allow receiving multicast message from a group before joining that multicast group.,,,,,,,,,,,,,,,,,2
+3.2.2.6 agentMom shall not allow receiving multicast message from a group after leaving that multicast group.,,,,,,,,,,,,,,,,,2
+3.2.2.7 agentMom shall support the ability to set 1ime-to-live for multicast message.,,,,,,,,,,,,,,,,,2
+3.2.2.8 agentMom shall support the ability to set multicast address and port for sending and receiving multicast message.,,,,,,,,,,,,,,,,,2
+3.2.2.9 agentMom shall support the ability to receive multicast message from multiple groups.,,,,,,,,,,,,,,,,,2
+3.2.3 Broadcast Communication.,,,,,,,,,,,,,,,,,1
+3.2.3.1 *agentMom shall support the ability to sent broadcast message.,,,,,,,,,,,,,,,,,2
+3.2.3.2 *agentMom shall support the ability to receive broadcast message.,,,,,,,,,,,,,,,,,2
+3.2.4 Security.,,,,,,,,,,,,,,,,,1
+3.2.4.1 *agentMom shall support the ability to encrypt unicast message.,,,,,,,,,,,,,,,,,2
+3.2.4.2 *agentMom shall support the ability to decrypt unicast message.,,,,,,,,,,,,,,,,,2
+3.2.4.3 agentMom shall allow an agent to decide whether or not to encrypt a message.,,,,,,,,,,,,,,,,,2
+3.2.4.4 agentMom shall automatically decrypt encrypted message.,,,,,,,,,,,,,,,,,2
+3.2.4.5 agentMom shall support the ability to enc1yptmulticastmessage.,,,,,,,,,,,,,,,,,2
+3.2.4.6 agentMom shall support the ability to decrypt multicast message.,,,,,,,,,,,,,,,,,2
+3.2.5 Architecture.,,,,,,,,,,,,,,,,,1
+agentMom with shall support the use of the architecture that agent directly controls the conversations.,,,,,,,,,,,,,,,,,2
+agentMom shall support the use of the architecture that agent?s components control the conversations.,,,,,,,,,,,,,,,,,2
+3.2.6 Compa1ibility.,,,,,,,,,,,,,,,,,1
+3.2.6.1 The new built agentMom shall be compatible with the agentMom.,,,,,,,,,,,,,,,,,1
+"As such D8 is a so-called common deliverable, beyond workpackage borders.",,,,,,,,,,,,,,,,,1
+There is no ambition to strive for completeness in this document.,,,,,,,,,,,,,,,,,1
+All BEYOND project members have been approached and partners themselves have made a selection of appropriate projects that could support the goal ofthis deliverable.,,,,,,,,,,,,,,,,,1
+It was decided that a domain-oriented approach provides a comprehensive structure for this deliverable.,,,,,,,,,,,,,,,,,1
+"It supports the placement of the individual projects in their context, and allows key aspects of the involved workpackages (multimodality, adaptivity, simulation and usability) to be emphasized.",,,,,,,,,,,,,,,,,2
+"Therefore, the other partners had to find a way to overcome this problem.",,,,,,,,,,,,,,,,,1
+"One consequence is that most of the contributing partners devoted resources to usability engineering activities, as reported in this deliverable.",,,,,,,,,,,,,,,,,1
+"Also, reconsidering the purpose of this deliverable D8 and devoting some time to the usability issues has delayed this deliverable.",,,,,,,,,,,,,,,,,1
+The contributions of the indivual project are ordered according to their application domain.,,,,,,,,,,,,,,,,,1
+"Finally, project-wide conclusions concerning the evolution from the first to the second milestone are formulated.",,,,,,,,,,,,,,,,,1
+"The purpose and approach of D8 has been agreed upon during the team meeting in Delft (NI), November 2000.",,,,,,,,,,,,,,,,,1
+"The following arguments contributed to the de?nition of D8, as it is currently presented.",,,,,,,,,,,,,,,,,1
+"D8, ?Functional Specification and Architecture?, can to some extent be considered as a second iteration on D2 ""Requirements and Usability Methodology"".",,,,,,,,,,,,,,,,,1
+The rationale behind this conclusion is as follows.,,,,,,,,,,,,,,,,,1
+"After describing ""key concepts"" in deliverable D1, the BEYOND partners have contributed to D2, in which the requirements have been detailed and the usability methodology has been described.",,,,,,,,,,,,,,,,,1
+Most of the BEYOND partners planned to have a first prototype at the time of the ?rst milestone (after one year of research in the consortium).,,,,,,,,,,,,,,,,,2
+"This is in particular the case for the partners that are directly active in one of the application domains (Public domain, Home domain, Vetronics domain, Avionics domain).",,,,,,,,,,,,,,,,,1
+"Consequently, the requirements stated in D2 are considered as a kind of checklist for the first prototype.",,,,,,,,,,,,,,,,,2
+"Based on the lessons learnt from the first prototype, ideas for the second prototype have been collected.",,,,,,,,,,,,,,,,,2
+It seems acceptable that the relation D2?milestone 1/prototype 1 is the same as D8-milestone 2/prototype 2.,,,,,,,,,,,,,,,,,2
+This as opposed to the realization of new prototypes during the second half ofthe project period.,,,,,,,,,,,,,,,,,2
+As a result it was decided that a domain-oriented approach provides a comprehensive structure for this deliverable.,,,,,,,,,,,,,,,,,1
+"It supports the placement of the individual projects in their context, and allows key aspects of the involved workpackages (multimodality, adaptivity, simulation and usability) to be emphasized.",,,,,,,,,,,,,,,,,1
+"However, we opted to let the workpackages take part through projects in application domains in order to obtain a coherent and comprehensive report.",,,,,,,,,,,,,,,,,2
+"It should be emphasized (and it should be obvious after reading this deliverable) that the key aspects multimodality, adaptivity, simulation and usability are independent variables.",,,,,,,,,,,,,,,,,2
+"They are different dimensions along which the Uls are investigated, but they have nothing to do with the order in which the projects are listed.",,,,,,,,,,,,,,,,,2
+The level to which these aspects have been addressed in the projects differs considerably.,,,,,,,,,,,,,,,,,1
+"Also, there are sections on architectural issues.",,,,,,,,,,,,,,,,,1
+"It has to be explicitly stated that due to uncertainties in the German funding situation, the consortium lacked the experienced partners for a separate usability workpackage.",,,,,,,,,,,,,,,,,1
+"Therefore, the other partners had to find a way to overcome this problem.",,,,,,,,,,,,,,,,,1
+"One consequence is that most of the contributing partners devoted resources to usability engineering activities, as reported in this deliverable.",,,,,,,,,,,,,,,,,1
+"The above mentioned relation between deliverables D1 (key concepts), D2 (requirements) and D8 (functional specifications) is applicable for all the listed projects.",,,,,,,,,,,,,,,,,1
+"D1, D2 and D8 are all common deliverables.",,,,,,,,,,,,,,,,,2
+"Besides this, there are relations with other deliverables that are the result of particular workpackages.",,,,,,,,,,,,,,,,,2
+"For instance, D3 ?Common Adaptivity Reference Framework? from WP2 comes into play in the adaptivity and/or architectural sections of this document.",,,,,,,,,,,,,,,,,1
+"This illustrates that the migration from the first to the second prototype takes into account adaptivity issues, possibly inspired by the cooperation in the context of the adaptivity framework.",,,,,,,,,,,,,,,,,2
+Similar relations can be found with regard to multimodality and simulation.,,,,,,,,,,,,,,,,,2
+"It is likely that the relationship also extends to future deliverables, intended to provide even more detail when we progress towards milestone 2.",,,,,,,,,,,,,,,,,1
+"Finally, project-wide conclusions concerning the evolution from the first to the second milestone are formulated.",,,,,,,,,,,,,,,,,1
+"APC (apc interactive solutions AG) is working on the development of information networks, terminals and kiosk solutions to address people's needs for information in public space.",,,,,,,,,,,,,,,,,1
+The core component in this project is the information terminal which is called accesspoint.,,,,,,,,,,,,,,,,,2
+It resembles the interface between users and the network which transports and provides context sensitive information.,,,,,,,,,,,,,,,,,1
+The accesspoint is higly multimodal and provides a good basis for adaptive services.,,,,,,,,,,,,,,,,,2
+APC has devoted part of its development to user interface design.,,,,,,,,,,,,,,,,,1
+Many features have been implemented in a first multimodal Accesspoint prototype.,,,,,,,,,,,,,,,,,1
+This is considered to be crucial not only for the accesspoint services but the acceptance of the whole system where essential functionalities are speech controlled dialogs.,,,,,,,,,,,,,,,,,1
+The second prototype will follow and offer adaptive features as well.,,,,,,,,,,,,,,,,,2
+It will enable enhanced understanding of voice commands and beter dialog design will be an important step towards natural language understanding.,,,,,,,,,,,,,,,,,1
+"Project Status During the first year, comprehensive analysis and functional specifications have culminated into the first multi-modal prototype accesspoint.",,,,,,,,,,,,,,,,,2
+Its basic technological implementation has been tested during operations in numerous public space applications as a geographical information system and marketing support media among many others.,,,,,,,,,,,,,,,,,1
+"During the second year, development of modular component based modules will address the lack of functionality and interoperability that are currently missing.",,,,,,,,,,,,,,,,,1
+Goals for the second prototype are guidelines for basic user interface design and the simulation of a sample application.,,,,,,,,,,,,,,,,,1
+Another focus is to comply with open architecture standards and maintain accessibility of web-hosted data.,,,,,,,,,,,,,,,,,2
+"Methods and results concerning usability As indicated in the project status, usability data has been acquired by log file analysis and video surveillance of user sessions.",,,,,,,,,,,,,,,,,2
+"Furthermore, users have been asked to participate in opinion polls and fill in questionnaires.",,,,,,,,,,,,,,,,,2
+Pre-evaluation of the user interface has been carried out together with design experts by APC corporate partners.,,,,,,,,,,,,,,,,,1
+"Results were mostly focused on acceptance of the system in public space, and address the design of the solid, speech and graphical user interface.",,,,,,,,,,,,,,,,,1
+It has been found that a major issue in the design of the solid user interface is ergonomics.,,,,,,,,,,,,,,,,,1
+"The most important requirement is the stability of the system on a high-Ievel user application level, which is a consequence of the availability of basic network and terminal functionality.",,,,,,,,,,,,,,,,,2
+System failures caused by user operation or network malfunctions have to be avoided.,,,,,,,,,,,,,,,,,2
+Dead ends in dialogs have to be addressed by a special help system and contextual understanding has to be provided.,,,,,,,,,,,,,,,,,2
+The system must guide users throughout the interaction process quickly and effectively and it has to be designed to avoid cognitive overloads caused by information overflow.,,,,,,,,,,,,,,,,,1
+The accesspoint has to be controllable through different modalities.,,,,,,,,,,,,,,,,,1
+"A switch between modalities must not affect the system operations, consequently there should be no need to re-initiate the dialog status.",,,,,,,,,,,,,,,,,1
+"Likewise, it should be possible to switch the current context without loosing perspective in case the system does not estimate the context properly.",,,,,,,,,,,,,,,,,1
+General changing requirements and extensions There is an urgent need for extensibility of the software system.,,,,,,,,,,,,,,,,,1
+The monolithic implementation which is used at the moment does not support modelling of upcoming functionality requests and it is very dif?cult to maintain and extend.,,,,,,,,,,,,,,,,,1
+Although the ?rst prototype complies with the specified functionality we have decided to re-implement it from scratch and carefully design all application interfaces for process communications.,,,,,,,,,,,,,,,,,1
+Better development tools to handle the speech system on an abstract level are required to improve the process of extending its rule database.,,,,,,,,,,,,,,,,,1
+"For better extensibility, context engines need to be implemented rather than interfaces and the method of choice are neural networks.",,,,,,,,,,,,,,,,,1
+As for training purposes new tools are needed and should be able to derive input from rule databases which are used at the moment.,,,,,,,,,,,,,,,,,1
+Usability related specifications There are two major aspects which are of vital importance for the acceptance of the terminal in public space applications.,,,,,,,,,,,,,,,,,1
+Firstly the solid user interface requires high standards in ergonomics and robustness.,,,,,,,,,,,,,,,,,1
+"Secondly the system needs to have a ?subtle notion"" of its services to guide users quickly and effectively.",,,,,,,,,,,,,,,,,2
+It must be self explicable and understand users' needs.,,,,,,,,,,,,,,,,,2
+It must also be able to handle context specific dialogs.,,,,,,,,,,,,,,,,,2
+Dialogs which it doesn't understand clearly should be handled properly to limit user frustration.,,,,,,,,,,,,,,,,,2
+Context switches must be supported at any state of the session and the system should offer alternatives and rank them by guessing its likelyhood.,,,,,,,,,,,,,,,,,1
+The graphical and speech user interface need to complement each other.,,,,,,,,,,,,,,,,,1
+They represent input and output channels and provide access to the state of the context BEYOND Public Deliverable 8 Functional Specifications and Architecture 9 February 2001 ITEA 99002 BEYOND engine.,,,,,,,,,,,,,,,,,1
+The information flow must be compatible with average user capabilities to avoid cognitive overload.,,,,,,,,,,,,,,,,,2
+The graphical user interface model presents information in an abstract two dimensional way and supports virtual characters.,,,,,,,,,,,,,,,,,1
+Further points address training of the context engine of which some have already been mentioned above.,,,,,,,,,,,,,,,,,1
+Adaptivity related specifications The following adaptivity specifications are limited to single user sessions.,,,,,,,,,,,,,,,,,1
+It is assumed that multiple user sessions are not very likely to occur in public space applications.,,,,,,,,,,,,,,,,,1
+A general single user session occurs when one person in front of the terminal interacts with the system.,,,,,,,,,,,,,,,,,2
+"An onlooker, or person inside the interaction area of the terminal is already considered to be a user.",,,,,,,,,,,,,,,,,1
+"Some adaptivity related speci?cations are partly indicated in section ?Usability related specifications"" above.",,,,,,,,,,,,,,,,,1
+Contextual understanding is an example and support of context switches without explicit requests are another.,,,,,,,,,,,,,,,,,1
+The interaction process should be as natural as possible and the development should ultimatly enable natural language understanding.,,,,,,,,,,,,,,,,,1
+"every single user is understood instantly irrelevant of age, gender or other distinct characteristics.",,,,,,,,,,,,,,,,,1
+"Multimodality related specifications The terminal is designed to support classical input-output channels like typing or reading, and complement them with speech and visual capabilities.",,,,,,,,,,,,,,,,,1
+"Except for high level features, most of the above mentioned adaptivity specifications primarily rely on multimodality related features.",,,,,,,,,,,,,,,,,2
+Visual and audio surveillance enable user detection and language understanding through face and speech recognition.,,,,,,,,,,,,,,,,,1
+"At the moment, higher level functions and more powerful features for enhanced sensing can be implemented by combining speech and visual information.",,,,,,,,,,,,,,,,,2
+Mode switches which are not initiated by the system are only possible through input channels.,,,,,,,,,,,,,,,,,2
+Output presentation is determined by the system and the user has no direct influence in this case.,,,,,,,,,,,,,,,,,2
+"If desired the user can override default settings, but because of privacy issues, certain output channels are preferred.",,,,,,,,,,,,,,,,,1
+Simulation related specifications Certain new usage scenarios require extended functionality which has not been implemented yet.,,,,,,,,,,,,,,,,,2
+The system functionality should be extensible and able to be integrated into the simulation environment to interface existing and new features at the same time.,,,,,,,,,,,,,,,,,1
+"To describe the newly defined specification, the simulation environment should provide an abstract high level scripting language thus providing an interpreter.",,,,,,,,,,,,,,,,,1
+"Architectural issues To ensure extensibility of the software system, an open architecture has been chosen.",,,,,,,,,,,,,,,,,1
+All functionalities will be implemented using components or even distributed components in a client-server oriented approach.,,,,,,,,,,,,,,,,,2
+Because of multimedia capabilities operating system selection is virtually limited to the MS V\?ndows based platform.,,,,,,,,,,,,,,,,,1
+"The implementations of the context engine with near natural language capabilities, the multiple modality support functions and the speech and graphical interfaces are heavily component based.",,,,,,,,,,,,,,,,,1
+Introduction Home entertainment systems are embedded-computer systems that deliver entertainment content to consumers in their homes.,,,,,,,,,,,,,,,,,2
+"The home environment places special constraints on entertainment systems, such as audio-video systems.",,,,,,,,,,,,,,,,,1
+"The expected evolution is that home systems can adapt to suit to individual preferences, different contexts of use, and different types of content.",,,,,,,,,,,,,,,,,1
+The user interfaces of adaptive home systems will have to communicate this adaptivity to the user.,,,,,,,,,,,,,,,,,1
+A first step towards adaptive user interfaces is to have an easy way to create customisable or ?flexible? user interfaces.,,,,,,,,,,,,,,,,,1
+Flexibility means here: adaptivity in the development phase.,,,,,,,,,,,,,,,,,1
+"However, the process to develop these ?exible user interfaces needs to be improved and supported by tools.",,,,,,,,,,,,,,,,,2
+"Currently, user interfaces are mostly specified on paper with sometimes-Iimited tool support, and it takes many man-years to develop them.",,,,,,,,,,,,,,,,,1
+"Prototypes or simulations, if developed well, are far more comprehensive than lots of pages of description and they allow early validation ofthe usability in a cost-effective way.",,,,,,,,,,,,,,,,,1
+"In the computer world, authoring tools or Rapid Application Development tools are used to prototype and build the graphical parts of an application.",,,,,,,,,,,,,,,,,2
+These parts are compiled into executable code.,,,,,,,,,,,,,,,,,1
+An authoring tool for the consumer world can use a similar approach as the user interface development tools in the computer world.,,,,,,,,,,,,,,,,,1
+"However, the consumer world has extra constraints that have to be taken into account: in particular, these are limited RAM, lack of hard disk and comparably slow processors.",,,,,,,,,,,,,,,,,1
+The high level requirements forthis authoring tool are: c The authoring tool should allow easy modification of the behaviour of user interfaces.,,,,,,,,,,,,,,,,,1
+0 The authoring tool should support easy development of adaptive user interfaces.,,,,,,,,,,,,,,,,,1
+0 The authoring tool should allow the functional requirements speci?cation of the next generation of consumer products to be developed in a much faster and ef?cient manner.,,,,,,,,,,,,,,,,,1
+BEYOND Public Deliverable 8 Functional Specifications and Architecture 14 February 2001 ITEA 99002 BEYOND The ?rst prototype of the authoring tool offers a basic functionality.,,,,,,,,,,,,,,,,,1
+This functionality has been testing extensively by expert users in a pilot project.,,,,,,,,,,,,,,,,,1
+"Their experiences resulted in more knowledge, needed to specify new requirements.",,,,,,,,,,,,,,,,,2
+"In the mean time, a common reference model for adaptive systems has been developed.",,,,,,,,,,,,,,,,,2
+The second prototype should offer a more extended functionality based on the new requirements and it should take into account the common reference model.,,,,,,,,,,,,,,,,,2
+The aim of the two prototypes is to give us insight in the feasibility of the development of an authoring tool for user interface development of consumer products.,,,,,,,,,,,,,,,,,1
+"Project status In the first year of the project, we started with an early version of the first prototype and focussed on the specification of the requirements for this prototype, by doing usability tests.",,,,,,,,,,,,,,,,,1
+This resulted in a list of requirements for the first prototype as described in section 5.4.1.,,,,,,,,,,,,,,,,,2
+Also our contribution to the reference model for adaptivity (document D3) gave us a better insight in the domain of adaptivity.,,,,,,,,,,,,,,,,,1
+"In the first half of the second project-year, the ?rst prototype has been used in a pilot project, where a user interface for a speci?c consumer system, a DVD (Digital Versatile Disc) player was developed.",,,,,,,,,,,,,,,,,2
+This usability testing by expert users in a real project was needed to gain better knowledge on what we expect from an authoring tool.,,,,,,,,,,,,,,,,,2
+"The requirements for a second prototype, speci?ed in section 5.4.1 are based on the knowledge gathered in these activities.",,,,,,,,,,,,,,,,,1
+"Although the ?rst prototype offered a limited functionality, it gave us the possibility to gain experience on the desired functionality of an authoring tool.",,,,,,,,,,,,,,,,,2
+"Our authoring tool specifically targets speci?cation, design, simulation and code generation, for the development of on-screen-based user interfaces and control of consumer products.",,,,,,,,,,,,,,,,,1
+Code generation for a target platform is not yet supported.,,,,,,,,,,,,,,,,,1
+The requirements ofthe ?rst prototype are described by the requirements listed below: 0 The authoring tool provides a set of standard widgets.,,,,,,,,,,,,,,,,,1
+A widget is a graphical entity representing the interface between a user and the application software.,,,,,,,,,,,,,,,,,2
+"0 The authoring tool provides for each project a project repository containing a font definition, a colour palette, bitmap images and strings.",,,,,,,,,,,,,,,,,2
+o The authoring tool allows the user to manage a palette and its colours.,,,,,,,,,,,,,,,,,2
+Colours are organised in a palette.,,,,,,,,,,,,,,,,,1
+o The authoring tool allows the userto import bitmaps from an external source.,,,,,,,,,,,,,,,,,2
+0 The authoring tool allows the userto simulate a user interface on a PC.,,,,,,,,,,,,,,,,,2
+"An extensive evaluation of the ?rst prototype, by trying out the tool for the development of the on-screen-based user interface of a DVD player resulted in new requirements for a second prototype.",,,,,,,,,,,,,,,,,1
+"From the UI developer?s point of view, the main need was the addition of the ability to create menus in an OSD UI.",,,,,,,,,,,,,,,,,1
+"Besides this important user requirement, the second prototype of the tool should demonstrate code generation for a target platform, in this case the DVD player.",,,,,,,,,,,,,,,,,2
+The extension - requirements for the second prototype are: c The authoring tool provides a complex widget containing a menu structure and a navigation function.,,,,,,,,,,,,,,,,,1
+0 The authoring tool should provide a menu editor.,,,,,,,,,,,,,,,,,2
+This menu editor allows the userto define items in a menu.,,,,,,,,,,,,,,,,,1
+"0 The authoring tool allows the user to generate C code for a target platform, e.g.a DVD player.",,,,,,,,,,,,,,,,,1
+"Usability related specifications The general requirements, listed in section 5.1, all stress the usability aspects of the tool.",,,,,,,,,,,,,,,,,1
+A possible usability requirement that will be considered for future extensions is: ?the authoring tool should be able to assist the user in the authoring process by a wizar 5.4.3.,,,,,,,,,,,,,,,,,2

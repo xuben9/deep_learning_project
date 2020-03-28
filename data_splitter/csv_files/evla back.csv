@@ -1,0 +1,176 @@
+Customer must be logged-in on the system. 2.,,,,,,,,,,,,,,,,,2
+"Customer must have item(s) in the shopping cart. Triggers: Customer clicks button or link to ""Ckeckout"" Basic Scenario: .",,,,,,,,,,,,,,,,,2
+Customer clicks the button or link to initiate the checkout process. .,,,,,,,,,,,,,,,,,2
+System appends cookie with ?ag for checkout process. .,,,,,,,,,,,,,,,,,1
+System presents the customer with the account details and payment methods. .,,,,,,,,,,,,,,,,,1
+Customer confirms account details and payment methods. .,,,,,,,,,,,,,,,,,2
+System stores order confirmation and order details. .,,,,,,,,,,,,,,,,,2
+System sends email confirmation to the Customer. .,,,,,,,,,,,,,,,,,2
+System appends cookie with ?ag for completed checkout process. (D(IXIO\I(DCJ?l-hl'.A)l\)??l Alternative Scenario: A1.,,,,,,,,,,,,,,,,,2
+Customer terminates order web browser during order the checkout process. A2.,,,,,,,,,,,,,,,,,1
+System recognizes cookie and goes to step 4 (Basic Scenario). Postconditions:,,,,,,,,,,,,,,,,,1
+The Customer has placed and confirmed an order. Administrator Use Cases Login Administrator Goal: Login to an Administrator account with the system. Actors:,,,,,,,,,,,,,,,,,1
+Administrator Weborder System Preconditions:,,,,,,,,,,,,,,,,,2
+Administrator account must already be registered. Triggers:,,,,,,,,,,,,,,,,,2
+"Administrator clicks button or linkto ""Login"" GAM MA?J Web Store Basic Scenario: 1.",,,,,,,,,,,,,,,,,2
+Administrator clicks button or link to initiate login process. 2.,,,,,,,,,,,,,,,,,2
+System prompts the Administrator for email and password. 3.,,,,,,,,,,,,,,,,,2
+System veri?es information. 4.,,,,,,,,,,,,,,,,,2
+System creates session cookie. 5.,,,,,,,,,,,,,,,,,2
+System displays account home page to Administrator Alternative Scenario: A1.,,,,,,,,,,,,,,,,,2
+System recognizes Administrator 's cookie A2.,,,,,,,,,,,,,,,,,2
+Go to Step 5 (Basic Scenario). B1.,,,,,,,,,,,,,,,,,2
+Administrator enters incorrect login information. B2.,,,,,,,,,,,,,,,,,2
+System prompts Administrator to resend login details to email account. B3.,,,,,,,,,,,,,,,,,2
+System sends email to registered email address. B5.,,,,,,,,,,,,,,,,,2
+Go to Step 1 (Basic Scenario). Postconditions:,,,,,,,,,,,,,,,,,1
+The Administrator is logged into the system.,,,,,,,,,,,,,,,,,1
+LogoutAdministrator Goal: Logout the Administrator account on the system. Actors:,,,,,,,,,,,,,,,,,1
+Administrator Weborder System Preconditions: Administrator must be logged-in on the system. Triggers:,,,,,,,,,,,,,,,,,2
+"Administrator clicks button or linkto ""Logout"" Basic Scenario: 1.",,,,,,,,,,,,,,,,,2
+Administrator clicks button or link to initiate logout process. 2.,,,,,,,,,,,,,,,,,2
+System terminates the session cookie. 3.,,,,,,,,,,,,,,,,,1
+System displays home page. Alternative Scenario:,,,,,,,,,,,,,,,,,1
+The Administrator is logged out of the system.,,,,,,,,,,,,,,,,,1
+"Administrator clicks button or linkto ""Add Users"" Basic Scenario: 1.",,,,,,,,,,,,,,,,,2
+Administrator clicks the button or link to initiate Add user process. 2.,,,,,,,,,,,,,,,,,2
+"System prompts the Administrator to ?ll out ?rst name, last name, username, email address, password, and privileges of the user. 3.",,,,,,,,,,,,,,,,,2
+System validates new user information. 4.,,,,,,,,,,,,,,,,,2
+System creates a new account for the new user with desired privileges. 5.,,,,,,,,,,,,,,,,,2
+System displays account home page to Administrator. Postconditions:,,,,,,,,,,,,,,,,,1
+A new customer account is created within the system.,,,,,,,,,,,,,,,,,1
+Remove a user from the system. Actors:,,,,,,,,,,,,,,,,,1
+Administrator Weborder System Preconditions: Administrator must be able to access the weborder system via a web browser with HTTPS. Triggers:,,,,,,,,,,,,,,,,,1
+Administrator clicks button or linkto ?,,,,,,,,,,,,,,,,,1
+"Remove User"" Basic Scenario: 1.",,,,,,,,,,,,,,,,,2
+Administrator clicks button or link to initiate the remove user process. 2.,,,,,,,,,,,,,,,,,2
+System prompts the Administrator to select a user by searching or viewing a list of users.,,,,,,,,,,,,,,,,,1
+System displays user information. 4.,,,,,,,,,,,,,,,,,2
+System displays account home page to Administrator. Postconditions:,,,,,,,,,,,,,,,,,2
+An account has been deleted within the system. Change User Properties Goal: Alter properties such as passwords and privileges of the user. Actors:,,,,,,,,,,,,,,,,,1
+Administrator GAM MA?J Web Store Weborder System Preconditions: Administrator must be able to access the weborder system via a web browser with HTTPS. Triggers:,,,,,,,,,,,,,,,,,1
+Administrator clicks button or linkto ?,,,,,,,,,,,,,,,,,1
+"Change User Properties"" Basic Scenario: 1.",,,,,,,,,,,,,,,,,1
+Administrator clicks the button or link to initiate change user properties process. 2.,,,,,,,,,,,,,,,,,2
+System prompts the Administrator to select a user by searching or viewing a list of users. 3.,,,,,,,,,,,,,,,,,2
+System displays the user information. 4.,,,,,,,,,,,,,,,,,2
+System alters the user properties. 5.,,,,,,,,,,,,,,,,,2
+System displays the account home page to Administrator. Postconditions:,,,,,,,,,,,,,,,,,2
+An account has been altered within the system.,,,,,,,,,,,,,,,,,1
+Install Plug-ins Goal: Install a new plug-in to the application. Actors:,,,,,,,,,,,,,,,,,1
+Administrator Weborder System Preconditions: Administrator must be able to access the weborder system via a web browser with HTTPS. Triggers:,,,,,,,,,,,,,,,,,2
+"Administrator clicks the button or linkto ""lnstall Plug-ins "" Basic Scenario: 1.",,,,,,,,,,,,,,,,,2
+Administrator clicks the button or linkto initiate Plug-in installation process. 2.,,,,,,,,,,,,,,,,,2
+System prompts the Administrator to upload the Plug-in module. 3.,,,,,,,,,,,,,,,,,2
+System installs plug-in and validates changes. 4.,,,,,,,,,,,,,,,,,2
+System displays plug-in options to the Administrator. Postconditions:,,,,,,,,,,,,,,,,,2
+A new plug-in is installed in the application. Remove Plug-ins Goal:,,,,,,,,,,,,,,,,,1
+Remove a plug-in from the application. Actors:,,,,,,,,,,,,,,,,,1
+Administrator Weborder System GAM MA?J Web Store Preconditions: Administrator must be able to access the weborder system via a web browser with HTTPS. Triggers:,,,,,,,,,,,,,,,,,1
+"Administrator clicks the button or linkto ""lnstall Plug-ins "" Basic Scenario: 1.",,,,,,,,,,,,,,,,,2
+Administrator clicks the button or linkto initiate Plug-in deletion process. 2.,,,,,,,,,,,,,,,,,2
+System prompts the Administrator to select the desired Plug-in module. 3.,,,,,,,,,,,,,,,,,2
+System removes the plug-in and validates changes. Postconditions:,,,,,,,,,,,,,,,,,1
+A plug-in is removed from the application. Manage Plug-in Options Goal: Make changes to an installed plug-in. Actors:,,,,,,,,,,,,,,,,,1
+Administrator Weborder System Preconditions: Administrator must be able to access the weborder system via a web browser with HTTPS. Triggers:,,,,,,,,,,,,,,,,,1
+"Administrator clicks button or linkto ""Manage Plug-ins "" Basic Scenario: 1.",,,,,,,,,,,,,,,,,2
+Administrator clicks the button or link to initiate Plug-in Options process. 2.,,,,,,,,,,,,,,,,,2
+System prompts the Administrator to select the desired Plug-in module. 3.,,,,,,,,,,,,,,,,,2
+System displays all plug-in options to the Administrator. 4.,,,,,,,,,,,,,,,,,2
+System con?rms changes with the Administrator. Postconditions:,,,,,,,,,,,,,,,,,2
+A plug-in?s options have successfully been changed.,,,,,,,,,,,,,,,,,1
+Install patch process Goal: lnstall patches or software updates to the web store. Actors:,,,,,,,,,,,,,,,,,1
+Administrator Weborder System Preconditions: Administrator must be able to access the weborder system via a web browser with HTTPS. GAM MA?J Web Store Triggers:,,,,,,,,,,,,,,,,,1
+"Administrator clicks the button or link to ""Install Patch"" Basic Scenario: 1.",,,,,,,,,,,,,,,,,1
+System prompts the Administrator to upload the patch. 3.,,,,,,,,,,,,,,,,,2
+System automatically installs patches and reinitializes software. 4.,,,,,,,,,,,,,,,,,2
+System con?rms that patch has been successfully installed. Postconditions:,,,,,,,,,,,,,,,,,2
+Sales Person clicks the button or linkto initiate login process. 2.,,,,,,,,,,,,,,,,,2
+System prompts the Sales Person for email and password. 3.,,,,,,,,,,,,,,,,,2
+System veri?es the information. 4.,,,,,,,,,,,,,,,,,2
+System creates session cookie. 5.,,,,,,,,,,,,,,,,,2
+System displays the account home page to Sales Person Alternative Scenario: A1.,,,,,,,,,,,,,,,,,2
+System recognizes Sales Person's cookie A2.,,,,,,,,,,,,,,,,,2
+Go to Step 5 (Basic Scenario). B1.,,,,,,,,,,,,,,,,,2
+Sales Person enters incorrect login information. B2.,,,,,,,,,,,,,,,,,2
+System prompts the Sales Person to resend login details to email account. B3.,,,,,,,,,,,,,,,,,2
+System sends email to registered email address. B5.,,,,,,,,,,,,,,,,,2
+The Sales Person is logged into the system.,,,,,,,,,,,,,,,,,1
+Sales Person clicks the button or linkto initiate logout process. 2.,,,,,,,,,,,,,,,,,2
+System terminates the session cookie. 3.,,,,,,,,,,,,,,,,,2
+System displays home page. Alternative Scenario:,,,,,,,,,,,,,,,,,1
+The Sales Person is logged out of the system.,,,,,,,,,,,,,,,,,1
+Sales Person clicks the button or link to initiate Add Product process. 2.,,,,,,,,,,,,,,,,,2
+"System prompts the Sales Person to ?ll out product name, product id, product description, product price, upload a product image, number of items in inventory, and availability of product. 3.",,,,,,,,,,,,,,,,,2
+System creates a new product page for the new product. 5.,,,,,,,,,,,,,,,,,2
+System displays the newly created product page. Postconditions:,,,,,,,,,,,,,,,,,1
+System prompts the Sales Person to select a product by searching or viewing a list of products.,,,,,,,,,,,,,,,,,1
+System validates the product information. 4.,,,,,,,,,,,,,,,,,2
+System removes the product page and product information from the system. 5.,,,,,,,,,,,,,,,,,2
+System displays the newly created product page. Postconditions:,,,,,,,,,,,,,,,,,2
+Sales Person clicks the button or link to initiate Update Product Attributes process. 2.,,,,,,,,,,,,,,,,,2
+System prompts the Sales Person to select a product by searching or viewing a list of products. 3.,,,,,,,,,,,,,,,,,2
+System validates the product information. 5.,,,,,,,,,,,,,,,,,2
+System updates the product page and product information within the system. 6.,,,,,,,,,,,,,,,,,2
+Customer Weborder System Preconditions:,,,,,,,,,,,,,,,,,2
+Customer must be able to access the weborder system via a web browser with HTTPS. Triggers:,,,,,,,,,,,,,,,,,1
+"Customer clicks the button or link to ""Register"" Basic Scenario: 1.",,,,,,,,,,,,,,,,,2
+Customer clicks the button or linkto initiate registration process. 2.,,,,,,,,,,,,,,,,,2
+System validates customer's information. 5.,,,,,,,,,,,,,,,,,2
+System creates a new account for the Customer. 6.,,,,,,,,,,,,,,,,,2
+System creates session cookie. 7.,,,,,,,,,,,,,,,,,2
+System displays account home page to Customer.,,,,,,,,,,,,,,,,,2
+System recognizes Customer's cookie. A2.,,,,,,,,,,,,,,,,,1
+Go to Step 7 (Basic Scenario). Postconditions:,,,,,,,,,,,,,,,,,1
+The Customer registers and creates a new customer account with the system. Login Customer,,,,,,,,,,,,,,,,,1
+Goal: Login to a customer account with the system. Actors:,,,,,,,,,,,,,,,,,1
+Customer Weborder System Preconditions: Customer account must already be registered. Triggers:,,,,,,,,,,,,,,,,,2
+"Customer clicks the button or link to ""Login"" Basic Scenario: 1.",,,,,,,,,,,,,,,,,2
+Customer clicks the button or linkto initiate login process. GAM MA?J Web Store 2.,,,,,,,,,,,,,,,,,2
+System prompts Customerto resend login details to email account. B3.,,,,,,,,,,,,,,,,,2
+Customer confirms. B4.,,,,,,,,,,,,,,,,,2
+System sends email to registered email address. B5.,,,,,,,,,,,,,,,,,2
+Go to Step 1 (Basic Scenario). Postconditions:,,,,,,,,,,,,,,,,,1
+The Customer is logged into the system.,,,,,,,,,,,,,,,,,1
+Edit Customer Details Goal: Edit the customer account details. Actors:,,,,,,,,,,,,,,,,,1
+"Customer Weborder System Preconditions: Customer must be logged-in on the system. Triggers: Customer clicks button or link to ""Edit Account"" Basic Scenario: 1.",,,,,,,,,,,,,,,,,1
+Customer clicks button or link to initiate the process to edit the account. 2.,,,,,,,,,,,,,,,,,2
+System displays account home page to Customer. 3.,,,,,,,,,,,,,,,,,2
+Customer clicks button or link to edit the account details. 4.,,,,,,,,,,,,,,,,,2
+System veri?es the changes. 5.,,,,,,,,,,,,,,,,,2
+System stores new account information. Alternative Scenario:,,,,,,,,,,,,,,,,,1
+None Postcoditions:,,,,,,,,,,,,,,,,,1
+The Customer has changed the account details.,,,,,,,,,,,,,,,,,1
+Customer clicks button or link to initiate logout process. 2.,,,,,,,,,,,,,,,,,2
+System terminates the session cookie. 3.,,,,,,,,,,,,,,,,,2
+System displays home page. Alternative Scenario:,,,,,,,,,,,,,,,,,1
+None Postconditions:,,,,,,,,,,,,,,,,,1
+The Customer is logged out of the system.,,,,,,,,,,,,,,,,,1
+Add Item To Cart Goal: Customer adds item(s) in the cart Actors:,,,,,,,,,,,,,,,,,1
+Customer System Preconditions:,,,,,,,,,,,,,,,,,1
+"The customer must be logged-in on the system. Triggers: Customer clicks button or link to ""Add To Cart"". Basic Scenario: 1.",,,,,,,,,,,,,,,,,2
+Customer clicks the button or link to add to the cart with speci?ed quantity. 2.,,,,,,,,,,,,,,,,,2
+System adds the item(s) to the cart. 3.,,,,,,,,,,,,,,,,,2
+System prompt Customer to edit quantity or remove item from cart.,,,,,,,,,,,,,,,,,2
+Customer confirms items in cart. 5.,,,,,,,,,,,,,,,,,1
+System stores cookie with cart details. 6.,,,,,,,,,,,,,,,,,2
+Customer returns to product listings. Alternative Scenario: A1.,,,,,,,,,,,,,,,,,2
+Customer terminates the web browser window after adding item(s) to cart. A2.,,,,,,,,,,,,,,,,,2
+Customer returns to weborder interface.,,,,,,,,,,,,,,,,,2
+System recognizes cookie and goes to step 6 (Basic Scenario) with existing items in cart. Postconditions:,,,,,,,,,,,,,,,,,1
+The Customer has added item(s) to the shopping cart.,,,,,,,,,,,,,,,,,1
+An Order GAM MA?J Web Store Goal: Customer places and con?rms an order for the checkout process. Actors:,,,,,,,,,,,,,,,,,1
+Customer must be logged-in on the system. 2.,,,,,,,,,,,,,,,,,2
+"Customer must have item(s) in the shopping cart. Triggers: Customer clicks button or link to ""Ckeckout"" Basic Scenario: .",,,,,,,,,,,,,,,,,1
+Customer clicks the button or link to initiate the checkout process. .,,,,,,,,,,,,,,,,,1
+System calculates order of items in the shopping cart. .,,,,,,,,,,,,,,,,,2
+System appends cookie with ?ag for checkout process. .,,,,,,,,,,,,,,,,,2
+System presents customer with account details and payment methods. Customer confirms account details and payment methods. .,,,,,,,,,,,,,,,,,2
+System stores order confirmation and order details. .,,,,,,,,,,,,,,,,,2
+System sends email confirmation to the Customer. .,,,,,,,,,,,,,,,,,2
+System appends cookie with ?ag for completed checkout process. Alternative Scenario: A1.,,,,,,,,,,,,,,,,,2
+Customer terminates order web browser during order the checkout process. A2.,,,,,,,,,,,,,,,,,2
+Customer returns to weborder interface.,,,,,,,,,,,,,,,,,2
+System recognizes cookie and goes to step 4 (Basic Scenario). Postconditions:,,,,,,,,,,,,,,,,,1
+The Customer has placed and confirmed an order.,,,,,,,,,,,,,,,,,1
+Analysis Models GAM MA?J Web Store Appendix D: Issues List 1.,,,,,,,,,,,,,,,,,1

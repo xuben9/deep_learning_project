@@ -1,0 +1,294 @@
+Values must conform to UTC standards.) The port code of the port from which the vessel is departing.,,,,,,,,,,,,,,,,,1
+Code list of defined anticipated activities to be found at the EC ERS web site.,,,,,,,,,,,,,,,,,1
+Used to declare entry into a stock recovery area or Western Waters. The date of the entry being reported.,,,,,,,,,,,,,,,,,1
+"Fixed format defined by the pattern: ""YYYY- MM-DD"" (YYYY = Year, MM = Month, DD = Date.",,,,,,,,,,,,,,,,,1
+Values must conform to UTC standards.),,,,,,,,,,,,,,,,,1
+The time of the entry being reported.,,,,,,,,,,,,,,,,,1
+"Fixed format defined by the pattern: ""HH:MM""",,,,,,,,,,,,,,,,,1
+The time of the entry being reported.,,,,,,,,,,,,,,,,,1
+"Fixed format defined by the pattern: ""HH:MM"" (HH = Hours, MM = Minutes.",,,,,,,,,,,,,,,,,1
+Values must conform to UTC standards.) Species targeted within zone.,,,,,,,,,,,,,,,,,1
+"Fixed format defined by the pattern ""X"" (X = single character alphabetical species code.)",,,,,,,,,,,,,,,,,1
+List of accepted codes to be found at the EC ERS web site. (http://ec.europa.eu/fisheries/cfp/control_en forcement/ers_en.htm),,,,,,,,,,,,,,,,,1
+The name of the fishing effort zone.,,,,,,,,,,,,,,,,,1
+"Fixed format defined by the pattern ""Y"" or ""N"".",,,,,,,,,,,,,,,,,2
+Fixed format defined by the pattern: Status CIF Norway CIF Norway CIF Norway Support Y|N|N/A Notes Item,,,,,,,,,,,,,,,,,2
+The estimated time of arrival at the control point.,,,,,,,,,,,,,,,,,1
+"The date of the discard being reported. Fixed format defined by the pattern: ""YYYY-MM-DD"" (YYYY = Year, MM = Month,",,,,,,,,,,,,,,,,,1
+DD = Date. Values must conform to UTC standards.),,,,,,,,,,,,,,,,,2
+"The time of the discard being reported. Fixed format defined by the pattern: ""HH:MM"" (HH = Hours,",,,,,,,,,,,,,,,,,1
+"The date of the departure being reported. Fixed format defined by the pattern: ""YYYY-MM-DD"" (YYYY = Year, MM = Month, DD = Date.",,,,,,,,,,,,,,,,,1
+Values must conform to UTC standards.),,,,,,,,,,,,,,,,,1
+"The time of the departure being reported. Fixed format defined by the pattern: ""HH:MM"" (HH = Hours, MM = Minutes. Values must conform to UTC standards.)",,,,,,,,,,,,,,,,,1
+The estimated date of arrival being reported.,,,,,,,,,,,,,,,,,1
+"Fixed format defined by the pattern: ""YYYY-MM-DD"" (YYYY = Year, MM = Month, DD = Date.",,,,,,,,,,,,,,,,,1
+Values must conform to UTC standards.),,,,,,,,,,,,,,,,,1
+The estimated time of arrival being reported.,,,,,,,,,,,,,,,,,1
+"Fixed format defined by the pattern: ""HH:MM"" (HH = Hours, MM = Minutes.",,,,,,,,,,,,,,,,,1
+Values must conform to UTC standards.),,,,,,,,,,,,,,,,,1
+The port code for the port of arrival.,,,,,,,,,,,,,,,,,1
+"Fixed format defined by the pattern: ""CCPPP"" (CC = ISO alpha-2 country code, PPP = 3 letter port code.)",,,,,,,,,,,,,,,,,2
+"Fixed format defined by the pattern: ""YYYY-MM-DD"" (YYYY = Year, MM = Month, DD = Date.",,,,,,,,,,,,,,,,,2
+Values must conform to UTC standards.),,,,,,,,,,,,,,,,,1
+The estimated time of landing being reported.,,,,,,,,,,,,,,,,,1
+"Fixed format defined by the pattern: ""HH:MM"" (HH = Hours, MM = Status C C C C C CIF Norway only and only for landings",,,,,,,,,,,,,,,,,1
+CIF in the Baltic sea CIF in the Baltic sea CIF in the Baltic sea Support,,,,,,,,,,,,,,,,,1
+To be transmitted immediately after last fishing operation and before returning to port and landing fish.,,,,,,,,,,,,,,,,,1
+"The date the fishing log is recorded as complete. Fixed format defined by the pattern: ""YYYY- MM-DD"" (YYYY = Year, MM = Month, DD = Date.",,,,,,,,,,,,,,,,,1
+Values must conform to UTC standards.),,,,,,,,,,,,,,,,,1
+"The time the fishing log is recorded as complete. Fixed format defined by the pattern: ""HH:MM"" (HH = Hours, MM = Minutes.",,,,,,,,,,,,,,,,,1
+Values must conform to UTC standards.) Status C C C Support,,,,,,,,,,,,,,,,,1
+Y|N|N/A Notes 4.4.3.11 Return to Port Declaration (RTP),,,,,,,,,,,,,,,,,1
+To Port declaration message.,,,,,,,,,,,,,,,,,1
+"To be transmitted on entry into port, after any PNO declaration and before landing any fish.",,,,,,,,,,,,,,,,,1
+The date the vessel returned to port.,,,,,,,,,,,,,,,,,2
+"Fixed format defined by the pattern: ""YYYY-MM-DD"" (YYYY = Year, MM = Month, DD = Date. Values must conform to UTC standards.)",,,,,,,,,,,,,,,,,1
+The time the vessel returned to port.,,,,,,,,,,,,,,,,,2
+"Fixed format defined by the pattern: ""HH:MM"" (HH = Hours,",,,,,,,,,,,,,,,,,1
+MM = Minutes. Values must conform to UTC Status C C C Support,,,,,,,,,,,,,,,,,2
+"The reason code indicating why the vessel C returned to port. Fixed format defined by the pattern: ""XXX"" (XXX = 3 character alphabetical uppercase code.)",,,,,,,,,,,,,,,,,2
+Reason code list to be found at the EC ERS web site. (http://ec.europa.eu/fisheries/cfp/control_enforce ment/ers_en.htm) 4.4.3.12 Landing Declaration (LAN) Item,,,,,,,,,,,,,,,,,2
+To be transmitted after landing of catch.,,,,,,,,,,,,,,,,,1
+The date of the landing being reported.,,,,,,,,,,,,,,,,,2
+"Fixed format defined by the pattern: ""YYYY-MM-DD"" (YYYY = Year, MM = Month, DD = Date. Values must conform to UTC standards.)",,,,,,,,,,,,,,,,,1
+The time of the landing being reported.,,,,,,,,,,,,,,,,,1
+"Fixed format defined by the pattern: ""HH:MM"" (HH = Hours, MM = Minutes.",,,,,,,,,,,,,,,,,1
+Values must conform to UTC standards.) Description of the message sender type.,,,,,,,,,,,,,,,,,1
+"Fixed format, the response must be one of: ""MAS"" (Vessel Master) ""REP"" (Representative of the Vessel Master) or ""AGE"" (Agent of the Vessel Master).",,,,,,,,,,,,,,,,,2
+The port code for the port of landing.,,,,,,,,,,,,,,,,,1
+"Fixed format defined by the pattern: ""CCPPP"" (CC = ISO alpha-2 country code, PPP = 3 letter port code.)",,,,,,,,,,,,,,,,,1
+Port code list to be found at the EC ERS Status C C C C C Support,,,,,,,,,,,,,,,,,1
+Format Please indicate your product?s support for the following sub-declarations.,,,,,,,,,,,,,,,,,1
+ers:GEA 165b 166 Gear number shot Fishing operations attribute attribute GBRTNS FO Total number of shots: gill nets and long lines Number of fishing operations (hauls) per 24 hour period CIF CIF if vessel licensed to fish Item,,,,,,,,,,,,,,,,,1
+The average height of the nets Nominal length of one net Number of nets Number of fleets Total length of gill nets on board Gear loss sub-declaration XML Syntax attribute element element attribute attribute attribute attribute attribute attribute attribute attribute element Code DU GES GER FD NH GL GD NL NN FL GBRGNT GLS Description and content Number of hours the gear was deployed (See details of sub-elements and attributes of GES (See details of sub-elements and attributes of GER) Fishing depth.,,,,,,,,,,,,,,,,,2
+"The distance from the water surface to the lowest part of the fishing gear, measured in meters. Applies to vessels using towed gear, long lines and fixed nets.",,,,,,,,,,,,,,,,,1
+The average number of hooks used on the long lines,,,,,,,,,,,,,,,,,2
+"The average length of the nets used when using fixed nets, measured in metres.",,,,,,,,,,,,,,,,,2
+"The average height of the nets used when using fixed nets, measured in metres.",,,,,,,,,,,,,,,,,2
+"The date of the gear-shot event being reported. Fixed format defined by the pattern: ""YYYY-MM-DD"" (YYYY = Year, MM = Month, DD = Date. Values must conform to UTC standards.)",,,,,,,,,,,,,,,,,2
+"The time of the gear-shot event being reported. Fixed format defined by the pattern: ""HH:MM"" (HH = Hours, MM = Minutes. Values must conform to UTC standards.) Indicator of where zone fishing will be commencing.",,,,,,,,,,,,,,,,,1
+"Fixed format defined by the options: ""XJM"" (fishing commences in Jan Mayan) or ""XSV"" (fishing commences in Svalbard).",,,,,,,,,,,,,,,,,1
+The date of the gear retrieval being reported.,,,,,,,,,,,,,,,,,1
+"Fixed format defined by the pattern: ""YYYY-MM-DD"" (YYYY = Year, MM = Month, DD = Date.",,,,,,,,,,,,,,,,,1
+Values must conform to UTC standards.),,,,,,,,,,,,,,,,,1
+The time of the gear retrieval being reported.,,,,,,,,,,,,,,,,,1
+Values must conform to UTC standards.) Numerical value indicating the quantity of gear lost. (See details of sub-elements and attributes of POS) Unique reference number identifying the gill net fleet lost. Status C C C C C Support,,,,,,,,,,,,,,,,,1
+Y|N|N/A Notes 4.4.4.6 Relevant Area Sub-declaration (RAS) Item ers:RAS ers:RAS ers:RAS Ref,,,,,,,,,,,,,,,,,1
+No 202a 203 204 Feature - Element or attribute name Start of Relevant area sub-declaration FAO area FAO (ICES) sub-area XML Syntax element attribute attribute Code RAS FA SA Description and content,,,,,,,,,,,,,,,,,1
+"The relevant area sub-declaration. Dependent upon the reporting requirement, at least one field should be filled in.",,,,,,,,,,,,,,,,,1
+List of accepted codes to be found at the EC ERS web site. (http://ec.europa.eu/fisheries/cfp/control_en forcement/ers_en.htm),,,,,,,,,,,,,,,,,1
+The economic zone ICES statistical rectangle (e.g. ?49E6?) (See details of sub-elements and attributes of POS). Status CIF CIF CIF CIF CIF Support Y|N|N/A Notes 4.4.4.7 Species Sub-declaration (SPE) Item,,,,,,,,,,,,,,,,,1
+"The primary goal of this document is to provide a complete and accurate list of requirements for the EVLA Correlator Monitor & Control System,",,,,,,,,,,,,,,,,,1
+"The requirements contained in this document are numbered based on the section/subsection in which they appear, 1.2 Scope",,,,,,,,,,,,,,,,,1
+Receive con?guration information from the EVLA M&C system and translate this info into a physical correlator hardware configuration. .,,,,,,,,,,,,,,,,,1
+"Process and transfer dynamic control data (models, ?lter parameters, etc), and monitor data (auto correlation products, state counts, etc,). .",,,,,,,,,,,,,,,,,1
+Monitor Correlator and correlator subsystem health and take corrective action autonomously (where possible) to recover from hardware and computing system faults. . ,,,,,,,,,,,,,,,,,1
+Perform limited amounts of real-time data processing and probing such as providing tools to collect and display auto correlation products. .,,,,,,,,,,,,,,,,,1
+Allow for easy system access to aid testing and debugging.,,,,,,,,,,,,,,,,,1
+In this document CPU refers to a single board computer or computer system. e2e 7 End-to-End System (archive).,,,,,,,,,,,,,,,,,1
+SRS 7 Refers to the Software Requirements S peci?calion document.,,,,,,,,,,,,,,,,,1
+"The format ofthe document follows that outlined in the IEEE STD 830 document, IEEE Recommended Practice for Software Requirements Specifications. EVLA Correlator Monitor and Control SRS",,,,,,,,,,,,,,,,,1
+The Correlator monitor subsystem will provide EVLA system wide access to all correlator system states (including the M&C supervisor system state).,,,,,,,,,,,,,,,,,1
+"Sorne ofthis information will be provided on a time synchronous basis as required by other systems (backend.monitor archive, data archive, etc,) and other information will only be presented on a request basis.",,,,,,,,,,,,,,,,,1
+"The CMCS will be a fully observable system with the only limits placed on information access being those imposed by hardware, bandwidth, and/ or security restrictions.",,,,,,,,,,,,,,,,,2
+"The MCCC will accept external data feeds for models, time standards, fiber-link phase corrections and other required data to be packaged with control data delivered to the correlator hardware, Recovery",,,,,,,,,,,,,,,,,2
+"A few authorized individuals may be allowed access to parts of the system that are usually considered restricted,",,,,,,,,,,,,,,,,,1
+"The Correlator Monitor and Control is a critical component in the Astronomical data path, If it is unavailable, incoming astronomical data will be lost, Computer Hardware Limitations",,,,,,,,,,,,,,,,,1
+"It is assumed that the Correlator will receive con?guration data in a format that is unambiguous and results in a convergent hardware con?guration (requested con?guration is valid and achievable), 2.5.2",,,,,,,,,,,,,,,,,1
+"The interface between the CMIB, MC C C, and CPC C shall be Ethernet (IEEE 802.3 compliant) 0f100 Mbits/sec or better data rate. 311 ,2 Network Topolo gy 7",,,,,,,,,,,,,,,,,2
+The interface between the MC C C and external networks (E VLA M&C) shall be E themet (IEEE 802. 3 compliant),,,,,,,,,,,,,,,,,2
+"Reboots should result in minimal system interruptions with the offending CPU recon?guring and returning to service autonomously, Module Features 7",,,,,,,,,,,,,,,,,1
+"This should allow the correlator CMlBs to boot, con?gure, and run without any communication outside of the correlator M&C network, 3.2.4 CPCC Req. 1])",,,,,,,,,,,,,,,,,2
+"This computer may eXist as a hot swappable or redundant CPU device capable of self-healing where possible, 3,242 System Isolation7",,,,,,,,,,,,,,,,,2
+The CPC C shall have all required disk and?le system facilities installed locally such that the system can boot and run in a stand-alone con?guration.,,,,,,,,,,,,,,,,,1
+"This requirement is to allow correlator power monitoring and control to continue in the event of an M&C network failure, 3.3 Performance Requirements 3.3.1 Hardware 3311 Description Processing Software Performance 7",,,,,,,,,,,,,,,,,1
+"The CMCS processors shall be EVLA Correlator Monitor and Control SRS capable of meeting all data processing deadlines and anticipatedfuture requirements 331,2 Processor Hardware Performance 7",,,,,,,,,,,,,,,,,2
+"The CMCS processors shall be capable of responding to correlator h ardware inputs (interrupts) in a deterministicfashion with su?icientpeiformance to avoid data loss, corruption or over?ows. 3.3.2 Software Req.",,,,,,,,,,,,,,,,,2
+ID | 3321 Description Errors 7 All lower system error and debug messages shall be present at the MC C C layer.,,,,,,,,,,,,,,,,,1
+ID l 341 Description Auto-correction 7 the CMCS shall be selfmortitoring.,,,,,,,,,,,,,,,,,1
+"It will be capable of detecting, reporting on and automatically taking action to remedy or lessen the impact of, at a minimum, the following types of abnormal conditions: processor hardware failure.",,,,,,,,,,,,,,,,,2
+"operating system hangs or crashes, temperature or voltage deviations, computational performance below minimum speci?cations.",,,,,,,,,,,,,,,,,2
+35.3 Debugging 7 all software application modules shall be debuggable.,,,,,,,,,,,,,,,,,1
+The CMCS needs a robust security mechanism in place so that unauthorized users are not allowed access.,,,,,,,,,,,,,,,,,2
+"Authorized users are expected to be restricted to software and hardware development, testing, maintenance and operations personnel.",,,,,,,,,,,,,,,,,2
+All users ofthe CMCS must be uniquely identified.,,,,,,,,,,,,,,,,,1
+"This could be done Via a username and associated password scheme that would authenticate and authorize the user access to the system and, if applicable, grant the user access to restricted or controlled parts of the system.",,,,,,,,,,,,,,,,,2
+"If a user cannot be identified, they will not be given access.",,,,,,,,,,,,,,,,,1
+"In order to monitor all past access to the system, all attempts to access the system should be logged. Users? needs and expectations from the system will be different.",,,,,,,,,,,,,,,,,1
+Systems operations should be given unrestricted access to all aspects of the system and should have the authority to grant and revoke privileges on a per-user basis.,,,,,,,,,,,,,,,,,1
+"(e.g., username and password) 3.8.2 All login attempts shall be done in a secure mariner.",,,,,,,,,,,,,,,,,1
+"(e.g., encrypted passwords) 3.8.3 A system administrator shall have unrestricted access to all aspects of the system, 3.84",,,,,,,,,,,,,,,,,1
+Each user shall have a set of system access properties that de?nes the user?s privileges within the system.,,,,,,,,,,,,,,,,,1
+The administrator shall have the ability to block all access to the system for all users or selectively by user.,,,,,,,,,,,,,,,,,1
+Maximalpractical use of available ?hot- swappable ? devices and components shall be made. 3.10 Documentation 3101,,,,,,,,,,,,,,,,,1
+Software shall be written in a style that is easily readable and usingpractices that allow for minimal confusion.,,,,,,,,,,,,,,,,,1
+EVLA Correlator Monitor and Control SRS,,,,,,,,,,,,,,,,,2
+The piimary goal of this document is to provide a complete and accurate list of requirements for the EVLA Correlator Backend System.,,,,,,,,,,,,,,,,,1
+"Upon completion, the document Will act as a binding contract between developers and users and Will provide a common point of reference for system expectations. ",,,,,,,,,,,,,,,,,1
+"The piimary audience of this document includes, but is not limited to, proj ect leaders, the designers and developers of the system and the end user.",,,,,,,,,,,,,,,,,1
+The document may also be of interest to EVLA proj ect scientists and engineers or as a reference for individuals involved in similar proj ects With similar requirements. ,,,,,,,,,,,,,,,,,1
+The requirements contained in this document are numbered based on the section/subsection in Which they appear.,,,,,,,,,,,,,,,,,1
+The Correlator Backend System lies between the Correlator and the End-to-End Systems.,,,,,,,,,,,,,,,,,1
+"The lag frames received from the Correlator Will contain up to 128 lag values, so lag sets longer than 128 values Will span multiple lag frames and require proper ordeiing and assembly into complete lag sets.",,,,,,,,,,,,,,,,,1
+"All data about the astronomical data. NaN 7 Literally, ?",,,,,,,,,,,,,,,,,1
+"Not a Number?. For ?oating point data types, a bit stiing that does not translate into a valid ?oating point number.",,,,,,,,,,,,,,,,,1
+"Non-real-time 7 Of?ine operations With data input from some external storage device or generated internal (e.g., for testing). Processing Pipeline 7",,,,,,,,,,,,,,,,,1
+The remainder of this document contains a more detailed description of the Correlator Backend System as well as the requirements necessary to design and build the system.,,,,,,,,,,,,,,,,,1
+Section 2 provides a general descnption of the Correlator Backend System.,,,,,,,,,,,,,,,,,1
+Section 3 details the requirements of the product and is the core of this document. EVLA Operations System SRS 2,,,,,,,,,,,,,,,,,1
+"The format of the document follows that outlined in the IEEE STD 830 document, IEEE Recommended Practice for Software Requirements Speci?cations. EVLA Operations System SRS",,,,,,,,,,,,,,,,,1
+The EVLA Correlator Backend System Will be designed and implemented as a real-time data processing system.,,,,,,,,,,,,,,,,,2
+The system is expected to be implemented on a distributed memory cluster of connected processors.,,,,,,,,,,,,,,,,,1
+Computers in the system Will all be exactly the same and operating systems and applications running on them Will communicate With one another and the Monitor and Control System over a network.,,,,,,,,,,,,,,,,,2
+Data input to the system from the Correlator and output from it to the End-to-End System,,,,,,,,,,,,,,,,,2
+Will be over very high?speed networks.,,,,,,,,,,,,,,,,,1
+"The networks connecting the internal processors, the Correlator and the E2E are part of the BE System.",,,,,,,,,,,,,,,,,1
+"Currently, only a conceptual diagram eXists for the system and should be Viewed as such (see Figure 1).",,,,,,,,,,,,,,,,,1
+The BE Management functions Will run on one of the cluster processors With one or more shadow processors standing by.,,,,,,,,,,,,,,,,,2
+The lag frames contain correlation lag values and all auxiliary parameters needed to assemble the lags into complete lag sets (properly ordered time series).,,,,,,,,,,,,,,,,,2
+It is currently assumed that all observational modes yielding correlator results that are transmitted to the Backend Will be in the form of lag frames.,,,,,,,,,,,,,,,,,1
+The BE Will receive and act upon status requests and control commands originating in or Via the M&C System. Data Processing,,,,,,,,,,,,,,,,,1
+"The Correlator lag frames Will be assembled into time series, normalized, and",,,,,,,,,,,,,,,,,1
+When necessary time stamp adj usted.,,,,,,,,,,,,,,,,,1
+The time series Will also be Fourier Transformed and other user selectable time and/or frequency domain processes Will be applied.,,,,,,,,,,,,,,,,,2
+All pertinent meta?data Will be contained in the formatted output.,,,,,,,,,,,,,,,,,1
+The fundamental unit of output is the minimum sub-band cross- power spectrum produced by the Correlator.,,,,,,,,,,,,,,,,,1
+"The BE Will produce a variety of error, warning, status and other reports and messages that Will be transferred to the M&C for ?nal disposition. 2.2.4 Monitoring",,,,,,,,,,,,,,,,,2
+The ability to attempt recovery from failure and out of spec performance conditions Will be built into the system. 2.2.6 Control,,,,,,,,,,,,,,,,,2
+"The system Will provide control and auxiliary parameters to input, output, processing, monitor, recovery, and other functions and receive status and performance data from them.",,,,,,,,,,,,,,,,,2
+The ability of the Backend System to achieve and maintain real-time processing Will be Vitally dependent upon reliable operation and rapid diagnosis and repair of faults in the hardware and software systems.,,,,,,,,,,,,,,,,,2
+These individuals Will be responsible for performing corrective and preventive maintenance along With periodic performance tests and upgrades.,,,,,,,,,,,,,,,,,1
+Engineers and technicians Will need tools to inspect individual devices from remote locations.,,,,,,,,,,,,,,,,,1
+These individuals are primarily interested in the science that is obtained from the instrument.,,,,,,,,,,,,,,,,,1
+Their main interaction Will be to select and provide parameters for any additional data processing beyond the Fourier transforms. Software Developer,,,,,,,,,,,,,,,,,2
+These individuals are responsible for developing the software and Will interact With the system to ensure that it is functioning properly.,,,,,,,,,,,,,,,,,2
+The software developer requires remote access to the system so that troubleshooting can be accomplished away from the EVLA and during non-Working hours. Web User,,,,,,,,,,,,,,,,,2
+A few authorized individuals may be allowed access to parts of the system that are usually considered restricted. The Correlator Backend System is a critical component in the Astronomical data path.,,,,,,,,,,,,,,,,,2
+The ability to realize and maintain real-time operations is critically dependent upon the performance levels of available network systems.,,,,,,,,,,,,,,,,,1
+Processing Limitations Operations performed shall be reversible.,,,,,,,,,,,,,,,,,1
+"That is, the original raw uncorrected data must be recoverable from the processing output.",,,,,,,,,,,,,,,,,1
+It is assumed that the Correlator Will deliver suitably formatted network data packets to the input network of the Backend System.,,,,,,,,,,,,,,,,,1
+Lag frames Will not necessarily arrive in Lag Set order.,,,,,,,,,,,,,,,,,1
+All lag frames for the same baseline Will be directed to the same Backend processor.,,,,,,,,,,,,,,,,,1
+It is further assumed that the number of lags per Lag Set Will always be a power of two. 2.5.2 Auxiliary Data,,,,,,,,,,,,,,,,,1
+It is assumed that all auxiliary data needed for processing and formatting operations Will be provided directly by the correlator or indirectly by the Monitor and Control System in a timely manner.,,,,,,,,,,,,,,,,,2
+Much of this data Will originate from the Station Board CMIBS. 2.5.3 Outgoing Data Stream EVLA,,,,,,,,,,,,,,,,,1
+It is assumed that the e2e System Will be capable of accepting output data rates and volumes generated by the Backend System.,,,,,,,,,,,,,,,,,1
+Visibility data from different baselines could be processed by different BE processors.,,,,,,,,,,,,,,,,,1
+Final assembly of all Visibility data is expected to be performed by the e2e system. Description Lag Frames 7,,,,,,,,,,,,,,,,,1
+The BE shall receive LT A or SpeedDump Lag F rames ?om the C or'relator.,,,,,,,,,,,,,,,,,1
+"For a detailed description of the two dump formats see Reference 8, pages 69 to 71.",,,,,,,,,,,,,,,,,1
+This Will most likely be in the form of one or more frames per UDP/IP packet 3.1.1.2 Transfers 7,,,,,,,,,,,,,,,,,1
+"The BE shall receive, via M&C, data and parameters speci?c to the current E VIA Observational Mode needed for processing the C or'relatorLag values. 3.1.2.8 Meta?data 7",,,,,,,,,,,,,,,,,2
+"The BE shall receive, via M &C, all meta-data necessary to format BE results for delivery to the E2E. 3.1.2.9 Operational Status and Control 7",,,,,,,,,,,,,,,,,2
+The BE shall provide operational status data to and receive control data?om the M&C System.,,,,,,,,,,,,,,,,,2
+This includes Lag Frame destination addresses and address changes. 3.1.2.10 Error and Warning 7,,,,,,,,,,,,,,,,,1
+The BE shall provide error and warning reports to M &C as operating conditions warrant. 3.1.2.11 Debug/Te st Messages 7,,,,,,,,,,,,,,,,,2
+The BE shall provide several optionally selectable levels ofprinted messages detailing operational parameters at critical locations in the system. Description Formatted Output 7,,,,,,,,,,,,,,,,,2
+The BE shall deliver formatted ?nal results to the e2e System.,,,,,,,,,,,,,,,,,2
+The BE shall produce all data needed by the e2e System for archiving and further processing.,,,,,,,,,,,,,,,,,2
+ID Description 3.2.1.1 Monitor and Control System 7,,,,,,,,,,,,,,,,,1
+The BE shall acknowledge receipt of all data received from M &C . 3.2.1.2 Correlator System 7,,,,,,,,,,,,,,,,,2
+The BE shall notify M&C of any detected interruptions ofdata delivery?om the C or'relator.,,,,,,,,,,,,,,,,,2
+The BE shall verify successful delivery afoutput t0 the e2e. 3.2.1.4 Internal Data 7,,,,,,,,,,,,,,,,,2
+The BE shall guarantee safe delivery of all internal messages. 3.2.1.5 Lag Frames 7,,,,,,,,,,,,,,,,,2
+The BE shall receive incoming data packets from the Correlator t0 Backend network interface.,,,,,,,,,,,,,,,,,2
+This network is a part of the BE System. 3.2.2.2,,,,,,,,,,,,,,,,,1
+The BE shall verify the successful receipt ofincoming data from the Correlator.,,,,,,,,,,,,,,,,,2
+"The BE shall respond to incoming correlator made changes, user optional processing sequence achor parameter changes, and other external inputs that a?ect the data processing pipeline.",,,,,,,,,,,,,,,,,2
+Update internal parameter tables and synchronize data processing pipeline EVLA Operations System SRS 10 With new operational conditions. 3.2.2.5 Time Series Assembly 7,,,,,,,,,,,,,,,,,1
+The BE shall assemble the received input data into continuous time series (lag sets). 3.2.2.6 Data Integrity Veri?cation 7,,,,,,,,,,,,,,,,,2
+The BE shall ensure that time series data is correctly ordered and contains valid data values along its entire extent.,,,,,,,,,,,,,,,,,2
+The BE shall be able to make time stamp acb?ustments as required by the observational mode and correlator output parameters.,,,,,,,,,,,,,,,,,2
+The BE shall be able to perform windowing operations prior and subsequent to F ourier T ransform.,,,,,,,,,,,,,,,,,2
+This Will be needed for narrow band RFI mitigation.,,,,,,,,,,,,,,,,,1
+Post Fourier Transform windowing,,,,,,,,,,,,,,,,,1
+The BE shall be able to apply user selected time domain processes.,,,,,,,,,,,,,,,,,1
+"These processes should be constructed to be chainable (output of any time domain process can be piped to input of any other, including replica of self and Fourier Transform) and repeatable in the chain.",,,,,,,,,,,,,,,,,1
+The BE shall be able to perform F ourier T ransform the lag set time series.,,,,,,,,,,,,,,,,,1
+A power-of?two compleX-to-compleX Fast Fourier Transform,,,,,,,,,,,,,,,,,1
+With retention of all output positive and negative frequencies Will be used.,,,,,,,,,,,,,,,,,1
+The BE shall be able to apply user selected?equency domain processes.,,,,,,,,,,,,,,,,,1
+These processes should be constructed to be chainable (output of Fourier Transform and any frequency domain process can be piped to input of any frequency domain process including replica of self) and repeatable in the chain.,,,,,,,,,,,,,,,,,1
+The amount (time duration) of summation Will be controlled by an observational mode parameter obtained Via M&C.,,,,,,,,,,,,,,,,,1
+"The BE shall keep track of the number ofsamples/dumps integrated in each spectral channel The summation Will occur after all optional frequency domain processing, or if none, after the Fourier Transform.",,,,,,,,,,,,,,,,,2
+The BE shall combine the ?nished spectra with meta- and auxiliary data tofomi suitablyformatted output data sets.,,,,,,,,,,,,,,,,,2
+The BE shall storeformatted output data records in a memory bu?er with backup disk baf?ing.,,,,,,,,,,,,,,,,,2
+The BE shall veri?) that all sent data was successfully received.,,,,,,,,,,,,,,,,,2
+Accumulate data transfer statistics and compare against tolerances.,,,,,,,,,,,,,,,,,1
+"Compare against tolerances and report all out of tolerance conditions. 3.2.2.23 Monitor Compute Errors 7 The BE shall trap, flag and repair inf?s, NaN ?s, undeij?lows, over?ows and other computation errors.",,,,,,,,,,,,,,,,,1
+Accumulate computation error statistics and compare against tolerances.,,,,,,,,,,,,,,,,,1
+Report all out of tolerance conditions. 3.2.2.24 Monitor Processes 7,,,,,,,,,,,,,,,,,1
+The BE shall periodically or upon request check PID ?s and assure that all started tasks are alive and running.,,,,,,,,,,,,,,,,,1
+"Report missing, stopped, defunct and other damaged processes. 3.2.2.25 Monitor Processors 7",,,,,,,,,,,,,,,,,1
+The BE shallperiodically or upon request check B ackend physical processors and assure that all neededprocessors are alive and responding.,,,,,,,,,,,,,,,,,2
+The BE shall be able to initiate a processing task on any B ackend processor. 3.2.2.28 Stop Process 7,,,,,,,,,,,,,,,,,2
+The BE shall be able to initiate a reboot of any B ackend a physical processor. 3.2.2.31 Reboot network 7,,,,,,,,,,,,,,,,,2
+The BE shall be able to initiate a reboot of any internal network. 3.2.2.32 Of?oad 7,,,,,,,,,,,,,,,,,2
+The BE shall be able to redistribute internal workload among its processors.,,,,,,,,,,,,,,,,,2
+Data entry status queue to track each record in the buffer.,,,,,,,,,,,,,,,,,1
+"This includes, but is not limited to, partial data, zero data, under?ows, over?ows, in?nities, and NaN?s",,,,,,,,,,,,,,,,,1
+Whether obtained on input or arising during processing. 3.3.2,,,,,,,,,,,,,,,,,1
+The BE System shall be capable of accepting an aggregate data input stream from the C orrelator of a minimum of I. 6 Gbytes/sec.,,,,,,,,,,,,,,,,,2
+"This must be done simultaneously With the output stream, but not necessarily over the same interconnects.",,,,,,,,,,,,,,,,,1
+This is an initial deployment speci?cation and Will be increased over time. 3.3.2.2 Output 7,,,,,,,,,,,,,,,,,1
+The BE System shall be capable of delivering an output data stream to the e2e System of a minimum of 25 MBytes/sec.,,,,,,,,,,,,,,,,,2
+This includes resends and simultaneous transfer of data stored due to a previous e2e connection outage.,,,,,,,,,,,,,,,,,1
+"This must be done simultaneously With the output stream, but not necessarily over the same interconnects.",,,,,,,,,,,,,,,,,1
+This is an initial deployment speci?cation and Will be increased over time. 3.3.2.3 CPU 7,,,,,,,,,,,,,,,,,1
+>? indicates questions or comments to myself and/ or readers.,,,,,,,,,,,,,,,,,1
+The user? can be replaced With ?An auth01ized user?. 1.2,,,,,,,,,,,,,,,,,1
+The Correlator Backend System lies between the Correlator and the End-to-End Systems.,,,,,,,,,,,,,,,,,1
+"This document Will de?ne only those requirements that must be ful?lled by the Correlator Backend System. 1.3 Definitions, Acronyms, and Abbreviations 1.3.1 Definitions Administrator 7 An individual",,,,,,,,,,,,,,,,,1
+"The lag frames received from the Correlator Will contain up to 128 lag values, so lag sets longer than 128 values Will span multiple lag frames and require proper ordeiing and assembly into complete lag sets.",,,,,,,,,,,,,,,,,1
+"All data about the astronomical data. NaN 7 Literally, ?",,,,,,,,,,,,,,,,,1
+"Not a Number?. For ?oating point data types, a bit stiing that does not translate into a valid ?oating point number.",,,,,,,,,,,,,,,,,1
+"Non-real-time 7 Of?ine operations With data input from some external storage device or generated internal (e.g., for testing). Processing Pipeline 7",,,,,,,,,,,,,,,,,1
+The remainder of this document contains a more detailed description of the Correlator Backend System as well as the requirements necessary to design and build the system.,,,,,,,,,,,,,,,,,1
+Section 2 provides a general descnption of the Correlator Backend System.,,,,,,,,,,,,,,,,,1
+Section 3 details the requirements of the product and is the core of this document. EVLA Operations System SRS 2,,,,,,,,,,,,,,,,,1
+"The format of the document follows that outlined in the IEEE STD 830 document, IEEE Recommended Practice for Software Requirements Speci?cations. EVLA Operations System SRS",,,,,,,,,,,,,,,,,1
+The EVLA Correlator Backend System Will be designed and implemented as a real-time data processing system.,,,,,,,,,,,,,,,,,2
+The system is expected to be implemented on a distributed memory cluster of connected processors.,,,,,,,,,,,,,,,,,1
+Computers in the system Will all be exactly the same and operating systems and applications running on them Will communicate With one another and the Monitor and Control System over a network.,,,,,,,,,,,,,,,,,1
+Data input to the system from the Correlator and output from it to the End-to-End System,,,,,,,,,,,,,,,,,1
+Will be over very high?speed networks.,,,,,,,,,,,,,,,,,1
+"The networks connecting the internal processors, the Correlator and the E2E are part of the BE System.",,,,,,,,,,,,,,,,,1
+"Currently, only a conceptual diagram eXists for the system and should be Viewed as such (see Figure 1).",,,,,,,,,,,,,,,,,1
+The BE Management functions Will run on one of the cluster processors With one or more shadow processors standing by.,,,,,,,,,,,,,,,,,1
+The remaining processors Will be running the Data Processing functions. Correlator lag data Will be received directly from the Correlator Baseline Boards in the form of Lag Frames.,,,,,,,,,,,,,,,,,2
+The lag frames contain correlation lag values and all auxiliary parameters needed to assemble the lags into complete lag sets (properly ordered time series).,,,,,,,,,,,,,,,,,1
+It is currently assumed that all observational modes yielding correlator results that are transmitted to the Backend Will be in the form of lag frames.,,,,,,,,,,,,,,,,,1
+The BE Will receive and act upon status requests and control commands originating in or Via the M&C System. Data Processing,,,,,,,,,,,,,,,,,1
+"The Correlator lag frames Will be assembled into time series, normalized, and",,,,,,,,,,,,,,,,,1
+When necessary time stamp adj usted.,,,,,,,,,,,,,,,,,1
+The time series Will also be Fourier Transformed and other user selectable time and/or frequency domain processes Will be applied.,,,,,,,,,,,,,,,,,1
+"Prior to output, the end results Will be formatted to meet the internal needs of the e2e. Data Output Formatted spectra Will be transferred to the End-to-End System.",,,,,,,,,,,,,,,,,2
+All pertinent meta?data Will be contained in the formatted output.,,,,,,,,,,,,,,,,,1
+The fundamental unit of output is the minimum sub-band cross- power spectrum produced by the Correlator.,,,,,,,,,,,,,,,,,1
+(No ?stitching? operations that combine spectra from different sub-bands Will be performed.),,,,,,,,,,,,,,,,,1
+"The BE Will produce a variety of error, warning, status and other reports and messages that Will be transferred to the M&C for ?nal disposition. 2.2.4 Monitoring",,,,,,,,,,,,,,,,,1
+The ability to attempt recovery from failure and out of spec performance conditions Will be built into the system. 2.2.6 Control,,,,,,,,,,,,,,,,,2
+"The system Will provide control and auxiliary parameters to input, output, processing, monitor, recovery, and other functions and receive status and performance data from them.",,,,,,,,,,,,,,,,,2
+The ability of the Backend System to achieve and maintain real-time processing Will be Vitally dependent upon reliable operation and rapid diagnosis and repair of faults in the hardware and software systems.,,,,,,,,,,,,,,,,,2
+These individuals Will be responsible for performing corrective and preventive maintenance along With periodic performance tests and upgrades.,,,,,,,,,,,,,,,,,1
+Engineers and technicians Will need tools to inspect individual devices from remote locations.,,,,,,,,,,,,,,,,,1
+These individuals are primarily interested in the science that is obtained from the instrument.,,,,,,,,,,,,,,,,,1
+Their main interaction Will be to select and provide parameters for any additional data processing beyond the Fourier transforms. Software Developer,,,,,,,,,,,,,,,,,1
+These individuals are responsible for developing the software and Will interact With the system to ensure that it is functioning properly.,,,,,,,,,,,,,,,,,1
+The software developer requires remote access to the system so that troubleshooting can be accomplished away from the EVLA and during non-Working hours. Web User,,,,,,,,,,,,,,,,,2
+A few authorized individuals may be allowed access to parts of the system that are usually considered restricted. The Correlator Backend System is a critical component in the Astronomical data path.,,,,,,,,,,,,,,,,,2
+"If it is unavailable, incoming astronomical data Will be lost. Computer Hardware Limitations",,,,,,,,,,,,,,,,,1
+Processing Limitations Operations performed shall be reversible.,,,,,,,,,,,,,,,,,1
+"That is, the original raw uncorrected data must be recoverable from the processing output.",,,,,,,,,,,,,,,,,1
+It is assumed that the Correlator Will deliver suitably formatted network data packets to the input network of the Backend System.,,,,,,,,,,,,,,,,,1
+Lag frames Will not necessarily arrive in Lag Set order.,,,,,,,,,,,,,,,,,1
+All lag frames for the same baseline Will be directed to the same Backend processor.,,,,,,,,,,,,,,,,,1
+It is further assumed that the number of lags per Lag Set Will always be a power of two. 2.5.2 Auxiliary Data,,,,,,,,,,,,,,,,,2
+It is assumed that all auxiliary data needed for processing and formatting operations Will be provided directly by the correlator or indirectly by the Monitor and Control System in a timely manner.,,,,,,,,,,,,,,,,,2
+It is assumed that the e2e System Will be capable of accepting output data rates and volumes generated by the Backend System.,,,,,,,,,,,,,,,,,2
+Visibility data from different baselines could be processed by different BE processors.,,,,,,,,,,,,,,,,,1
+Final assembly of all Visibility data is expected to be performed by the e2e system. Description Lag Frames 7,,,,,,,,,,,,,,,,,1
+The BE shall receive LT A or SpeedDump Lag F rames ?om the C or'relator.,,,,,,,,,,,,,,,,,1
+"For a detailed description of the two dump formats see Reference 8, pages 69 to 71.",,,,,,,,,,,,,,,,,1
+This Will most likely be in the form of one or more frames per UDP/IP packet 3.1.1.2 Transfers 7,,,,,,,,,,,,,,,,,1
