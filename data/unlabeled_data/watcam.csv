@@ -1,0 +1,311 @@
+Introduction This document outlines a set of steps that should be taken to provide shared libraries and position independent code support to the Open Watcom compiler as a part of the Open Watcom Linux porting effort.
+All information is presented relative to open_watcom_devel_1.1.7.
+"Since Open Watcom is open-source project, we assume some of the topics covered might become obsolete or inaccurate at the moment of reading this document."
+A considerable amount of experimental work was performed prior writing this Specification.
+Some results of that work are included in this document.
+This document consists of four large sections.
+Section one is an introductory section.
+Section two describes the key components of Open Watcom C Compiler and Linker.
+"Section three defines steps, needed for adding PIC and shared object support."
+Section four describes some problems found during our investigation.
+? An executable file holds a program suitable for execution; the file specifies how the function exec() creates a program?s process image.
+? A shared object file holds code and data suitable for linking in two contexts.
+"First, the link editor may process it with other relocatable and shared object files to create another object file."
+"Second, the dynamic linker combines it with an executable file and other shared objects to create a process image."
+wlink have limited support of building and using of ELF files.
+Relocatable Object Module Format This format (developed by Microsoft) is produced by wcc386 (and has ?native? support in wlink).
+Object Reading Library API for reading object files.
+"Position Dependent Code (opposite to PIC) Position Independent Code This lets a segment?s virtual address change from one process to another, without invalidating execution behavior."
+"Because PIC uses relative addressing between segments, the difference between virtual addresses in memory must match the difference between virtual addresses in the file."
+The difference between the virtual address of any segment in memory and the corresponding virtual address in the file is thus a single constant value for any one executable or shared object in a given process.
+Open Watcom C Compiler Open Watcom Linker 1.2 References 1.
+"SYSTEM V APPLICATION BINARY INTERFACE, Edition 4.1 2."
+"SYSTEM V APPLICATION BINARY INTERFACE, Intel386? Architecture Processor Supplement, Fourth Edition 3."
+Linux Standard Base Specification for the IA32 Architecture 1.9.0-20031030 4.
+Key Components of the Open Watcom C Compiler and Linker Certain parts of the Open Watcom source code are especially important for our project.
+"Such parts will be referred as ?components? throughout this document, although some of them are logically interrelated source files, and others are subprojects (subdirectories under the Open Watcom source tree)."
+The informal names defined here will be used in the further parts of this document.
+Each component is described in two sections.
+"First section describes the purpose of the component, and provides the list of core source files."
+Second section describes the principles of function of the corresponding component.
+"Important functions, data structures, and constants are described as well."
+"ORL is designed for reading various formats of object files: ELF, OMF, and COFF."
+We are interested mainly in the ELF stuff ($OWROOT/bld/orl/elf).
+2.1.2 Description There are several handle types defined in ORL.
+Most important are orl_sec_handle and orl_symbol_handle.
+"There are many functions operating with sections and symbols: Currently, LoadELF is able to create only ELF executable files (shared objects are not supported)."
+Most of the work is performed in loadelf.c.
+"The second file, loadelf2.c, contains only the routines for creating ELF symbol tables."
+The main function is FiniELFLoadFile().
+The following tasks are performed there: 1.
+"Initialize the ELF header, program headers, and section headers."
+Write relocation section (.rela.text).
+Write DWARF debug information (if needed).
+"Write symbol table (.symtab), hash (.hash), and strings (.strtab)."
+Write section strings (.shstrtab).
+Write section headers.
+Write DWARF trailer (if needed).
+Rewind and write the ELF header and program headers.
+So the order of sections is predefined.
+Program header is created in SetHeaders() as well.
+"In this function, group list is iterated (as described in WLCore)."
+"For each group, code or data are written to the ELF file, using WriteGroupLoad()."
+"The corresponding program headers and sections are filled as well, using SetGroupHeaders()."
+Note that uninitialized data (.bss) are processed in the special way.
+Relocations are written using void WriteRelocsSections( ElfHdr *hdr ).
+"In this implementation, all relocations are presented with explicit addends (i.e."
+"Task 5 is performed by WriteElfSymTable( ElfSymTable *tab, ElfHdr *hdr, int hashidx, int symtabidx, int strtabidx )."
+Both symbol table and hash are written in this function.
+Then string table is written using WriteSHStrings().
+Function WriteSHStrings() is reused for the next task (i.e.
+This field specifies the current offset in the ELF file.
+"However, it is not updated automatically, e.g."
+after WriteLoad() therefore precise calculations are needed to keep this value up to date.
+Functions to write ELF (and other) executable files are located in $OWROOT/bld/wl/c/loadfile.c.
+2.4.2 Description Documentation for the Code Generator ($OWROOT/bld/cg/doc) covers only the interface to the code generator (i.e.
+The code generator (back end) interface is a set of procedure calls.
+"These are divided into Code Generation (CG), Data Generation (DG), miscellaneous Back End (BE), Front end supplied (FE), and debugger information (DB) routines."
+"There is internal machine-independent format (allowing scalability, multiple platforms, and machine- independent optimizations)."
+"The main parts of these intermediate data (passed to the code generator for particular machine) are ""blocks"" and ""instructions"": This data looks like machine-dependent, since different architectures have different registers."
+"However, this is top-level abstraction."
+The code generator for particular architecture supplies the corresponding set of registers.
+Actually there are many register sets (e.g.
+"stack pointer, registers for temporary storage, fixed registers, etc.)"
+The hw_reg_set type is able to hold one or more registers (or be empty).
+Abbreviation of ?Object Writing Library?.
+Located in $OWROOT/bld/owl.
+OWL is designed for writing object files in ELF and COFF formats.
+We are interested mainly in the ELF (owelf.c).
+"However, OWL is not an abstract wrapper (like ORL)."
+"But rather a set of data structures and functions, useful for creating object files."
+2.5.2 Description OWL is currently used by RISC code generators (Alpha AXP and PowerPC).
+"As mentioned above, OWL is not currently used by CG386."
+OWL provides set of useful functions for creating ELF object files.
+"These functions cover sections, symbols, and relocations."
+"For understanding OWL, one can examine $OWROOT/bld/cg/risc/c/rscobj.c."
+"For example, void OWLEmitReloc( owl_section_handle section, owl_offset offset, owl_symbol_handle sym, owl_reloc_type type ) is intended to add new relocation to the specified section."
+Relocation type is defined in OWL terms: 3.
+Porting Open Watcom C Compiler and Linker to Linux The porting task was originally defined as: ? Add PIC support to the compiler.
+? Implement building of shared objects (both PIC and PDC).
+? Implement using of existing shared objects.
+This task was defined with the assumption Open Watcom is already able to build ELF files (i.e.
+"This is almost true, but there are two problems: ? Some bugs (in open_watcom_devel_1.1.7) causing problems in building ELF executables (even ?Hello, world!?)."
+? The only object file format produced by CG386 is OMF.
+"The first problem is, of course, temporary."
+"After fixing the mentioned bugs, it is possible to build ELF executable from OMF and ELF object files and e.g."
+"However, the second problem is more serious."
+"It affects the perspective of PIC implementation (and therefore, building of ?real? shared objects)."
+The corresponding issues are described in the latter sections.
+3.1 Position-Independent Code PIC stands for Position-Independent Code.
+"The functions in a shared library may be loaded at different addresses in different programs, so the code in the shared object must not depend on the address (or position) at which it is loaded."
+"Fortunately, on x86 platform all jumps are PC-relative (except for the indirect ones)."
+"There are, however, some problems with: ? functions exported by a shared object; ? indirect function calls, i.e."
+These problems are solved (in 386 ABI) mostly by introducing special relocation types.
+"These relocation types are specific to ELF object files, there are no their equivalents in OMF."
+The first approach is the simplest from implementation perspective.
+"But we will get a non-standard object file format, alien to both Linux and Windows worlds."
+Therefore such approach should be ommited.
+"The third approach seems too hard to implement, since CG386 is the most complex code generator."
+And it seems impractical to have two branches of CG386 that differ only in the output format.
+So the second approach is the best option.
+"Of course, changes to Open Watcom Linker are needed as well."
+But wlink is described in other sections.
+"Moreover, we can use ld to build shared object from ELFs produced by wcc386."
+3.1.1 Command Line Switches There are no ELF and PIC switches in Open Watcom C Compiler.
+"In gcc, ELF is default format of object files, and PIC generation is turned on by either -fPIC or -fpic."
+"Since command line of wcc386 differs from gcc very much, we may follow the ?Watcom style?."
+"For ELF, perhaps the best option is -elf."
+"The ?el? prefix is free, since the ?nearest? options are -ei and -em."
+"And this choice is logical, because the option -ez stands for ?generate PharLap EZ-OMF object files?."
+"For PIC, the GNU style seems unacceptable, since ?fp? prefix is intended for floating-point options."
+"Especially, -fpi means ?inline 80x87 instructions with emulation?."
+"Like in the ELF case, simply -pic may be acceptable (however, ?p? prefixes preprocessor options)."
+"As alternative, -zpic seems a good choice, since ?z? groups very specific options."
+There is also -re switch (already implemented).
+"This switch is mapped to POSITION_INDEPENDANT option in CG386, but nothing reasonable is performed when it is turned on."
+"Finally, our switch should be passed from wcc386 to CG386."
+"In the compiler, switches are stored in CompFlags variable."
+Other important variables are GenSwitches and (especially) TargetSwitches.
+"Switches are passed to CG386 in cgen2.c: Since Open Watcom already contains OWL with ELF support, it is planned to use this library in CG386."
+Both CG386 and OWL were described briefly in the previous sections.
+Many things in CG386 are rigidly bound to OMF structure.
+"However, any object file format defines virtually the same objects: groups, segments, symbols, relocations, etc."
+The biggest conceptual difference between OMF and ELF is relocation handling.
+But the opposite problem was successfully solved in ORL and WLCore.
+"So we can implement the same ?mapping? approach in CG386, avoiding harmful changes to the complicated code generator."
+The sample trace (see section CG386) shows how OMF object file is created.
+"Although there are many calls of this function in the trace, data are written when the following condition is true: obj->data.used > CurrSeg- >data_prefix_size."
+"Instead of calling PutObjRec(), we will call OWLEmitData()."
+Note that fix-ups are written in EjectLEData() as well.
+So OWLEmitReloc() should be used to write relocations.
+Sample mapping between i86obj.c and OWL is shown below.
+"Each entry means that we can use specified OWL function for OMF task, so there is no direct correspondence between columns."
+"Since some relocations are 386-specific, the corresponding constants to both files should be added."
+"In addition, new fixup flags are needed for the mapping between OMF-style fixups and OWL relocations."
+Extending fixups seems to be the hardest part of this subtask.
+"The only remark is that OWL in open_watcom_devel_1.1.7 seemed to be under development, i.e."
+some features are incomplete.
+3.1.3 PIC Generation GOT base register The EBX register serves as the global offset table base register for position-independent code.
+So this register should be excluded from normal code generation.
+Register macros were described in CG386 section.
+The following template illustrates turning off EBX.
+The call instruction pushes the absolute address of the next instruction onto the stack.
+"Consequently, the popl instruction pops the absolute address of .L1 into register %ebx."
+The last instruction computes the desired absolute value into %ebx.
+This works because _GLOBAL_OFFSET_TABLE_ in the expression gives the distance from the addl instruction to the global offset table; [.-.L1] gives the distance from .L1 to the addl instruction.
+"Adding their sum to the absolute address of .L1, already in %ebx, gives the absolute address of the global offset table."
+"The last line seems a bit complicated, since there is address calculation."
+"But actually this line should be add $0x3,%ebx, where immediate is the explicit addend for R_386_GOTPC relocation."
+"Note that code generator should create the undefined symbol _GLOBAL_OFFSET_TABLE_, if R_386_GOTPC encountered."
+"In addition, register EBX should be saved in the stack."
+"There is variable to_push in GenProlog(), so the needed code is: HW_CTurnOn( to_push, HW_EBX )."
+"Moreover, 386 ABI notes that EBX, ESI, and EDI should be saved in the stack, for both PIC and PDC."
+"Of course, PIC actions depend on CG386 switch for PIC."
+So conditional processing as well should be also added.
+Position-Independent Function Epilogue All registers previously saved in stack (see above) should be resotred.
+"Although epilogue is created in void GenEpilog( void ), the interesting function is void DoEpilog( void )."
+"There is variable to_pop, defining the register set to be popped."
+PIC Function Calls Function calls are handled in $OWROOT/bld/cg/intel/c/i86call.c.
+"There is also important function void AddCallIns( instruction *ins, cn call ) located in $OWROOT/bld/cg/c/bldcall.c."
+"Since ELF-specific relocations are not implemented yet, there is no code template."
+"However, the task is simple."
+"For PDC, the target address has R_386_PC32 relocation."
+"For PIC, this relocation should be R_386_PLT32."
+The corresponding GNU assembler line is call function@PLT.
+The information above covers direct function calls.
+Indirect function calls are kind of PIC data access described below.
+PIC Data Access This task covers accessing the global data (including extern and static).
+Position-independent instructions cannot contain absolute addresses.
+"Instead, instructions that reference symbols hold the symbols? offsets into the global offset table."
+Combining the offset with the global offset table address in EBX gives the absolute address of the table entry holding the desired address.
+"Although references like name@GOT seem complicated, their meaning is simple, e.g."
+"mov 0x0(%ebx), %eax, where 0x0 is addend for relocation R_386_GOT32, associated with symbol ptr."
+"For PDC, relocation type is R_386_32, and generated code is much simpler."
+"Finally, position-independent references to static data may be optimized."
+"Because EBX holds a known address, the global offset table, a program may use it as a base register."
+"External references should use the global offset table entry, because dynamic linking may bind the entry to a definition outside the current object file?s scope."
+"For static variables, the PIC code will be the following: Again, references name@GOTOFF actually correspond to relocations R_386_GOTOFF, where relocation symbol is the segment (e.g."
+There is no code template for data access.
+"This task is most complicated, so additional investigation is needed."
+PIC data access might affect the common code generator (not only CG386).
+"In general, PIC global variable should be treated as pointer to the actual address instead of address itself."
+One potentially useful function is AddGlobalIndex() located in $OWROOT/bld/cg/intel/386/c/386opseg.c.
+This function adds EBX to every memory reference.
+"Summary For PIC support, code generator should be able to produce some specific relocations (in addition to R_386_32 and R_386_PC32)."
+These relocations are summarized below (now from the perspective of link editor).
+This relocation type computes the distance from the base of the global offset table to the symbol?s global offset table entry.
+It additionally instructs the link editor to build a global offset table.
+This relocation type computes the difference between a symbol?s value and the address of the global offset table.
+It additionally instructs the link editor to build the global offset table.
+"This relocation type resembles R_386_PC32, except it uses the address of the global offset table in its calculation."
+"The symbol referenced in this relocation normally is _GLOBAL_OFFSET_TABLE_, which additionally instructs the link editor to build the global offset table."
+This relocation type computes the address of the symbol?s procedure linkage table entry and additionally instructs the link editor to build a procedure linkage table.
+3.1.4 Notes The information presented in the sections above should not be treated as retelling of 386 ABI.
+It should be used together with ABI documentation.
+Some details are omitted.
+"During the porting work, developer should refer to ABI and other documentation; perform analysis using objdump and readelf; etc."
+"3.2 Building Shared Objects This section describes the changes to Open Watcom Linker, needed for building shared libraries (PIC and PDC)."
+"3.2.1 Linker Command Line Fortunately, the command line option for building a shared object is already implemented in Open Watcom Linker."
+"In such case, one should execute the linker this way: wlink form ELF DLL ... DLL stands for Dynamic Linking Library that is shared object in the Linux world."
+The following change is needed: We will refer to these samples from other sections of this document.
+"3.2.4 Program Headers Unnecessary PT_PHDR Since shared object is not a program, the program header entry PT_PHDR is not needed."
+"Program headers are allocated in SetHeaders(), and the first element is always PT_PHDR."
+"Although PT_PHDR is never used in shared objects, PT_DYNAMIC is always used there."
+This program header specifies dynamic linking information.
+"Therefore we can leave hdr->eh.e_phnum = NumGroups + 1, for executable and shared object."
+"Following the GNU convention, we will place dynamic segment after other segments."
+3.2.5 Dynamic Section The PT_DYNAMIC segment contains the .dynamic section.
+This section (with type SHT_DYNAMIC) contains an array of the following structures.
+"Both are generally the same, but dynamic table does not contain local symbols (except sections)."
+"Of course, the corresponding string table should be created (.dynstr instead of .strtab)."
+"For shared objects, section .hash is related to dynamic symbol table."
+"Some changes are needed to WriteElfSymTable(), located in loadelf2.c."
+Function WriteSHStrings() from loadelf.c should be changed as well.
+"These changes include providing virtual addresses of the corresponding sections (there is no memory allocation for normal symbol table), and supporting different section names and types."
+"Like normal symbol table, two variables are needed for dynamic table: it should build the Global Offset Table."
+Additionally wlink should process this relocation types according to 386 ABI.
+"The table?s entry zero is reserved to hold the address of the dynamic structure, referenced with the symbol _DYNAMIC."
+Entries one and two in the global offset table also are reserved.
+One should add support of these relocation types to both ORL and WLCore.
+"For ORL, introduce new constants in orlglobl.h, e.g."
+Then extend the mapping between ELF and ORL (elflwlv.c).
+"Then the mapping between ORL_ and FIX_ should be added to DoReloc(), objorl.c."
+"Of course, new FIX_ constants are needed as well (obj2supp.h)."
+Relocation processing is performed in obj2supp.c.
+Some preprocessing is performed in objorl.c as well.
+Relocation types mentioned above are processed in the following way.
+A This means the addend used to compute the value of the relocatable field.
+G This means the offset into the global offset table at which the address of the relocation entry?s symbol will reside during execution.
+GOT This means the address of the global offset table.
+S This means the value of the symbol whose index resides in the relocation entry.
+"We can build the GOT during ORL conversion, i.e."
+"During this phase, symbol offsets into the GOT are calculated."
+"At the end of first linker pass, we can create the .got section (i.e."
+"At this time, _GLOBAL_OFFSET_TABLE_ symbol should be defined as well."
+This allows creating the GOT with minimal changes to the source code.
+"For unresolved external symbols, GOT entries are needed as well."
+Linker should create R_386_GLOB_DAT relocations for such GOT entries.
+These relocations are associated with unresolved symbols.
+Another relocation type that can appear in shared object is R_386_RELATIVE.
+Its offset member gives a location within a shared object that contains a value representing a relative address.
+The dynamic linker computes the corresponding virtual address by adding the virtual address at which the shared object was loaded to the relative address.
+"Such relocations are created from R_386_GOT32, if the corresponding symbol is not external."
+"In this section, only GOT aspects related with data were described."
+Code aspects are described in the next section.
+"Finally, the dynamic array should be updated (PLTGOT)."
+Note that there is PowerPC TOC implementation in Open Watcom Linker.
+"TOC is close to GOT in some sense, but in general it is different thing."
+"However, developer should take a look at existing TOC implementation, since it contains some useful ideas."
+"3.2.9 Procedure Linkage Table PLT is like GOT in some sense, but it is associated with PIC code instead of PIC data."
+"Although 386 ABI defines PLT for PDC and PIC, only PIC PLT is needed for our current task: .PLT0@PC in each entry means the distance between the corresponding jmp and .PLT0, since x86 jumps are PC-relative."
+The GOT entry should be created for each PLT entry.
+"Such GOT entry should contain the address of the following pushl instruction, not the real address of e.g."
+Thus name1@GOT means the offset of the corresponding GOT entry.
+A new R_386_JUMP_SLOT relocation should be created.
+Its offset will specify the global offset table entry used in the previous jmp instruction.
+"The relocation entry also contains a symbol table index, thus telling the dynamic linker what symbol is being referenced, e.g."
+Instructions pushl $offset pushes the offset of such relocation in the PLT relocation table (rel.plt).
+"When first creating the memory image of the program, the dynamic linker sets the second and the third entries in the global offset table to special values."
+Therefore these entries are reserved.
+"For further references to the same symbol, we will refer to the previously created PLT entry."
+Source files and functions participating in relocation process were described in the previous section.
+This allows creating the PLT with minimal changes to the source code.
+Note that the separated relocation section (.rel.plt) is needed for PLT relocations.
+This relocation table should also reside in the code segment.
+"Finally, the dynamic array should be updated (PLTRELSZ, PLTREL, and JMPREL)."
+3.2.10 Notes The information presented in the sections above should not be treated as retelling of 386 ABI.
+It should be used together with ABI documentation.
+"Some details are omitted, e.g."
+section flags for the dynamic section.
+"During the porting work, developer should refer to ABI and other documentation; perform analysis using objdump and readelf; etc."
+Note that symbol types (STT_) are very important for dynamic linking tasks.
+"For example, STT_FUNC is closely related with PLT."
+The current implementation (i.e.
+"open_watcom_devel_1.1.7) sometimes loses symbol types, so such issues need to be fixed."
+"3.3 Using Shared Objects This section describes the changes to Open Watcom Linker, needed for using existing shared libraries (PIC and PDC)."
+Note that a shared library may use other shared libraries as well.
+"Since many things are related to building shared libraries (which is covered in the provious sections of this document), this section is sufficiently short."
+3.3.1 Reading Shared Objects Shared object is another kind of ELF object file.
+ORL is able to read ELF object files.
+Some features related to shared objects are implemented as well.
+Segmentation fault) when one tries to link a shared object.
+ORL should be reviewed and fixed in respective to these issues.
+"Additionally, the linker should collect the names of shared objects for further processing (see ""Needed Libraries"" below)."
+"If this list is non-empty, the linker should perform some tasks described in the further sections."
+3.3.2 Program Interpreter The additional program header PT_INTERP is needed for an executable that uses shared object(s).
+It specifies the location and size of a null-terminated path name to invoke as an interpreter.
+This segment type is meaningful only for executable files (though it may occur for shared objects); it may not occur more than once in a file.
+"If it is present, it must precede any loadable segment entry."
+"For Linux, the program interpreter is /lib/ld-linux.so.2 The needed changes in LoadELF are simple and obvious."
+"When the dynamic linker creates the memory segments for an object file, the dependencies (recorded in DT_NEEDED entries of the dynamic structure) tell what shared objects are needed to supply the program?s services."
+"DT_NEEDED holds the string table offset of a null-terminated string, giving the name of a needed library."
+The offset is an index into the table recorded in the DT_STRTAB entry.
+The dynamic array may contain multiple entries with this type.
+"These entries? relative order is significant, though their relation to entries of other types is not."
+Dynamic array is described in the previous sections.
+3.3.4 Global Offset Table The GOT processing is described in previous section.
+"If any specific relocation is encountered, the linker should resolve them and create the Global Offset Table."
+3.3.5 Procedure Linkage Table The PLT processing is described in previous section.
+"If any specific relocation is encountered, the linker should resolve them and create the Procedure Linkage Table."
+"There is, however, one important case not covered in the previous sections."
+"If PDC shared object is needed for the program, the linker creates PDC PLT."
