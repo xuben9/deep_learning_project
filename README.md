@@ -21,7 +21,7 @@
 #### Sprint 3
 ![Sprint 3 Burndown](/images/sprint3-burndown.png)
 
-#### Sprint 3
+#### Sprint 4
 ![Sprint 4 Burndown](/images/sprint4-burndown.png)
 
 #### Evaluation
