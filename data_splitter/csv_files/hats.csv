@@ -1,99 +1,99 @@
-"The data will be collected from the participants, organized by location and type of data, and quality flags will be added.",,,,,,,,,,,,,,,,,2
-"When this is done, the data will be published to the Service Providers and other participant/consumers in Clarus.",,,,,,,,,,,,,,,,,1
-"MADIS, for example, uses NetCDF files as a standard interchange format.",,,,,,,,,,,,,,,,,2
-"While the service provider interface is completely within the control of the Clarus Initiative, the interface(s) to the collectors may be influenced by what interfaces these systems can support.",,,,,,,,,,,,,,,,,1
+﻿The data will be collected from the participants, organized by location and type of data, and quality flags will be added.,,,,,,,,,,,,,,,,,2
+When this is done, the data will be published to the Service Providers and other participant/consumers in Clarus.,,,,,,,,,,,,,,,,,1
+MADIS, for example, uses NetCDF files as a standard interchange format.,,,,,,,,,,,,,,,,,2
+While the service provider interface is completely within the control of the Clarus Initiative, the interface(s) to the collectors may be influenced by what interfaces these systems can support.,,,,,,,,,,,,,,,,,1
 While the participants may want to access the network through ?a one-stop Internet portal for all surface transportation weather and pavement related observations? (Ref.,,,,,,,,,,,,,,,,,1
-"12), there is no requirement that the system be a single centralized system.",,,,,,,,,,,,,,,,,1
+12), there is no requirement that the system be a single centralized system.,,,,,,,,,,,,,,,,,1
 Designers are free to explore centralized and de-centralized architectures so long as the interfaces with participants give the appearance of a ?one-stop? portal.,,,,,,,,,,,,,,,,,1
 The issues of data retention and archive are also not explicitly addressed.,,,,,,,,,,,,,,,,,1
 This phase of development does not include directly archiving the large volume of environmental data in Clarus.,,,,,,,,,,,,,,,,,1
-"Considering the technical scope of such an effort, archiving may be externalized or be deferred until the Clarus network is operational and proven.",,,,,,,,,,,,,,,,,1
+Considering the technical scope of such an effort, archiving may be externalized or be deferred until the Clarus network is operational and proven.,,,,,,,,,,,,,,,,,1
 These basic processes are shown in Figure 3 in terms of Clarus system objects and their interactions.,,,,,,,,,,,,,,,,,1
-"The ellipses represent specific types of data, user roles, or equipment, and the arrows represent the interactions between them�.",,,,,,,,,,,,,,,,,1
-"For example, a ?Collector? administers a ?Sensor,? collects ?Observation Data,? provides ?Sensor Metadata,? and receives ?Quality Feedback?.",,,,,,,,,,,,,,,,,1
+The ellipses represent specific types of data, user roles, or equipment, and the arrows represent the interactions between themэ.,,,,,,,,,,,,,,,,,1
+For example, a ?Collector? administers a ?Sensor,? collects ?Observation Data,? provides ?Sensor Metadata,? and receives ?Quality Feedback?.,,,,,,,,,,,,,,,,,1
 The Clarus system should be a data collection system capable of handling a vast range of data in a flexible manner that permits new data types to be added.,,,,,,,,,,,,,,,,,1
 Determining data types will be a significant challenge.,,,,,,,,,,,,,,,,,1
 Proper understanding of the available data versus the required information will dictate how the data gathering processes and the database itself should be designed for greatest efficiency.,,,,,,,,,,,,,,,,,1
 These environmental data elements are described in the NTCIP 1204 standard for Environmental Sensor Station (ESS) interfaces (Ref.,,,,,,,,,,,,,,,,,1
 8) and summarized in Table 1 as potential environmental data elements to include in the Clarus system.,,,,,,,,,,,,,,,,,1
 There is also a period for which the Service Provider Customers have temporal-driven requirements.,,,,,,,,,,,,,,,,,1
-"Further, the variation in the Service Provider component includes the time required to add other data to the Clarus data and to perform the human- and machine-based product generation.",,,,,,,,,,,,,,,,,1
+Further, the variation in the Service Provider component includes the time required to add other data to the Clarus data and to perform the human- and machine-based product generation.,,,,,,,,,,,,,,,,,1
 The average data age grows as a result of the aggregated times required to move through the various layers and eventually to the Service Provider Customers.,,,,,,,,,,,,,,,,,1
 The Clarus system design must address how best to minimize these times to optimize the flow of data in a timely manner.,,,,,,,,,,,,,,,,,1
 The age of observed and recorded values can vary widely within these bands.,,,,,,,,,,,,,,,,,1
 ? Average Data Age is the estimated average age of an ESS observation as it is transferred from the ESS to the end user.,,,,,,,,,,,,,,,,,1
-"Because a variety of users can derive benefit from the Clarus system, it is necessary to focus upon those users who have the most immediate contact with the system components.",,,,,,,,,,,,,,,,,1
-"The primary user classes include the owners and operators of the observing systems collecting and sending information to Clarus, and the users directly accessing the data published by the Clarus system.",,,,,,,,,,,,,,,,,1
+Because a variety of users can derive benefit from the Clarus system, it is necessary to focus upon those users who have the most immediate contact with the system components.,,,,,,,,,,,,,,,,,1
+The primary user classes include the owners and operators of the observing systems collecting and sending information to Clarus, and the users directly accessing the data published by the Clarus system.,,,,,,,,,,,,,,,,,1
 This list of direct users of data from the Clarus system is a subset of the entire population of stakeholders interested in the Clarus Initiative.,,,,,,,,,,,,,,,,,1
 The requirements of the broader stakeholder community are essential to the Clarus Initiative and these interests must serve as a framework for the core Clarus system.,,,,,,,,,,,,,,,,,1
 From information in the Surface Transportation Weather Decision Support Requirements (STWDSR) (Ref.,,,,,,,,,,,,,,,,,1
-"5), Weather Information for Surface Transportation (WIST) (Ref.",,,,,,,,,,,,,,,,,2
-"6), and 511 Deployment Coalition (Ref.",,,,,,,,,,,,,,,,,2
-"7) documents, it is possible to separate stakeholder groups into a condensed list based upon the user?s interface or interaction with Clarus data.",,,,,,,,,,,,,,,,,2
+5), Weather Information for Surface Transportation (WIST) (Ref.,,,,,,,,,,,,,,,,,2
+6), and 511 Deployment Coalition (Ref.,,,,,,,,,,,,,,,,,2
+7) documents, it is possible to separate stakeholder groups into a condensed list based upon the user?s interface or interaction with Clarus data.,,,,,,,,,,,,,,,,,2
 The users are viewed as defining layers in the process of transferring data from raw field observations to various levels of data use.,,,,,,,,,,,,,,,,,2
 The Autonomous Layer data comprises the vast majority of the raw input data to the Clarus system.,,,,,,,,,,,,,,,,,1
 The Service Provider Customer Layer includes those groups who are direct consumers of products generated by Service Providers and are generally not a direct user of Clarus data.,,,,,,,,,,,,,,,,,1
-"The members of this group could be anyone using weather information, but are largely found within the surface transportation community.",,,,,,,,,,,,,,,,,1
+The members of this group could be anyone using weather information, but are largely found within the surface transportation community.,,,,,,,,,,,,,,,,,1
 The weather products received by these end users are built from a combination of Clarus and non-Clarus data.,,,,,,,,,,,,,,,,,1
 Figure 5 can also be viewed as a depiction of the time horizons that separate the stakeholder groups.,,,,,,,,,,,,,,,,,1
-"There is an inherent time scale, similar to Figure 4, emanating from the center of the diagram outward, representing the flow and processing of data through the Clarus system and between the layers.",,,,,,,,,,,,,,,,,2
+There is an inherent time scale, similar to Figure 4, emanating from the center of the diagram outward, representing the flow and processing of data through the Clarus system and between the layers.,,,,,,,,,,,,,,,,,2
 The context diagram in Figure 6 illustrates the relationship of the entities interfacing with Clarus.,,,,,,,,,,,,,,,,,1
 The diagram also describes the flow of data between the entities and the Clarus system.,,,,,,,,,,,,,,,,,1
 The data provider organizations maintain data collection systems.,,,,,,,,,,,,,,,,,1
 These organizations make up the Autonomous Layer ? the primary contributors of surface transportation data to the Clarus system.,,,,,,,,,,,,,,,,,1
 These stakeholders can benefit from Clarus by receiving quality-controlled data from the Clarus system.,,,,,,,,,,,,,,,,,1
-"The quality-controlled data are not value-added data, but data with flags indicating that elements do not meet quality checking thresholds.",,,,,,,,,,,,,,,,,1
+The quality-controlled data are not value-added data, but data with flags indicating that elements do not meet quality checking thresholds.,,,,,,,,,,,,,,,,,1
 Figure 6 ? Context Diagram of Clarus User Needs The private and public sector Service Providers are the principal Clarus users.,,,,,,,,,,,,,,,,,1
 These Service Providers generate value-added road and rail weather information services for the transportation community.,,,,,,,,,,,,,,,,,1
 This group places considerable emphasis on the pavement-specific component of the data at the observational level to make immediate decisions.,,,,,,,,,,,,,,,,,1
-"These users, primarily maintenance and operations personnel, are the principal consumers of information provided by surface transportation weather service providers.",,,,,,,,,,,,,,,,,1
-"Additional data from this group may include closed circuit television (CCTV) images, road condition information, and records of treatment activities such as plowing and chemical application.",,,,,,,,,,,,,,,,,2
+These users, primarily maintenance and operations personnel, are the principal consumers of information provided by surface transportation weather service providers.,,,,,,,,,,,,,,,,,1
+Additional data from this group may include closed circuit television (CCTV) images, road condition information, and records of treatment activities such as plowing and chemical application.,,,,,,,,,,,,,,,,,2
 This group places considerable emphasis on understanding weather conditions along designated routes.,,,,,,,,,,,,,,,,,1
 ? Rail ? These are the owners and operators of rail systems who contribute raw data to the Clarus system and may receive quality-controlled data from it.,,,,,,,,,,,,,,,,,2
-"As this method of data collection matures, the information obtained on weather and pavement conditions from instrumentation on-board vehicles will be important Clarus data.",,,,,,,,,,,,,,,,,1
+As this method of data collection matures, the information obtained on weather and pavement conditions from instrumentation on-board vehicles will be important Clarus data.,,,,,,,,,,,,,,,,,1
 ? Weather Service Providers ? These include the weather support services that are primarily interested in the meteorological and hydrologic components of the Clarus data.,,,,,,,,,,,,,,,,,2
 ? Archives ? This category includes operational and non-operational interests who choose to include the Clarus data in their endeavors.,,,,,,,,,,,,,,,,,2
-"The archiving of Clarus data will be most effective when combined with other meteorological archives beyond the scope of Clarus, but is not restricted to such efforts.",,,,,,,,,,,,,,,,,1
+The archiving of Clarus data will be most effective when combined with other meteorological archives beyond the scope of Clarus, but is not restricted to such efforts.,,,,,,,,,,,,,,,,,1
 2.4 General Constraints Timeliness of information and reliability of the system are major constraints on the design.,,,,,,,,,,,,,,,,,1
 Both of these factors can be addressed through appropriate system architecture and implementation.,,,,,,,,,,,,,,,,,1
-"To address the timeliness factor, the system should be designed such that it can both retrieve and disseminate large volumes of data from a variety of sources and at potentially high rates.",,,,,,,,,,,,,,,,,1
+To address the timeliness factor, the system should be designed such that it can both retrieve and disseminate large volumes of data from a variety of sources and at potentially high rates.,,,,,,,,,,,,,,,,,1
 An architecture that spreads its data collection and dissemination processes across multiple servers and communication channels may address this issue.,,,,,,,,,,,,,,,,,1
 Reliability can be achieved through a variety of design and deployment considerations.,,,,,,,,,,,,,,,,,1
-"Hardware, operating system, and development environment have significant impacts on the inherent reliability of the system.",,,,,,,,,,,,,,,,,1
-"While the availability of the system is covered in the Concept of Operations, the criticality of the system is not explicitly addressed.",,,,,,,,,,,,,,,,,1
-"If the Clarus system fails, requestors will need to use their legacy systems.",,,,,,,,,,,,,,,,,1
-"The system will be ?open,? using architecture and communications interfaces that are non-proprietary and broadly supported within the information technology industry.",,,,,,,,,,,,,,,,,2
-"The system should be standards based, where national standards are applicable.",,,,,,,,,,,,,,,,,2
+Hardware, operating system, and development environment have significant impacts on the inherent reliability of the system.,,,,,,,,,,,,,,,,,1
+While the availability of the system is covered in the Concept of Operations, the criticality of the system is not explicitly addressed.,,,,,,,,,,,,,,,,,1
+If the Clarus system fails, requestors will need to use their legacy systems.,,,,,,,,,,,,,,,,,1
+The system will be ?open,? using architecture and communications interfaces that are non-proprietary and broadly supported within the information technology industry.,,,,,,,,,,,,,,,,,2
+The system should be standards based, where national standards are applicable.,,,,,,,,,,,,,,,,,2
 Special consideration should be given to the national intelligent transportation system (ITS) standards.,,,,,,,,,,,,,,,,,1
-"? Security considerations for the Clarus system fall under the guidance of Reference 14, OMB Circular No.",,,,,,,,,,,,,,,,,2
-"A-130, which, by its own definition, does not apply to ?critical national security missions.? Future applications of Clarus may necessitate revisiting this classification.",,,,,,,,,,,,,,,,,1
+? Security considerations for the Clarus system fall under the guidance of Reference 14, OMB Circular No.,,,,,,,,,,,,,,,,,2
+A-130, which, by its own definition, does not apply to ?critical national security missions.? Future applications of Clarus may necessitate revisiting this classification.,,,,,,,,,,,,,,,,,1
 2.5 Assumptions and Dependencies The usefulness of the Clarus system is dependent on participation by multiple environmental data providers and multiple environmental data consumers.,,,,,,,,,,,,,,,,,1
-"While the system could be placed in operation with data from only a single contributing network, there is no added value without the participation of other weather data sources.",,,,,,,,,,,,,,,,,1
-"Likewise, participation by a small number of data consumers would not justify the cost of operating the system.",,,,,,,,,,,,,,,,,1
-"Several assumptions have been made as to how long it will take environmental data contributors to collect, process, and publish their data.",,,,,,,,,,,,,,,,,1
+While the system could be placed in operation with data from only a single contributing network, there is no added value without the participation of other weather data sources.,,,,,,,,,,,,,,,,,1
+Likewise, participation by a small number of data consumers would not justify the cost of operating the system.,,,,,,,,,,,,,,,,,1
+Several assumptions have been made as to how long it will take environmental data contributors to collect, process, and publish their data.,,,,,,,,,,,,,,,,,1
 Data not collected in a timely manner may be of limited use to the data consumers.,,,,,,,,,,,,,,,,,1
-"Assumptions have also been made about the accuracy of the data, and the ability of the contributing systems to provide adequate location, time/date, and data qualification tags.",,,,,,,,,,,,,,,,,1
+Assumptions have also been made about the accuracy of the data, and the ability of the contributing systems to provide adequate location, time/date, and data qualification tags.,,,,,,,,,,,,,,,,,1
 Accepting data from contributors who cannot provide these tags with the data could seriously complicate the design of the data acquisition interfaces.,,,,,,,,,,,,,,,,,1
-"Several requirements deal with ?regional? needs, without specifying regional boundaries.",,,,,,,,,,,,,,,,,1
+Several requirements deal with ?regional? needs, without specifying regional boundaries.,,,,,,,,,,,,,,,,,1
 It is unlikely that the regional boundaries from contributing systems will correspond with the regional boundaries defined within data consumer systems.,,,,,,,,,,,,,,,,,2
 It is even likely that participating data contributors will have different (though possibly overlapping) coverage areas for their networks.,,,,,,,,,,,,,,,,,2
-"Data consumers will need to understand that data will be presented by geographic coordinates, not by regional boundaries.",,,,,,,,,,,,,,,,,2
+Data consumers will need to understand that data will be presented by geographic coordinates, not by regional boundaries.,,,,,,,,,,,,,,,,,2
 Consumers will also need to understand that coverage will not be uniform and will depend on sensor placement by the contributing organizations.,,,,,,,,,,,,,,,,,1
-"The availability, format, and precision of geo-reference coordinates for data collection points could present unusual problems for the data acquisition system.",,,,,,,,,,,,,,,,,1
+The availability, format, and precision of geo-reference coordinates for data collection points could present unusual problems for the data acquisition system.,,,,,,,,,,,,,,,,,1
 Clarus timestamps for data in the database and in published data sets need to be referenced to a standard time reference such as Coordinated Universal Time (UTC).,,,,,,,,,,,,,,,,,1
-"The base assumption regarding ?database tools? is that the selected data storage software will include appropriate programming interfaces, query tools, and configuration and management tools.",,,,,,,,,,,,,,,,,2
+The base assumption regarding ?database tools? is that the selected data storage software will include appropriate programming interfaces, query tools, and configuration and management tools.,,,,,,,,,,,,,,,,,2
 Some tools may developed in the future as part of ongoing Clarus Initiative activities.,,,,,,,,,,,,,,,,,1
 The functional components of the Clarus system have been detailed in the Clarus System Architectural Description and are summarized in this section.,,,,,,,,,,,,,,,,,1
-"Figure 7, taken from that document, represents the general structure and flow of information within the Clarus system.",,,,,,,,,,,,,,,,,1
-"The collector, QED, and EM services are sets of services because each individual service represents a particular data format interface.",,,,,,,,,,,,,,,,,1
+Figure 7, taken from that document, represents the general structure and flow of information within the Clarus system.,,,,,,,,,,,,,,,,,1
+The collector, QED, and EM services are sets of services because each individual service represents a particular data format interface.,,,,,,,,,,,,,,,,,1
 A set of services is required to properly interpret and transform all the incoming and outgoing environmental information.,,,,,,,,,,,,,,,,,1
-"The particular collector, QED, or EM service performing a transformation depends on the origin and destination of the environmental data.",,,,,,,,,,,,,,,,,1
+The particular collector, QED, or EM service performing a transformation depends on the origin and destination of the environmental data.,,,,,,,,,,,,,,,,,1
 The fourth component modeled as a set is the quality checking service.,,,,,,,,,,,,,,,,,1
 It is a set of services because it represents in one component all the QCh algorithms that can be applied to environmental data collected by Clarus.,,,,,,,,,,,,,,,,,1
 The specific algorithms and sequence in which they are applied are determined by quality rules established through the configuration & administration service.,,,,,,,,,,,,,,,,,1
 This arrangement supports flexibility in adding and removing QCh algorithms to produce the best possible qualified environmental data in the Clarus system.,,,,,,,,,,,,,,,,,1
 There are two services that keep the Clarus system operating: the watchdog and schedule services.,,,,,,,,,,,,,,,,,1
-"The watchdog service monitors the overall system state and restarts unresponsive services as needed, thus preventing long-term service disruption.",,,,,,,,,,,,,,,,,1
+The watchdog service monitors the overall system state and restarts unresponsive services as needed, thus preventing long-term service disruption.,,,,,,,,,,,,,,,,,1
 The schedule service prioritizes requests to receive environmental data from collectors and contributors.,,,,,,,,,,,,,,,,,2
 The schedule service will also prioritize and respond to subscription requests for environmental data (not depicted in Figure 7).,,,,,,,,,,,,,,,,,2
 The set of collector services in the Clarus system receives environmental data from ED collectors and contributors through both push and pull methods.,,,,,,,,,,,,,,,,,2
@@ -102,66 +102,66 @@ Multiple passes by the quality checking services on the QEDC information could a
 This allows constant access to qualified environmental data in-process.,,,,,,,,,,,,,,,,,1
 The QEDC is still valuable to end-users since it will always identify its level of quality and can be continuously delivered.,,,,,,,,,,,,,,,,,2
 The QED services format the qualified environmental data to fulfill requests from and information subscriptions for environmental service providers and end-users.,,,,,,,,,,,,,,,,,2
-"Similarly, the EM services format the metadata to meet requests from and metadata subscriptions for environmental service providers.",,,,,,,,,,,,,,,,,1
-"Each of these components is a set of services, with each individual service supporting a particular data format.",,,,,,,,,,,,,,,,,1
+Similarly, the EM services format the metadata to meet requests from and metadata subscriptions for environmental service providers.,,,,,,,,,,,,,,,,,1
+Each of these components is a set of services, with each individual service supporting a particular data format.,,,,,,,,,,,,,,,,,1
 The configuration and administration service supports both the Clarus system and program.,,,,,,,,,,,,,,,,,1
-"It maintains information about data provider redistribution restrictions and controls who has access to modify the system state, quality rules, and set ED retrieval schedules.",,,,,,,,,,,,,,,,,1
-"The configuration & administration service manages environ- mental metadata, formatting it for internal storage.",,,,,,,,,,,,,,,,,1
+It maintains information about data provider redistribution restrictions and controls who has access to modify the system state, quality rules, and set ED retrieval schedules.,,,,,,,,,,,,,,,,,1
+The configuration & administration service manages environ- mental metadata, formatting it for internal storage.,,,,,,,,,,,,,,,,,1
 Data transactions and system operational statistics are logged in the configuration and administration user interface as well.,,,,,,,,,,,,,,,,,1
 These requirements describe the expected attributes and capabilities of the system and allocate capabilities to specific components within the Clarus system.,,,,,,,,,,,,,,,,,1
 The high-level requirements in this document are limited to those that can be derived from a context diagram (Figure 8) that pictures the Clarus system as a single functional block with its interfaces.,,,,,,,,,,,,,,,,,1
 The types of high-level requirements described in this section correspond roughly to these functions and interfaces.,,,,,,,,,,,,,,,,,1
-"Functional requirements describe what happens inside the Clarus system itself: quality checking, development, and packaging of environmental data.",,,,,,,,,,,,,,,,,1
+Functional requirements describe what happens inside the Clarus system itself: quality checking, development, and packaging of environmental data.,,,,,,,,,,,,,,,,,1
 Figure 8 ? High-Level Requirements Context The high-level perspective assumed for these requirements has implications for downstream development activities.,,,,,,,,,,,,,,,,,1
 Conformance to high-level requirements is shown through testing based on plans derived from the detailed requirements.,,,,,,,,,,,,,,,,,1
 The entire development process is tied together by lines of traceability anchored in the high- level requirements.,,,,,,,,,,,,,,,,,1
-"In this section, the requirements are classified by the first letter in the requirement identification as described in Table 2 and shown in Table 3.",,,,,,,,,,,,,,,,,1
+In this section, the requirements are classified by the first letter in the requirement identification as described in Table 2 and shown in Table 3.,,,,,,,,,,,,,,,,,1
 ? Functional Requirements ? Lists the characteristics that the system must support for each interface.,,,,,,,,,,,,,,,,,1
-"Identifies what is to be done by the system, what inputs should be transformed to what outputs, and what specific operations are required.",,,,,,,,,,,,,,,,,1
-"? Organizational Requirements ? Includes requirements for policies and procedures to support the implementation, operations, training, and institutional requirements to support the system.",,,,,,,,,,,,,,,,,1
-"Table 2 shows the general layout of the requirements tables, and explains the purpose or content of each column of the requirements table.",,,,,,,,,,,,,,,,,1
+Identifies what is to be done by the system, what inputs should be transformed to what outputs, and what specific operations are required.,,,,,,,,,,,,,,,,,1
+? Organizational Requirements ? Includes requirements for policies and procedures to support the implementation, operations, training, and institutional requirements to support the system.,,,,,,,,,,,,,,,,,1
+Table 2 shows the general layout of the requirements tables, and explains the purpose or content of each column of the requirements table.,,,,,,,,,,,,,,,,,1
 The matrix includes requirements that may apply to future versions of the system or which have been deferred due to cost or complexity.,,,,,,,,,,,,,,,,,2
 Table 3 provides an explanation of the requirement identification numbering system.,,,,,,,,,,,,,,,,,1
-"The high-level requirements are identified as A-NNN, where A is the classification and NNN is a unique number.",,,,,,,,,,,,,,,,,2
-"The detailed requirements are identified as A-NNNUU, where A-NNN is the parent or high-level requirement and UU is a unique identifier.",,,,,,,,,,,,,,,,,2
+The high-level requirements are identified as A-NNN, where A is the classification and NNN is a unique number.,,,,,,,,,,,,,,,,,2
+The detailed requirements are identified as A-NNNUU, where A-NNN is the parent or high-level requirement and UU is a unique identifier.,,,,,,,,,,,,,,,,,2
 This section lists the functional characteristics that the system must support.,,,,,,,,,,,,,,,,,1
-"It also identifies what is to be done by the system, what inputs should be transformed to what outputs, and what specific operations are required.",,,,,,,,,,,,,,,,,1
+It also identifies what is to be done by the system, what inputs should be transformed to what outputs, and what specific operations are required.,,,,,,,,,,,,,,,,,1
 The functional requirements are broken into subsections by each allocation to specific modules listed in Table 4.,,,,,,,,,,,,,,,,,1
 Detailed requirements are associated with a parent or high-level requirement.,,,,,,,,,,,,,,,,,1
 Many of the high-level requirements are allocated to more than one module or component of the Clarus system.,,,,,,,,,,,,,,,,,1
-"Within each table, the high-level requirements show their allocations to particular modules.",,,,,,,,,,,,,,,,,1
-"If the high-level requirement is allocated to more than one module, then the high-level requirement will be repeated in the corresponding allocation?s module.",,,,,,,,,,,,,,,,,1
-"Following the high-level requirement, detailed requirement(s) are shown to create more refined requirements specific to the associated module.",,,,,,,,,,,,,,,,,1
+Within each table, the high-level requirements show their allocations to particular modules.,,,,,,,,,,,,,,,,,1
+If the high-level requirement is allocated to more than one module, then the high-level requirement will be repeated in the corresponding allocation?s module.,,,,,,,,,,,,,,,,,1
+Following the high-level requirement, detailed requirement(s) are shown to create more refined requirements specific to the associated module.,,,,,,,,,,,,,,,,,1
 These initiating generators are referred to as system Black Start generators.,,,,,,,,,,,,,,,,,1
-"Generators that can safely rej ect load down to their auxiliary load are another form of Black Start generator that can aid system restoration, but are not addressed with this Black Start Capability Plan (BCP).",,,,,,,,,,,,,,,,,1
+Generators that can safely rej ect load down to their auxiliary load are another form of Black Start generator that can aid system restoration, but are not addressed with this Black Start Capability Plan (BCP).,,,,,,,,,,,,,,,,,1
 Such Test Dispatch Notice shall be marked ?,,,,,,,,,,,,,,,,,1
 The CAISO shall not request a Black Start Test for a hydroelectric Unit during periods of constrained water availability.,,,,,,,,,,,,,,,,,1
  The following provides general guidance for CAISO Black Start planning: Step Description 1,,,,,,,,,,,,,,,,,1
 The CAISO determines the amount and location of Black Start Generation it requires through contingency studies that are used as the basis of the CAISO?s emergency plans.,,,,,,,,,,,,,,,,,1
-"o The initiating disturbance, o The magnitude of the Outage, including the extent of the Outage (local area, CAISO Controlled Grid, or WECC),",,,,,,,,,,,,,,,,,1
-"The assumed status of Generation after the initiating disturbance,",,,,,,,,,,,,,,,,,1
-"The sy stem Demand level at the time of the disturbance,",,,,,,,,,,,,,,,,,1
-"The interconnection support, and assumptions regarding the availability of support from other utilities to help restore Generation and Demand 0",,,,,,,,,,,,,,,,,1
+o The initiating disturbance, o The magnitude of the Outage, including the extent of the Outage (local area, CAISO Controlled Grid, or WECC),,,,,,,,,,,,,,,,,,1
+The assumed status of Generation after the initiating disturbance,,,,,,,,,,,,,,,,,,1
+The sy stem Demand level at the time of the disturbance,,,,,,,,,,,,,,,,,,1
+The interconnection support, and assumptions regarding the availability of support from other utilities to help restore Generation and Demand 0,,,,,,,,,,,,,,,,,1
 Such documentation may include Cranking Path diagrams.,,,,,,,,,,,,,,,,,1
-"The CAISO Black Start planning evaluation process includes the following: 0 Diverse fuel resources for Black Start power for generating units, 0",,,,,,,,,,,,,,,,,1
-"The planning evaluation process is coordinated, as appropriate, with the Black Start capability plans of transmission owners and neighboring Balancing Authorities.",,,,,,,,,,,,,,,,,1
+The CAISO Black Start planning evaluation process includes the following: 0 Diverse fuel resources for Black Start power for generating units, 0,,,,,,,,,,,,,,,,,1
+The planning evaluation process is coordinated, as appropriate, with the Black Start capability plans of transmission owners and neighboring Balancing Authorities.,,,,,,,,,,,,,,,,,1
 Contracts with generators that satisfy the results of the annual planning evaluation process. Page 4 of 11 3.,,,,,,,,,,,,,,,,,1
-"Submit documentation of the test results and analysis to the CAISO, WECC, or NERC upon any request. 0 Submit any past reports for Black Start tests with the CAISO and WECC. 0",,,,,,,,,,,,,,,,,1
-"Those Participants Who do not currently test their Black Start capability, will be required to test their Black Start capability. 0",,,,,,,,,,,,,,,,,1
+Submit documentation of the test results and analysis to the CAISO, WECC, or NERC upon any request. 0 Submit any past reports for Black Start tests with the CAISO and WECC. 0,,,,,,,,,,,,,,,,,1
+Those Participants Who do not currently test their Black Start capability, will be required to test their Black Start capability. 0,,,,,,,,,,,,,,,,,1
 The Black Start unit must be capable of starting and energizing the applicable transmission path Without assistance from the electrical system.,,,,,,,,,,,,,,,,,2
-"The Black Start Test should include key operating aids used in Black Starts such as telephone communications and SCADA, if applicable. Page 5 of 11 ? 3 Version: 2.1 Caln?ornla ISO Date: 6/13/2008 Y? L'"""" t""",,,,,,,,,,,,,,,,,2
+The Black Start Test should include key operating aids used in Black Starts such as telephone communications and SCADA, if applicable. Page 5 of 11 ? 3 Version: 2.1 Caln?ornla ISO Date: 6/13/2008 Y? L' t,,,,,,,,,,,,,,,,,2
 All Black Start Generating Units must satisfy technical requirements speci?ed by the CAISO.,,,,,,,,,,,,,,,,,1
-"The CAISO shall from time to time undertake performance tests, with or Without prior noti?cation.",,,,,,,,,,,,,,,,,2
+The CAISO shall from time to time undertake performance tests, with or Without prior noti?cation.,,,,,,,,,,,,,,,,,2
 The CAISO shall have the sole right to determine when the operation of Black Start Generating Unit is required to respond to conditions on the CAISO Controlled Grid.,,,,,,,,,,,,,,,,,2
 Submit a request for an Availability Test using G-2l3H Black Start Test Report Form and send it to the CAISO Operations Support Test Administrator at ASNoti?cations@CAlSO.com.,,,,,,,,,,,,,,,,,1
 This form is also used by Interim BS Units.,,,,,,,,,,,,,,,,,1
-"This form is also or stated Availability, used by Interim BS Units.",,,,,,,,,,,,,,,,,1
-"Then... The staIt to the lSt N otify the BS Unit SC Via telephone providing hour of the test, enough time to ramp the Unit to full capacity. Prior to...",,,,,,,,,,,,,,,,,1
-"Then... The staIt of the first Ramp to the requested MW of the test. hour, Maintain the requested MW for four full hours. After. . .",,,,,,,,,,,,,,,,,1
-"Ambient Temperature Points, along with an average. Each of he four points must reside in a different hour of the test.",,,,,,,,,,,,,,,,,2
-"If information is hotprovided within the state timeframe, CAISO reserves the right to pull its own information. Ambient Temperature information is vital to an accurate analysis of Page 8 of 11 CK California ISO",,,,,,,,,,,,,,,,,2
+This form is also or stated Availability, used by Interim BS Units.,,,,,,,,,,,,,,,,,1
+Then... The staIt to the lSt N otify the BS Unit SC Via telephone providing hour of the test, enough time to ramp the Unit to full capacity. Prior to...,,,,,,,,,,,,,,,,,1
+Then... The staIt of the first Ramp to the requested MW of the test. hour, Maintain the requested MW for four full hours. After. . .,,,,,,,,,,,,,,,,,1
+Ambient Temperature Points, along with an average. Each of he four points must reside in a different hour of the test.,,,,,,,,,,,,,,,,,2
+If information is hotprovided within the state timeframe, CAISO reserves the right to pull its own information. Ambient Temperature information is vital to an accurate analysis of Page 8 of 11 CK California ISO,,,,,,,,,,,,,,,,,2
 Step Description 1 o The CAISO maintains a Black StaIt database that contains all Black StaIt generators designated for use during a sy stem restoration.,,,,,,,,,,,,,,,,,1
-"The Black Start database includes the name, location, megawatt capacity, type of unit, latest date of test, and starting method. ",,,,,,,,,,,,,,,,,2
+The Black Start database includes the name, location, megawatt capacity, type of unit, latest date of test, and starting method. ,,,,,,,,,,,,,,,,,2
 The following describes the CAISO?s commitment to Black Start Operator training:,,,,,,,,,,,,,,,,,1
 The Real-time Grid Operators are trained at least annually for system restoration including the use of Black Start capable units.,,,,,,,,,,,,,,,,,1
 As a system simulator becomes available the CAISO will conduct operator training for system restoration and Black StaIt unit use. 6.,,,,,,,,,,,,,,,,,1
@@ -170,40 +170,40 @@ The ability of a generating unit or station to go from a shutdown condition to a
 Interim A generating unit with Black Start capability that enters into an Black Start Interim Black Start Contract with the CAISO.,,,,,,,,,,,,,,,,,1
 Those generator owners or operators that desire to test their generating units for Black StaIt capability.,,,,,,,,,,,,,,,,,1
 RMR Black A generating unit with Black Start capability that enters into an Start Unit RMR Black StaIt Contract with the CAISO. Voluntary,,,,,,,,,,,,,,,,,2
-"A generating unit Witho_ut a CAISO Black Start contract that Black Start desires, for whatever reason, to be recognized as a CAISO Black Unit Start generating unit.",,,,,,,,,,,,,,,,,1
+A generating unit Witho_ut a CAISO Black Start contract that Black Start desires, for whatever reason, to be recognized as a CAISO Black Unit Start generating unit.,,,,,,,,,,,,,,,,,1
 These initiating generators are referred to as system Black Start generators.,,,,,,,,,,,,,,,,,1
-"Generators that can safely rej ect load down to their auxiliary load are another form of Black Start generator that can aid system restoration, but are not addressed with this Black Start Capability Plan (BCP).",,,,,,,,,,,,,,,,,2
-"From a planning perspective, a system Black Start Capability Plan (BCP) is necessary",,,,,,,,,,,,,,,,,1
+Generators that can safely rej ect load down to their auxiliary load are another form of Black Start generator that can aid system restoration, but are not addressed with this Black Start Capability Plan (BCP).,,,,,,,,,,,,,,,,,2
+From a planning perspective, a system Black Start Capability Plan (BCP) is necessary,,,,,,,,,,,,,,,,,1
 to ensure that the quantity and location of system Black Start generators are sufficient and that they can perform their expected functions as specified in overall coordinated WECC BCP.,,,,,,,,,,,,,,,,,1
 The Black Start Test shall be performed in accordance with the Ancillary Services Requirements Protocol in the CAISO Tariff.,,,,,,,,,,,,,,,,,1
 The CAISO shall not request a Black Start Test for a hydroelectric Unit during periods of constrained water availability. The following provides general guidance for CAISO Black Start planning: Step Description 1,,,,,,,,,,,,,,,,,2
 The CAISO determines the amount and location of Black Start Generation it requires through contingency studies that are used as the basis of the CAISO?s emergency plans.,,,,,,,,,,,,,,,,,1
-"o The initiating disturbance, o The magnitude of the Outage, including the extent of the Outage (local area, CAISO Controlled Grid, or WECC), The assumed status of Generation after the initiating disturbance,",,,,,,,,,,,,,,,,,2
-"The generator performance including a percentage of Black Start units (to be determined by the CAISO) which are expected to fail to start, 0 Expected transmission system damage.",,,,,,,,,,,,,,,,,1
+o The initiating disturbance, o The magnitude of the Outage, including the extent of the Outage (local area, CAISO Controlled Grid, or WECC), The assumed status of Generation after the initiating disturbance,,,,,,,,,,,,,,,,,,2
+The generator performance including a percentage of Black Start units (to be determined by the CAISO) which are expected to fail to start, 0 Expected transmission system damage.,,,,,,,,,,,,,,,,,1
 Such documentation may include Cranking Path diagrams.,,,,,,,,,,,,,,,,,1
-"The CAISO Black Start planning evaluation process includes the following: 0 Diverse fuel resources for Black Start power for generating units, 0",,,,,,,,,,,,,,,,,1
-"Available cranking and transmission paths, 0 Communication adequacy, 0",,,,,,,,,,,,,,,,,1
-"The planning evaluation process is coordinated, as appropriate, with the Black Start capability plans of transmission owners and neighboring Balancing Authorities.",,,,,,,,,,,,,,,,,1
+The CAISO Black Start planning evaluation process includes the following: 0 Diverse fuel resources for Black Start power for generating units, 0,,,,,,,,,,,,,,,,,1
+Available cranking and transmission paths, 0 Communication adequacy, 0,,,,,,,,,,,,,,,,,1
+The planning evaluation process is coordinated, as appropriate, with the Black Start capability plans of transmission owners and neighboring Balancing Authorities.,,,,,,,,,,,,,,,,,1
 The CAISO annually enters into RMR and Interim Black Start Contracts with generators that satisfy the results of the annual planning evaluation process. Page 4 of 11 3.,,,,,,,,,,,,,,,,,1
-"Submit documentation of the test results and analysis to the CAISO, WECC, or NERC upon any request. 0 Submit any past reports for Black Start tests with the CAISO and WECC. 0",,,,,,,,,,,,,,,,,1
-"Those Participants Who do not currently test their Black Start capability, will be required to test their Black Start capability. 0",,,,,,,,,,,,,,,,,1
-"Within 24 hours of conducting a Black Start test, all Participants will notify the CAISO RT Dispatcher by phone indicating the success or failure of the test. 0",,,,,,,,,,,,,,,,,1
+Submit documentation of the test results and analysis to the CAISO, WECC, or NERC upon any request. 0 Submit any past reports for Black Start tests with the CAISO and WECC. 0,,,,,,,,,,,,,,,,,1
+Those Participants Who do not currently test their Black Start capability, will be required to test their Black Start capability. 0,,,,,,,,,,,,,,,,,1
+Within 24 hours of conducting a Black Start test, all Participants will notify the CAISO RT Dispatcher by phone indicating the success or failure of the test. 0,,,,,,,,,,,,,,,,,1
 Adequate transmission capacity shall be available to connect the Black Start facility to the source providing station services to other specified generating stations.,,,,,,,,,,,,,,,,,1
 The Black Start unit must be capable of starting and energizing the applicable transmission path Without assistance from the electrical system.,,,,,,,,,,,,,,,,,2
 All Black Start Generating Units must satisfy technical requirements speci?ed by the CAISO.,,,,,,,,,,,,,,,,,2
-"The CAISO shall from time to time undertake performance tests, with or Without prior noti?cation.",,,,,,,,,,,,,,,,,2
+The CAISO shall from time to time undertake performance tests, with or Without prior noti?cation.,,,,,,,,,,,,,,,,,2
 The CAISO shall have the sole right to determine when the operation of Black Start Generating Unit is required to respond to conditions on the CAISO Controlled Grid.,,,,,,,,,,,,,,,,,2
 Submit a request for an Availability Test using G-2l3H Black Start Test Report Form and send it to the CAISO Operations Support Test Administrator at ASNoti?cations@CAlSO.com.,,,,,,,,,,,,,,,,,1
 It is needed to test the Unit to Request this in G-2l3H Black Start generate above its contract MNDC Test Report Form.,,,,,,,,,,,,,,,,,1
-"This form is also or stated Availability, used by Interim BS Units.",,,,,,,,,,,,,,,,,1
-"Then... The staIt of the first Ramp to the requested MW of the test. hour, Maintain the requested MW for four full hours. After. . .",,,,,,,,,,,,,,,,,1
-"The end of the Ramp back down or continue in Market Transaction. fourth hour, Note: undesirable a?ect on outcome of the test.",,,,,,,,,,,,,,,,,1
-"If ramping occurs during the four-hour timeframe, it will have an Step RMR Generating Unit Operator Actions (Optional for Interim BS Units) 10 After...",,,,,,,,,,,,,,,,,1
-"Ambient Temperature Points, along with an average. Each of he four points must reside in a different hour of the test. Note: the test outcome.",,,,,,,,,,,,,,,,,1
-"If information is hotprovided within the state timeframe, CAISO reserves the right to pull its own information. Ambient Temperature information is vital to an accurate analysis of Page 8 of 11 CK California ISO",,,,,,,,,,,,,,,,,1
+This form is also or stated Availability, used by Interim BS Units.,,,,,,,,,,,,,,,,,1
+Then... The staIt of the first Ramp to the requested MW of the test. hour, Maintain the requested MW for four full hours. After. . .,,,,,,,,,,,,,,,,,1
+The end of the Ramp back down or continue in Market Transaction. fourth hour, Note: undesirable a?ect on outcome of the test.,,,,,,,,,,,,,,,,,1
+If ramping occurs during the four-hour timeframe, it will have an Step RMR Generating Unit Operator Actions (Optional for Interim BS Units) 10 After...,,,,,,,,,,,,,,,,,1
+Ambient Temperature Points, along with an average. Each of he four points must reside in a different hour of the test. Note: the test outcome.,,,,,,,,,,,,,,,,,1
+If information is hotprovided within the state timeframe, CAISO reserves the right to pull its own information. Ambient Temperature information is vital to an accurate analysis of Page 8 of 11 CK California ISO,,,,,,,,,,,,,,,,,1
 The CAISO maintains a Black StaIt database that contains all Black StaIt generators designated for use during a sy stem restoration.,,,,,,,,,,,,,,,,,1
 The Black Start database is reviewed and updated on at least an annual basis. 0,,,,,,,,,,,,,,,,,2
-"The Black Start database includes the name, location, megawatt capacity, type of unit, latest date of test, and starting method. 2 If . . .",,,,,,,,,,,,,,,,,2
+The Black Start database includes the name, location, megawatt capacity, type of unit, latest date of test, and starting method. 2 If . . .,,,,,,,,,,,,,,,,,2
 The a Black Start unit An explanation and a plan to address and did not successfully correct the deficiency shall be provided to the pass the CAISO CAISO by the generator owner/operator.,,,,,,,,,,,,,,,,,2
 The Real-time Grid Operators are trained at least annually for system restoration including the use of Black Start capable units.,,,,,,,,,,,,,,,,,2
 As a system simulator becomes available the CAISO will conduct operator training for system restoration and Black StaIt unit use. 6.,,,,,,,,,,,,,,,,,1
@@ -213,4 +213,4 @@ Interim A generating unit with Black Start capability that enters into an Black 
 This is not an Unit RMR contract.,,,,,,,,,,,,,,,,,1
 Those generator owners or operators that desire to test their generating units for Black StaIt capability.,,,,,,,,,,,,,,,,,1
 RMR Black A generating unit with Black Start capability that enters into an Start Unit RMR Black StaIt Contract with the CAISO. Voluntary,,,,,,,,,,,,,,,,,1
-"A generating unit Witho_ut a CAISO Black Start contract that Black Start desires, for whatever reason, to be recognized as a CAISO Black Unit Start generating unit.",,,,,,,,,,,,,,,,,1
+A generating unit Witho_ut a CAISO Black Start contract that Black Start desires, for whatever reason, to be recognized as a CAISO Black Unit Start generating unit.,,,,,,,,,,,,,,,,,1

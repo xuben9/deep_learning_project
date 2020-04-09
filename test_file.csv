@@ -1,0 +1,1300 @@
+"As such D8 is a so-called common deliverable, beyond workpackage borders.",0
+1 Introduction This section provides an oveIView of this project.,0
+1.1 Purpose The putpose of this document is to describe functionality and behavior of the new agentMom fiamework.,0
+This document is intended to be Viewed only by project advisor and committee members.,0
+1.2 Scope This document covers the software requirements for the project?,0
+App1ying Broadcasting/Multicasting/Secured Communication to agentMom in Multi? Agent Systems?.,0
+"1.3 Definitions, Acronym & Abbreviations agentMom 1.2 refers to current implementation of agentMom New agentMom refers to this project, including agentMom with capability of broadcasting, multicasting and secured communication. ",0
+"Unicast refers to one-to-one communication in such a way that a packet originates from a single Intemet host, and it is destined to a unique location of another Intemet host.",0
+"Multicast refers to one-to-many communication in such a way that a packet Oiiginates from a single Intemet host, and it is destined to multiple receivers within the same multicast address.",0
+"Broadcast refers to one-to-many communication in such a way that a packet Oiiginates from a single Internet host, and it is destined to all receivers within the same local network.",0
+Orgagigtion refers to a set of agents.,0
+Reorgagigtion refers to a situation where the previous organization structure is not ef?cient to succeed the mission Group refers to a set of agents who agiee to use the same multicast address to subscribe group message.,0
+There is no ambition to strive for completeness in this document.,0
+Time-To -Live (TIL) refers to the number of hops that multicast message is allowed to remain in the network before it is discarded by the router.,0
+1.5 Overview The remainder of this document provides a greater detail functionality and requirement of the software.,0
+"Section 2 desolibes product perspective, oveIall functionality, intended users, constraints and assumption of this software.",0
+Section 3 provides general Use Cases and speci?c requirement of this software.,0
+2 Overall Description This section provides an oveIView of the proj ect functionality and factors that affect this project and its requirements.,0
+2.1 Product Perspective This project will be a fIaInework that provides reusability of agents communication .,0
+"It is implemented in J ava and provides the basic building blocks for building agents, conversations between agents, and the message that are passed in the conversations.",0
+2.1.1 Software InteIface ? java version 1.4.0 is required to use the software.,0
+2.1.2 Communication Interface ? TCP/IP is used in order to send unicast message.,0
+Multicast protocol is used in order to send multicast message.,0
+UDP is used in order to send broadcast message.,1
+2.2 Product Functions 2.2.1 Enable agents to broadcast a message to all the agents within the same local network.,1
+2.2.2 Enable agents to multicast a message to all the agents within the same multicast address.,1
+2.2.3 Enable agents to unicast a message to other agents within organization.,1
+"2.2.4 Allow agents to choose among unicast, multicast and broadcast communication.",1
+2.2.5 Allow agents to join and leave multicast group.,1
+2.2.6 Provide message enc1yption and deCIyption techniques for secured communication. ,1
+2.2.7 Allow agents to choose to encrypt or not to encrypt message.,0
+"2.3 User Characteristics Users who want to implement multi? agent systems based on this framework are expected to have general knowledge of Java programming, object-on'ented programming and Multi? Agent Systems Engine eIing Methodology.",1
+2.4.1 Reliable message deliver ? multicast/broadcast packets are delivered with best effort.,1
+"Thus, a packet may be delivered to all speci?ed agents or none.",0
+2.4.2 Security ? we provide some basic mechanisms for secu1ity such as message enCIyption.,0
+"However, there is no guaIantee that the others cannot decrypt the enc1ypted messages.",1
+"2.4.3 Multicast Protocol ? in order to send multicast message, netw01k environment such as router, netw01k card and operating systems must support multicast protocol.",1
+"2.4.4 Broadcast Message ? in many network, only system administrator is allowed to send broadcast message.",0
+2.5 Assumptions and Dependencies ,0
+.2.5.1 We assume that each agent knows the address of destinating agents in order to send unicast message.,0
+2.5.2 We assume that each agent has enough knowledge to decide the best way to communicate with the other agents.,0
+"2.5.3 In the case of using secured multicast communication, we assume that there is an agent whom each agent can request for the same enc1yption and deCIyption key.",1
+This agent should maintain a list of agents who are allowed to get the keys.,0
+2.5.4 We assume that each agent knows the multicast address in order to send multicast message.,0
+3 Specific Requirements This section provides all of the project requirements in detail.,0
+Message is enCIypted or Message is not enc1ypted.,1
+An agent sends notify to join/leave multicast group.,0
+Message is deCIypted only if Message is enc1ypted.,0
+"For example, Agent_B and Agent_D belong to the same group, and then Agent_B wants to leave the group and Agent_A wants to join the group.",1
+"In this situation, when reorganization occurs, Agent_A who is previously not pan of the group may send notify message to join the group, and Agent_B who is previously part of the group, may send notify message to leave the group.",0
+"For instance, Agent_B suffers a failure in one of its capabilities and does not want to receive any further message from the group.",1
+Agent_A who may have capability to substitute Agent_B is needed to be pan of the group.,1
+This involves sending notify of join and leave the group.,0
+Message is encrypted or Message is not encrypted.,0
+An agent sends multicast message to the group (multicast address).,0
+Other agents in the group receive message.,1
+"Message 1s decrypted only if Message 1s encrypted I11 this situation, Agent_ A wants to send a message to everyone within the group, assuming that Agent_A, Agent_B and Agent_C subscribe to the same multicast address.",0
+This involves the multicast communication since other agents who do not belong to the group carmot receive this message.,1
+"For instance, an agent may want to inform everyone in the group when the assigned tasks are completed.",0
+This is more effective than in unicast communication since only one copy is sent.,0
+"Also, using biddmgmarket-based protocols ?t well with this kind of communication An agent may request a bid from other agents for doing some tasks.",0
+An agent sends message to everyone in the same local network.,0
+Other agent in the same local network receive message.,0
+"In this situation, Agent_A wants to send a message to everyone within the same local network that agent A belongs to.",0
+This involves the broadcast communication since any agent in the same local network as Agent_A can receive this message.,0
+"For instance, when a new agent who does not previously exist in that local network wants to armounce the existence to other agents.",0
+3.2 Speci?c Requirement.,0
+ 3.2.1 Unicast Communication ,1
+3.2.1.1 *agentMom shall support the ability to send unicast message.,1
+3.2.1.2 *agentMom shall support the ability to receive unicast message.,1
+3.2.1.3 Unicast message shall only be received by the speci?ed address.,1
+3.2.1.4 Unicast message shall arrive at the speci?ed address and in order.,1
+3.2.2 Multicast Communication.,0
+ 3.2.2.1 *agentMom shall support the ability to send multicast message.,1
+3.2.2.2 *agentMom shall support the ability to receive multicast message.,1
+3.2.2.3 *agentMom shall support the ability to send request to join multicast group.,1
+3.2.2.4 *agentMom shall support the ability to send request to leave multicast group.,1
+3.2.2.5 agentMom shall not allow receiving multicast message from a group before joining that multicast group.,1
+3.2.2.6 agentMom shall not allow receiving multicast message from a group after leaving that multicast group.,1
+3.2.2.7 agentMom shall support the ability to set 1ime-to-live for multicast message.,1
+3.2.2.8 agentMom shall support the ability to set multicast address and port for sending and receiving multicast message.,1
+3.2.2.9 agentMom shall support the ability to receive multicast message from multiple groups.,1
+3.2.3 Broadcast Communication.,0
+3.2.3.1 *agentMom shall support the ability to sent broadcast message.,1
+3.2.3.2 *agentMom shall support the ability to receive broadcast message.,1
+3.2.4 Security.,0
+3.2.4.1 *agentMom shall support the ability to encrypt unicast message.,1
+3.2.4.2 *agentMom shall support the ability to decrypt unicast message.,1
+3.2.4.3 agentMom shall allow an agent to decide whether or not to encrypt a message.,1
+3.2.4.4 agentMom shall automatically decrypt encrypted message.,1
+3.2.4.5 agentMom shall support the ability to enc1yptmulticastmessage.,1
+3.2.4.6 agentMom shall support the ability to decrypt multicast message.,1
+3.2.5 Architecture.,0
+agentMom with shall support the use of the architecture that agent directly controls the conversations.,1
+agentMom shall support the use of the architecture that agent?s components control the conversations.,1
+3.2.6 Compa1ibility.,0
+3.2.6.1 The new built agentMom shall be compatible with the agentMom.,0
+"As such D8 is a so-called common deliverable, beyond workpackage borders.",0
+There is no ambition to strive for completeness in this document.,0
+All BEYOND project members have been approached and partners themselves have made a selection of appropriate projects that could support the goal ofthis deliverable.,0
+It was decided that a domain-oriented approach provides a comprehensive structure for this deliverable.,0
+"It supports the placement of the individual projects in their context, and allows key aspects of the involved workpackages (multimodality, adaptivity, simulation and usability) to be emphasized.",1
+"Therefore, the other partners had to find a way to overcome this problem.",0
+"One consequence is that most of the contributing partners devoted resources to usability engineering activities, as reported in this deliverable.",0
+"Also, reconsidering the purpose of this deliverable D8 and devoting some time to the usability issues has delayed this deliverable.",0
+The contributions of the indivual project are ordered according to their application domain.,0
+"Finally, project-wide conclusions concerning the evolution from the first to the second milestone are formulated.",0
+"The purpose and approach of D8 has been agreed upon during the team meeting in Delft (NI), November 2000.",0
+"The following arguments contributed to the de?nition of D8, as it is currently presented.",0
+"D8, ?Functional Specification and Architecture?, can to some extent be considered as a second iteration on D2 ""Requirements and Usability Methodology"".",0
+The rationale behind this conclusion is as follows.,0
+"After describing ""key concepts"" in deliverable D1, the BEYOND partners have contributed to D2, in which the requirements have been detailed and the usability methodology has been described.",0
+Most of the BEYOND partners planned to have a first prototype at the time of the ?rst milestone (after one year of research in the consortium).,1
+"This is in particular the case for the partners that are directly active in one of the application domains (Public domain, Home domain, Vetronics domain, Avionics domain).",0
+"Consequently, the requirements stated in D2 are considered as a kind of checklist for the first prototype.",1
+"Based on the lessons learnt from the first prototype, ideas for the second prototype have been collected.",1
+It seems acceptable that the relation D2?milestone 1/prototype 1 is the same as D8-milestone 2/prototype 2.,1
+This as opposed to the realization of new prototypes during the second half ofthe project period.,1
+As a result it was decided that a domain-oriented approach provides a comprehensive structure for this deliverable.,0
+"It supports the placement of the individual projects in their context, and allows key aspects of the involved workpackages (multimodality, adaptivity, simulation and usability) to be emphasized.",0
+"However, we opted to let the workpackages take part through projects in application domains in order to obtain a coherent and comprehensive report.",1
+"It should be emphasized (and it should be obvious after reading this deliverable) that the key aspects multimodality, adaptivity, simulation and usability are independent variables.",1
+"They are different dimensions along which the Uls are investigated, but they have nothing to do with the order in which the projects are listed.",1
+The level to which these aspects have been addressed in the projects differs considerably.,0
+"Also, there are sections on architectural issues.",0
+"It has to be explicitly stated that due to uncertainties in the German funding situation, the consortium lacked the experienced partners for a separate usability workpackage.",0
+"Therefore, the other partners had to find a way to overcome this problem.",0
+"One consequence is that most of the contributing partners devoted resources to usability engineering activities, as reported in this deliverable.",0
+"The above mentioned relation between deliverables D1 (key concepts), D2 (requirements) and D8 (functional specifications) is applicable for all the listed projects.",0
+"D1, D2 and D8 are all common deliverables.",1
+"Besides this, there are relations with other deliverables that are the result of particular workpackages.",1
+"For instance, D3 ?Common Adaptivity Reference Framework? from WP2 comes into play in the adaptivity and/or architectural sections of this document.",0
+"This illustrates that the migration from the first to the second prototype takes into account adaptivity issues, possibly inspired by the cooperation in the context of the adaptivity framework.",1
+Similar relations can be found with regard to multimodality and simulation.,1
+"It is likely that the relationship also extends to future deliverables, intended to provide even more detail when we progress towards milestone 2.",0
+"Finally, project-wide conclusions concerning the evolution from the first to the second milestone are formulated.",0
+"APC (apc interactive solutions AG) is working on the development of information networks, terminals and kiosk solutions to address people's needs for information in public space.",0
+The core component in this project is the information terminal which is called accesspoint.,1
+It resembles the interface between users and the network which transports and provides context sensitive information.,0
+The accesspoint is higly multimodal and provides a good basis for adaptive services.,1
+APC has devoted part of its development to user interface design.,0
+Many features have been implemented in a first multimodal Accesspoint prototype.,0
+This is considered to be crucial not only for the accesspoint services but the acceptance of the whole system where essential functionalities are speech controlled dialogs.,0
+The second prototype will follow and offer adaptive features as well.,1
+It will enable enhanced understanding of voice commands and beter dialog design will be an important step towards natural language understanding.,0
+"Project Status During the first year, comprehensive analysis and functional specifications have culminated into the first multi-modal prototype accesspoint.",1
+Its basic technological implementation has been tested during operations in numerous public space applications as a geographical information system and marketing support media among many others.,0
+"During the second year, development of modular component based modules will address the lack of functionality and interoperability that are currently missing.",0
+Goals for the second prototype are guidelines for basic user interface design and the simulation of a sample application.,0
+Another focus is to comply with open architecture standards and maintain accessibility of web-hosted data.,1
+"Methods and results concerning usability As indicated in the project status, usability data has been acquired by log file analysis and video surveillance of user sessions.",1
+"Furthermore, users have been asked to participate in opinion polls and fill in questionnaires.",1
+Pre-evaluation of the user interface has been carried out together with design experts by APC corporate partners.,0
+"Results were mostly focused on acceptance of the system in public space, and address the design of the solid, speech and graphical user interface.",0
+It has been found that a major issue in the design of the solid user interface is ergonomics.,0
+"The most important requirement is the stability of the system on a high-Ievel user application level, which is a consequence of the availability of basic network and terminal functionality.",1
+System failures caused by user operation or network malfunctions have to be avoided.,1
+Dead ends in dialogs have to be addressed by a special help system and contextual understanding has to be provided.,1
+The system must guide users throughout the interaction process quickly and effectively and it has to be designed to avoid cognitive overloads caused by information overflow.,0
+The accesspoint has to be controllable through different modalities.,0
+"A switch between modalities must not affect the system operations, consequently there should be no need to re-initiate the dialog status.",0
+"Likewise, it should be possible to switch the current context without loosing perspective in case the system does not estimate the context properly.",0
+General changing requirements and extensions There is an urgent need for extensibility of the software system.,0
+The monolithic implementation which is used at the moment does not support modelling of upcoming functionality requests and it is very dif?cult to maintain and extend.,0
+Although the ?rst prototype complies with the specified functionality we have decided to re-implement it from scratch and carefully design all application interfaces for process communications.,0
+Better development tools to handle the speech system on an abstract level are required to improve the process of extending its rule database.,0
+"For better extensibility, context engines need to be implemented rather than interfaces and the method of choice are neural networks.",0
+As for training purposes new tools are needed and should be able to derive input from rule databases which are used at the moment.,0
+Usability related specifications There are two major aspects which are of vital importance for the acceptance of the terminal in public space applications.,0
+Firstly the solid user interface requires high standards in ergonomics and robustness.,0
+"Secondly the system needs to have a ?subtle notion"" of its services to guide users quickly and effectively.",1
+It must be self explicable and understand users' needs.,1
+It must also be able to handle context specific dialogs.,1
+Dialogs which it doesn't understand clearly should be handled properly to limit user frustration.,1
+Context switches must be supported at any state of the session and the system should offer alternatives and rank them by guessing its likelyhood.,0
+The graphical and speech user interface need to complement each other.,0
+They represent input and output channels and provide access to the state of the context BEYOND Public Deliverable 8 Functional Specifications and Architecture 9 February 2001 ITEA 99002 BEYOND engine.,0
+The information flow must be compatible with average user capabilities to avoid cognitive overload.,1
+The graphical user interface model presents information in an abstract two dimensional way and supports virtual characters.,0
+Further points address training of the context engine of which some have already been mentioned above.,0
+Adaptivity related specifications The following adaptivity specifications are limited to single user sessions.,0
+It is assumed that multiple user sessions are not very likely to occur in public space applications.,0
+A general single user session occurs when one person in front of the terminal interacts with the system.,1
+"An onlooker, or person inside the interaction area of the terminal is already considered to be a user.",0
+"Some adaptivity related speci?cations are partly indicated in section ?Usability related specifications"" above.",0
+Contextual understanding is an example and support of context switches without explicit requests are another.,0
+The interaction process should be as natural as possible and the development should ultimatly enable natural language understanding.,0
+"every single user is understood instantly irrelevant of age, gender or other distinct characteristics.",0
+"Multimodality related specifications The terminal is designed to support classical input-output channels like typing or reading, and complement them with speech and visual capabilities.",0
+"Except for high level features, most of the above mentioned adaptivity specifications primarily rely on multimodality related features.",1
+Visual and audio surveillance enable user detection and language understanding through face and speech recognition.,0
+"At the moment, higher level functions and more powerful features for enhanced sensing can be implemented by combining speech and visual information.",1
+Mode switches which are not initiated by the system are only possible through input channels.,1
+Output presentation is determined by the system and the user has no direct influence in this case.,1
+"If desired the user can override default settings, but because of privacy issues, certain output channels are preferred.",0
+Simulation related specifications Certain new usage scenarios require extended functionality which has not been implemented yet.,1
+The system functionality should be extensible and able to be integrated into the simulation environment to interface existing and new features at the same time.,0
+"To describe the newly defined specification, the simulation environment should provide an abstract high level scripting language thus providing an interpreter.",0
+"Architectural issues To ensure extensibility of the software system, an open architecture has been chosen.",0
+All functionalities will be implemented using components or even distributed components in a client-server oriented approach.,1
+Because of multimedia capabilities operating system selection is virtually limited to the MS V\?ndows based platform.,0
+"The implementations of the context engine with near natural language capabilities, the multiple modality support functions and the speech and graphical interfaces are heavily component based.",0
+Introduction Home entertainment systems are embedded-computer systems that deliver entertainment content to consumers in their homes.,1
+"The home environment places special constraints on entertainment systems, such as audio-video systems.",0
+"The expected evolution is that home systems can adapt to suit to individual preferences, different contexts of use, and different types of content.",0
+The user interfaces of adaptive home systems will have to communicate this adaptivity to the user.,0
+A first step towards adaptive user interfaces is to have an easy way to create customisable or ?flexible? user interfaces.,0
+Flexibility means here: adaptivity in the development phase.,0
+"However, the process to develop these ?exible user interfaces needs to be improved and supported by tools.",1
+"Currently, user interfaces are mostly specified on paper with sometimes-Iimited tool support, and it takes many man-years to develop them.",0
+"Prototypes or simulations, if developed well, are far more comprehensive than lots of pages of description and they allow early validation ofthe usability in a cost-effective way.",0
+"In the computer world, authoring tools or Rapid Application Development tools are used to prototype and build the graphical parts of an application.",1
+These parts are compiled into executable code.,0
+An authoring tool for the consumer world can use a similar approach as the user interface development tools in the computer world.,0
+"However, the consumer world has extra constraints that have to be taken into account: in particular, these are limited RAM, lack of hard disk and comparably slow processors.",0
+The high level requirements forthis authoring tool are: c The authoring tool should allow easy modification of the behaviour of user interfaces.,0
+0 The authoring tool should support easy development of adaptive user interfaces.,0
+0 The authoring tool should allow the functional requirements speci?cation of the next generation of consumer products to be developed in a much faster and ef?cient manner.,0
+BEYOND Public Deliverable 8 Functional Specifications and Architecture 14 February 2001 ITEA 99002 BEYOND The ?rst prototype of the authoring tool offers a basic functionality.,0
+This functionality has been testing extensively by expert users in a pilot project.,0
+"Their experiences resulted in more knowledge, needed to specify new requirements.",1
+"In the mean time, a common reference model for adaptive systems has been developed.",1
+The second prototype should offer a more extended functionality based on the new requirements and it should take into account the common reference model.,1
+The aim of the two prototypes is to give us insight in the feasibility of the development of an authoring tool for user interface development of consumer products.,0
+"Project status In the first year of the project, we started with an early version of the first prototype and focussed on the specification of the requirements for this prototype, by doing usability tests.",0
+This resulted in a list of requirements for the first prototype as described in section 5.4.1.,1
+Also our contribution to the reference model for adaptivity (document D3) gave us a better insight in the domain of adaptivity.,0
+"In the first half of the second project-year, the ?rst prototype has been used in a pilot project, where a user interface for a speci?c consumer system, a DVD (Digital Versatile Disc) player was developed.",1
+This usability testing by expert users in a real project was needed to gain better knowledge on what we expect from an authoring tool.,1
+"The requirements for a second prototype, speci?ed in section 5.4.1 are based on the knowledge gathered in these activities.",0
+"Although the ?rst prototype offered a limited functionality, it gave us the possibility to gain experience on the desired functionality of an authoring tool.",1
+"Our authoring tool specifically targets speci?cation, design, simulation and code generation, for the development of on-screen-based user interfaces and control of consumer products.",0
+Code generation for a target platform is not yet supported.,0
+The requirements ofthe ?rst prototype are described by the requirements listed below: 0 The authoring tool provides a set of standard widgets.,0
+A widget is a graphical entity representing the interface between a user and the application software.,1
+"0 The authoring tool provides for each project a project repository containing a font definition, a colour palette, bitmap images and strings.",1
+o The authoring tool allows the user to manage a palette and its colours.,1
+Colours are organised in a palette.,0
+o The authoring tool allows the userto import bitmaps from an external source.,1
+0 The authoring tool allows the userto simulate a user interface on a PC.,1
+"An extensive evaluation of the ?rst prototype, by trying out the tool for the development of the on-screen-based user interface of a DVD player resulted in new requirements for a second prototype.",0
+"From the UI developer?s point of view, the main need was the addition of the ability to create menus in an OSD UI.",0
+"Besides this important user requirement, the second prototype of the tool should demonstrate code generation for a target platform, in this case the DVD player.",1
+The extension - requirements for the second prototype are: c The authoring tool provides a complex widget containing a menu structure and a navigation function.,0
+0 The authoring tool should provide a menu editor.,1
+This menu editor allows the userto define items in a menu.,0
+"0 The authoring tool allows the user to generate C code for a target platform, e.g.a DVD player.",0
+"Usability related specifications The general requirements, listed in section 5.1, all stress the usability aspects of the tool.",0
+A possible usability requirement that will be considered for future extensions is: ?the authoring tool should be able to assist the user in the authoring process by a wizar 5.4.3.,1
+"Adaptivity related specifications The ?rst as well as the second prototype focus on off-Iine adaptivity: a user interface developed with the tool is created, simulated and modi?ed on a PC.",0
+The compiled C code can then be loaded in the target system.,1
+Off-Iine adaptivity is a first step towards the development of more adaptive user interfaces.,0
+We called this flexibility instead of adaptivity.,0
+The tool offers the UI developer a more ?exible way of developing a UI.,0
+"Thus the authoring tool should be able to support specification, simulation and code generation of UI aspects related to these i/o peripherals.",0
+A Multimodal user interface forthe authoring tool is a possible requirement for future versions.,0
+"Simulation related specification As specified in the requirements of section 5.4.1, the ?rst as well as the second prototype allow to make simulations of a user interface on a PC.",0
+Simulations are a way to get early feedback on a UI that is being developed.,1
+"Architectural issues Until now, Philips Hasselt concentrated for the Beyond project on usability testing and on requirements speci?cation.",0
+A lot of effort will be done to design the second prototype conform the requirements specified for the second prototype of the authoring tool.,0
+"Examples are global positioning systems in cars, trajectory guidance in busses and metro, systems allowing the monitoring ofa boat in its environment etc.",0
+The environments in which they are used place special constraints on the displays of the Vetronics systems.,0
+"Rugged displays are needed, which satisfy specifications such as being resistant to vibrations, extremely high or low temperatures, shocks, high degree of humidity, magnetic fields etc.",0
+"These speci?cations must be satisfied in addition to common image speci?cations with regard to resolution, coIors etc.",1
+"In addition, the possibility to add both textual and graphic overlay to the displayed video is necessary to show navigation information, diagnostics etc.",0
+BARCO collaborates with the LUC for the Vetronics software.,0
+The first prototype of the UI-Editor was meant to perform some research about the general structure of the Editor.,1
+This prototype gave us an impression of how to implement such kind of program and enabled us to learn about the do?s and don?ts in this kind of application.,0
+Another important target is to get some feedback of the market about the new concept we are introducing.,0
+High-Ievel requirements The previous section emphasized the fact that the Vetronics domain demands ruggedized displays.,0
+"In this section we will not mention general criteria for ruggedized displays, as they are well-known by BARCO from earlier developments.",1
+We will rather focus on speci?c targets for BARCO and LUC in the second prototype based on the requirements of the first prototype.,1
+VI?th the feedback on this first prototype we can re?ne our requirements so they actually re?ect our needs.,0
+However the software part (UI-Editor and firmware support) are still in prototype phase because ofthe new approach for the UI-Editor.,0
+Forthe Vetronics hardware and firmware: 0 Optimum Video performance 0 Ruggedness : Environmental Specification compliance.,1
+0 The so?ware structure of the ?rmware should be suitable for adding a ?UI- interpreter? (to interprete and visualize the UI code generated by the UI Editor; so a very important component in this project).,1
+For this aspect we have chosen to add/implement a kind of virtual machine which performs the interaction between the UI-Code and the effective hardware/firmware.,1
+0 The software (firmware) should be able to control all the available hardware and the hardware state should be accessible to the ?rmware and be exposed to the UI-Code.,0
+Forthe User Interface Editor: 0 The UI Editor should allow ?exible creation and modi?cation of the user interface ofthe Vetronics application.,1
+This must be done in an interactive and visual way.,0
+"0 The UI Editor should be able to communicate with the Vetronics hardware, to download the developed UI to the Vetronics system for real use.",0
+"This communication is done using different kinds of interfacing (Serial port, USB, FireVI?re, IrDa, CAN, ...).",1
+This communication module is also needed to obtain the system configuration from the Vector Unit.,1
+0 The UI Editor itself should be a powerful and user friendly tool.,1
+"Because we are focussing of VI?ndows-users, the VI?ndows guidelines are taken info account.",0
+"However, we do not want to obtain the ?Designed for Windows Label.",0
+It should be compatible with the common versions of VI?ndows (98/ME/2000) and near-future versions.,0
+0 The UI-Editor should be an open-application so we can add new functionality to support new hardware con?gurations.,0
+To obtain this we must create an open framework on which we can PIug-In aII functionality we desire.,0
+"Flexibility versus Adaptivity We define flexibility here as a level of adaptivity of the system, from the point of view of the UI developer.",0
+"This way of working assumes that we, in a first stage, only focus BEYOND Public Deliverable 8 Functional Specifications and Architecture 20 February 2001 ITEA 99002 BEYOND on ?Off-Line Adaptivity?.",0
+This means that we must develop/modify the User Interface using a separate program (UI-Editor) and download it into the system in order to use the new User Interface.,1
+The adaptation takes place in between sessions with the Vetronics system.,1
+"Even this off-Iine adaptivity is a step fonivard in the Vetronics domain as in most cases, the UI is realized in firmware.",1
+"Project status During the first year of the project, a lot of analysis and research have been performed.",0
+All this research resulted in the development of a first prototype.,0
+This prototype was the first milestone in the BEYOND program.,0
+"The prototype consists of a User Interface Editor, a Vetronics system and some peripherals to try the complete system as such.",0
+This expert review resulted in some kind of score by which we could validate the prototype (or reject it).,0
+0 The functionality ofthe prototype is more or less what was required 0 The graphical performance could be better.,0
+Some screen updates were not OK 0 A list of bugs/malfunctions has been made.,0
+Most of these have already been corrected.,0
+"In fact, all functional requirements were fulfilled, but we noticed a major lack in the approach of the software: PIugIn-Capability.",0
+AII functional parts were statically linked to each other without any way to add additional functionality; although not without writing lots of code.,0
+"So, we have decided to start a new cycle with a weII-analyzed framework so we will be able to easily pIug-in new functionality onto the application.",0
+Every pIug-in will then represent a piece of functional hardware.,0
+"As already mentioned in the project status, there has been an expert review on the first prototype.",0
+The UI interpreter should interpret the downloaded UI code to navigate through the menus and perform de?ned actions.,0
+This is the decision-agent we need for content prioritization.,0
+User Interface Editor: System Configuration VI?zard Font authoring modalities The UI Editor should allow the user to create/modify menus.,0
+"Menus are in fact the combination of Overlay (OSD and Symbol Generator), HotSpot zones and Event-Action Associations.",1
+The UI Editor should enable the user to associate an event to an action as defined in the previous point.,0
+An event-driven approach is envisioned in the first prototype to evaluate its feasibility.,0
+Hereby the VM must support this event-driven approach and act as a transparent link between the generated UI-code and the hardware.,0
+BEYOND Public Deliverable 8 Functional Specifications and Architecture 25 February 2001 ITEA 99002 BEYOND o The UI Editor should also dispose of a facility to associate an event to more than one action.,0
+This extension of the event-driven approach raises design issues to be tackled.,0
+"o In general, the UI Editor should be a user friendly and powerful development tool.",0
+"This requires: 0 Attention for visualization and simulation issues (WYSIVWG approach, e.g.",0
+"Visualization of the designed UI, menus, icons, Simulating navigation etc.).",0
+0 Attention for solutions that speed up the development of the UI (e.g.,0
+investigate the use of drag-and-drop tools such as in the context of action definition).,0
+0 Attention for general usability issues and user interface design.,0
+Our main extension of the requirements forthe UI-Editor is the PIug-In- approach of the program.,0
+In order to meet this extra requirement a lot of investigation on the architecture of the UI-Editor has been done and seriously evaluated.,0
+This resulted in a component?based approach where all functionality could easily be ?Plugged? into the editor.,0
+"As a result, we are able to add the Symbol Generator Functionality to the Editor, even with expanded possibilities like macro definition, text capability and bitmap operations.",0
+"All these important features exposed by the hardware will now be fully supported in the UI-Editor, which gives us expanding possibilities.",0
+Usability related specifications The usability has been verified by the expert review of the first prototype.,0
+"Because of the variety of SW?experience and interest we covered a wide range of usability issues, from non-technical, commercial to pure technical.",1
+"Every member had his speci?c remarks on the software, as expected, some were more about the Look?And-Feel, and others were more technical about bugs and inconsistencies.",0
+The hardware layout is always visible during development.,0
+"AIso derived Vetronics products, with different housing, LCD, are not covered.",0
+0 Font creation/modi?cation is really easy and performing well.,0
+BEYOND Public Deliverable 8 Functional Specifications and Architecture 26 February 2001 ITEA 99002 BEYOND 0 Some artifacts are noted during screen updates.,1
+0 Communication ports are statically implemented into the editor.,0
+o The complete UI-Editor has to be updated if modifications are made.,1
+This is an anomaly when we want to give support/updates via the Internet.,1
+"0 Finally we concluded that the prototype met its functional requirements, but it was too static.",0
+From our hardware development and customer requirements we had learned that all have very specific needs concerning not only on User Interface but also real Hardware Interfacing to several peripherals.,0
+So we must be able to support this wide (and growing) range of interfacing capabilities of our Vetronics hardware in our UI-Editor as kind of PIug-Ins.,1
+This will also solve our maintainability issue.,0
+Adaptivity related specifications The generated User Interface is only off-Iine adaptive.,0
+Which means the UI is modified on a separate computer and then reloaded into the Vector System.,0
+"The Vector system has some agents inside to prioritize the information available (UI- information, system status, Environment data, ...).",0
+"Though using off-Iine adaptivity, the running Vetronics application (based on code realized by means of the UI Editor) can demonstrate ?intelligent? behavior to some extent.",0
+"The User Interface has access to its own data (directly UI-related), but also to data provided by the firmware concerning the current system status and its environment.",0
+"As a consequence, there is a need for a kind of decision algorithm (=agent) in order to decide whether the UI is more important than the system/environment data or vice-versa, depending on the actual content.",0
+This will re?ect in the information the user gets to see.,1
+It is possible that in dangerous conditions the environmental data force the defined UI to be overruled by some buiIt-in UI elements (e.g.,0
+The UI-Editor itself enables us to create and modify the User Interface off-Iine and then reload it.,0
+In the definite program we can implement wizards in orderto guide the user through several tasks or warn him for contradictory situations.,0
+These self- Iearning wizards will recognize the user?s behavior and identify occasions to interfere and help.,0
+"In this case, we need a kind of user pro?le and a behavior database in order to take the right decisions/predictions.",0
+"In this context, we will use the reference model in which we collaborated with the other members of WP2 for the Deliverable 3.",0
+This reference model will be used in the agent approach of both the ?rmware and editor.,0
+"Although extension will be rather limited in ?rst, we want to do some research about extending its implementation in both the Firmware and UI-Editor.",0
+BEYOND Public Deliverable 8 Functional Specifications and Architecture 27 February 2001 ITEA 99002 BEYOND 6.4.4.,0
+Multimodality related specifications The relation of this project to multimodality is rather limited.,0
+"However, our Vector system should be able to communicate with all kinds of peripherals.",0
+"In Vetronics markets, probably due to the heavy environmental conditions (temperature, vibrations, noise, ...) we cannot really use fine multimodal devices.",0
+"However, auditive information is one of the most used feedback methods in train applications.",0
+Also Touch Input devices are rather frequently used because they do not require additional place.,0
+"Currently, support for a touch screen is provided in the UI-Editor.",0
+"As a consequence, the Vector system does not have to be available while developing and testing the UI.",0
+This is a very important demand because the systems are mostly built in into consoles where they are not easily accessible for downloading etc.,0
+An important result of the simulation may be the ability to certify the generated UI for use in life critical conditions.,1
+This can be achieved when using an identical Virtual Machine in both the simulator and firmware.,1
+This is to be investigated after the finalization of our application and is certainly beyond the context of this BEYOND project.,0
+"Architectural issues Because this new approach demands flexible functionality by using PIug-Ins, we needed to redesign the framework from a static one to a component based one.",1
+In order to be sure we can cover all flexibility requirements a lot of effort is now being done in the complete architectural redesign of the UI-Editor.,0
+This architecture is thus considered as a very open framework (the base application) where we can easily plug in all PIug-Ins we need.,0
+"To accomplish this, we have chosen to use an component based approach by using the latest SW?technologies that are usable within this type of application/platform, namely COM & COM+.",0
+Accident analysis has shown that 65% of all aircraft incidents are caused by human error.,1
+"Two kinds of human errors can be distinguished: slips and mistakes [Reason, 1987].",0
+"A slip occurs when the intention is right, but a deviation of that intention occurs.",0
+"A mistake occurs when the actions are according to the intended plan, but the plan is inadequate to achieve the intended goal.",0
+It is expected that slips and mistakes in aircraft operation can be avoided by an intelligent adaptive flight deck that assists the ?ight crew in performing theirtasks.,0
+An intelligent system that knows the human intentions and the actual and predicted flight status can detect slips from the intended plan.,0
+"Ifthe system is aware of the goals of the operation, the intelligent system can even give a recommendation to the pilot to correct for the error.",0
+"In most cases, mistakes are not simply due to a bad knowledge of the theory or procedure, but are rather a logical consequence of a lack of situation awareness.",0
+"The flight deck communicates to the pilot information about the ?ight status (flight plan, position, velocity, etc.",0
+"To form an internal representation of the flight situation, the crew has to integrate all this information presented to them on numerous head-down cockpit displays in different formats.",0
+"In addition, the auditory channel is used to present advice, warnings and alerts to the crew.",1
+"Especially during critical situations, where the situation awareness is of greatest importance, pilots have difficulties building up a representation of the ?ight situation.",0
+"At the same time, several buttons can lighten up, various alerts can be given, and information is highlighted on the display.",1
+Mistakes can be prevented by assisting the pilot in building situation awareness.,0
+Another contributorto the high workload during critical situations in the cockpit is the task ofdecision making.,0
+"Even if the flight crew is able to determine a good resolution to solve the problem, they have too little overview to optimize it.",0
+An intelligent ?ight deck can help the pilot by proposing optimized alternatives out of which the pilot can choose one.,0
+"In such a co-operation, the pilot and intelligent ?ight deck share their knowledge and capabilities to improve the safety and efficiency of the overall system.",0
+BEYOND Public Deliverable 8 Functional Specifications and Architecture 30 February 2001 ITEA 99002 BEYOND 7.1.2.,0
+"Levels of the adaptation process Four stages can be distinguished in the adaptation process: initiation, proposal, decision, and execution [Dieterich et al., 1993].",0
+The agents performing or controlling these stages are the pilot of the automation.,1
+This adaptation is contradicting with the human-centered design philosophy and seems therefore unacceptable.,0
+"In certain time-critical, high workload situations, however, it may be necessary or even mandatory to automatically adapt the interface to draw the crew?s attention and to allow an immediate but sound response.",0
+"Because the adaptation is unexpected and may cause confusion, its occurrence must be well known and trained by the cockpit crew.",1
+"User?controlled self-adaptation: the decision to adapt is taken by the user, while all other tasks are automated.",0
+"If the automation thinks that for the current situation a different presentation may be more ef?cient, it may suggest an adaptation that has to be agreed upon by the pilot.",1
+" User?initiated self-adaptation: the user takes the initiative, the automation proposes, decides and executes.",0
+"This is in fact self-adaptation, but allowing the pilot to take the initiative.",0
+" Computer?aided adaptation: on a user?s initiative, the automation proposes an adaptation, which it will execute afterthe user?s approval.",0
+" Svstem-initiated adaptation: on a system?s initiative, the user proposes, decides and executes the adaptation.",0
+The pilot is then informed if it seems reasonable to tailor the system.,1
+Adagtation: the user performs the tasks on all stages of the adaptation.,0
+The management of [company name]. has identified a potential need for re-writing its core Laboratory Information System (LIS) to improve the performance.,1
+"In general, this project will provide a stable environment, automate decisions, streamline work?ows, and employ industry standard coding and documentation practices.",0
+All functionalities for the new [system name] system would be documented in this FRS.,0
+Any undocumented requirements will be considered out of scope and will not be implemented duiing this phase of Re-WIiting. ,1
+The existing functionalities in the core [system name] will remain same.,0
+The project team has decided that system development will occur on module by module basis. ,0
+The system shall display the desired operational page for the user after clicking the hyperlink.,0
+A user with admin privileges shall be able to Add/Create a new user and associate the user with specified ro|e(s) in the system.,0
+The system shall display an error message if the new user is found in the [system name] system. ,0
+The system shall display an error message if the new user is not active in the Active Directory.,1
+The user shall be able to create/add a new user manually or from a template.,1
+ The system shall display the xxx tab as the default tab.,1
+The user record shall inherit all speci?ed ro|e(s) settings in the template when the user record is created from the user template,1
+The user shall be able to add additional roles manually while creating/adding a new user from a user template.,0
+The system shall save the user info to the database with specified roles associated with divisions for the newly created/added user.,1
+ The system shall perform a search on the [system name] user display name and user name columns in the user tables to find the user and verify the user?s existence. ,1
+"The user must have the flexibility to click any tab to commence the adding process, although the xxx Tab shall display as the default tab.",1
+2.1.1.2.1.11 The system shall generate a standard confirmation message after saving data and warning/caution messages after the cancel or close button is clicked. ,0
+The system shall clear up data if the user chooses to click the Cancel button in the midst of creating/adding a new user.,1
+2.1 121.18 The user must fill in the required fields?User Name and Display Name?in the User Information section at the time of creating/adding a new user.,1
+The system shall direct the user to the xxx Page if the user chooses to click the close button without entering any data.,1
+The Project Team must demonstrate mockups of UI changes to project stakeholders early in the development process. ,0
+" 2.1.1.2.1.17 The user must associate at least one role, division, designator code, and lab location at the time of creating/adding a new user. ",0
+The Project Team must permit reasonable adjustment to the user interfaces of new functionality by project stakeholders when project schedule permits those adjustments.,1
+The Project Team must perform applicable and appropriate testing against new functionality prior to releasing that functionality/build to the production environment.,1
+ 2.4.1.2 The project Team must allow a reasonable time to conduct User Acceptance Testing (UAT) against the built functionalities prior to deploying the product to the production environment.,1
+The Development Team shall define coding standards for the application and follow those standards consistently.,1
+ 2.5.1.2 The Development Team shall be required to adjust existing source code to follow accepted coding standards only if that source code must be modified. ,0
+"The system shall log errors, warnings, and informational messages to an external log file on the application server.",1
+The Development Team shall be required to adjust existing source code to use the external log file only if that source code must be modified to implement another requirement.,0
+2.5.2.3 The system shall log an error message to the external data file when the user is directed to the [SYSTEM NAME] error page.,0
+2.6.1.2 The Development Team shall utilize established open source frameworks instead of proprietary custom components wherever appropriate. 2.6.1.3,1
+The Technical Owner/Lead shall provide signof?f before any [SYSTEM NAME] build can be deployed to the production environment.,1
+The Development Team shall perform weekly integrations of the [SYSTEM NAME] system and deploy these system updates to the Staging environment. ,1
+The Development Team shall label every scheduled [SYSTEM NAME] build in the source control system.,0
+2.6.3.3 The Development Team shall perform scheduled [SYSTEM NAME] builds using code checked out of source control using the label as defined and specified. ,0
+The Development Team shall develop and then send out release notes via e-mail to all Project Team after each [SYSTEM NAME] build deployed to the Staging environment.,1
+The [system name] system will displaya hypertext link labeled ?,0
+Help? at the top right corner on each of the user screens to provide assistance to the user.,0
+Each of the Help topic pop-up windows will contain that same content that is available within the [system name] user?s manuals. ,0
+2.7.1.1 The system shall provide the capability to open a pop-up window displaying information about the specific page along with links to supporting help topics upon selecting each Help link.,0
+2.7.1.2 The system shall display ?[system name] Overview? page located underthe Getting Started section of Help as default help topic page that will load upon selecting Help hypertext link. ,1
+2.7.1.3 The system must allow users to easily navigate through each of the help topics by selecting a corresponding hypertext link provided in the left frame of the pop-up Help window. ,1
+"The system shall display the [company name] logo in the top, right side of the screen on each of the help pages. ",1
+2.7.1.5 The system must exhibit each of the help pages using the same color scheme and background as specified.,0
+The system shall provide an index to the users for a more in-depth search of topic contents through the online help tool. ,1
+ 2.7.1.6 The system shall provide searching ability to the users to quickly find specific topic material through the online help tool. ,0
+The system shall provide a Glossary for industry-related terms associated with [company name] and the [system name] system to the users through the online help tool.,1
+The Functional Requirements Speci?cations (FRS) report provides the detailed description of the functionalities required for the ?rst version of the CCTNS.,0
+"CCTNS V1.0 functionality is designed to focus on delivering value to 105, records room staff and Citizens within the broad crime investigation area.",0
+"Based on the guiding principles stated above, nine different function blocks have been identi?ed and the detailed functionality of each block was determined.",0
+"The functionality of the CCTNS application is focused on providing value to the police personnel, especially the of?cers operating at the cutting edge and easing the day to day operations of the police function.",0
+"Citizens can register their complaints with police and then based on the evidence, facts and following investigation, police shall take the complaint forward.",0
+"The Registration module acts as an interface between the police and Citizens and it eases the approach, interaction and information exchange between police and complainants.",0
+"Investigation After a complaint is initiated, police initiates the investigation process.",0
+Prosecution Interfacing with the courts during the prosecution of cases is an integral part of the responsibilities of police personnel.,1
+A designated constable from each police station constantly interfaces with the courts.,0
+Search The Search module of the CCTNS gives police personnel the ability to execute a basic or advanced search on cases.,0
+"Using the search functionality, police personnel can search for a particular person, type of crime, modus operandi, property etc.",0
+It also gives the user the ability to customize the results View by criminal/accused or by cases.,0
+"It makes reporting easy for police by enabling them to execute different types of queries such as monthly reporting, RTI related etc.",0
+The Citizen Interface module of the CCTNS acts as a conduit for the information exchange between Citizens and police units/personnel.,0
+Citizens can use it as a tool to get information or acknowledgements from police.,1
+The police in turn can use it to respond to Citizens with very little turnaround time.,1
+The Navigation module of the CCTNS provides role based landing pages which help in navigating through the CCTNS application.,1
+"It shows information such as cases assigned, alerts, pending tasks etc hence helping police personnel to plan better and execute with greater ef?ciency.",1
+Application Configuration The Con?guration module of the CCTNS helps keep the application con?gured according to the states? requirements in addition to keeping data elements/rules up to date.,0
+"With a proper con?guration, information such as act and sections, state speci?c data, castes, tribes, property information etc.",0
+The functional requirements for each of the modules are provided as A1 to A7 in separate enclo sures.,0
+The non?functional requirements specify the qualitative attributes such as user?friendliness and performance of the system that are critical for the increased user?acceptance 0f the application.,0
+Help Module 1 The solution should provide detailed context?sensitive help material for all the possible actions and scenarios on all user interfaces in the application.,0
+"2 The solution should send alerts (e.g., email, SMS) to the user if the user Chooses .",1
+"The solution should enable the help?desk user to View the reports on the 4. submitted defects or enhancement requests category?wise, status?wise, and age? wise.",1
+5 The support solution should be accessible to the users both from within the application and also outside the application through a browser interface.,1
+Audit Module An audit trail is a record of actions taken by either the user or the system triggers.,1
+"This includes actions taken by users or Administrators, or actions initiated automatically by the system as a result of system parameters.",0
+"Once the audit trail functionality has been activated, the System must track 2. events without manual intervention, and store in the audit trail information about them.",1
+"The System must maintain the audit trail for as long as required, which will be at 3' least for the life of the case to which it refers.",1
+The System must be able to export audit trails for speci?ed cases (without 5. affecting the audit trail stored by the System).,1
+This functionality can be used by external auditors who wish to examine or analyse system activity.,1
+"A user?s attempts 6. to access a case to which he is denied access), and (where Violations can validly be attempted) attempted Violations, of access control mechanisms.",0
+The System should be able to provide reports for actions on cases organised by workstation and (where technically appropriate) by network address.,1
+"The requirements specify the requirements to control the user access to correspondences, ?les, and records and various functionalities provided within the system.",0
+Access Module The System must allow the user to limit access to cases to speci?ed users or user groups.,0
+The System must allow a user to be a member of more than one group.,0
+The System must allow only adrnin?users to set up user pro?les and allocate users to groups.,1
+The System should allow a user to stipulate which other users or groups can access cases.,1
+"The System must allow changes to security attributes for groups or users (such as access rights, security level, privileges, password allocation and management) to be made only by super?user.",1
+These options are presented in order of increasing security.,1
+"If a user performs a quick or advanced search, the System must never include in the search result list any record which the user does not have the right to access.",0
+"Any access to cases, and all other activities involving the cases and related 10. documents or data should also need to be stored in the audit trail to ensure legal admissibility and to assist in data recovery.",0
+"All error messages produced by the System must be meaningful, so that they can be appropriately acted upon by the users who are likely to see them.",0
+"The System must be able to display several entities (cases, suspects) simultaneously.",0
+The interfaces must be made customizable or user?con?gurable to the extent 4. possible.,0
+Such con?gurations must be saved in the user pro?le.,0
+The System must allow persistent defaults for data entry where desirable.,0
+"These defaults should include: 7 0 user?de?nable values; 0 values same as previous item; 0 values derived from context, e.g.",0
+"Where the System employs a graphical user interface, it must allow users to customise it.",1
+"Customisation should include, but need not be limited to the following changes: Usability 1.",0
+The user interfaces should be designed to make them user?intuitive.,0
+The user interfaces of the system should comply with Standard ISO 9241.,0
+ICT accessibility: ISO 9241?20 shall be the standard for guidance on ICT accessibility.,0
+Application user interfaces to meet its requirements and recommendations.,0
+User interfaces should meet its requirements and recommendations.,0
+Content accessibility WCAG 1.0 shall be the standard used for guidance on content accessibility.,0
+General guidance on achieving self?descriptiveness is given in ISO 9241?110.,0
+Offering altemative access paths: Alternative access paths for navigating to a speci?c unit of content should be offered to support different navigation strategies.,0
+"If a splash screen is used, a navigation option to skip it should be offered.",1
+Avoiding opening unnecessary windows: Additional windows such as new browser windows or pop?up windows should only be opened if this supports the user?s task.,0
+"Opening new windows can distract, confuse or impede users for a variety of reasons.",1
+They could make it cognitively more dif?cult to understand the navigation structure with negative effects on both usability and accessibility.,0
+They also require additional user actions for closing unwanted windows.,0
+This may be done by placing important information at the top and providing links to information that is further down the page.,0
+Horizontal scrolling should be avoided wherever possible.,0
+Designing for input device independence: User interfaces should be designed to allow activation of controls by a variety of input devices.,0
+"The ability to choose between different input devices for activating controls such as links, ?elds and buttons is important both for users who prefer a certain input mode, mobile users and users with disabilities.",1
+"In general, device independence can be achieved if the functionality is operable Via a keyboard.",0
+Making user interfaces robust: User interfaces should be designed to be as robust as possible in the face of changing technology.,1
+This encompasses being able to present content containing newer technologies by older user agents as well as designing content to be usable with future technologies.,1
+"This is particularly important for frequently accessed pages or pages that are important for user navigation and exploration, such as the home page.",0
+Minimizing user errors: Potential user errors as well as the effort needed to recover from errors should be minimized.,0
+Users expect error messages to be in the same language as the user interface.,0
+"Making text resizable by the user: Text should be able to be resized by the user, using functions provided by the user agent or other appropriate means i.e.",0
+Text quality: The quality of textual content with respect to spelling and grammar should be suf?cient so as not to impede readability.,1
+"Supporting text skimming: Fast skimming of text should be supported by the provision of clear links, bulleted lists, highlighted keywords, logical headings, and short phrases and sentences.",0
+Readability of text: Text presented on the pages should be readable taking into account the expected display characteristics and spatial arrangement.,1
+Distinguishable within?page links: Within?page links should be clearly distinguishable from other links that lead to a different page.,0
+Within?page links are shown with dashed rather than solid underlines 24.,1
+Avoiding link overload: Text pages containing large proportions of links should be formatted so that the presence of links does not impede the readability of the text.,0
+Using appropriate terminology speci?c to the user?s tasks and information needs is important for making the content easy to understand.,1
+Marking links opening new windows: Links that open new browser windows or pop?up windows should be clearly marked.,0
+Distinguishing navigation links from controls: Navigation links should be clearly distinguishable from controls activating some action.,1
+space ?lled only with the background color should be used in such a way that it does not impair the Visual skimming of the page.,1
+Selecting appropriate page lengths The length of a page should be selected so as to support the primary purpose and use of the page.,0
+"Short pages are generally more appropriate for homepages, navigation pages, or overview pages that need to be read quickly.",0
+Longer pages can be more appropriate when users want to read the content without interruptions or when the page needs to match a paper counterpart.,0
+"Using colour: Colour should be used with care, taking into account human capabilities and restrictions in perceiving colour, and not as the only means of conveying information.",1
+Color should never be the only means of coding.,1
+"When frames are used, it is important to title each frame, and to describe its purpose and how frames relate to one another other.",0
+"Providing altematives to frame?based presentation: If frames are used, an alternative way of presenting relevant information without frames should be provided.",0
+"Consistent page layout: Pages should be designed using consistent layout schemes, supporting the user in ?nding similar information at the same position on different pages.",1
+Overall layout schemes apply to all pages and are preferable when all pages have a similar structure.,1
+"Frequently, however, different pages have different purposes and types of content.",0
+"In such cases, pages can usually be grouped in different categories, using one layout scheme for each category consistently.",0
+Placing title information consistently: Page titles should be placed in a consistent location on the different pages.,0
+"Observing principles of human perception When designing application pages, the general principles of human perception should be taken into account.",1
+The Intemational Standards mentioned below shall be consulted for guidance.,0
+Guidance on selecting and using different forms of interaction techniques is to be found in ISO 9241?14 to ISO 9241?17.,0
+"ISO 9241?14 gives guidance about menus, ISO 9241?15 about command dialogues, ISO 9241?16 about direct manipulation and ISO 9241?17 about forms.",0
+"In addition, when designing multimedia information presentations, the design principles and recommendations described in ISO 14915?1 to ISO 14915?3 should be taken into account.",0
+Appropriate content presentation also plays a key role in accessibility.,0
+Linking back to the home page or landmark pages: Each page should contain a link leading to the home page of the application or to a landmark page that is easy to recognize for the user.,0
+Providing a site map: A separate navigation overview such as a site map should be provided for application showing the structure of the site in an overview form.,1
+Placing navigation components consistently: Navigation components should be 41' placed consistently on the pages or in the framesets in the pages of the application.,1
+User adaptation can also be important for making the user interface more accessible.,1
+"Different approaches can be used for achieving these goals, like providing users with means for customizing the user interface to their personal needs i.e.",0
+individualization designing content and navigation differently for varying user groups or roles i.e.,0
+Making individualization and adaptation evident: It should be made evident to the 44' user when individualization and/ or adaptation are used.,0
+"Making user pro?les evident: If prede?ned user pro?les or user?speci?ed pro?les 45 are used for individualizing or adapting content, the pro?le currently used should ' be made evident.",1
+"If pro?les are used, it is important to provide users with information about this concept and its implications.",1
+"46 Allowing users to see and change pro?les: If user?speci?ed pro?les are used, users ' should be able to see, modify and delete that pro?le on demand.",0
+Unplanned downtime for the System must not exceed per 3' .,0
+4 The number of incidents of unplanned downtime for the System must not exceed ' per .,0
+"5 In the event of any software or hardware failure, it must be possible to restore the System (with inline synchronization) within no more than hours.",0
+"In this context, performing a search means returning a result list.",0
+It does not include retrieving the records themselves.,0
+"The System must be able to retrieve and display within 5?8 seconds the case which has been accessed within the previous 2 months, regardless of storage capacity or 3. number of cases in the system.",0
+"This requirement is intended to allow for rapid retrieval of frequently?used cases, on the understanding that frequency of use is typically correlated with recent use.",0
+"The System be scaleable and must not have any features which would preclude use in small or large police stations, with varying numbers of cases handled.",0
+The proposed functional architecture is modeled around centralized deployment to facilitate ease of maintenance and leverage advancement in open standards and web technologies.,0
+The 3 C?s (Core?Con?guration?Customization) forms the guiding principle for the architecture.,0
+The functional architecture of the CCTNS solution is given in the ?gure below.,1
+The functional architecture is composed of 4 major components based on SOA principles.,0
+Each of the components contains multiple services as de?ned by Service De?nition.,0
+"The core services, support layer and security and access control components can be deployed as standard components with necessary con?guration changes.",0
+The customization layer can override and add to the core services based on the speci?c state requirements and can be plugged with the core services.,1
+The deployment of the application will be at state level and will be con?gured and customized as per the state speci?c extensions.,0
+Central trading System.,0
+The central trading system (CTS) is to complete the trading of stock.,0
+It analyses the instructions that enter the central trading system and diVides them into several kinds of instructions.,0
+The system will make a match between them under specifical prescripts.,0
+"Also, the central trading system provides some interfaces to send messages to other modules.",0
+The CTS is just a subsystem of the whole stock trading system (STS) system.,0
+"There are mainly siX subsystems involved, stock account operation, ?nancing account operation, trade client serve, network message promulgating, central trading system and trading system manage.",0
+Communications exist among these subsystems which complicates the relationships between subsystems. The CTS receive instructions from trade client serve.,0
+Then the CTS produces new messages which to be sent to network message promulgating after dealing with the instructions from trade client serve.,0
+"Also, the system manager is authorized to access the information in CTS. There are mainly two kinds of users.",0
+"The CTS provides the terminal users easy Operations that are con?ned to a series of mouse clicks and keyboard, which compared to other systems are really much simpli?ed.",0
+"However, for another user, things are different .",0
+the maintainers of this CTS must be familiar with java programming and the socket.,0
+"When the system crashes down, they can find the cause and ?x it.",0
+"When new requirements should be supported, they can modify the program to make it ?t.",0
+"As the instruction is frequently operated in CTS such as fetch, deal with, repeal and so on, the CTS is heavily transferred.",0
+The program must take this into consideration.,1
+The maintainers of CTS should have good strategies to overcome crash of the system when overhead exceeds the capacity of it.,0
+"There are mainly five kinds of actors, which here consist of other related sub-systerns, involved with our Central Trading System.",1
+"Often, user-scenario is considered the same to use-case.",0
+They both can help our team understand how system functions and features will be used by different classes of end-users (actors).,0
+"However, I prefer to understand it like this: a user scenario is a particular environment within a specified use case.",0
+"So, I will specify user-scenarios going along with developing use cases in the next session. Preconditions . . 1nformat10n Trigger",0
+central trading system: save the buy instruction 3 central trading system: match the instructions with the Scenario same stock id 4.,0
+central trading system: make a trade by matching 5.,1
+central trading system: modify the information of matched instructions 1.,1
+Should the trade information return to Transaction User Interface immediately when the deal is done?,1
+Should the failure of trade return to Transaction User Interface the next day? 3.,1
+"If exception happens, is exception log needed? 4.",1
+central trading system: save the sell instruction 3.,0
+central trading system: match the instructions with the Scenario same stock id,1
+central trading system: make a trade by matching 5.,1
+central trading system: modify the information of matched instructions 1.,1
+all the operations have been suspended Exception 2.,1
+"some deal exceptions come up 3 no matched stock with the buy instruction Priority Essential, must be implemented",1
+Should the trade information return to Transaction User Interface immediately when the deal is done? 2.,0
+Should the failure of trade return to Transaction User Interface the next day? 3.,1
+"If exception happens, is exception log needed? 4.",0
+security issue Open issues Preconditions . . cancel 1nformatlon Trigger,0
+The ?cancel? button on UI been clicked l. transaction user interface: give the cancel in struction Scenario 2.,1
+central trading system: save the cancel instruction 3.,1
+central trading system: cancel the correlative instruction 1.,1
+Is it necessary to return the status of cancel transaction? 2.,1
+"If exception happens, is exception log needed? 3.",1
+"The correlative trade transactions have been successfully happens, is exception log needed? 2.",1
+central trading system: implement the query cenano 3.,1
+central trading system: structuralize the queried data 4.,1
+central trading system: send the data to release 1.,1
+Then the instructions will go to the instructions manager modular.,0
+This modular will deal with all the three kinds of instructions.,0
+Then it will send the results to the Trading client serve and information releasing modular as well as keep a log file. The instructions analysis will identify the kind of the instructions.,0
+Then it will deal with the illegal instructions like the raising limit and freezing the fund in the Data Base.,1
+"In addition, it will keep log file about the instructions. In this level the three kinds of instructions will go to three different modules.",0
+The query instruction will refer to the Data Base or the instructions list.,0
+The cancel instruction will delete the instruction the instruction in the instructions list.,1
+Include the query and writing and modifying DB 1nstruct10n Data Base(1nput) instructions to the Data Base newest trading CTS(output) Information,1
+Freeze the fund ofuser?s account instruction . . . . . . . . . deal the 1nstruct10n 1n detall.,1
+"There are several states in the diagram, which are decoding, researching, canceling, analyzing, rej ecting, queuing, storing, matching, queue modifying, responding.",0
+The ?ow between the adjacent states goes their way according to specific conditions which are displayed on the ?ow line. Class: PretreatmentO?nstruction,1
+"ManagementOfInstruction Class: ManagementOfDealing Deal business following the key rules, and some operations are executed after the deals 15 Version 1.0 Deal the business",0
+The central trading system has relation with three modules that are trading client serve.,1
+These modules have contact with CTS usin g the interface supplied by CTS. 7.1.1 Transaction User Interface,0
+The Transaction User Interface has to input the instructions.,0
+"This instruction should have ?ve parameters: user ID, stock ID, quantity, respected price, tirnestarnp.",0
+This instruction can be divided into two kinds: user query instruction and the stock query instruction.,1
+"The user query instruction should have three Version 1.0 parameters: user ID, query content, some restrict parameters.",1
+"The stock query instruction should has three parameters: stock ID, query content, some restrict pararnetera 7.1.2 Information Releasing Module",0
+The information releasing module use the interface to ?nd the price of the stocks.,1
+The input should has two parameters including the stock name and the restrict parameter. 7.1.3 Trading manager system,0
+The trading manager system uses the interface to ?nd the user?s trading instruction.,1
+"The input should has two parameters including the trading instruction type(buy or sell),and the restrict parameter. 7.2 Function Criteria",0
+"The CTS deals with trading instruction, query instruction and some cancel instruction.",1
+The functions are as follows: I) instruction matching,0
+"When the client serve get a trading instruction, it will send the instruction to the CTS to trade with other trading instructions.",1
+The process of the trading includes the following two main principles: price ?rst principle and the time ?rst principle.,0
+"If the trading fails when these two principles have been applied, we should refer to another principle.",0
+The trading states are diVided into two kinds: totally ?nished and the partially ?nished. 4) outdated instruction,0
+"If a instruction haven?t ?nished it?s trading in one day, then it will be removed form the CTS for out of date. 17 Version 1.0",1
+Software Requirements Specification for KeePass Password Safe,0
+"This document includes software requirements for KeePass Password Safe, release number 1.10.",0
+KeePass Password Safe is an OSI Certified Open Source Software distributed under the terms of the GNU General Public License Version 2 or under.,0
+The system gives resolution to memorizing passwords problem.,0
+"Its purpose is to keep all of the user?s passwords, data, email accounts, usernames and URLs stored in a very secure, encrypted database, protected by a Master Password.",0
+The system is very small so it can be easily transferred from one computer to another.,0
+It provides several functionalities on the already encrypted data and the new ones to be inserted.,0
+"The database produced, is protected by a Master Password only known by its inventor with no backup if lost. 1.2 Document Conventions 0",0
+"This requirement document contains general information about KeePass, main classes and use cases, functions, features and special technologies.",0
+It describes in detail all that KeePass needs to work properly and with safety.,0
+The rest of the document is divided into chapters for better understanding. 0,0
+In chapter 2 an overall description of KeePass is provided.,0
+First product perspective is presented with product features and main functions.,0
+"Then follow user classes and characteristics, operating environments that KeePass supports as well as design and implementation constraints.",0
+After all that user documentation is presented and will provide you with more details about each feature?s technology. 0,0
+In chapter 5 requirements about safety and performance are presented.,0
+"So it provides you a very secure, encrypted database where you can keep inside all your passwords, usernames, email accounts, URLs, notes without any risk for others to find them.",0
+That is because KeePass Password Safe can lock every database with only one Master Password and/or key file.,0
+"There are no duplicates, anywhere in your computer, of this Master Password and/or key file so in case of lost database cannot be opened by anyone.",0
+Those are analyzed in the following pages. More about KeePass you can find out at http://keepass.info/ 1.5 References More about KeePass can be found at 0 http://soarcef0rge.net/proiects/keepass/,0
+In this website you can find out more about the project and discuss any questions in the forums.,0
+"You can go back and look at preVious releases, code and problems that have been solved.",0
+There you can also find information about the developers as well as the project?s main characteristics such as programming language and algorithms 0,0
+Overall Description 2.1 Product Perspective KeePass consists of a database which contains data for one or more users.,0
+Each user?s data are diVided into groups and subgroups so that they are organized in a form that serves right the user.,0
+Every user has a unique Master Key which can be simple or composite and its combination opens uniquely the database.,0
+If lost there is no recovery.,0
+"Groups and subgroups contain entries with usernames, passwords URLs etc that can be sent or copied to websites, application and accounts.",0
+There is also the ability for a onetime key creation to be used once in a transaction without the risk of reused by others for any reason.,0
+"In the diagram below there are the main components of the system, subsystem interconnections and external interfaces to help you understand the main idea of KeePass.",0
+The database can be opened and closed whenever user wants it.,0
+Changes on the data are permitted and the changes can be saved.,1
+The user also can print all data in order to keep them with him even when a computer is not available.,1
+Also the user can search the database using key words through a search engine provided with the software.,0
+"Last but not least, the database can be imported and/or exported from/to the Internet. 0 Group/Subgroup ?",0
+New groups and subgroups can be added easily and can be deleted the same way.,0
+"The feature of searching can be applied in just one group and not in the whole database if wanted. 0 Entry ? Add, View/Edit, Duplicate, Delete",0
+"A new entry can be added in any group or subgroup and it contains title, username, password, URL and notes.",0
+Not all fields are required for an entry.,0
+An entry can be duplicated and deleted in the click of a button. 0 Change Language,0
+At KeePass website there are available language translations that can be downloaded and applied easily. 0,0
+The user can select a sequence of keypresses that KeePass will be able to perform and send them to any window or browser. 0 Command Line Options,0
+All these together form the Composite Master Key and are all required in order to open the database.,1
+So the user cannot use a combination of them to unlock the database. 0 Configuration,0
+There are available generations based on character sets and based on patterns the first for generating random passwords and the second for creating passwords which require specific patterns.,0
+There is also available generating passwords that follow rules which are determined further down on this document.,1
+Then there are security-reducing options which reduce the security of the passwords they are applied to.,0
+"When this option is turned on, secure edit controls stronger than the ones of Windows are protecting your data and no one can access them, see them or steal them. 0",0
+TAN Support KeePass uses TAN-Transaction Authentication Numbers for even more security.,0
+"This feature can be used for generating one time passwords so that there won?t be any chance, for anyone to access e.g. your bank account even if he finds out that password.",1
+That is because when the password is entered one time it becomes useless.,0
+TANs can be added using the TANs wizard. 0 URL Field,0
+The URL field supports various special protocols and placeholders and can be used for Standard capabilities where URL field can execute valid URLs for which a protocol handler is defined.,1
+"In addition to that, KeePass supports all registered protocols that Internet Explorer supports.",1
+URL field also offers the ability of executed command lines instead of URLs.,0
+"Also, placeholders can be used that will be automatically replaced when the URL is executed. 0",0
+Using Stored Passwords Passwords that are stored in the database can be copied to website accounts and applications with security and without retyping them again.,0
+"This can be done by several methods such us ConteXt-Sensitive Password List, Drag and Drop, Auto-Type and KeeForm.",0
+All of them are explained better further down. Software Requirements Specification for KeePass Password Safe Page 6 0 Lock Workspace Last but not least at all is the locking workspace feature.,0
+This feature is turned on and locks the database when minimized.,0
+So to unlock it the Master Key is required again.,1
+The workspace can be locked manually as well by selecting this option from File menu. 2.3 User Classes and Characteristics 0,1
+"The user interfaces used are: NET/Mono, Win32 (MS Windows)",1
+"When a password is copied for any reason, (e.g. copy to an application, account, and website) it remains in the memory for only 10 seconds.",0
+After 10 seconds pass there is nothing to paste and you have to recopy again.,0
+That provides security in a case a password is copied and not pasted anywhere so no one can find it out by pasting later. Language Requirements in KeePass Password Safe:,0
+Not in all translations translated help files and tutorials are available. Specific Technologies used in KeePass Password Safe: 0,0
+"In order to keep the user?s data fully protected, 2 very secure algorithms are used: Cipher Block Size Key Size Advanced Encryption Standard (AES / Rijndael) 128 bits 256 bits Twofish 128 bits 256 bits",0
+"In both algorithms every time the user saves a database, a random 128-bit initialization vector is generated. 0",0
+"For the creation of the 256-bit key the Cipher uses, the Secure Hash Algorithm SHA-256 is used. 0",0
+A compiled HTML Help file with a tutorial and full help on all features provided 0,0
+"A KeePass Internet shortcut which take the user in the system?s official website where are available downloads, translations, plug-ins and extensions. Software Requirements Specification for KeePass Password Safe Page 8 3.",0
+System Features System features are organized by use cases and functional hierarchy so that the main functions of the system will be understandable. 3.1 New Database,1
+It is the first thing a user must do to begin using KeePass.,0
+Its main function is the determination of the master password that will unlock the database from now on Stimulus/Response Sequences Data Flow 3.1.2.1 Basic Data Flow 1.,0
+User opens KeePass and select New->Database 2.,0
+User writes his private Master Password and/or selects Key File 3.,1
+Master Password confirmation: the user retypes Master Password 5.,1
+The user does not determines a Master Password 2b.,0
+A message is appeared which prompts him to enter a password or key file Functional Requirements REQ?l: KeePass must be downloaded and installed REQ?2: Master Password has no limits in length.,1
+A whole sentence can be used with more than 100 characters. Software Requirements Specification for KeePass Password Safe Page 9 3.2,1
+"When the database is found, the master password is wanted so that the database will be unlocked.",0
+Once this is done the user is free to access his data. 3.2.2.,1
+Stimulus/Response Sequences Data Flow 3.2.2.1 Basic Data Flow 1.,0
+User opens KeePass and select Open->Database 2.,0
+User navigates through his folders 3.,1
+User selects a database 4.,1
+User types Master Password 5.,1
+User selects a type of folder non suitable for database 3b.,1
+A message ?file not found? appears 3c.,1
+Master Password is wrong 4b.,1
+invalid/wrong key? appears 4c.,0
+User chooses cancel,1
+"But when it is time for the database to close or during his working on the database, he can save the changes made. 3.3.2.",1
+Stimulus/Response Sequences Data Flow 3.3.2.1 Basic Data Flow 1.,0
+User opens KeePass and changes his data 2.,0
+User selects save database 3.,1
+User gives a new database name 2c.,0
+User wants to exit KeePass 2b.,1
+A message is appeared asking if he wants to save the database 2c.,1
+Users minimizes the database 2b.,1
+This can be done by selecting print.,0
+"When this happens, a list of data types that can be printed are shown and the user can select the data to be printed.",1
+User selects print from file menu 3.,0
+"The list of options opens with checked the fields: password groups, title, user name, password, URL, notes 4.",0
+User unselects all fields 3b.,0
+This is very useful when the user needs to find out very quickly which password is required in one account or what username he has put on another account.,0
+It is not necessary to write in the search field all characters.,0
+By writing just one character the database will present all data which contains it or are related with it. 3.5.2.,0
+"User types a password, user name, URL, word of notes, title or group that exist in the database 3.",0
+User types two or more words in the search field 3.,1
+User does not type anything 3.,1
+User types data not related with the database 3.,1
+All data related to the word must be shown.,1
+"For example if user types ?abc? and abc is part of a password and of a username, both entries must be shown 3.6",0
+Add Group/Subgroup,0
+The user can create a new group or subgroups into an existing group.,0
+When creating a group/subgroup the user must select a name and then he can add entries into it. 3.6.2.,0
+User opens KeePass and selects to add new group/subgroup,0
+User types a name and has the option to select an image 3.,1
+The group/subgroup is created 5.,1
+User leaves the group/subgroup name field empty,1
+User selects Cancel,0
+User opens KeePass and selects modify group/subgroup,0
+User types the new name and has the option to select an image 3.,0
+The group/subgroup changes name 5.,1
+The group/subgroup?s name remains the same 5.,1
+"In order for that to happen, he must have chosen first a group/subgroup. Stimulus/Response Sequences Data Flow 3.8.2.1 Basic Data Flow 1.",0
+User opens KeePass and selects a group/subgroup 2.,1
+User selects to delete the group/subgroup 3.,1
+A message is appeared to confirm the delete 4.,1
+The group/subgroup is deleted 6.,1
+The group/subgroup is not deleted Functional Requirements Not exists. 3.9,1
+The user selects a group/subgroup and then he chooses ?find in this group? from file menu.,1
+Then a window appears which prompts the user to write a sequence of characters (letters and numbers) from one character to 200 (or more).,0
+"After that a menu of options to choose from appears and the user can select to search for: title, user name, password, URL, notes, group name.",0
+Search results appear in the main window. Stimulus/Response Sequences Software Requirements Specification for KeePass Password Safe Page 16 Data Flow 3.9.2.1 Basic Data Flow 1.,0
+User opens KeePass and selects to find something in a selected group/subgroup,1
+User types the word to search for 3.,1
+User selects the fields which will be searched 4.,1
+User leaves the find field empty 5.,1
+User leaves all search in boxes unchecked 5.,1
+User leaves the find field empty 3.,1
+User leaves all search in boxes unchecked 5.,1
+In order to find something in a group a word must be placed in the find field 3.10 Add Entry,1
+"When he does this, a window opens which is actually a form.",0
+In this form the user completes the fields he wants.,0
+Not all fields are required for an entry to be created.,0
+In fact an entry can be added with no fields at all.,1
+By selecting OK the entry is created in the group selected. Stimulus/Response Sequences Data Flow 3.10.2.1 Basic Data Flow 1.,1
+User opens KeePass and selects to add an entry,0
+"User fills in the form, as many fields as he wants, from 1 to 9 3.",0
+User fills in the password field 2b.,0
+The repeat password field is not identical with the password field 2c.,0
+This feature allows the user to change or modify an existing entry. Software Requirements Specification for KeePass Password Safe 3.11.1 3.11.2. 3.11.3 Page 18 Description,0
+The user can modify the context of an entry he already has added.,0
+This can be done by selecting View/edit entry.,0
+"In order for that to happen, the user must select an entry first.",0
+"Then the user can change the group, title, user name, password, URL, notes, expiration date and attachment file.",0
+His changes are saved by clicking OK. Stimulus/Response Sequences Data Flow 3.11.2.1 Basic Data Flow 1.,0
+User opens KeePass and selects to View/edit an existing entry 2.,0
+User changes the fields he wants in the form 3.,1
+User changes the password field 2b.,1
+The repeat password field is not identical with the password field 2c.,0
+A message appears ?the repeated password must be identical with the password 3.11.2.2.2 Alternative Data Flow 2 3.,0
+The user can create an exact copy of an entry.,0
+This can be done by selecting an entry and clicking duplicate entry.,1
+When this is done the new entry is added in the same group were the first was. 3.12.2.,0
+User opens KeePass and selects an existing entry,0
+The user can delete an existing entry by selecting it and then by clicking delete entry.,1
+When this is done a message appears and informs the user that if he deletes the entry he won?t be able to restore it back. 3.13.2.,0
+User opens KeePass and selects to delete an existing entry Software Requirements Specification for KeePass Password Safe Page 20 3.13.3 2.,1
+The user can select between a number of translations that are available at KeePass website.,1
+All the user has to do is to select change language from the View menu and then the language he wants.,1
+If he already has download languages packets he can choose one of them.,0
+If he wants another language pack he can select get more language.,0
+Doing this he will be transferred at KeePass website and choose the language he wants for downloading. Stimulus/Response Sequences Data Flow 3.14.2.1 Basic Data Flow 1.,0
+User opens KeePass and selects to change language from the View menu,0
+The user selects a language to load from the list that appears 3.,1
+A message appears that informs user that the installation has been done and in order for the changes to take place KeePass must be restarted Software Requirements Specification for KeePass Password Safe Page 21 4.,1
+KeePass asks to save any changes that may have been made in the database and restarts 6.,0
+User selects get more languages,0
+The browser opens in KeePass website were translations are located 4.,1
+User selects a language he wants 5.,1
+The user defines the sequences which can be sent to any other open window like browsers or login accounts.,1
+By default the sent keystroke sequence is {USERNAME} {TAB } {PASSWORD} {ENTER}.,1
+There is the ability for the user to define his own auto-type sequence in the notes field of each entry.,0
+The sequence must be prefixed with ?Auto-Type? and length of one line.,0
+If a sequence is more than a line it cannot be used and in case of two sequences in one note?s field only the first one is used.,0
+There are 3 methods to invoke auto-type.,0
+Software Requirements Specification for KeePass Password Safe Page 22 0,0
+The first method is to use the context menu command and perform auto-type while the entry is selected. 0,1
+The second method is to select an entry and press Ctrl+V 0,1
+The third method is to use the system?wide auto-type hot key so that KeePass can search all entries in the database for matching sequences. 3.,1
+15 .2 Functional Requirements REQ?l9: The prefix ?Auto-Typez? is required in front of each sequence REQ?20: Sequence?s length must not be more than a line (59 characters),1
+The database file location is passed as argument in the command line.,0
+This feature is a composition of master password and key files and all its composites are required so that the database can be unlocked. 3.17.1 Description,0
+"The database can be unlocked with a master password, a key file or both of them.",0
+But the same composition of them must be used always.,1
+A master key is a password the user creates.,1
+"Once a master key is created for a database, it is always required.",0
+"In case the user forgets it, the database can never be opened again by any way. A key file is a file that locks the database.",0
+The database opens when this file is present.,0
+"If the file is lost and there are no copies of it, all data are gone forever and database never unlocks again. Software Requirements Specification for KeePass Password Safe Page 23 3.17.2 Functional Requirements REQ?24:",0
+"Import/Export If a master password is required to unlock the database, the database doesn?t open unless the password is entered",1
+"If a key file is required to unlock the database, the database doesn?t open unless",0
+"In case of lost master password or key file, the database never unlocks again.",0
+"Despite that, almost all support exporting to CSV or XML files.",0
+This feature allows switching back from an application to KeePass. 3.19.1 Description,0
+The global hot key takes the user back from one window to KeePass.,0
+In case of multiple databases running of KeePass the global hot key restores the window which was opened first of all.,1
+This password may contain letters (big and small) and numbers.,1
+The user can keep it or he can put his own in the field.,0
+"The generation can be based on character sets, patterns or can be created according by rules.",0
+This feature can be disabled if user wants it by selecting 0 as password length in the password generator dialog.,0
+More about characters sets and patterns can be found at KeePass Help Files including directions and examples.,0
+They can be added to user?s database by using TAN wizard and can contain all letters and numbers.,0
+"When TAN are created, they appear as typical entries which in the field title contain ?",0
+"? so that KeePass will know it?s a TAN. In TAN entries, user cannot change the title, user name or URL but notes can be added.",0
+"When a TAN is used, its expiration time is set to that current time and the entry expires automatically. Functional Requirements REQ?32: Title, username or URL cannot be changed in a TAN entry.",0
+"When a TAN is used, it expires automatically and can never be used again. Software Requirements Specification for KeePass Password Safe Page 25 4.",1
+External Interface Requirements 4.1 User Interfaces User interface includes various forms and windows.,0
+"The main database window consists of the main menu bar with file, edit, View, tools and help.",0
+Under main menu there is a toolbar with shortcuts to most used functions of KeePass.,0
+"Those are: new, open, save, add entry, edit/View entry, delete entry, copy username to clipboard, copy password to clipboard, find in database and lock workspace.",1
+On the main database window are appeared entries from a selected group.,0
+Groups and subgroups can be found at a side bar.,0
+"When a function is performed like adding, editing or deleting, the active window is the one performing the action.",0
+Other Nonfunctional Requirements 5.1 Performance Requirements,0
+"When a password is copied, it remains on memory for only 10 seconds.",0
+"If in the meanwhile it is not pasted anywhere, it must be copied again.",0
+"That happens so that if user copies a password and not paste it anywhere, the password cannot be found by anyone later. 5 .2 Safety Requirements",1
+"When a USB which contains the database is removed from a computer while changes haven?t been completely saved, the database is damaged and cannot be opened.",0
+In this case the repair functionality can help by repairing KeePass database file from tools menu.,0
+"In case the user forgets or loses the Master Password, the repair functionality won?t help.",0
+KeePass is a small and light proj ect,0
+so it does not need to be installed.,0
+All it takes is unpacking from the Zip package.,0
+It can be transferred also in a USB stick with no additional configuration needed. 0,0
+"KeePass is a project that once uninstalled from a computer, leaves no trace behind.",0
+So there is no way passwords and other data in the database to be found later. 0,0
+KeePass is developed under GNU General Public License version 2 or later (copy from http://www.gnu.org/licenses/gplhtml) and can be distributed under those terms. 0,0
+KeePass can be found and downloaded from www.sourceforge.com and the proj ect?s official website at http://keepass.info/ for free.,0
+Computer Science & Software Engineering,0
+This document presents the business requirement of Unified University Inventory System (U UIS) in Technology-independent manner.,0
+A11 attempts have been made in using mostly business terminology and business language while describing the requirements in this document.,0
+Very minimal and commonly understood Technical terminology is used.,0
+Use case approach is used in modeling the business requirements in this document. 2.,0
+Inventory assets Assets in the inventory are classified in 3 types 0,0
+University structure University organizational hierarchy is represented by the following University I,0
+Name: Modify Use Case Identifier: MODUC Description,0
+The use case describes the modification that the Inventory Admin can do.,0
+Goal The Inventory Admin initiates the use case.,0
+The use case presents all the modification that can be done by the Inventory Admin. Preconditions 1.,0
+The Inventory Admin is authenticated Assumptions 1.,1
+We assume that use Knows the results of each operation there is no go back actions Basic Course 1.,1
+Use case begins when Inventory Admin start searching for an asset 2.,0
+Inventory Admin Edit the asset 3.,1
+Inventory Admin modify asset properties Alternate Course A:,1
+Condition: administrator or authorised inventory user is working on waiting for approval list or waiting for execution list 1.,1
+Inventory user or Admin Edit the asset 2.,1
+Inventory user or Admin modify asset properties Exceptional Course : 1. .,0
+Inventory Admin search for asset .,1
+Inventory Admin edit asset .,1
+Inventory Admin asset out of inventory .,1
+Message error because asset cannot be modified 4;me .,1
+Inventory Admin search for asset .,1
+Inventory Admin search for asset 2.,1
+no asset found .,1
+Message error is displayed U.) Post conditions 1.,0
+The system state change according to modification Description The use case describes the edit operation that the Inventory Admin can do.,0
+The Inventory Admin initiates the use case.,0
+The use case presents the edit done by the Inventory Admin. Preconditions 1.,0
+The Inventory Admin is authenticated Assumptions 1.,1
+We assume that use Knows the results of each operation there is no go back actions Basic Course 1.,1
+Use case begins when Inventory Admin start searching for an asset 2.,1
+Inventory Admin Edit the asset Alternate Course A:,0
+Condition: administrator or authorised inventory user is working on waiting for approval list or waiting for execution list 1.,0
+Inventory user or Admin Edit the asset Exceptional Course : 1. 1.,0
+Inventory Admin search for asset 2.,0
+Inventory Admin edit asset 3.,0
+Inventory Admin does not have sufficient privileges to edit asset 4.,0
+Inventory Admin search for asset 2.,0
+Message error is displayed Post conditions 1.,0
+"The system state change according to modification Actors Inventory Admin, Inventory system, Authentication system 10 Included Use Cases 1.",0
+"We suppose that Hosting system and servers support all the operations Authentica?o . V- . , l x I / (< U 58/56) / Authentication System * | to Ad ' ?V5? W mm InventorySystem EDT.UC",1
+Name: Add New Asset Use Case Identifier: ANI.UC Description The use case describes the operation of adding a new asset to the inventory.,1
+The Inventory Admin initiates the use case.,0
+The use case presents how Inventory Admin can add new inventory asset. Preconditions 1.,0
+The Inventory Admin is authenticated Assumptions 1.,1
+We assume that use Knows the results of each operation there is no go back actions Basic Course 1.,1
+Use case begins when Administrator start a new asset Administrator select asset type Administrator select asset location Administrator select owner Administrator fill all asset properties 9%?!? Alternate Course,1
+A: None Exceptional Course: 1.,1
+Use case begins when Administrator start a new asset,0
+Administrator send exception request to IT to add the new type and the common properties Post conditions 1.,0
+The User initiates the use case.,0
+The use case presents request process that can be done by User. Preconditions 1.,0
+The User is authenticated Assumptions 1.,0
+We assume that use Knows the results of each operation,0
+Only basic request form is available for level 0 3.,1
+"Requests forrns provide search facilities to users levels 1, 2 and 3 Basic Course 1.",1
+User select basic request form 2.,1
+"User type a small request text specifying asset (s) location,.. 3.",1
+User click on submit Alternate Course A: 1. User select advanced request form 2.,1
+User enter asset serial number and location 3.,0
+User enter small text describing operation to be done 4.,1
+User click on submit Alternate Course B: 1.,1
+User select advanced request form 2.,0
+User enter asset serial number and location 3.,1
+User enter small text describing operation to be done 4 User can add as many assets as he wants to the list by clicking add another asset button 5.,1
+User click on submit Alternate Course C: 1.,1
+User select exception request form 2.,0
+User enter a text message describing the exception that occurs 3.,1
+User click on submit Exceptional Course : 1.,1
+User search for asset 2.,0
+Asset not available to be borrowed 3.,1
+Error Message is displayed 14 Post conditions,0
+"A new request is pending waiting approval Actors Inventory Admin, Inventory system, Authentication system Included Use Cases 1.",0
+We suppose that Hosting system and servers support all the operations Authentication,0
+Use Case 15 Name: Returning Asset Identifier: RTI.UC Description The use case describes the returning asset update that the Inventory Admin can do.,0
+The use case presents all the updates to the inventory that can be done by the Inventory Admin. Preconditions 1.,0
+The Inventory Admin is authenticated Assumptions 1.,1
+We assume that use Knows the results of each operation there is no go back actions Basic Course 1.,1
+Use case begins when Inventory Admin start returning 2.,1
+Inventory Admin select asset state to available Alternate Course A: Condition: 1.,1
+Use case begins when Inventory Admin start returning 2.,0
+Inventory Admin select asset state to damaged Exceptional Course : Post conditions 1.,1
+"The inventory system is updated Actors Inventory Admin, Inventory system, Authentication system 16 Description The use case describes the approving of requests that an Inventory Admin can do.",0
+The Inventory Admin initiates the use case.,1
+The use case presents all the approval or denial of a user request that can be done by an Inventory Admin. Preconditions 1.,0
+The Inventory Admin is authenticated,0
+Request list not empty Assumptions 1.,0
+We assume that use Knows the results of each operation Basic Course 1.,0
+"The Inventory system is updated Actors Inventory Admin, Inventory system, Authentication system 18 Included Use Cases 3.",0
+"Use Case Identifier: CHP.UC Description The use case describes the modification that Department, Facutly or University Admininistrator can do to a user permissions.",0
+The administrator initiates the use case.,0
+The use case presents all change that can be done by the Admininistrators. Preconditions 1.,0
+The Administrator is authenticated Assumptions 1.,0
+We assume that use Knows the results of each operation 2.,0
+Administrator knows the role of each permission on the permission list,1
+Administrator cannot assigne permissions more than he have Basic Course 1.,1
+Use case begins when Administrator press change permission 2.,1
+Administrator select user 3.,0
+Administrator modify permissions Alternate Course A:,1
+Condition: None Exceptional Course : 1. 1.,0
+Administrator select user 2.,0
+Administrator modify permissions he give permissions more than he have 3.,0
+An error message is displayed Post conditions,0
+"The permissions of user are changed Acto rs Administrator, Inventory system, Authentication system 20",0
+Name: Search Identifier: SRCH.UC Description The use case describes the search operation that only authorised users can do.,1
+The User initiates the use case.,0
+The use case presents search and advanced search that can be done by the User. Preconditions 1.,0
+Search operation is authorised Assumptions 1.,0
+We assume that use Knows the results of each operation Basic Course 1.,0
+Use case begins when User start ?ll searching field,0
+Search results are displayed Alternate Course A: 1.,0
+Use case begins when User press advanced search,0
+Press submit 4 Search results are displayed Exceptional Course : 1.,0
+Use case begins when User start ?ll searching field 2.,0
+"No results are found message is displayed Post conditions None Acto rs User, Inventory system, Authentication system 24 Included Use Cases 1.",0
+Authentication use case Name: Create Reports Use Case Identifier: REP.UC Description The use case describes the creation of reports that the User can do.,0
+The use case presents reports that can be created by the User.,1
+Three reports can be created Reports .,0
+User Permission Report .,0
+Request Report .,0
+Assets By Location Report Preconditions 1.,0
+The User is authenticated,0
+User is authorised to create reports Assumptions 1.,0
+We assume that use Knows the results of each operation Basic Course 1.,0
+Use case begins when User click on a report type 2.,0
+Report can be filtered 4.,0
+"Fields can be sorted Alternate Course A: None Exceptional Course : None Post conditions Report is generated Acto rs User, Inventory system, Authentication system 26 Included Use Cases",0
+By Location Report REP.UC Create reports Use Case 27 8.,0
+Construction Junction Inventory Management Software Requirements Specification Version 2.0,0
+The purpose of this document is to define the requirements of the Inventory Management System as proposed by the Construction Junction (CJ) staff. 1.2. Scope,0
+Requirements defined in this document are prioritized by business and technical sponsors (Please refer to Appendix A).,0
+"Overview The Inventory Management System is an application designed to allow the Construction Junction staff to create, maintain and view the contents and value of its inventory of items in a categorized way.",0
+"It also facilitates the process of receiving items into the Construction Junction inventory via the drop-off, pick-up and deconstruction donation processes so that items can be traced from donation through sale.",0
+This section contains a description of each actor that interfaces with the system:,0
+Administrator: A member of the Construction Junction staff who can perform any of the Inventory Management functions.,0
+Decon Associate: A member of the Construction Junction staff who executes a deconstruction and/or strip out job and brings the items for processing at the receiving dock.,0
+A customer who purchases items from the Construction Junction inventory.,0
+Primary Contact: An individual who is the primary contact for a donation.,0
+The individual may be the actual donor or be acting on behalf of one.,0
+Vendor: An individual or organization who sells items to be added to Construction Junction?s inventory Consigner: An individual who donates items to Construction Junction under consignment. 3.,0
+Detailed Functional Requirements This section contains detailed reports for each product-functional use cases.,0
+"Each report contains the following data or sections (if a section has no content for a use case, it has been removed): Name of the use case High-level description Actor(s): All actors who interact with the system during the course of the use case.",0
+Pre-conditions: Pre-conditions are conditions that must be true prior to beginning the use case and are assumed to be true throughout the use case. Triggers:,1
+"Use Case Dependencies: Other use cases which this use case depends on. Basic Flows: The flows for the standard, expected execution of the use case.",1
+The system should provide a categorized view of the entire inventory to the Construction Junction staff.,1
+"Starting at the department level, users can navigate into the inventory item categories and sub- categories, all the way down to an individual inventory item. 3.1.1. Actor(s):",1
+Administrator Director Manager Customer Service Representative,0
+1. User accesses the main inventory screen 2.,0
+All Items button at any level in the inventory to view a list of all items in that department or category 3.,1
+The user may click the View All Items button on the main inventory screen to view the complete list of all items in the inventory 4.,1
+"Once in the view items list screen, the user may filter the results by searching for: 4.1.",1
+A particular item by item number 4.2.,0
+"All items with Donor, Department, Category or Description matching the provided keyword 4.3.",1
+"All items with certain attributes, features and/or details",1
+3.1.6. Business Rules: 1. Inventory departments and categories are displayed in matrix format,1
+"2. The matrix dimensions are fixed, and are the same when displaying departments or categories.",1
+3. Unused matrix cells are displayed empty. 4.,1
+The actual matrix dimensions are to be determined during system implementation. 4.1.,1
+Each matrix cell displays a department or category name.,1
+"For departments with subcategories, the department name is a hyperlink to the view of the department subcategories 5.2.",0
+"For categories with subcategories, the category name is a hyperlink to the view of the subcategories 5.4.",0
+The category name is not a hyperlink 6.,0
+"By default, the items list contains the list of all Unique and Stock items in the selected department or category, or across all departments and categories when viewing the all inventory items screen 7.",0
+"When a search keyword is specified, the system filters the default items list for that screen and returns only the items for which the keyword matches one or more of the following columns: 7.1.",0
+The system should allow inventory administrators to customize the inventory structure by defining the inventory departments (not to be confused actual retail floor departments known later in this document as stocking locations). 3.2.1. Actor(s):,0
+Use Case Dependencies 1. View Inventory 3.2.4. Basic Flows:,1
+User accesses the main inventory screen 1.2.,1
+System displays the Add Department button 1.3.,1
+User clicks the Add Department button 1.4.,1
+User enters the Department data 1.5.,1
+System validates the Department data 1.6.,1
+System adds the new Department to the inventory 1.7.,1
+User is taken back to the main inventory screen,1
+User navigates to a Department (see View Inventory) 2.2.,1
+System displays the Edit Department button,0
+User clicks the Edit Department button 2.4.,1
+System displays the Department data 2.5.,1
+User edits Department data 2.6.,1
+System validates the Department data 2.7.,1
+System updates the Department information 2.8.,1
+User is taken back to the Department screen,1
+User navigates to a Department (see View Inventory) 3.2.,1
+System displays the Edit Department button 3.3.,1
+User clicks the Edit Department button 3.4.,1
+System displays the Department data 3.5.,1
+User clicks the Delete Department button 3.6.,1
+System validates the Department deletion 3.7.,1
+System removes the Department from the inventory 3.8.,1
+User is taken back to the main inventory screen,1
+User cancels the Department add and is taken back to the main inventory screen,0
+"During data validation, data is deemed invalid and an error message is presented to the user 2. Edit Department 2.1.",0
+User cancels the Department edit and is taken back to the main inventory screen,0
+"During data validation, data is deemed invalid and an error message is presented to the user 3. Delete Department 3.1.",1
+User cancels the Department deletion and is taken back to the Department screen,0
+The Department Name must be unique across the inventory 1.3.,1
+The Department?s Unique Tag must be unique across the inventory 1.4.,1
+The POS Department Code must be at most 3 characters long 1.5.,1
+The Unique Tag must be at most 18 characters long 1.6.,1
+There must be at least one slot available in the Department matrix to hold the new Department 2. Edit Department 2.1.,1
+The Department Name must be unique across the inventory 2.3.,0
+The Department?s Unique Tag must be unique across the inventory 2.4.,1
+The Unique Tag must be at most 18 characters long 3.,1
+A Department cannot be deleted if it contains categories and/or items,1
+The Department is updated 3. Delete Department 3.1.,1
+The system should allow inventory administrators to customize the inventory structure by defining the inventory departments and categories. 3.3.1. Actor(s):,0
+User navigates to a Department or Category (see View Inventory) 1.2.,0
+System displays the Add Category buttons,0
+User enters Category data 1.6.,0
+System validates the Category data 1.7.,1
+System adds the new Category to the inventory 1.8.,1
+User navigates to a Category (see View Inventory) 2.2.,1
+System displays the Edit Category button 2.3.,1
+User clicks the Edit Category button 2.4.,1
+System updates the Category information 2.8.,1
+User is taken back to the Category screen,1
+User navigates to a Category (see View Inventory) 3.2.,0
+System displays the Edit Category button 3.3.,1
+User clicks the Edit Category button 3.4.,1
+System displays the appropriate screen for the Category type 3.4.1.Unique Item 3.4.2.Stock Item 3.5.,1
+User clicks the Delete Category button 3.6.,0
+Details can be assigned to any combination of departments and categories,1
+Details can be assigned to ?All? departments and/or categories 4.8.,0
+"Alternatively, items can be added during routine inventory maintenance.",0
+Receiving Associate Pickup Associate Decon Associate Customer Service Representative,0
+The screen displays all inventory departments in matrix format (see View Inventory) 2.,0
+User drills down to the appropriate category for the item 2.1.,0
+"If in donation processing mode, the item entry screen is presented automatically 2.2.",1
+"If in inventory management mode, the list of existing inventory items in that category is displayed 2.2.1.User clicks the Add Item button 3.",1
+The appropriate item entry screen is presented,0
+"At any point, the user may click on a department on the inventory department shortcuts list, which takes the user to the inventory view for that particular department. 2.",0
+Only unique and stock items are available to be added in inventory management mode,0
+"When an item is added to the inventory, the system updates QuickBooks POS accordingly and promptly 4.1.",0
+A new item entry is created in POS for a unique item 4.2.,1
+The item quantity is updated for a stock item 5. Mandatory fields: 5.1.,1
+"The available options in the Material, Finish, Color and Features selectors should be the ones defined for the selected department (see Manage Attributes and Details) 8.",0
+"The fields and available options under the Details section should be the ones defined for the selected category (see Manage Attributes and Details) 9. For Stock Items, all fields are pre-set and disabled, and cannot be changed 10.",0
+"For Unique Items, all fields with values defined when the Unique Item category was created are pre- set and cannot be changed 11.",1
+"For unique and stock items, the system makes pricing recommendations to the user on the item entry screen (see Suggest Item Price)",0
+"For unique items, user can accept the suggested price, enter a different one, or leave it blank 11.1.1.",0
+The item price can only be left blank during the processing of an acquisition.,0
+The price has to be set before the item can be added to the inventory 11.2.,0
+"For stock items, the price is pre-set and the user cannot change it 12.",0
+The system should allow various management actions to be performed on items existing in the inventory.,0
+"These include modifying, deleting and splitting an item, and viewing the item?s details and item history.",0
+These actions are only available for Unique and Stock items. 3.6.1. Actor(s):,0
+The screen displays all inventory departments in matrix format with option to select and/or edit items to move them to a new department/category 1.3.,0
+User drills down to the desired existing inventory item (see View Inventory) 1.4.,1
+The item detail screen is presented 1.5.,1
+User modifies item information,1
+The system validates item information,1
+Item information is updated in the inventory 1.8.,1
+System gives the option of re-printing then item tag 1.9.,1
+User optionally re-prints the item tag and attaches it to the item 2. Adjust Item Quantity 2.1.,1
+User accesses the main inventory screen 2.2.,1
+The screen displays all inventory departments in matrix format 2.3.,1
+User drills down to the desired existing inventory item (see View Inventory) 2.4.,1
+The item detail screen is presented 2.5.,1
+User changes the item quantity 2.6.,1
+The system displays a confirmation screen where a reason for the adjustment must be specified by the user 2.7.,1
+The system validates the item change,1
+Item information is updated in the inventory 3.,1
+Split Inventory Item 3.1.,1
+User accesses the main inventory screen 3.2.,0
+The screen displays all inventory departments in matrix format 3.3.,1
+User drills down to the desired existing inventory item (see View Inventory) 3.4.,1
+The item detail screen is presented 3.5.,1
+User clicks the Split Item button 3.6.,1
+The system displays the Item Split screen 3.7.,1
+"Once the list is complete, user confirms the split 3.9.",0
+The system validates the split,1
+3.10. Item information is updated in the inventory 3.10.1.,0
+The original (split) item is updated in the inventory 3.10.2. Any new items that were added to the split list are added to the inventory maintaining parental history 4. View Inventory Item History 4.1.,0
+User accesses the main inventory screen 4.2.,1
+The screen displays all inventory departments in matrix format 4.3.,0
+User drills down to the desired existing inventory item (see View Inventory) 4.4.,1
+The item detail screen is presented 4.5.,1
+User clicks the Item History button 4.6.,1
+The system displays the Item History screen containing current and historical information about the inventory item 3.6.5. Alternative Flows:,1
+1. Modify Inventory Item 1.1.,0
+User cancels the operation and is taken back to the item selection screen,0
+"During data validation, data is deemed invalid and an error message is presented to the user 2. Adjust Item Quantity 2.1.",0
+User cancels the operation and is taken back to the item selection screen,0
+"During data validation, data is deemed invalid and an error message is presented to the user 3.",1
+"All item properties available when the item was originally added to the inventory can be modified, except for the system-generated item number (see Add Item to Inventory). 1.2.",1
+The business rules defined for adding a new item into the inventory are also applicable to modifying an existing inventory item (see Add Item to Inventory). 1.3.,1
+"Once set for the first time in the inventory, the item price can only be modified by a Manager, Director or Administrator, must maintain a history and include an explanation for the price change 1.4.",1
+Changes to the item in the inventory should be reflected in the corresponding item in QuickBooks POS 2. Adjust Item Quantity 2.1.,0
+"When an item is updated, the system must automatically detect that the item quantity has been modified and present the adjustment confirmation screen 2.2.",1
+"If the quantity is increased, the user must enter a comment describing the reason for the change 2.4.",1
+Changes to an item?s quantity in the inventory should be reflected in the corresponding item in QuickBooks POS,0
+3. Split Inventory Item 3.1.,0
+"When building the split item list, at least two items must exist in the list, including the original item 3.2.",0
+"When building the split item list, the business rules defined for adding a new item into the inventory are also applicable (see Add Item to Inventory). 3.3.",1
+"Clicking the Clone button on a row adds a new item row with the same item values as the original, except for the item number, which is left blank 3.4.",1
+Clicking the Add Item button takes the user through the inventory matrix so that a category can be selected for the new item.,1
+The user is then taken to the View/Update Item screen 3.5.,1
+Clicking the category name for an item takes the user to the View/Update Item screen for that item 3.6.,1
+All items in the split item list are saved in the inventory when the user confirms the split 3.6.1.The original item is updated,1
+Item is updated in QuickBooks POS,0
+2. Adjust Item Quantity 2.1.,0
+Item is updated in the inventory 2.2.,0
+Item is updated in QuickBooks POS,1
+3. Split Inventory Item 3.1.,1
+Original item is updated in the inventory 3.2.,0
+Original item is updated in QuickBooks POS 3.3.,1
+New items are updated in the inventory 3.4.,1
+New items are updated in QuickBooks POS,1
+4. View Inventory Item History None 3.6.8. Open Issues: None,1
+The system should assist in the task of pricing a new inventory item by making pricing suggestions to the user when adding to or modifying an item in the inventory.,0
+Use Case Dependencies,0
+User modifies item data,0
+The following price suggestion configuration parameters are available: 3.1.,0
+Number of months of historical price information to include when calculating price recommendations.,0
+3.7.7. Post-Condition(s): 1. Price suggestion information is displayed on the screen,0
+Inventory Management users should be able to view all past and current acquisitions. Receiving Associates use this function to locate an expected acquisition when receiving a donation at the loading dock.,0
+"Pickup and Decon crews may also use this function to initiate the process of receiving items while in the truck, on their way to the receiving dock.",1
+Off acquisitions are not typically pre-scheduled as Pick Up and Decon acquisitions except for those submitted through the organizational website.,0
+Administrator Director Manager Customer Service Representative,0
+1. User accesses the acquisitions screen 2.,0
+"The screen displays a list of all acquisitions, latest ones at the top of the list 3. User may optionally filter the acquisitions displayed on the screen by changing filtering options",1
+"4. User clicks on an acquisition record 5. System display the details for that acquisition, including expected items 3.8.5. Alternative Flows:",1
+Details can be assigned to any combination of departments and categories,1
+Details can be assigned to ?All? departments and/or categories 4.8.,0
+"Alternatively, items can be added during routine inventory maintenance.",0
+Receiving Associate Pickup Associate Decon Associate Customer Service Representative,0
+The screen displays all inventory departments in matrix format (see View Inventory) 2.,0
+User drills down to the appropriate category for the item 2.1.,0
+"If in donation processing mode, the item entry screen is presented automatically 2.2.",1
+"If in inventory management mode, the list of existing inventory items in that category is displayed 2.2.1.User clicks the Add Item button 3.",1
+The appropriate item entry screen is presented,0
+"At any point, the user may click on a department on the inventory department shortcuts list, which takes the user to the inventory view for that particular department. 2.",0
+Only unique and stock items are available to be added in inventory management mode,0
+"When an item is added to the inventory, the system updates QuickBooks POS accordingly and promptly 4.1.",0
+A new item entry is created in POS for a unique item 4.2.,1
+The item quantity is updated for a stock item 5. Mandatory fields: 5.1.,1
+"The available options in the Material, Finish, Color and Features selectors should be the ones defined for the selected department (see Manage Attributes and Details) 8.",0
+"The fields and available options under the Details section should be the ones defined for the selected category (see Manage Attributes and Details) 9. For Stock Items, all fields are pre-set and disabled, and cannot be changed 10.",0
+"For Unique Items, all fields with values defined when the Unique Item category was created are pre- set and cannot be changed 11.",1
+"For unique and stock items, the system makes pricing recommendations to the user on the item entry screen (see Suggest Item Price)",0
+"For unique items, user can accept the suggested price, enter a different one, or leave it blank 11.1.1.",0
+The item price can only be left blank during the processing of an acquisition.,0
+The price has to be set before the item can be added to the inventory 11.2.,0
+"For stock items, the price is pre-set and the user cannot change it 12.",0
+The system should allow various management actions to be performed on items existing in the inventory.,0
+"These include modifying, deleting and splitting an item, and viewing the item?s details and item history.",0
+These actions are only available for Unique and Stock items. 3.6.1. Actor(s):,0
+The screen displays all inventory departments in matrix format with option to select and/or edit items to move them to a new department/category 1.3.,0
+User drills down to the desired existing inventory item (see View Inventory) 1.4.,1
+The item detail screen is presented 1.5.,1
+User modifies item information,1
+The system validates item information,1
+Item information is updated in the inventory 1.8.,1
+System gives the option of re-printing then item tag 1.9.,1
+User optionally re-prints the item tag and attaches it to the item 2. Adjust Item Quantity 2.1.,1
+User accesses the main inventory screen 2.2.,1
+The screen displays all inventory departments in matrix format 2.3.,1
+User drills down to the desired existing inventory item (see View Inventory) 2.4.,1
+The item detail screen is presented 2.5.,1
+User changes the item quantity 2.6.,1
+The system displays a confirmation screen where a reason for the adjustment must be specified by the user 2.7.,1
+The system validates the item change,1
+Item information is updated in the inventory 3.,1
+Split Inventory Item 3.1.,1
+User accesses the main inventory screen 3.2.,0
+The screen displays all inventory departments in matrix format 3.3.,1
+User drills down to the desired existing inventory item (see View Inventory) 3.4.,1
+The item detail screen is presented 3.5.,1
+User clicks the Split Item button 3.6.,1
+The system displays the Item Split screen 3.7.,1
+"Once the list is complete, user confirms the split 3.9.",0
+The system validates the split,1
+3.10. Item information is updated in the inventory 3.10.1.,0
+The original (split) item is updated in the inventory 3.10.2. Any new items that were added to the split list are added to the inventory maintaining parental history 4. View Inventory Item History 4.1.,0
+User accesses the main inventory screen 4.2.,1
+The screen displays all inventory departments in matrix format 4.3.,0
+User drills down to the desired existing inventory item (see View Inventory) 4.4.,1
+The item detail screen is presented 4.5.,1
+User clicks the Item History button 4.6.,1
+The system displays the Item History screen containing current and historical information about the inventory item 3.6.5. Alternative Flows:,1
+1. Modify Inventory Item 1.1.,0
+User cancels the operation and is taken back to the item selection screen,0
+"During data validation, data is deemed invalid and an error message is presented to the user 2. Adjust Item Quantity 2.1.",0
+User cancels the operation and is taken back to the item selection screen,0
+"During data validation, data is deemed invalid and an error message is presented to the user 3.",1
+"All item properties available when the item was originally added to the inventory can be modified, except for the system-generated item number (see Add Item to Inventory). 1.2.",1
+The business rules defined for adding a new item into the inventory are also applicable to modifying an existing inventory item (see Add Item to Inventory). 1.3.,1
+"Once set for the first time in the inventory, the item price can only be modified by a Manager, Director or Administrator, must maintain a history and include an explanation for the price change 1.4.",1
+Changes to the item in the inventory should be reflected in the corresponding item in QuickBooks POS 2. Adjust Item Quantity 2.1.,0
+"When an item is updated, the system must automatically detect that the item quantity has been modified and present the adjustment confirmation screen 2.2.",1
+"If the quantity is increased, the user must enter a comment describing the reason for the change 2.4.",1
+Changes to an item?s quantity in the inventory should be reflected in the corresponding item in QuickBooks POS,0
+3. Split Inventory Item 3.1.,0
+"When building the split item list, at least two items must exist in the list, including the original item 3.2.",0
+"When building the split item list, the business rules defined for adding a new item into the inventory are also applicable (see Add Item to Inventory). 3.3.",1
+"Clicking the Clone button on a row adds a new item row with the same item values as the original, except for the item number, which is left blank 3.4.",1
+Clicking the Add Item button takes the user through the inventory matrix so that a category can be selected for the new item.,1
