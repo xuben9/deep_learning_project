@@ -1,0 +1,100 @@
+The system shall notify the user about any changes made to the order.,,,,,,,,,,,,,,,,,2
+"3.1.16 Allow Online Product reviews and ratings The system shall display the reViews and ratings of each product, when it is selected.",,,,,,,,,,,,,,,,,1
+The system shall enable the user to enter their reViews and ratings.,,,,,,,,,,,,,,,,,2
+3.1.17 Offer ?nancing options.,,,,,,,,,,,,,,,,,1
+The system shall display all the available financing options.,,,,,,,,,,,,,,,,,2
+The system shall allow user to select the ?nancing option.,,,,,,,,,,,,,,,,,2
+The system shall notify the use about the financing request.,,,,,,,,,,,,,,,,,2
+3.1.18 Provide detailed sitemap.,,,,,,,,,,,,,,,,,1
+The system shall allow user to View detailed sitemap.,,,,,,,,,,,,,,,,,2
+The system shall display all the available promotions to the user.,,,,,,,,,,,,,,,,,2
+The system shall allow user to select available promotion.,,,,,,,,,,,,,,,,,2
+3.1.20 Online Purchase of products.,,,,,,,,,,,,,,,,,1
+The system shall allow user to confirm the purchase.,,,,,,,,,,,,,,,,,2
+The system shall enable user to enter the payment information.,,,,,,,,,,,,,,,,,2
+3.2 Usability 3.2.1 Graphical User Interface The system shall provide a uniform look and feel between all the web pages.,,,,,,,,,,,,,,,,,1
+The system shall provide a digital image for each product in the product catalog.,,,,,,,,,,,,,,,,,2
+The system shall provide use of icons and toolbars.,,,,,,,,,,,,,,,,,2
+3.2.2 Accessibility The system shall provide handicap access.,,,,,,,,,,,,,,,,,1
+The system shall provide multi language support.,,,,,,,,,,,,,,,,,2
+3.3 Reliability & Availability 3.3.1 Back-end Internal Computers The system shall provide storage of all databases on redundant computers with automatic switchover.,,,,,,,,,,,,,,,,,1
+The system shall provide for replication of databases to off-site storage locations.,,,,,,,,,,,,,,,,,2
+The system shall provide RAID V Disk Stripping on all database storage disks.,,,,,,,,,,,,,,,,,2
+3.3.2 Internet Service Provider The system shall provide a contractual agreement with an internet service provider for T3 access with 99.9999% availability.,,,,,,,,,,,,,,,,,1
+3.4 Performance The product sha11be based on web and has to be run from a web server.,,,,,,,,,,,,,,,,,1
+The performance shall depend upon hardware components of the client/customer.,,,,,,,,,,,,,,,,,1
+The system shall automatically log out all customers after a period of inactivity.,,,,,,,,,,,,,,,,,2
+The system shall confirm all transactions with the customer?s web browser.,,,,,,,,,,,,,,,,,2
+The system shall not leave any cookies on the customer?s computer containing the user?s password.,,,,,,,,,,,,,,,,,2
+The system shall not leave any cookies on the customer?s computer containing any of the user?s confidential information.,,,,,,,,,,,,,,,,,2
+3.5.2 Data Storage The customer?s web browser shall never display a customer?s password.,,,,,,,,,,,,,,,,,1
+It shall always be echoed with special characters representing typed characters.,,,,,,,,,,,,,,,,,1
+The customer?s web browser shall never display a customer?s credit card number after retrieving from the database.,,,,,,,,,,,,,,,,,1
+It shall always be shown with just the last 4 digits of the credit card number.,,,,,,,,,,,,,,,,,1
+The system?s back-end servers shall never display a customer?s password.,,,,,,,,,,,,,,,,,2
+The customer?s password may be reset but never shown.,,,,,,,,,,,,,,,,,2
+The system?s back-end servers shall only be accessible to authenticated administrators.,,,,,,,,,,,,,,,,,2
+The system?s back-end databases sha11be encrypted.,,,,,,,,,,,,,,,,,2
+3.7 Design Constraints 3.7.1 Standard Development Tools The system sha11be built using a standard web page development tool that conforms to either IBM?s CUA standards or Microsoft?s GUI standards.,,,,,,,,,,,,,,,,,1
+The product must be stored in such a way that allows the client easy access to it.,,,,,,,,,,,,,,,,,1
+Response time for loading the product should take no longer than five minutes.,,,,,,,,,,,,,,,,,1
+"3.9 Purchased Components Not Applicable The user interface for the software shall be compatible to any browser such as Internet Explorer, Mozilla or Netscape Navigator by which user can access to the system.",,,,,,,,,,,,,,,,,2
+"The user interface shall be implemented using any tool or software package like Java Applet, MS Front Page, EJB etc.",,,,,,,,,,,,,,,,,1
+"Hardware Interfaces Since the application must run over the internet, all the hardware shall require to connect internet will be hardware interface for the system.",,,,,,,,,,,,,,,,,1
+"As for e. g. Modem, WAN ? LAN, Ethernet Cross-Cable.",,,,,,,,,,,,,,,,,1
+Software Interfaces The e-store system shall communicate with the Configurator to identify all the available components to configure the product.,,,,,,,,,,,,,,,,,1
+"The e-store shall communicate with the content manager to get the product specifications, offerings and promotions.",,,,,,,,,,,,,,,,,2
+"The e-store system shall communicate with billPay system to identify available payment methods , validate the payments and process payment.",,,,,,,,,,,,,,,,,2
+The e-store system shall communicate to credit management system for handling financing options.,,,,,,,,,,,,,,,,,2
+The e-store system shall communicate with CRM system to provide support.,,,,,,,,,,,,,,,,,2
+The e-store system shall communicate with Sales system for order management.,,,,,,,,,,,,,,,,,2
+The e-store system shall communicate with shipping system for tracking orders and updating of shipping methods.,,,,,,,,,,,,,,,,,2
+The e-store system shall communicate with external Tax system to calculate tax.,,,,,,,,,,,,,,,,,2
+The e-store system shall communicate with export regulation system to validate export regulations.,,,,,,,,,,,,,,,,,2
+These requirements are not limited to any industry sector.,,,,,,,,,,,,,,,,,1
+The approach provides a common ?Ianguage? for describing eProcurement documents that is modular and extensible to specialised business contexts.,,,,,,,,,,,,,,,,,1
+This speci?cation does not include the XML schema to be used.,,,,,,,,,,,,,,,,,1
+No assumptions are made (other than good business practice) about how the internal systems at the Buyer and the Seller are designed or work; these systems are treated as ?black boxes?.,,,,,,,,,,,,,,,,,1
+The following aspects of procurement are out of scope: 0 Seller discovery.,,,,,,,,,,,,,,,,,1
+0 e-tendering; 0 negotiation of terms and conditions of trade.,,,,,,,,,,,,,,,,,1
+0 communication with third parties and intermediaries e.g.,,,,,,,,,,,,,,,,,1
+"carriers, banks and fiscal authorities.",,,,,,,,,,,,,,,,,1
+0 message transport and security.,,,,,,,,,,,,,,,,,1
+0 data protection and retention rules.,,,,,,,,,,,,,,,,,1
+0 the application of public sector purchasing policy.,,,,,,,,,,,,,,,,,1
+"In practice, these Documents are likely to be introduced incrementally, starting with one or two Documents, such as Purchase Order and/or Invoice, and adding additional services as required.",,,,,,,,,,,,,,,,,2
+Such an incremental approach demands that all Documents (those adopted earlier and later) represent the same things in a common way.,,,,,,,,,,,,,,,,,1
+"These requirements support several Government initiatives, including.",,,,,,,,,,,,,,,,,1
+The greatest bene?ts accrue when information persists through the purchasing cycle without re-keying and with manual intervention only where needed for business reasons.,,,,,,,,,,,,,,,,,2
+"One example is the ?three-way match? between Purchase Order, goods receipt and Invoice, usually performed in the accounts payable function before an Invoice is paid.",,,,,,,,,,,,,,,,,1
+Automating the three-way match may reduce substantially the end-to-end costs of in the Buyer?s back office.,,,,,,,,,,,,,,,,,1
+"Cross?Government eProcurement standards also benefit Sellers, particularly small to medium-sized enterprises (SMEs).",,,,,,,,,,,,,,,,,1
+"This specification provides a clear ?stake in the ground? for Sellers, for their trade with Government and, potentially, for trade across the private sector.",,,,,,,,,,,,,,,,,1
+"Similarly, a common Government standard reduces the need for software and service providers to cater for multiple specifications.",,,,,,,,,,,,,,,,,1
+"Aworking group compiled the basic requirements with representation from across Government, local authorities and the National Health Service.",,,,,,,,,,,,,,,,,1
+"These requirements have been re?ned through public consultation, meetings with IT suppliers and experts involved in relevant international standards and trade associations.",,,,,,,,,,,,,,,,,1
+The method used is based on the OeE?s e-Service Development Framework (e-SDF); see www.qovtalk.qov.uk/schemastandards/eservices.asp.,,,,,,,,,,,,,,,,,1
+The scope for this speci?cation is the procurement of goods and services for public sector organisations.,,,,,,,,,,,,,,,,,1
+This broad domain is broken down into four main business processes.,,,,,,,,,,,,,,,,,1
+"Sourcing includes activity prior to placing a formal order, including the exchange of Catalogue information, Requests For Quotation (RFQ) and Quotations.",,,,,,,,,,,,,,,,,1
+Ordering includes Purchase Orders and responses.,,,,,,,,,,,,,,,,,1
+"Fulfilment includes delivery/despatch noti?cation, receipt (including variances) and Seller's proposed recti?cation of any problems.",,,,,,,,,,,,,,,,,2
+"Accounting includes Invoices (including Self Billed Invoices) Credit Notes, Debit Notes, Statements and Remittance Advice.",,,,,,,,,,,,,,,,,2
+"Each business process involves the exchange of information between the Buyer and the Seller, using a number of Documents.",,,,,,,,,,,,,,,,,2
+Documents Produced in Each Business Process.,,,,,,,,,,,,,,,,,2
+Sourcing Request for Quotation Catalogue.,,,,,,,,,,,,,,,,,2
+Ordering Purchase Order Purchase Order Response.,,,,,,,,,,,,,,,,,2
+Fulfilment Receipt Advice Ful?lment Notification.,,,,,,,,,,,,,,,,,2
+Recti?cation Advice.,,,,,,,,,,,,,,,,,2
+Accounting Self Billed Invoice Invoice.,,,,,,,,,,,,,,,,,2
+Debit Note Credit Note.,,,,,,,,,,,,,,,,,2
+Remittance Advice Statement.,,,,,,,,,,,,,,,,,2
+The Documents included are: Catalogue RFQ (Request for Quotation) Quotation is sent from the Seller to the Buyer to provide Item price and other information for use in locally held Catalogues.,,,,,,,,,,,,,,,,,1
+Is a request from the Buyer to the Seller to quote terms and conditions under which the Seller is willing to supply speci?c goods or services.,,,,,,,,,,,,,,,,,1
+The Documents included are: Purchase Order PO Res ponse 2.1.3 Fulfilment is sent by the Buyer to tell the Seller that the sender wishes to purchase goods and/or services.,,,,,,,,,,,,,,,,,1
+It is a promise to buy.,,,,,,,,,,,,,,,,,1
+"Variants may support revision or cancellation of the Purchase Order either in content (Items ordered or quantity of Items) and/or in terms of fulfilment (changed delivery details, required by date etc).",,,,,,,,,,,,,,,,,1
+"|t acknowledges that the Purchase Order has been received and that it will be ful?lled in total, in part or not at all.",,,,,,,,,,,,,,,,,1
+It may also give additional information about specific delivery.,,,,,,,,,,,,,,,,,1
+The Documents included are: Fulfilment Notification is sent by the Seller to tell the Buyer that goods have been despatched or delivered or that a service has been performed.,,,,,,,,,,,,,,,,,1
+The Seller may use this Document to notify the Buyer of shipping details via a third party carrier and to notify partial or complete delivery of a Purchase Order.,,,,,,,,,,,,,,,,,1

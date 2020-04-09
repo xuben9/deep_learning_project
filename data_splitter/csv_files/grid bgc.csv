@@ -1,0 +1,370 @@
+The product will be highly accessible to ABC Paint clients and distributors.,,,,,,,,,,,,,,,,,2
+"To enable this wide access to the application, the new system will be integrated into the current ABC Paint website.",,,,,,,,,,,,,,,,,1
+Each main feature of the application will be modularized.,,,,,,,,,,,,,,,,,2
+Each module will fit on a single webpage.,,,,,,,,,,,,,,,,,2
+The application will provide a theme and styling mechanism to allow ABC Paint web designers to integrate the application.,,,,,,,,,,,,,,,,,1
+"ABC Paint has made it very clear that they will make trade-offs to retain the benefits of the application being available on the web, retaining high accessibility.",,,,,,,,,,,,,,,,,1
+The product is a stand-alone web application with a theme mechanism to allow easy integration of the application into the ABC Paint website.,,,,,,,,,,,,,,,,,2
+The ColorKast solution is a server based application with a web-based clientfor consumer and enterprise access.,,,,,,,,,,,,,,,,,2
+"In some respects, the application is the next generation of the old mechanical, hand-select, palette board system located in paint stores everywhere.",,,,,,,,,,,,,,,,,1
+All of these will be defined and described later in this same document.,,,,,,,,,,,,,,,,,1
+The actual user interface will be described in a separate user interface specification whitepaper.,,,,,,,,,,,,,,,,,2
+All references to performance or specification apply to the application client.,,,,,,,,,,,,,,,,,2
+Specifications and performance estimates apply to the application server only if explicitly stated.,,,,,,,,,,,,,,,,,2
+2.2 Product Functions These functions are modularized sub-components of the client application.,,,,,,,,,,,,,,,,,1
+Each of the functions has a single purpose and can accomplish its mission without the other components.,,,,,,,,,,,,,,,,,2
+"Together, the components function as a stand-alone application.",,,,,,,,,,,,,,,,,2
+2.3 User Classes and Characteristics ColorKast has identified two user classes for access to the new application.,,,,,,,,,,,,,,,,,1
+The first user class is default for all users and allows no administrative functionality whatsoever.,,,,,,,,,,,,,,,,,2
+"The second class, the administrative user, is composed of several subclasses for the secure management of access to data and permissions throughout the organization.",,,,,,,,,,,,,,,,,2
+Software Requirements Specification for CS] 79g / ABC Paint Project Page 4 Default: This user has access to all functionality of the application except the administrative fu nction.,,,,,,,,,,,,,,,,,2
+The user data stored by this user is not password protected but is session persistent.,,,,,,,,,,,,,,,,,1
+Administrative: This user is composed of three subclasses.,,,,,,,,,,,,,,,,,1
+"Level 3, the highest level administrative user has all access, update, add, delete permissions, and can create other administrative users at any level.",,,,,,,,,,,,,,,,,2
+"Level 2, has update, add permissions, and can create administrative users up to Level 2.",,,,,,,,,,,,,,,,,2
+"Level 1, has add permissions and can add administrative users at Level 1 only.",,,,,,,,,,,,,,,,,2
+2.4 Operating Environment The proposed ColorKast Solution will be implemented in a client/server model.,,,,,,,,,,,,,,,,,1
+All processing of searches and storing of information will be local to the server.,,,,,,,,,,,,,,,,,2
+"Client: The web-based client is compatible with most operating systems and requires a working installation of Internet Explorer 4.01, Netscape 6.0, or Mozilla 1.0 or later.",,,,,,,,,,,,,,,,,1
+The client computer should match or exceed the system requirements specified for the web browser intended for use with the client application.,,,,,,,,,,,,,,,,,1
+2.5 Design and Implementation Constraints A few issues limit our choices when implementing a suitable solution for the ABC Paint Project.,,,,,,,,,,,,,,,,,1
+It is very important that the application be web-based.,,,,,,,,,,,,,,,,,1
+"We understand that in any design choice, precedence should be given to the implementation of a completely web-based client.",,,,,,,,,,,,,,,,,2
+"Wherever possible, the application should retain full usability with a keyboard input device only.",,,,,,,,,,,,,,,,,2
+This allows an easy transition for employees who are primarily used to keyboard input in current ABC Paint business applications.,,,,,,,,,,,,,,,,,1
+"Finally, a utility should be available to report errors.",,,,,,,,,,,,,,,,,1
+"In all instances, the application should attempt full recovery and report errors automatically to ColorKast without encroaching on the user experience.",,,,,,,,,,,,,,,,,1
+2.6 User Documentation Documentation for users will be made available in the form of on-line help within the client application itself.,,,,,,,,,,,,,,,,,1
+An online tutorial will also be made available.,,,,,,,,,,,,,,,,,1
+2.7 Assumptions and Dependencies ColorKast assumes that any use of the application will occur in an environment with full compliance to this specification.,,,,,,,,,,,,,,,,,1
+The application will be dependant on third-party databases for storage of paint information and implementation of the color search engine.,,,,,,,,,,,,,,,,,2
+The databases will give responses to Queries in sub- second time.,,,,,,,,,,,,,,,,,2
+Software Requirements Specification for CS] 79g / ABC Paint Project Page 6 3.,,,,,,,,,,,,,,,,,1
+External Interface Requirements 3.1 User Interfaces The application will have a task-based screen interface for increased usability and workflow pace.,,,,,,,,,,,,,,,,,1
+The interface will use accelerator keys heavily to allow limited ?keyboard-only? application use.,,,,,,,,,,,,,,,,,1
+A task-pane will be available in all workflow scenarios to allow easy access to on-line help and next-step options.,,,,,,,,,,,,,,,,,1
+The navigation options in every screen will be similar to lower or eliminate the application learning curve.,,,,,,,,,,,,,,,,,1
+Input confirmation and error notification will be consistent throughout the application.,,,,,,,,,,,,,,,,,1
+"A Pointing device will be required for color selection, for example, when matching colors or using the graphical color chooser.",,,,,,,,,,,,,,,,,1
+3.2 Hardware Interfaces The application is dependent on existing hardware for a display device and for data-entry via a keyboard and Painting device.,,,,,,,,,,,,,,,,,1
+The new system does not support legacy monochrome displays.,,,,,,,,,,,,,,,,,1
+The application provides minimal support for client computers without a Painting device.,,,,,,,,,,,,,,,,,1
+Display dependency: The client computer must have a display device capable of display of 16.7 million colors or greater.,,,,,,,,,,,,,,,,,1
+Colors displayed on the target client computer will only be accurate when the device is properly calibrated.,,,,,,,,,,,,,,,,,1
+Keyboard: The keyboard is used to enter and place Paint name and paint number searches.,,,,,,,,,,,,,,,,,1
+The keyboard also provides ?keyboard-only? application functionality when a Painting device is not available.,,,,,,,,,,,,,,,,,1
+"Pointing device: The Pointing device provides intuitive, fluid control of the application for less sophisticated consumer users, and ease-of-use for the graphical color chooser interface.",,,,,,,,,,,,,,,,,2
+"3.3 Software Interfaces The ColorKast software will interface with other software for storage of paint information, paint collection data, and the matching and translation of paint color values.",,,,,,,,,,,,,,,,,1
+"Interface 1: Connection to database for storage of information for paint number, name, collection, and company.",,,,,,,,,,,,,,,,,2
+"Interface 2: Database connection for color search, matching, and paint number scheme translation.",,,,,,,,,,,,,,,,,2
+Software Requirements Specification for CS] 79g / ABC Paint Project Page 7 These connections are implemented on the server.,,,,,,,,,,,,,,,,,1
+The Web Browser must comply with standards for HTTP version 1.0 or 1.1.,,,,,,,,,,,,,,,,,1
+HTTP version 1.0 is a well founded and highly supported protocol.,,,,,,,,,,,,,,,,,1
+"The product also indirectly requires some network connection to the internet, over which it may communicate in HTTP.",,,,,,,,,,,,,,,,,1
+This network connection assumes a physical or wireless connection from the client computer to a consumer Internet Service Provider (ISP) or enterprise environment Local Area Network (LAN).,,,,,,,,,,,,,,,,,2
+Software Requirements Specification for CS] 79g / ABC Paint Project Page 8 4.,,,,,,,,,,,,,,,,,1
+System Features Each feature has a single mission it can complete independently.,,,,,,,,,,,,,,,,,1
+This feature set is a modularized representation of the stand-alone application.,,,,,,,,,,,,,,,,,1
+The modularization approach allows for a more robust application with fault tolerance and easy module replacement for security and upgradeability.,,,,,,,,,,,,,,,,,1
+4.1 Graphical Color Chooser The graphical color chooser will be a pointing device driven intuitive color selection tool.,,,,,,,,,,,,,,,,,1
+4.1.2 Functional Requirements The color chooser requires the presence of a hardware pointing device.,,,,,,,,,,,,,,,,,2
+"The color translator allows old scheme to new scheme paint number translation, given a paint number, collection and a target collection.",,,,,,,,,,,,,,,,,1
+4.1.1 Priority High priority.,,,,,,,,,,,,,,,,,2
+4.1.2 Functional Requirements The color translator requires the presence of the software color search module.,,,,,,,,,,,,,,,,,2
+4.3 Closest Colors The closest color tool is a special case of the color search engine.,,,,,,,,,,,,,,,,,1
+4.1.1 Priority High priority 4.1.2 Functional Requirements The closest colors tool requires the presence of the software color search module.,,,,,,,,,,,,,,,,,2
+These two databases store paint and collection information.,,,,,,,,,,,,,,,,,1
+4.5 User Color Palette This is a user experience tool.,,,,,,,,,,,,,,,,,1
+The user color palette tool will store a list of the user?s recent color searches.,,,,,,,,,,,,,,,,,2
+"If the color sample matcher is loaded, the user color palette tool will also store recent uploaded images for matching.",,,,,,,,,,,,,,,,,2
+The user color matcher only associates this information with a single client based on a persistent client session.,,,,,,,,,,,,,,,,,2
+This user data will be removed from the server after 30 days.,,,,,,,,,,,,,,,,,2
+This information is private but not secure.,,,,,,,,,,,,,,,,,2
+"4.6 Administrative Interface The administrative interface allows administrative users to update, add, and delete paint information.",,,,,,,,,,,,,,,,,1
+Administrative users are also able to add users.,,,,,,,,,,,,,,,,,1
+Refer to section 2.3 for development and implementation of user classes and access permissions.,,,,,,,,,,,,,,,,,1
+4.1.1 Priority High priority 4.1.2 Functional Requirements The application administrative interface requires the color space and paint information databases to be present.,,,,,,,,,,,,,,,,,2
+4.7 Color Sample Matcher The color sample matcher allows the client user to upload images in a common format for matching.,,,,,,,,,,,,,,,,,1
+The color sample matcher will allow the user to graphically select with a hardware pointing device the color or blended color group they wish to use in a color search.,,,,,,,,,,,,,,,,,1
+This module is not a requirement of the project.,,,,,,,,,,,,,,,,,1
+It is included for specification purposes only.,,,,,,,,,,,,,,,,,1
+4.1.2 Functional Requirements The color sample matcher requires the color search engine moolule to function.,,,,,,,,,,,,,,,,,1
+The color chooser requires the presence of a hardware pornting devrce.,,,,,,,,,,,,,,,,,1
+Software Requirements Specification for CS] 79g / ABC Paint Project Page 10 5.,,,,,,,,,,,,,,,,,1
+Other Nonfunctional Requirements 5.1 Performance Requirements Color searches among the various collections defined by ABC Paint will be processed in sub- second time on the server.,,,,,,,,,,,,,,,,,1
+"Changes to Paint and collection information will occur in ReaI-time, although the actual processing time will vary with respect to the amount of information to be updated, added, or deleted on the server.",,,,,,,,,,,,,,,,,2
+"While performance requirements are transparently defined at the server, ColorKast makes no guarantees as to the speed, completeness, or timeliness of service over the greater internet.",,,,,,,,,,,,,,,,,1
+Performance of the application will vary on the speed and type of internet access to which the client computer has access.,,,,,,,,,,,,,,,,,1
+"To verify the performance of the application, ColorKast will show the amount of time the server takes to process a request.",,,,,,,,,,,,,,,,,1
+The time shown will not take into account the transit time of the information over various computer networks.,,,,,,,,,,,,,,,,,1
+5.2 Safety Requirements Analysis of the proposed product requirements and features has not brought any safety concerns to light.,,,,,,,,,,,,,,,,,1
+ColorKast recommends that a full legal review of the final product be undertaken prior to any public use of the product or business-wide rollout.,,,,,,,,,,,,,,,,,2
+This will ensure that ABC Paint is allowed full indemnification of liability.,,,,,,,,,,,,,,,,,1
+Refer to current state and federal regulations regarding workplace use of keyboard-based products.,,,,,,,,,,,,,,,,,1
+"Experts have concluded that the continued, repetitive use of data-entry and Painting devices leads to injury in almost all circumstances.",,,,,,,,,,,,,,,,,2
+ColorKast takes no responsibility for injury or resulting damages from the use of these devices.,,,,,,,,,,,,,,,,,1
+No attempts will be made to secure this information.,,,,,,,,,,,,,,,,,1
+"Information that the product will collect or store, which need access protections include user specified color palettes and their store of access permissions.",,,,,,,,,,,,,,,,,2
+"Most important, the store of access permissions to administrative features and access permissions must be secure.",,,,,,,,,,,,,,,,,1
+Questions of application correctness come to lig ht with respect to the accurate display of color samples on the target client computer.,,,,,,,,,,,,,,,,,1
+"In the enterprise environment, we can assume that the kiosk or employee computer will have a correctly calibrated display device.",,,,,,,,,,,,,,,,,1
+"To allow calibration of the clientdisplay device is a possible extension of this application, but is not currently included in the specification.",,,,,,,,,,,,,,,,,1
+ColorKast believes that a typical employee or consumer should be granted default privileges only.,,,,,,,,,,,,,,,,,1
+A limited number of administrative users should be created to manage the paint data updates.,,,,,,,,,,,,,,,,,1
+Administrative users can give other users administrative access up to their own access level only.,,,,,,,,,,,,,,,,,1
+The software product being developed by ColorKast for ABC Paint.,,,,,,,,,,,,,,,,,1
+A computer or program that can run applications or request application-based services from a server.,,,,,,,,,,,,,,,,,2
+"A group of colors made by the same company, designed by a specific designer, or provided in a separate group from other paints.",,,,,,,,,,,,,,,,,2
+"For example, the Ralph Lauren Collection.",,,,,,,,,,,,,,,,,1
+"A card, list, or other utility for displaying available or selected colors.",,,,,,,,,,,,,,,,,1
+Logical color numbers used to represent physical colors normally represented as 363 triplets.,,,,,,,,,,,,,,,,,1
+"Hardware, a keyboard or mouse used to interact with an application.",,,,,,,,,,,,,,,,,1
+"An input device, such as a mouse, joystick, or trackball, with which one can move or manipulate a cursor or pointer to interact with an application.",,,,,,,,,,,,,,,,,2
+Limited security through indirect verification of identity.,,,,,,,,,,,,,,,,,1
+"For example, in the ColorKast application, persistent user data is linked to a specific client session on a client computer, not a single individual.",,,,,,,,,,,,,,,,,1
+"A client?s request for information, generally as a formal request to a database or search engine.",,,,,,,,,,,,,,,,,1
+This relates to computer systems that update information at the same rate as they receive data.,,,,,,,,,,,,,,,,,1
+"For example, if the time required to update information on the server is five minutes, then a ReaI-time update will take ?ve minutes.",,,,,,,,,,,,,,,,,1
+A individual is linked directly to their persistent user data using a username and associated pass phrase.,,,,,,,,,,,,,,,,,1
+This is required for all administrative level access.,,,,,,,,,,,,,,,,,1
+A computer that processes requests for data and Queries that are elements of the application.,,,,,,,,,,,,,,,,,2
+Processing for the client or server that occurs only on the server.,,,,,,,,,,,,,,,,,2
+"These requirements capture the expression of general needs in the Clarus Concept of Operations (ConOps), in meetings with potential users and participants, and in subsequent documents identified below.",,,,,,,,,,,,,,,,,1
+These requirements will form the basis for the design verification and validation of the system.,,,,,,,,,,,,,,,,,1
+"The intended audience for this document includes decision makers, stakeholders, designers, and testers.",,,,,,,,,,,,,,,,,1
+"This document may be updated periodically to reflect changes in the system requirements, including changes reflected in subsequent versions of the system.",,,,,,,,,,,,,,,,,1
+"In addition to increasing productivity, it will maximize their RWIS/ESS investments.",,,,,,,,,,,,,,,,,1
+2) Surface transportation-based weather observations will enhance and extend the existing weather data sources that support general purpose weather forecasting for the protection of life and property.,,,,,,,,,,,,,,,,,1
+3) Collection of real-time surface transportation-based weather observations will support real-time operational responses to weather.,,,,,,,,,,,,,,,,,1
+The Clarus Initiative will address the necessary infrastructure to consolidate the data from a multitude of independent data collection systems.,,,,,,,,,,,,,,,,,1
+Clarus represents the next step in bringing together surface transportation best practices and the greater weather community.,,,,,,,,,,,,,,,,,1
+The Clarus Initiative consists of two development components.,,,,,,,,,,,,,,,,,1
+"? The first component is the development of the Clarus system ? a network for sharing, quality checking, and exchanging surface environmental data and relevant surface transportation conditions.",,,,,,,,,,,,,,,,,1
+? The second component is the development of tools (such as decision support systems) that make effective use of the Clarus system.,,,,,,,,,,,,,,,,,1
+? ?Pavement data? in this context includes surface and subsurface data specified in NTCIP 1204 (Ref.,,,,,,,,,,,,,,,,,1
+"The addition of Clarus system data to national weather observations will further enhance general purpose weather forecasting, providing a wider range of benefits to the protection of life and property.",,,,,,,,,,,,,,,,,1
+"1.3 Definitions, Acronyms, and Abbreviations This document may contain terms, acronyms, and abbreviations that are unfamiliar to the reader.",,,,,,,,,,,,,,,,,1
+"A dictionary of these terms, acronyms, and abbreviations can be found in Appendix A.",,,,,,,,,,,,,,,,,1
+1.4 References The following documents contain additional information pertaining to this project or have been referenced within this document: 1.,,,,,,,,,,,,,,,,,1
+"Clarus ? The Nationwide Surface Transportation Weather Observing and Forecast System; Pisano, Pol, Stern, and Goodwin; TRB 2005.",,,,,,,,,,,,,,,,,2
+"Weather Information in the National ITS Architecture Version 5.0; Meridian Environmental Technology, Inc.; August 2004.",,,,,,,,,,,,,,,,,1
+"Surface Transportation Decision Support Requirements, Version 1.0; Mitretek Systems, Inc.; January 2000.",,,,,,,,,,,,,,,,,1
+Weather Information for Surface Transportation: National Needs Assessment Report; Office of the Federal Coordinator for Meteorology; FCM-R18-2002; December 2002.,,,,,,,,,,,,,,,,,1
+Weather and Environmental Content on 511? Services; 511 Deployment Coalition; June 2003.,,,,,,,,,,,,,,,,,1
+Where the Weather Meets the Road: A Research Agenda for Improving Road Weather; The National Academies; BASC-U-02-06-A; 2004.,,,,,,,,,,,,,,,,,1
+Road Weather Information Systems (RWIS) Data Integration Guidelines; Castle Rock Consultants; October 2002.,,,,,,,,,,,,,,,,,1
+Draft Report: Joint TMC/TOC System Integration Study for Emergency Transportation Operations and Weather: Baseline Conditions; Battelle; 2004 (in review).,,,,,,,,,,,,,,,,,1
+"Clarus Final Draft Concept of Operations; Iteris and Meridian Environmental Technology, Inc.; June 24, 2005.",,,,,,,,,,,,,,,,,1
+"Clarus Weather System Design ? Systems Engineering Analysis of Clarus- Related Systems; Mixon/Hill, Inc. and Oklahoma Climatological Survey; September 2005.",,,,,,,,,,,,,,,,,1
+"Clarus Weather System Design ?Architectural Alternatives Analysis; Mixon/Hill, Inc.; September 2005.",,,,,,,,,,,,,,,,,1
+"Clarus Weather System Design ? Design Gaps Analysis; Mixon/Hill, Inc.; October 2005.",,,,,,,,,,,,,,,,,1
+"The requirements presented in this document represent the high-level and detailed objectives, constraints, and desires for the Clarus system.",,,,,,,,,,,,,,,,,1
+"Each requirement is identified by a unique Clarus-specific identifier to allow the requirement to be referenced in future documents, providing traceability throughout the development process.",,,,,,,,,,,,,,,,,2
+Each detailed requirement is traced to its parent through its identification number followed by a unique identifier.,,,,,,,,,,,,,,,,,1
+A requirements document states what must be accomplished to fulfill the vision described in a concept of operations.,,,,,,,,,,,,,,,,,1
+It does not state how it is to be accomplished.,,,,,,,,,,,,,,,,,1
+This document describes each requirement and the basis for inclusion of that requirement.,,,,,,,,,,,,,,,,,1
+The remaining sections of the document contain the requirements for the system.,,,,,,,,,,,,,,,,,1
+The sections and their content are as follows: Section 2 ? General Description provides a general overview of the entire system.,,,,,,,,,,,,,,,,,1
+This section describes the general factors that affect the system and its requirements.,,,,,,,,,,,,,,,,,1
+Section 3 ? System Architecture provides an overview of the Clarus system?s components and their functions.,,,,,,,,,,,,,,,,,1
+Specific requirements in the next section are allocated to and organized according to these components.,,,,,,,,,,,,,,,,,2
+Section 4 ? Specific Requirements contains the requirements developed from reference documentation and stakeholder communications.,,,,,,,,,,,,,,,,,1
+This section organizes the requirements into categories that facilitate the system development process.,,,,,,,,,,,,,,,,,2
+2 GENERAL DESCRIPTION This section provides an overview of the entire system and describes the general factors that affect the system and its requirements.,,,,,,,,,,,,,,,,,1
+"This section does not state specific requirements, but instead is intended to make the requirements easier to understand by giving them context.",,,,,,,,,,,,,,,,,1
+That context and the overall intent of the Clarus program are described in detail in the Clarus Concept of Operations (Ref.,,,,,,,,,,,,,,,,,1
+"While the Internet is an interconnection of computer networks, Clarus will be an interconnection of environmental (weather, pavement, and water level condition) data collection networks.",,,,,,,,,,,,,,,,,1
+Each of the weather networks will function autonomously; they will collect information and disseminate it internally without direction or dependence on Clarus.,,,,,,,,,,,,,,,,,1
+Each participating weather network?s connection to Clarus will add two new possible modes of functionality.,,,,,,,,,,,,,,,,,1
+"Second, participants will be able to receive environmental data collected by Clarus.",,,,,,,,,,,,,,,,,1
+"The primary recipients of this data will be weather service providers, but any Clarus participants would be able to receive data if they so chose.",,,,,,,,,,,,,,,,,1
+"The data will be collected from the participants, organized by location and type of data, and quality flags will be added.",,,,,,,,,,,,,,,,,1
+"When this is done, the data will be published to the Service Providers and other participant/consumers in Clarus.",,,,,,,,,,,,,,,,,1
+Figure 2 shows the general process as data progresses from collection through publication to service providers.,,,,,,,,,,,,,,,,,1
+"MADIS, for example, uses NetCDF files as a standard interchange format.",,,,,,,,,,,,,,,,,2
+"While the service provider interface is completely within the control of the Clarus Initiative, the interface(s) to the collectors may be influenced by what interfaces these systems can support.",,,,,,,,,,,,,,,,,1
+While the participants may want to access the network through ?a one-stop Internet portal for all surface transportation weather and pavement related observations? (Ref.,,,,,,,,,,,,,,,,,1
+"12), there is no requirement that the system be a single centralized system.",,,,,,,,,,,,,,,,,1
+Designers are free to explore centralized and de-centralized architectures so long as the interfaces with participants give the appearance of a ?one-stop? portal.,,,,,,,,,,,,,,,,,2
+The issues of data retention and archive are also not explicitly addressed.,,,,,,,,,,,,,,,,,2
+This phase of development does not include directly archiving the large volume of environmental data in Clarus.,,,,,,,,,,,,,,,,,1
+"Considering the technical scope of such an effort, archiving may be externalized or be deferred until the Clarus network is operational and proven.",,,,,,,,,,,,,,,,,1
+These basic processes are shown in Figure 3 in terms of Clarus system objects and their interactions.,,,,,,,,,,,,,,,,,1
+"The ellipses represent specific types of data, user roles, or equipment, and the arrows represent the interactions between themý.",,,,,,,,,,,,,,,,,1
+"For example, a ?Collector? administers a ?Sensor,? collects ?Observation Data,? provides ?Sensor Metadata,? and receives ?Quality Feedback?.",,,,,,,,,,,,,,,,,1
+The Clarus system should be a data collection system capable of handling a vast range of data in a flexible manner that permits new data types to be added.,,,,,,,,,,,,,,,,,1
+Proper understanding of the available data versus the required information will dictate how the data gathering processes and the database itself should be designed for greatest efficiency.,,,,,,,,,,,,,,,,,1
+These environmental data elements are described in the NTCIP 1204 standard for Environmental Sensor Station (ESS) interfaces (Ref.,,,,,,,,,,,,,,,,,1
+8) and summarized in Table 1 as potential environmental data elements to include in the Clarus system.,,,,,,,,,,,,,,,,,1
+The design of Clarus will need to consider these time horizons when planning the technical limitations of the system architecture.,,,,,,,,,,,,,,,,,1
+"Further, the variation in the Service Provider component includes the time required to add other data to the Clarus data and to perform the human- and machine-based product generation.",,,,,,,,,,,,,,,,,2
+The average data age grows as a result of the aggregated times required to move through the various layers and eventually to the Service Provider Customers.,,,,,,,,,,,,,,,,,1
+The age of observed and recorded values can vary widely within these bands.,,,,,,,,,,,,,,,,,1
+2.3 User Characteristics Direct and indirect use of the Clarus system can be applied to a wide audience.,,,,,,,,,,,,,,,,,1
+"Because a variety of users can derive benefit from the Clarus system, it is necessary to focus upon those users who have the most immediate contact with the system components.",,,,,,,,,,,,,,,,,2
+"The primary user classes include the owners and operators of the observing systems collecting and sending information to Clarus, and the users directly accessing the data published by the Clarus system.",,,,,,,,,,,,,,,,,2
+This list of direct users of data from the Clarus system is a subset of the entire population of stakeholders interested in the Clarus Initiative.,,,,,,,,,,,,,,,,,1
+The requirements of the broader stakeholder community are essential to the Clarus Initiative and these interests must serve as a framework for the core Clarus system.,,,,,,,,,,,,,,,,,1
+From information in the Surface Transportation Weather Decision Support Requirements (STWDSR) (Ref.,,,,,,,,,,,,,,,,,1
+"7) documents, it is possible to separate stakeholder groups into a condensed list based upon the user?s interface or interaction with Clarus data.",,,,,,,,,,,,,,,,,1
+The users are viewed as defining layers in the process of transferring data from raw field observations to various levels of data use.,,,,,,,,,,,,,,,,,2
+The Autonomous Layer data comprises the vast majority of the raw input data to the Clarus system.,,,,,,,,,,,,,,,,,2
+The Service Provider Customer Layer includes those groups who are direct consumers of products generated by Service Providers and are generally not a direct user of Clarus data.,,,,,,,,,,,,,,,,,2
+"The members of this group could be anyone using weather information, but are largely found within the surface transportation community.",,,,,,,,,,,,,,,,,2
+The weather products received by these end users are built from a combination of Clarus and non-Clarus data.,,,,,,,,,,,,,,,,,1
+Figure 5 can also be viewed as a depiction of the time horizons that separate the stakeholder groups.,,,,,,,,,,,,,,,,,1
+The context diagram in Figure 6 illustrates the relationship of the entities interfacing with Clarus.,,,,,,,,,,,,,,,,,1
+The diagram also describes the flow of data between the entities and the Clarus system.,,,,,,,,,,,,,,,,,1
+The data provider organizations maintain data collection systems.,,,,,,,,,,,,,,,,,1
+These organizations make up the Autonomous Layer ? the primary contributors of surface transportation data to the Clarus system.,,,,,,,,,,,,,,,,,1
+These stakeholders can benefit from Clarus by receiving quality-controlled data from the Clarus system.,,,,,,,,,,,,,,,,,1
+"The quality-controlled data are not value-added data, but data with flags indicating that elements do not meet quality checking thresholds.",,,,,,,,,,,,,,,,,1
+Figure 6 ? Context Diagram of Clarus User Needs The private and public sector Service Providers are the principal Clarus users.,,,,,,,,,,,,,,,,,1
+These Service Providers generate value-added road and rail weather information services for the transportation community.,,,,,,,,,,,,,,,,,2
+This group places considerable emphasis on the pavement-specific component of the data at the observational level to make immediate decisions.,,,,,,,,,,,,,,,,,1
+"These users, primarily maintenance and operations personnel, are the principal consumers of information provided by surface transportation weather service providers.",,,,,,,,,,,,,,,,,1
+"Additional data from this group may include closed circuit television (CCTV) images, road condition information, and records of treatment activities such as plowing and chemical application.",,,,,,,,,,,,,,,,,1
+? Transit ? These are the owners and operators of transit systems who contribute raw data to the Clarus system and may receive quality- controlled data from it.,,,,,,,,,,,,,,,,,1
+This group places considerable emphasis on understanding weather conditions along designated routes.,,,,,,,,,,,,,,,,,1
+? Rail ? These are the owners and operators of rail systems who contribute raw data to the Clarus system and may receive quality-controlled data from it.,,,,,,,,,,,,,,,,,1
+"As this method of data collection matures, the information obtained on weather and pavement conditions from instrumentation on-board vehicles will be important Clarus data.",,,,,,,,,,,,,,,,,1
+? Archives ? This category includes operational and non-operational interests who choose to include the Clarus data in their endeavors.,,,,,,,,,,,,,,,,,1
+"The archiving of Clarus data will be most effective when combined with other meteorological archives beyond the scope of Clarus, but is not restricted to such efforts.",,,,,,,,,,,,,,,,,1
+2.4 General Constraints Timeliness of information and reliability of the system are major constraints on the design.,,,,,,,,,,,,,,,,,1
+Both of these factors can be addressed through appropriate system architecture and implementation.,,,,,,,,,,,,,,,,,2
+"To address the timeliness factor, the system should be designed such that it can both retrieve and disseminate large volumes of data from a variety of sources and at potentially high rates.",,,,,,,,,,,,,,,,,2
+An architecture that spreads its data collection and dissemination processes across multiple servers and communication channels may address this issue.,,,,,,,,,,,,,,,,,2
+The inherent scalability of such a design may also enable the system to expand and add new data sources and end-users.,,,,,,,,,,,,,,,,,1
+"Hardware, operating system, and development environment have significant impacts on the inherent reliability of the system.",,,,,,,,,,,,,,,,,1
+"To maximize system uptime, redundancies may be required at both the hardware and software levels of the system.",,,,,,,,,,,,,,,,,1
+"While the availability of the system is covered in the Concept of Operations, the criticality of the system is not explicitly addressed.",,,,,,,,,,,,,,,,,1
+"If the Clarus system fails, requestors will need to use their legacy systems.",,,,,,,,,,,,,,,,,1
+"The system will be ?open,? using architecture and communications interfaces that are non-proprietary and broadly supported within the information technology industry.",,,,,,,,,,,,,,,,,1
+"The system should be standards based, where national standards are applicable.",,,,,,,,,,,,,,,,,1
+Special consideration should be given to the national intelligent transportation system (ITS) standards.,,,,,,,,,,,,,,,,,1
+"? Security considerations for the Clarus system fall under the guidance of Reference 14, OMB Circular No.",,,,,,,,,,,,,,,,,1
+"A-130, which, by its own definition, does not apply to ?critical national security missions.? Future applications of Clarus may necessitate revisiting this classification.",,,,,,,,,,,,,,,,,1
+2.5 Assumptions and Dependencies The usefulness of the Clarus system is dependent on participation by multiple environmental data providers and multiple environmental data consumers.,,,,,,,,,,,,,,,,,1
+"While the system could be placed in operation with data from only a single contributing network, there is no added value without the participation of other weather data sources.",,,,,,,,,,,,,,,,,2
+"Likewise, participation by a small number of data consumers would not justify the cost of operating the system.",,,,,,,,,,,,,,,,,1
+"Several assumptions have been made as to how long it will take environmental data contributors to collect, process, and publish their data.",,,,,,,,,,,,,,,,,1
+Data not collected in a timely manner may be of limited use to the data consumers.,,,,,,,,,,,,,,,,,1
+"Assumptions have also been made about the accuracy of the data, and the ability of the contributing systems to provide adequate location, time/date, and data qualification tags.",,,,,,,,,,,,,,,,,2
+"Several requirements deal with ?regional? needs, without specifying regional boundaries.",,,,,,,,,,,,,,,,,1
+It is unlikely that the regional boundaries from contributing systems will correspond with the regional boundaries defined within data consumer systems.,,,,,,,,,,,,,,,,,1
+It is even likely that participating data contributors will have different (though possibly overlapping) coverage areas for their networks.,,,,,,,,,,,,,,,,,1
+"Data consumers will need to understand that data will be presented by geographic coordinates, not by regional boundaries.",,,,,,,,,,,,,,,,,2
+Consumers will also need to understand that coverage will not be uniform and will depend on sensor placement by the contributing organizations.,,,,,,,,,,,,,,,,,2
+"The availability, format, and precision of geo-reference coordinates for data collection points could present unusual problems for the data acquisition system.",,,,,,,,,,,,,,,,,2
+"Data in the system database and in published data sets will likely include geo- reference coordinates in decimal longitude, latitude, and elevation.",,,,,,,,,,,,,,,,,2
+Clarus timestamps for data in the database and in published data sets need to be referenced to a standard time reference such as Coordinated Universal Time (UTC).,,,,,,,,,,,,,,,,,2
+"The base assumption regarding ?database tools? is that the selected data storage software will include appropriate programming interfaces, query tools, and configuration and management tools.",,,,,,,,,,,,,,,,,2
+No special database tools will be developed as a part of the Clarus system.,,,,,,,,,,,,,,,,,1
+Some tools may developed in the future as part of ongoing Clarus Initiative activities.,,,,,,,,,,,,,,,,,1
+The functional components of the Clarus system have been detailed in the Clarus System Architectural Description and are summarized in this section.,,,,,,,,,,,,,,,,,1
+"Figure 7, taken from that document, represents the general structure and flow of information within the Clarus system.",,,,,,,,,,,,,,,,,1
+A set of services is required to properly interpret and transform all the incoming and outgoing environmental information.,,,,,,,,,,,,,,,,,1
+"The particular collector, QED, or EM service performing a transformation depends on the origin and destination of the environmental data.",,,,,,,,,,,,,,,,,1
+The fourth component modeled as a set is the quality checking service.,,,,,,,,,,,,,,,,,1
+It is a set of services because it represents in one component all the QCh algorithms that can be applied to environmental data collected by Clarus.,,,,,,,,,,,,,,,,,1
+The specific algorithms and sequence in which they are applied are determined by quality rules established through the configuration & administration service.,,,,,,,,,,,,,,,,,1
+This arrangement supports flexibility in adding and removing QCh algorithms to produce the best possible qualified environmental data in the Clarus system.,,,,,,,,,,,,,,,,,1
+There are two services that keep the Clarus system operating: the watchdog and schedule services.,,,,,,,,,,,,,,,,,1
+"The watchdog service monitors the overall system state and restarts unresponsive services as needed, thus preventing long-term service disruption.",,,,,,,,,,,,,,,,,1
+The schedule service prioritizes requests to receive environmental data from collectors and contributors.,,,,,,,,,,,,,,,,,2
+The schedule service will also prioritize and respond to subscription requests for environmental data (not depicted in Figure 7).,,,,,,,,,,,,,,,,,2
+The set of collector services in the Clarus system receives environmental data from ED collectors and contributors through both push and pull methods.,,,,,,,,,,,,,,,,,1
+Flagging out-of-range values is one example of a quality rule.,,,,,,,,,,,,,,,,,1
+Multiple passes by the quality checking services on the QEDC information could apply grid algorithms sequentially to further quality check the environmental data.,,,,,,,,,,,,,,,,,1
+This allows constant access to qualified environmental data in-process.,,,,,,,,,,,,,,,,,1
+The QEDC is still valuable to end-users since it will always identify its level of quality and can be continuously delivered.,,,,,,,,,,,,,,,,,2
+The QED services format the qualified environmental data to fulfill requests from and information subscriptions for environmental service providers and end-users.,,,,,,,,,,,,,,,,,2
+"Similarly, the EM services format the metadata to meet requests from and metadata subscriptions for environmental service providers.",,,,,,,,,,,,,,,,,1
+"Each of these components is a set of services, with each individual service supporting a particular data format.",,,,,,,,,,,,,,,,,1
+The configuration and administration service supports both the Clarus system and program.,,,,,,,,,,,,,,,,,1
+"It maintains information about data provider redistribution restrictions and controls who has access to modify the system state, quality rules, and set ED retrieval schedules.",,,,,,,,,,,,,,,,,2
+"The configuration & administration service manages environ- mental metadata, formatting it for internal storage.",,,,,,,,,,,,,,,,,1
+Data transactions and system operational statistics are logged in the configuration and administration user interface as well.,,,,,,,,,,,,,,,,,2
+The configuration and administration user interface allows administrative users to interact with these functions and supports the manual quality review processes.,,,,,,,,,,,,,,,,,1
+These requirements describe the expected attributes and capabilities of the system and allocate capabilities to specific components within the Clarus system.,,,,,,,,,,,,,,,,,1
+The types of high-level requirements described in this section correspond roughly to these functions and interfaces.,,,,,,,,,,,,,,,,,2
+"Functional requirements describe what happens inside the Clarus system itself: quality checking, development, and packaging of environmental data.",,,,,,,,,,,,,,,,,1
+Figure 8 ? High-Level Requirements Context The high-level perspective assumed for these requirements has implications for downstream development activities.,,,,,,,,,,,,,,,,,1
+"The high-level requirements provide a basis for components in system elaboration, and detailed requirements are subsequently tied to specific components.",,,,,,,,,,,,,,,,,1
+Conformance to high-level requirements is shown through testing based on plans derived from the detailed requirements.,,,,,,,,,,,,,,,,,1
+The entire development process is tied together by lines of traceability anchored in the high- level requirements.,,,,,,,,,,,,,,,,,1
+"In this section, the requirements are classified by the first letter in the requirement identification as described in Table 2 and shown in Table 3.",,,,,,,,,,,,,,,,,1
+? Functional Requirements ? Lists the characteristics that the system must support for each interface.,,,,,,,,,,,,,,,,,2
+"Identifies what is to be done by the system, what inputs should be transformed to what outputs, and what specific operations are required.",,,,,,,,,,,,,,,,,1
+"? Performance Requirements ? Specifies static and dynamic capacity for the number of users, connections, and other performance related factors.",,,,,,,,,,,,,,,,,2
+"? Organizational Requirements ? Includes requirements for policies and procedures to support the implementation, operations, training, and institutional requirements to support the system.",,,,,,,,,,,,,,,,,2
+"Table 2 shows the general layout of the requirements tables, and explains the purpose or content of each column of the requirements table.",,,,,,,,,,,,,,,,,1
+The matrix includes requirements that may apply to future versions of the system or which have been deferred due to cost or complexity.,,,,,,,,,,,,,,,,,2
+Table 3 provides an explanation of the requirement identification numbering system.,,,,,,,,,,,,,,,,,1
+"The high-level requirements are identified as A-NNN, where A is the classification and NNN is a unique number.",,,,,,,,,,,,,,,,,2
+"The detailed requirements are identified as A-NNNUU, where A-NNN is the parent or high-level requirement and UU is a unique identifier.",,,,,,,,,,,,,,,,,2
+This section lists the functional characteristics that the system must support.,,,,,,,,,,,,,,,,,1
+"It also identifies what is to be done by the system, what inputs should be transformed to what outputs, and what specific operations are required.",,,,,,,,,,,,,,,,,1
+The functional requirements are broken into subsections by each allocation to specific modules listed in Table 4.,,,,,,,,,,,,,,,,,1
+Detailed requirements are associated with a parent or high-level requirement.,,,,,,,,,,,,,,,,,1
+Many of the high-level requirements are allocated to more than one module or component of the Clarus system.,,,,,,,,,,,,,,,,,2
+"Within each table, the high-level requirements show their allocations to particular modules.",,,,,,,,,,,,,,,,,2
+"If the high-level requirement is allocated to more than one module, then the high-level requirement will be repeated in the corresponding allocation?s module.",,,,,,,,,,,,,,,,,1
+"These requirements capture the expression of general needs in the Clarus Concept of Operations (ConOps), in meetings with potential users and participants, and in subsequent documents identified below.",,,,,,,,,,,,,,,,,1
+These requirements will form the basis for the design verification and validation of the system.,,,,,,,,,,,,,,,,,1
+"The intended audience for this document includes decision makers, stakeholders, designers, and testers.",,,,,,,,,,,,,,,,,1
+"This document may be updated periodically to reflect changes in the system requirements, including changes reflected in subsequent versions of the system.",,,,,,,,,,,,,,,,,1
+Clarus is an initiative sponsored by the U.S. Department of Transportation (U.S.,,,,,,,,,,,,,,,,,1
+DOT) to organize and make more effective environmental and road condition observation capabilities in support of four primary motivations.,,,,,,,,,,,,,,,,,1
+"In addition to increasing productivity, it will maximize their RWIS/ESS investments.",,,,,,,,,,,,,,,,,1
+2) Surface transportation-based weather observations will enhance and extend the existing weather data sources that support general purpose weather forecasting for the protection of life and property.,,,,,,,,,,,,,,,,,1
+3) Collection of real-time surface transportation-based weather observations will support real-time operational responses to weather.,,,,,,,,,,,,,,,,,1
+The Clarus Initiative will address the necessary infrastructure to consolidate the data from a multitude of independent data collection systems.,,,,,,,,,,,,,,,,,1
+Clarus represents the next step in bringing together surface transportation best practices and the greater weather community.,,,,,,,,,,,,,,,,,1
+"Surface transportation environmental data collected by the Clarus system will include atmospheric data, pavement data?, and hydrologic (water level) data.",,,,,,,,,,,,,,,,,1
+The Clarus Initiative consists of two development components.,,,,,,,,,,,,,,,,,1
+"? The first component is the development of the Clarus system ? a network for sharing, quality checking, and exchanging surface environmental data and relevant surface transportation conditions.",,,,,,,,,,,,,,,,,1
+? The second component is the development of tools (such as decision support systems) that make effective use of the Clarus system.,,,,,,,,,,,,,,,,,1
+? ?Pavement data? in this context includes surface and subsurface data specified in NTCIP 1204 (Ref.,,,,,,,,,,,,,,,,,1
+"The addition of Clarus system data to national weather observations will further enhance general purpose weather forecasting, providing a wider range of benefits to the protection of life and property.",,,,,,,,,,,,,,,,,1
+Data from the Clarus system will have a wide variety of direct and indirect uses.,,,,,,,,,,,,,,,,,1
+"1.3 Definitions, Acronyms, and Abbreviations This document may contain terms, acronyms, and abbreviations that are unfamiliar to the reader.",,,,,,,,,,,,,,,,,1
+"A dictionary of these terms, acronyms, and abbreviations can be found in Appendix A.",,,,,,,,,,,,,,,,,1
+1.4 References The following documents contain additional information pertaining to this project or have been referenced within this document: 1.,,,,,,,,,,,,,,,,,1
+"Weather Information in the National ITS Architecture Version 5.0; Meridian Environmental Technology, Inc.; August 2004.",,,,,,,,,,,,,,,,,1
+"Surface Transportation Decision Support Requirements, Version 1.0; Mitretek Systems, Inc.; January 2000.",,,,,,,,,,,,,,,,,1
+Weather and Environmental Content on 511? Services; 511 Deployment Coalition; June 2003.,,,,,,,,,,,,,,,,,1
+Where the Weather Meets the Road: A Research Agenda for Improving Road Weather; The National Academies; BASC-U-02-06-A; 2004.,,,,,,,,,,,,,,,,,1
+Draft Report: Joint TMC/TOC System Integration Study for Emergency Transportation Operations and Weather: Baseline Conditions; Battelle; 2004 (in review).,,,,,,,,,,,,,,,,,1
+"IEEE Recommended Practice for Software Requirements Specifications; Software Engineering Standards Committee of the IEEE Computer Society; IEEE Standard 830-1998, June 25, 1998.",,,,,,,,,,,,,,,,,2
+"Clarus Weather System Design ? High-level System Requirements Specification; Mixon/Hill, Inc.; July 2005.",,,,,,,,,,,,,,,,,1
+"Clarus Weather System Design ? System Architectural Description; Mixon/Hill, Inc.; October 2005.",,,,,,,,,,,,,,,,,1
+"Clarus Weather System Design ? Clarus ESS Survey; Cambridge Systematics, Inc.; September 2005.",,,,,,,,,,,,,,,,,1
+"Clarus Weather System Design ? Systems Engineering Analysis of Clarus- Related Systems; Mixon/Hill, Inc. and Oklahoma Climatological Survey; September 2005.",,,,,,,,,,,,,,,,,1
+"Clarus Weather System Design ?Architectural Alternatives Analysis; Mixon/Hill, Inc.; September 2005.",,,,,,,,,,,,,,,,,1
+"Clarus Weather System Design ? Design Gaps Analysis; Mixon/Hill, Inc.; October 2005.",,,,,,,,,,,,,,,,,1
+Some portions of the Clarus Concept of Operations (Ref.,,,,,,,,,,,,,,,,,1
+Specific attributions of this content are only included where they enhance the context of the requirements.,,,,,,,,,,,,,,,,,1
+"The requirements presented in this document represent the high-level and detailed objectives, constraints, and desires for the Clarus system.",,,,,,,,,,,,,,,,,1
+"Each requirement is identified by a unique Clarus-specific identifier to allow the requirement to be referenced in future documents, providing traceability throughout the development process.",,,,,,,,,,,,,,,,,2
+Each detailed requirement is traced to its parent through its identification number followed by a unique identifier.,,,,,,,,,,,,,,,,,1
+A requirements document states what must be accomplished to fulfill the vision described in a concept of operations.,,,,,,,,,,,,,,,,,2
+It does not state how it is to be accomplished.,,,,,,,,,,,,,,,,,1
+This document describes each requirement and the basis for inclusion of that requirement.,,,,,,,,,,,,,,,,,2
+The remaining sections of the document contain the requirements for the system.,,,,,,,,,,,,,,,,,1
+The sections and their content are as follows: Section 2 ? General Description provides a general overview of the entire system.,,,,,,,,,,,,,,,,,1
+This section describes the general factors that affect the system and its requirements.,,,,,,,,,,,,,,,,,1
+Section 3 ? System Architecture provides an overview of the Clarus system?s components and their functions.,,,,,,,,,,,,,,,,,1
+Specific requirements in the next section are allocated to and organized according to these components.,,,,,,,,,,,,,,,,,1
+Section 4 ? Specific Requirements contains the requirements developed from reference documentation and stakeholder communications.,,,,,,,,,,,,,,,,,1
+This section organizes the requirements into categories that facilitate the system development process.,,,,,,,,,,,,,,,,,1
+2 GENERAL DESCRIPTION This section provides an overview of the entire system and describes the general factors that affect the system and its requirements.,,,,,,,,,,,,,,,,,1
+"This section does not state specific requirements, but instead is intended to make the requirements easier to understand by giving them context.",,,,,,,,,,,,,,,,,1
+"12), from which much of the description in this section was derived.",,,,,,,,,,,,,,,,,1
+2.1 System Perspective The Clarus Initiative is essentially a plan to create a ?network of networks? ? much like the Internet ? for surface transportation environmental data.,,,,,,,,,,,,,,,,,1
+"While the Internet is an interconnection of computer networks, Clarus will be an interconnection of environmental (weather, pavement, and water level condition) data collection networks.",,,,,,,,,,,,,,,,,2
+Each of the weather networks will function autonomously; they will collect information and disseminate it internally without direction or dependence on Clarus.,,,,,,,,,,,,,,,,,2
+Each participating weather network?s connection to Clarus will add two new possible modes of functionality.,,,,,,,,,,,,,,,,,2
+"First, the participants will be able to share collected environmental data with Clarus.",,,,,,,,,,,,,,,,,2
+"Second, participants will be able to receive environmental data collected by Clarus.",,,,,,,,,,,,,,,,,2

@@ -1,0 +1,105 @@
+Bank Name is the name of the bank.,,,,,,,,,,,,,,,,,2
+All Documents have two or more Parties and one or more Lines.,,,,,,,,,,,,,,,,,1
+A single Line contains information about one |tem.,,,,,,,,,,,,,,,,,1
+"Each Document is identified with a Document identifier, date and status e.g.",,,,,,,,,,,,,,,,,1
+"original, copy or test and includes details of the sender and intended recipient as well as metadata (information about the Document itself).",,,,,,,,,,,,,,,,,1
+Linkage at the Line level between Documents allows a many-to-many relationship between Documents such as Purchase Order and Invoice.,,,,,,,,,,,,,,,,,1
+is the Document identifier within the sender's system e.g.,,,,,,,,,,,,,,,,,1
+Purchase Order Number.,,,,,,,,,,,,,,,,,1
+"If the original Document is revised, it may keep the original Document ID, but the Document status and UUID will be different.",,,,,,,,,,,,,,,,,1
+is the date or date/time assigned to the Document by the sender (using format ? CCYYMMDthmmss which may be truncated from the right e.g.,,,,,,,,,,,,,,,,,1
+"Note: for a copy, revision or cancellation, the Document date is the date of the revised Document, not the original.",,,,,,,,,,,,,,,,,1
+"|f value is ?true?, the Document is intended for test purposes only and does not to constitute a contractual commitment.",,,,,,,,,,,,,,,,,1
+This should be the same as the value of the version attribute in the schema element of both the XML message instance and the schema.,,,,,,,,,,,,,,,,,2
+"This identifier is optional, but is recommended to be sent.",,,,,,,,,,,,,,,,,2
+"The format may be manufacturer speci?c, but could be a UUID.",,,,,,,,,,,,,,,,,2
+"This is used for non-structured header-Ievel Document information, which is intended to be human readable.",,,,,,,,,,,,,,,,,2
+This information is should be sent if it is known to the sender.,,,,,,,,,,,,,,,,,1
+"This string may include details of the payment trigger event, the period between trigger event and payment and any agreed settlement terms.",,,,,,,,,,,,,,,,,1
+This does not include delivery terms which may be |tem-specific.,,,,,,,,,,,,,,,,,1
+In an XML Document it is recommended that the Digital Signature be the ?nal element of the payload.,,,,,,,,,,,,,,,,,1
+Document Specialisations and Attributes Document CItIIu-gu Total IchAT is the Document total including VAT.,,,,,,,,,,,,,,,,,1
+Total Ex VAT is the Document total excluding VAT.,,,,,,,,,,,,,,,,,1
+VAT Evidence indicates whether the Invoice can be used for VAT purposes (mandatory) (True/False).,,,,,,,,,,,,,,,,,1
+Paid In Full indicates whether the Invoice has (mandatory) already been paid (True/False).,,,,,,,,,,,,,,,,,1
+Tax Point is the date on which the VAT is calculated.,,,,,,,,,,,,,,,,,2
+This is used for non-structured Line- |eve| information; intended to be human readable.,,,,,,,,,,,,,,,,,1
+Limit to one line 70 characters text.,,,,,,,,,,,,,,,,,2
+The code is 2 or 3 characters (e.g.,,,,,,,,,,,,,,,,,1
+No restriction of length or format.,,,,,,,,,,,,,,,,,1
+"Most GTINs are 8, 12,13 or 14 character.",,,,,,,,,,,,,,,,,1
+Leading spaces in a 14- character string may be packed with zeroes.,,,,,,,,,,,,,,,,,1
+"Price includes a currency code (mandatory) Commodity Class (mandatory) 3.5.3 Priced Item Validity expressed using ISO 4217 3-character codes, e.g.",,,,,,,,,,,,,,,,,1
+This is needed for management information.,,,,,,,,,,,,,,,,,1
+The format of UNSPSC is four pairs of characters (28).,,,,,,,,,,,,,,,,,1
+The ?rst two pairs of digits (levels 1 and 2) are mandatory; the next two pairs (levels 3 and 4) are required.,,,,,,,,,,,,,,,,,1
+Quantity From Quantity To Price Valid From Price Valid To 3.5.4 Item Instance is the lower value for the number of units that this unit price applies to.,,,,,,,,,,,,,,,,,1
+Each |tem may have any number of Extended |tem IDs.,,,,,,,,,,,,,,,,,1
+Extended Item ID Source quali?es the Extended Item ID by specifying its origin.,,,,,,,,,,,,,,,,,1
+This should be a unique identifier for the source.,,,,,,,,,,,,,,,,,1
+"Aspect is used to capture miscellaneous domain-specific data about an Item, using the attributes: o Aspect Name (e.g.",,,,,,,,,,,,,,,,,1
+"colour, height, length width, weight, collar size); .",,,,,,,,,,,,,,,,,1
+"Aspect Value; and, optionally Example: 0 Aspect Value Unit.",,,,,,,,,,,,,,,,,2
+Aspect Name (mandatory) Aspect Value (mandatory) Aspect Value Unit (mandatory) is the name of the aspect.,,,,,,,,,,,,,,,,,2
+Data Types and Emunerations -1_ This section describes the structure of each of the 14 Documents introduced in Section 2 (Business Processes) using simplified UML class diagrams.,,,,,,,,,,,,,,,,,1
+"Only the main classes and associations are shown, along with the package to which they belong.",,,,,,,,,,,,,,,,,1
+"Full details of each class are shown in Section 3 (Common Elements), organised according to Package.",,,,,,,,,,,,,,,,,1
+4.1 Catalogue Catalogue is sent by the Sales Point (Seller) to the Purchasing Manager (Buyer) to provide Item price and other information for use in locally held Catalogues.,,,,,,,,,,,,,,,,,1
+"Each Catalogue Line references a single priced |tem, which may be associated with a quantity range and date interval.",,,,,,,,,,,,,,,,,2
+Each Line speci?es a Line Quantity and references a single |tem.,,,,,,,,,,,,,,,,,2
+"Each Quotation Line references a single priced |tem, a quantity, Line value and Delivery Point.",,,,,,,,,,,,,,,,,2
+It may also reference a corresponding RFQ.,,,,,,,,,,,,,,,,,1
+Buyer wishes to purchase goods or services.,,,,,,,,,,,,,,,,,1
+It is a promise to buy.,,,,,,,,,,,,,,,,,1
+"Variants may support cancellation or revision of the Purchase Order either in content (Items ordered or quantity of Items) and/or in terms of fulfilment (changed delivery details, required by date etc.).",,,,,,,,,,,,,,,,,2
+Purchase Order is the currency in which the Buyer wishes the Invoice to be expressed.,,,,,,,,,,,,,,,,,1
+This is used when the Buyer wishes to be invoiced in a currency other than that used for the Purchase Order.,,,,,,,,,,,,,,,,,1
+Note: this attribute is required for Seller performance measurement.,,,,,,,,,,,,,,,,,1
+"FOB (Free On Board ? carrier?s responsibility to destination), CIF (Carriage Insured Freight - Seller to insure to destination).",,,,,,,,,,,,,,,,,1
+4.5 PO Response PO (Purchase Order) Response is sent by the Sales Point (Seller) to inform the Order Point (Buyer) of the intention to supply goods or perform services in response to a Purchase Order.,,,,,,,,,,,,,,,,,2
+"|t acknowledges that the Purchase Order has been received and that it will be fulfilled in total, in part or not at all.",,,,,,,,,,,,,,,,,1
+PO Response Ful?lment Notification is sent by the Despatch Point (Seller) to inform the Delivery Point (Buyer) that goods have been despatched or delivered or that a service has been performed.,,,,,,,,,,,,,,,,,2
+The Seller may use this Document to notify the Buyer of shipping details via a third party carrier and to notify partial or complete delivery of an order.,,,,,,,,,,,,,,,,,1
+Ful?lment Notification is the quantity unit associated with the shipping of the goods; the unit of containment.,,,,,,,,,,,,,,,,,1
+Receipt Advice is sent by the Delivery Point (Buyer) to Customer Service (Seller) acknowledging receipt in full or in part and describing discovered variances e.g.,,,,,,,,,,,,,,,,,2
+Receipt Advice Actual Delivery Date is the date/time at which goods are actually delivered or a service is performed.,,,,,,,,,,,,,,,,,2
+Variance Quantity is the difference between the ordered quantity and the delivered quantity.,,,,,,,,,,,,,,,,,2
+Variance Condition is a description of the variance e.g.,,,,,,,,,,,,,,,,,2
+"short delivery, damaged goods, underperformance of service etc.",,,,,,,,,,,,,,,,,1
+Proposed Remedy is the Buyer?s suggested solution to the variance.,,,,,,,,,,,,,,,,,1
+This may be in response to a Receipt Advice that contains variance.,,,,,,,,,,,,,,,,,1
+"For example, the Seller may instruct the Buyer to return the goods, await collection of the goods (by the Seller or his carrier) or destroy the goods.",,,,,,,,,,,,,,,,,1
+Recti?cation Advice is the Buyer?s cost centre reference (in cases where this has actually been communicated to the Seller).,,,,,,,,,,,,,,,,,1
+dii.csv,,,,,,,,,,,,,,,,,1
+DII COE AOG Data Access Services Technical Working Group (DATATWG) Semi-Structured Data and Metadata Sub-panel (SSD-MD),,,,,,,,,,,,,,,,,1
+"The XS functional area includes Registration of terms (tags and structures), Design of XML schemas, Generation and Consumption of XML documents.",,,,,,,,,,,,,,,,,1
+These services isolate vendor- unique implementations of data access and provide applications a means of avoiding dependencies on physical access models.,,,,,,,,,,,,,,,,,1
+This document outlines the software capabilities required for the XS components for the D11 COE. Section 2 lists the documents that are applicable to this speci?cation.,,,,,,,,,,,,,,,,,1
+Section 3 provides a list of functional capabilities.,,,,,,,,,,,,,,,,,1
+Section 4 identi?es the quali?cation requirements.,,,,,,,,,,,,,,,,,1
+Section 5 outlines the requirements and veii?cation traceability matIiX. ,,,,,,,,,,,,,,,,,1
+Section 6 contains the applicable notes associated with the XS component.,,,,,,,,,,,,,,,,,1
+"CDRL A142 AWIS Software Requirements Speci?cation (ASRD), July1992.",,,,,,,,,,,,,,,,,1
+"CDRL ML03 AWIS Systems Management Manual (SMM), 31 Oct.1994. AWIS SuppOIt Software Design Document, December 1994. D18664A Standard Theater Army Command and Control System(STACCS)",,,,,,,,,,,,,,,,,1
+"System Design Document Version 1.1/As Built, 1 Oct. 93. AAN?SDAOOIA Standard Theater Army Command and Control System(STACCS)",,,,,,,,,,,,,,,,,1
+XML Services shall be segmented.,,,,,,,,,,,,,,,,,1
+COE sponsors shall adhere to compliance level requirements described in the I&RTS. 3.,,,,,,,,,,,,,,,,,2
+These workloads and databases are expected to change more frequently and to a greater extent than for processing associated with deployed units 4.,,,,,,,,,,,,,,,,,2
+The XS shall have the ability to rede?ne or reset names of connect descriptors to database server instances.,,,,,,,,,,,,,,,,,2
+ Connect descriptors are fully quali?ed obj ect names and include address (protocol/host/pOIt) and instance name. 5.,,,,,,,,,,,,,,,,,2
+"At a minimum, the session time-out values shall be user de?nable and be able to be reset pnor t0 initialization of a user session.",,,,,,,,,,,,,,,,,2
+The goal is to provide the option of dynamically changing session time values based on current communications performance identi?ed by capabilities of the network management or DBMS. 6.,,,,,,,,,,,,,,,,,2
+"Portion of XS services shall be used by vanous classes of users: data consumers, data and database managers, network information infrastructure resource managers.",,,,,,,,,,,,,,,,,1
+Some of these uses of the data management services will entail unique requirements that shall be ful?lled within the capability of XS services. 7.,,,,,,,,,,,,,,,,,2
+"This mode includes modi?cation and/or addition of application data segments, user permission, pnvileges, and restructuring storage and memory areas.",,,,,,,,,,,,,,,,,1
+"In addition, maintenance also shall peitain to shutdown, open not-mounted and online/off?line implementations, modi?cations, upgrade, or other related actions.",,,,,,,,,,,,,,,,,1
+"The data management services shall suppOIt managing vanous types of data, database architectures and platforms that includes hardware and software at the speci?ed sites. 8.",,,,,,,,,,,,,,,,,2
+"In support of training activities, the data management services shall provide for the same processing as would be encountered in a production environment.",,,,,,,,,,,,,,,,,1
+"However, access to the database may be Via a training application access to the DBMS rather than from the production mission application. 1.",,,,,,,,,,,,,,,,,1
+A producer is an agent that contributes metadata for inclusion into an XML Registry for the purposes of ensuring maximum semantic understanding of a term as it appears in an XML document.,,,,,,,,,,,,,,,,,2
+"Download Information Resource Submittal Package from the web containing forms, instructions, and tools for submission to XML Registry. 3.",,,,,,,,,,,,,,,,,1
+The Package is to be compressed and emailed or sent ftp to an addressee. .V? Submit metadata by an on-line interactive process 6.,,,,,,,,,,,,,,,,,2
+Submit metadata by a off?line and interactive batch process 7.,,,,,,,,,,,,,,,,,2
+Parse submitted XML Registry speci?cation forms 8.,,,,,,,,,,,,,,,,,2
+Populate XML Registry database 9.,,,,,,,,,,,,,,,,,2
+Modify of speci?ed terms & de?nitions of metadata and status of Information Resources. 10.,,,,,,,,,,,,,,,,,1

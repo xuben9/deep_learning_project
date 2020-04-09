@@ -1,0 +1,150 @@
+Asset not available to be borrowed 3.,,,,,,,,,,,,,,,,,2
+Error Message is displayed 14 Post conditions,,,,,,,,,,,,,,,,,1
+"A new request is pending waiting approval Actors Inventory Admin, Inventory system, Authentication system Included Use Cases 1.",,,,,,,,,,,,,,,,,1
+We suppose that Hosting system and servers support all the operations Authentication,,,,,,,,,,,,,,,,,1
+Use Case 15 Name: Returning Asset Identifier: RTI.UC Description The use case describes the returning asset update that the Inventory Admin can do.,,,,,,,,,,,,,,,,,1
+The use case presents all the updates to the inventory that can be done by the Inventory Admin. Preconditions 1.,,,,,,,,,,,,,,,,,1
+The Inventory Admin is authenticated Assumptions 1.,,,,,,,,,,,,,,,,,2
+We assume that use Knows the results of each operation there is no go back actions Basic Course 1.,,,,,,,,,,,,,,,,,2
+Use case begins when Inventory Admin start returning 2.,,,,,,,,,,,,,,,,,2
+Inventory Admin select asset state to available Alternate Course A: Condition: 1.,,,,,,,,,,,,,,,,,2
+Use case begins when Inventory Admin start returning 2.,,,,,,,,,,,,,,,,,1
+Inventory Admin select asset state to damaged Exceptional Course : Post conditions 1.,,,,,,,,,,,,,,,,,2
+"The inventory system is updated Actors Inventory Admin, Inventory system, Authentication system 16 Description The use case describes the approving of requests that an Inventory Admin can do.",,,,,,,,,,,,,,,,,1
+The Inventory Admin initiates the use case.,,,,,,,,,,,,,,,,,2
+The use case presents all the approval or denial of a user request that can be done by an Inventory Admin. Preconditions 1.,,,,,,,,,,,,,,,,,1
+The Inventory Admin is authenticated,,,,,,,,,,,,,,,,,1
+Request list not empty Assumptions 1.,,,,,,,,,,,,,,,,,1
+We assume that use Knows the results of each operation Basic Course 1.,,,,,,,,,,,,,,,,,1
+"The Inventory system is updated Actors Inventory Admin, Inventory system, Authentication system 18 Included Use Cases 3.",,,,,,,,,,,,,,,,,1
+"Use Case Identifier: CHP.UC Description The use case describes the modification that Department, Facutly or University Admininistrator can do to a user permissions.",,,,,,,,,,,,,,,,,1
+The administrator initiates the use case.,,,,,,,,,,,,,,,,,1
+The use case presents all change that can be done by the Admininistrators. Preconditions 1.,,,,,,,,,,,,,,,,,1
+The Administrator is authenticated Assumptions 1.,,,,,,,,,,,,,,,,,1
+We assume that use Knows the results of each operation 2.,,,,,,,,,,,,,,,,,1
+Administrator knows the role of each permission on the permission list,,,,,,,,,,,,,,,,,2
+Administrator cannot assigne permissions more than he have Basic Course 1.,,,,,,,,,,,,,,,,,2
+Use case begins when Administrator press change permission 2.,,,,,,,,,,,,,,,,,2
+Administrator select user 3.,,,,,,,,,,,,,,,,,1
+Administrator modify permissions Alternate Course A:,,,,,,,,,,,,,,,,,2
+Condition: None Exceptional Course : 1. 1.,,,,,,,,,,,,,,,,,1
+Administrator select user 2.,,,,,,,,,,,,,,,,,1
+Administrator modify permissions he give permissions more than he have 3.,,,,,,,,,,,,,,,,,1
+An error message is displayed Post conditions,,,,,,,,,,,,,,,,,1
+"The permissions of user are changed Acto rs Administrator, Inventory system, Authentication system 20",,,,,,,,,,,,,,,,,1
+Name: Search Identifier: SRCH.UC Description The use case describes the search operation that only authorised users can do.,,,,,,,,,,,,,,,,,2
+The User initiates the use case.,,,,,,,,,,,,,,,,,1
+The use case presents search and advanced search that can be done by the User. Preconditions 1.,,,,,,,,,,,,,,,,,1
+Search operation is authorised Assumptions 1.,,,,,,,,,,,,,,,,,1
+We assume that use Knows the results of each operation Basic Course 1.,,,,,,,,,,,,,,,,,1
+Use case begins when User start ?ll searching field,,,,,,,,,,,,,,,,,1
+Search results are displayed Alternate Course A: 1.,,,,,,,,,,,,,,,,,1
+Use case begins when User press advanced search,,,,,,,,,,,,,,,,,1
+Press submit 4 Search results are displayed Exceptional Course : 1.,,,,,,,,,,,,,,,,,1
+Use case begins when User start ?ll searching field 2.,,,,,,,,,,,,,,,,,1
+"No results are found message is displayed Post conditions None Acto rs User, Inventory system, Authentication system 24 Included Use Cases 1.",,,,,,,,,,,,,,,,,1
+Authentication use case Name: Create Reports Use Case Identifier: REP.UC Description The use case describes the creation of reports that the User can do.,,,,,,,,,,,,,,,,,1
+The use case presents reports that can be created by the User.,,,,,,,,,,,,,,,,,2
+Three reports can be created Reports .,,,,,,,,,,,,,,,,,1
+User Permission Report .,,,,,,,,,,,,,,,,,1
+Request Report .,,,,,,,,,,,,,,,,,1
+Assets By Location Report Preconditions 1.,,,,,,,,,,,,,,,,,1
+The User is authenticated,,,,,,,,,,,,,,,,,1
+User is authorised to create reports Assumptions 1.,,,,,,,,,,,,,,,,,1
+We assume that use Knows the results of each operation Basic Course 1.,,,,,,,,,,,,,,,,,1
+Use case begins when User click on a report type 2.,,,,,,,,,,,,,,,,,1
+Report can be filtered 4.,,,,,,,,,,,,,,,,,1
+"Fields can be sorted Alternate Course A: None Exceptional Course : None Post conditions Report is generated Acto rs User, Inventory system, Authentication system 26 Included Use Cases",,,,,,,,,,,,,,,,,1
+By Location Report REP.UC Create reports Use Case 27 8.,,,,,,,,,,,,,,,,,1
+Construction Junction Inventory Management Software Requirements Specification Version 2.0,,,,,,,,,,,,,,,,,1
+The purpose of this document is to define the requirements of the Inventory Management System as proposed by the Construction Junction (CJ) staff. 1.2. Scope,,,,,,,,,,,,,,,,,1
+Requirements defined in this document are prioritized by business and technical sponsors (Please refer to Appendix A).,,,,,,,,,,,,,,,,,1
+"Overview The Inventory Management System is an application designed to allow the Construction Junction staff to create, maintain and view the contents and value of its inventory of items in a categorized way.",,,,,,,,,,,,,,,,,1
+"It also facilitates the process of receiving items into the Construction Junction inventory via the drop-off, pick-up and deconstruction donation processes so that items can be traced from donation through sale.",,,,,,,,,,,,,,,,,1
+This section contains a description of each actor that interfaces with the system:,,,,,,,,,,,,,,,,,1
+Administrator: A member of the Construction Junction staff who can perform any of the Inventory Management functions.,,,,,,,,,,,,,,,,,1
+Decon Associate: A member of the Construction Junction staff who executes a deconstruction and/or strip out job and brings the items for processing at the receiving dock.,,,,,,,,,,,,,,,,,1
+A customer who purchases items from the Construction Junction inventory.,,,,,,,,,,,,,,,,,1
+Primary Contact: An individual who is the primary contact for a donation.,,,,,,,,,,,,,,,,,1
+The individual may be the actual donor or be acting on behalf of one.,,,,,,,,,,,,,,,,,1
+Vendor: An individual or organization who sells items to be added to Construction Junction?s inventory Consigner: An individual who donates items to Construction Junction under consignment. 3.,,,,,,,,,,,,,,,,,1
+Detailed Functional Requirements This section contains detailed reports for each product-functional use cases.,,,,,,,,,,,,,,,,,1
+"Each report contains the following data or sections (if a section has no content for a use case, it has been removed): Name of the use case High-level description Actor(s): All actors who interact with the system during the course of the use case.",,,,,,,,,,,,,,,,,1
+Pre-conditions: Pre-conditions are conditions that must be true prior to beginning the use case and are assumed to be true throughout the use case. Triggers:,,,,,,,,,,,,,,,,,2
+"Use Case Dependencies: Other use cases which this use case depends on. Basic Flows: The flows for the standard, expected execution of the use case.",,,,,,,,,,,,,,,,,2
+The system should provide a categorized view of the entire inventory to the Construction Junction staff.,,,,,,,,,,,,,,,,,2
+"Starting at the department level, users can navigate into the inventory item categories and sub- categories, all the way down to an individual inventory item. 3.1.1. Actor(s):",,,,,,,,,,,,,,,,,2
+Administrator Director Manager Customer Service Representative,,,,,,,,,,,,,,,,,1
+1. User accesses the main inventory screen 2.,,,,,,,,,,,,,,,,,1
+All Items button at any level in the inventory to view a list of all items in that department or category 3.,,,,,,,,,,,,,,,,,2
+The user may click the View All Items button on the main inventory screen to view the complete list of all items in the inventory 4.,,,,,,,,,,,,,,,,,2
+"Once in the view items list screen, the user may filter the results by searching for: 4.1.",,,,,,,,,,,,,,,,,2
+A particular item by item number 4.2.,,,,,,,,,,,,,,,,,1
+"All items with Donor, Department, Category or Description matching the provided keyword 4.3.",,,,,,,,,,,,,,,,,2
+"All items with certain attributes, features and/or details",,,,,,,,,,,,,,,,,2
+3.1.6. Business Rules: 1. Inventory departments and categories are displayed in matrix format,,,,,,,,,,,,,,,,,2
+"2. The matrix dimensions are fixed, and are the same when displaying departments or categories.",,,,,,,,,,,,,,,,,2
+3. Unused matrix cells are displayed empty. 4.,,,,,,,,,,,,,,,,,2
+The actual matrix dimensions are to be determined during system implementation. 4.1.,,,,,,,,,,,,,,,,,2
+Each matrix cell displays a department or category name.,,,,,,,,,,,,,,,,,2
+"For departments with subcategories, the department name is a hyperlink to the view of the department subcategories 5.2.",,,,,,,,,,,,,,,,,1
+"For categories with subcategories, the category name is a hyperlink to the view of the subcategories 5.4.",,,,,,,,,,,,,,,,,1
+The category name is not a hyperlink 6.,,,,,,,,,,,,,,,,,1
+"By default, the items list contains the list of all Unique and Stock items in the selected department or category, or across all departments and categories when viewing the all inventory items screen 7.",,,,,,,,,,,,,,,,,1
+"When a search keyword is specified, the system filters the default items list for that screen and returns only the items for which the keyword matches one or more of the following columns: 7.1.",,,,,,,,,,,,,,,,,1
+The system should allow inventory administrators to customize the inventory structure by defining the inventory departments (not to be confused actual retail floor departments known later in this document as stocking locations). 3.2.1. Actor(s):,,,,,,,,,,,,,,,,,1
+Use Case Dependencies 1. View Inventory 3.2.4. Basic Flows:,,,,,,,,,,,,,,,,,2
+User accesses the main inventory screen 1.2.,,,,,,,,,,,,,,,,,2
+System displays the Add Department button 1.3.,,,,,,,,,,,,,,,,,2
+User clicks the Add Department button 1.4.,,,,,,,,,,,,,,,,,2
+User enters the Department data 1.5.,,,,,,,,,,,,,,,,,2
+System validates the Department data 1.6.,,,,,,,,,,,,,,,,,2
+System adds the new Department to the inventory 1.7.,,,,,,,,,,,,,,,,,2
+User is taken back to the main inventory screen,,,,,,,,,,,,,,,,,2
+User navigates to a Department (see View Inventory) 2.2.,,,,,,,,,,,,,,,,,2
+System displays the Edit Department button,,,,,,,,,,,,,,,,,1
+User clicks the Edit Department button 2.4.,,,,,,,,,,,,,,,,,2
+System displays the Department data 2.5.,,,,,,,,,,,,,,,,,2
+User edits Department data 2.6.,,,,,,,,,,,,,,,,,2
+System validates the Department data 2.7.,,,,,,,,,,,,,,,,,2
+System updates the Department information 2.8.,,,,,,,,,,,,,,,,,2
+User is taken back to the Department screen,,,,,,,,,,,,,,,,,2
+User navigates to a Department (see View Inventory) 3.2.,,,,,,,,,,,,,,,,,2
+System displays the Edit Department button 3.3.,,,,,,,,,,,,,,,,,2
+User clicks the Edit Department button 3.4.,,,,,,,,,,,,,,,,,2
+System displays the Department data 3.5.,,,,,,,,,,,,,,,,,2
+User clicks the Delete Department button 3.6.,,,,,,,,,,,,,,,,,2
+System validates the Department deletion 3.7.,,,,,,,,,,,,,,,,,2
+System removes the Department from the inventory 3.8.,,,,,,,,,,,,,,,,,2
+User is taken back to the main inventory screen,,,,,,,,,,,,,,,,,2
+User cancels the Department add and is taken back to the main inventory screen,,,,,,,,,,,,,,,,,1
+"During data validation, data is deemed invalid and an error message is presented to the user 2. Edit Department 2.1.",,,,,,,,,,,,,,,,,1
+User cancels the Department edit and is taken back to the main inventory screen,,,,,,,,,,,,,,,,,1
+"During data validation, data is deemed invalid and an error message is presented to the user 3. Delete Department 3.1.",,,,,,,,,,,,,,,,,2
+User cancels the Department deletion and is taken back to the Department screen,,,,,,,,,,,,,,,,,1
+The Department Name must be unique across the inventory 1.3.,,,,,,,,,,,,,,,,,2
+The Department?s Unique Tag must be unique across the inventory 1.4.,,,,,,,,,,,,,,,,,2
+The POS Department Code must be at most 3 characters long 1.5.,,,,,,,,,,,,,,,,,2
+The Unique Tag must be at most 18 characters long 1.6.,,,,,,,,,,,,,,,,,2
+There must be at least one slot available in the Department matrix to hold the new Department 2. Edit Department 2.1.,,,,,,,,,,,,,,,,,2
+The Department Name must be unique across the inventory 2.3.,,,,,,,,,,,,,,,,,1
+The Department?s Unique Tag must be unique across the inventory 2.4.,,,,,,,,,,,,,,,,,2
+The Unique Tag must be at most 18 characters long 3.,,,,,,,,,,,,,,,,,2
+A Department cannot be deleted if it contains categories and/or items,,,,,,,,,,,,,,,,,2
+The Department is updated 3. Delete Department 3.1.,,,,,,,,,,,,,,,,,2
+The system should allow inventory administrators to customize the inventory structure by defining the inventory departments and categories. 3.3.1. Actor(s):,,,,,,,,,,,,,,,,,1
+User navigates to a Department or Category (see View Inventory) 1.2.,,,,,,,,,,,,,,,,,1
+System displays the Add Category buttons,,,,,,,,,,,,,,,,,1
+User enters Category data 1.6.,,,,,,,,,,,,,,,,,1
+System validates the Category data 1.7.,,,,,,,,,,,,,,,,,2
+System adds the new Category to the inventory 1.8.,,,,,,,,,,,,,,,,,2
+User navigates to a Category (see View Inventory) 2.2.,,,,,,,,,,,,,,,,,2
+System displays the Edit Category button 2.3.,,,,,,,,,,,,,,,,,2
+User clicks the Edit Category button 2.4.,,,,,,,,,,,,,,,,,2
+System updates the Category information 2.8.,,,,,,,,,,,,,,,,,2
+User is taken back to the Category screen,,,,,,,,,,,,,,,,,2
+User navigates to a Category (see View Inventory) 3.2.,,,,,,,,,,,,,,,,,1
+System displays the Edit Category button 3.3.,,,,,,,,,,,,,,,,,2
+User clicks the Edit Category button 3.4.,,,,,,,,,,,,,,,,,2
+System displays the appropriate screen for the Category type 3.4.1.Unique Item 3.4.2.Stock Item 3.5.,,,,,,,,,,,,,,,,,2
+User clicks the Delete Category button 3.6.,,,,,,,,,,,,,,,,,1
