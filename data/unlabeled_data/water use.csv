@@ -1,0 +1,240 @@
+The Software Requirements Specification (SRS) is a collection and organization of all the requirements surrounding a project.
+"The SRS is a collection, or package, of artifacts that describe the complete external behavior of the system (i.e., what the system has to do to deliver those features)."
+"Following the Rational Unified Process (RUP) and its iterative nature, the SRS is not a frozen document, but rather a living artifact."
+It has a number of uses as the developer begins the implementation efforts.
+"It selves as a basis for communication between all parties (i.e., between the developers themselves, between the developers and the stakeholders)."
+The SRS will also serve as input to software testing and quality assurance checks.
+"During testing, Test Cases will be created to ensure that the developed system does indeed fulfill the requirements outlined in the SRS."
+"1.2 Overview The Water Use Tracking (WUT) System?s SRS, as outlined above, is a collection of artifacts that have been developed separately duiing the Implementation Phase of the project."
+"This document will also describe how the requirement statements gathered from the stakeholders make their way into use case documents and, eventually, into features of the system."
+"Although this system is being built to support the efforts within the SWUCA, it will support the same functionality for anywhere within the District."
+"Currently, tracking of spatial and temporal trends in permitted and actual water uses is done using manual and sen1i-automated methodologies by a number of groups in the District."
+"This approach is staff time intensive, and since data sources and methodologies vary between different groups conducting these analyses, it may lead to inconsistent or apparently con?icting results."
+This is further complicated by the fact that current database management systems and data collection activities were not speci?cally designed to support these types of activities.
+The result is that the current system does not adequately support the types of analyses required for successful implementation of the SWUCA Management Plan.
+2.2 Product Position Statement The WUT Project will provide software for several different customer types.
+"It will also provide tools that can be used to aggregate permitted and actual purnpage over speci?ed geographic areas (model grid cells, counties, Most Impacted Area (MIA), watershed, etc.)."
+Resource Conservation and Development Department ? The system will provide information that can be used to assist in the calibration of ground water models.
+The system will also provide information on WUPs that can support the establishment and monitoring of Minimum Flows and Levels.
+Executive Sta?/Goveming Board ? The system will provide standard reports that are published as hardcopy or web-accessible documents.
+"Web accessible maps and documents could be interactive, allow users to zoom, pan, and query areas of interest."
+"External Customers ? External customers potentially include local governments, the media, and the general public."
+"Standard interactive map interfaces will provide information in a consistent, low maintenance environment."
+Other Users ? This system is in line with the objectives of the CWM Information Technology initiative presented to the Governing Board in June 2002.
+It will provide improved access to WUP data for all District staff.
+Gene Heath Executive level View of Assistant Executive Director requirements.
+John Heuer Executive level View of Deputy Executive Director requirements.
+"Jarvis Oversees the computer entry of Director, Records and Data ermit and pumpage data."
+Department Mark Barcelo Oversees Groundwater modeling Hydrologic Evaluation activities and ensures the proj ect Manager adheres to SWUCA Rules.
+Chris Zajac Estimates past water usage and Senior Water Conservation rojects future water use.
+Analy st Granville Kinsman Compare Regulatory Database to Water Mgmt Database for redundant well points.
+"Manager, Hydrologic Data Collection Section Mike Beach Use data in model to track Senior Professional Engineer minimum ?ows and levels changes."
+Mike Hancock Use data in model to track Senior Professional Engineer minimum ?ows and levels changes.
+Ron Basso Use data in model to track Senior Professional minimum ?ows and levels Geologist/Engineer changes.
+Rand Frahm Track the project for ways Planning Manager planning department can use information.
+Margit Crowell Water management database Staff Hydrologist expertise.
+Regulatory Business Experts: Christine J ackson Provide Water Use Permitting Senior Professional and SWUCA Expertise.
+Geologist/Engineer Jay Yingling Use to study cost impacts in Senior Economist regards to water use rule changes.
+Deanna Naugler Expertise on administrative Senior Regulatory Systems aspect of the permitting process.
+Analyst Debbie Ammendola Computer entry of permit and Records Processing Supervisor pumpage data that will be utilized.
+J im Whalen Familiar with the issues that Regulatory Data Analyst eople are trying to resolve.
+Martha Norris Knowledge of permit data.
+Permit Data Analyst J ohn Parker Ensure that permit rule criteria Water Use Regulatory and compliance issues are Manager satisfied.
+Ken Weber Ensures that the proj ect adheres Regulation Program Director to SWUCA Rules.
+Mike Balser Ensure that permit rule criteria Water Use Regulatory and compliance issues are Manager satisfied.
+Susan Caye Familiar with the issues that Senior Regulatory Systems eople are trying to resolve.
+Analyst Ralph Kerr Ensure that permit rule criteria Water Use Regulatory and compliance issues are Manager satisfied.
+Scott Laidlaw Ensure that permit rule criteria Water Use Regulatory and compliance issues are Manager satisfied.
+Technical Experts: Axel Griner Geodatabase design support.
+Senior GIS Analyst Cheryl Glenn Supply GIS aspects of GIS Analyst 2 ermitting.
+Eileen Burns-Wilson Provide expertise on how the Regulatory database is built.
+Sherrie Kubis Oracle database design support.
+Computer Systems Support ? Scienti?c Steven Dicks Technical Team Leader Mapping & GIS Manager Other Impacted Parties: Diana Burdick Coordinate with Land Resources Senior GIS Analyst Dept.
+Database Project Richard Owen Provide planning perspective to Planning Director roject.
+"Kurt Fritsch Provide District?wide, cross- Inspector General cultural View of the project, and help to ensure scope is maintained."
+1 IBM DB2 Data Server The IBM DB2 data server was upgraded in January 2003 and it is anticipated that it has sufficient capacity to support the proposed system.
+It is likewise anticipated that the current DB2 database software configuration will support the proposed system.
+2.4.1.2 HP-UXArcSDE/Oracle Data Server The District is currently retiring the obsolete HP Tru-64 computer system and replacing it with an HP-UX system.
+It is anticipated that when this upgrade is completed in fiscal year (FY) 2004 that the system will have sufficient capacity to support the proposed system.
+"It is likewise anticipated that when the upgrade is completed, current ArcSDE/Oracle database system configuration will support the proposed system."
+2.4.1.3 Communications/Data Network The primary impact of this system on the network will occur during the transfer of data between the IBM and HP-UX systems.
+"Since this transfer will occur only during non-business hours, it is not anticipated that it will have a significant impact on the current network."
+"In the event that these servers are not adequate, they are relatively inexpensive to upgrade."
+5 Desktop Workstations It is anticipated that this system will operate within the ArcGIS ArcView and ArcIMS web browser environment that is currently implemented at the District.
+"2.5 Product Perspective The system will require a combination of permitting, geographic, and water resource data derived from the following sources."
+2.5.1 WUPData The data source for WUPs is the Regulatory Database (RDB).
+This database is implemented in the IBM DB2 environment on the District's IBM mainframe data server located in the Tampa Data Center.
+The Records and Data Department is the primary entity responsible for the entry and maintenance of the data in the RDB.
+"The Information Resources Department (1RD) is responsible for the design, development, and maintenance of the RDB."
+"Water Use Tracking Proj ect ? February 13, 2007 Software Requirements Specification 2."
+5.2 Geograph ic Data The data source for geographic data is the GIS.
+This database is implemented in the ArcSDE/Oracle environment on the District's HP-UX data server located in the Brooksville computer room.
+The Mapping and GIS Section (MGIS) is the primary entity responsible for the entry and maintenance of most of the data in the GIS.
+"The Land Resources, Operations, and Records and Data Departments maintain specialized datasets within the GIS."
+"IRD and MGIS are jointly responsible for the design, development, and maintenance of the GIS."
+The source for these data is the Water Management Database (WMDB).
+This database is implemented in the IBM DB2 environment on the District's IBM mainframe data server located in the Tampa Data Center.
+The Operations Department is the primary entity responsible for the entry and maintenance of the water levels/?ows and meteorological data in the RDB.
+"Water quality data stored in the WMDB are collected by multiple departments, processed by the District's laboratory, and loaded into the WMDB."
+"It is important to note that while almost all water level information collected by the District is entered into the WMDB, loading of water quality data is less common."
+"The WMDB, therefore, does not provide a comprehensive collection of water quality data."
+"The Information Resources Department (IRD) is responsible for the design, development, and maintenance of the WMDB."
+"5.4 GIS/RDB/WZWDB Data Integration The proposed system will require the integration of data in the GIS, RDB, and WMDB."
+Data in these systems are logically linked using a common identifier known as the Universal ID (U 1D).
+Each WUP withdrawal point and data collection site is assigned a UID.
+"UIDs are unique for physical objects such as wells, rain gauges, and stream gauges."
+Unique UIDs are also assigned to surface water quality sample sites.
+"In cases where a well is both associated with a WUP and also serves as a data collection site, it is assigned a single UID that provides linkages to data stored in both the RDB and WMDB."
+"In the GIS, the UID is associated with a physical location and, therefore, can be represented within a data layer representing WUPs, stream gauges, or rainfall stations."
+Data are physically transferred from the DB2-based WMDB and RDB to the ArcSDE/Oracle based GIS using the Transformation Server software.
+This software provides tools for moving data between databases in their entirety or as selected subsets.
+"While this transfer is currently only done from the WMDB/RDB to the GIS, it is technically possible to transfer data in the other direction."
+"It is assumed that the needed changes, to collect and store the data, will be made within the current application and database."
+"However, if the required changes cannot be completed to the current systems in a timely manner, the WUT System will need to implement these requirements within the new application."
+It is also assumed that the current databases mentioned above are still available in their current form during the development of the WUT System.
+"The WUT System will be dependent on the data stored in the WUP, WMDB, GIS, and RDB databases."
+Changes to the current systems would need to be done in collaboration with the WUT Project Development Team.
+Communication between the responsible parties is key in the success of the development of this system.
+One requirement for the WUT System is that it will be developed with the hardware and software architecture currently in place at the District.
+Changes to the current architecture requirements could have a negative impact on the development of this system and cause delays in the release of the system.
+2.7 Needs The following is a list of needs that were captured in the SWUCA Permitted Water Use T racking Application 4 Feasibility Study.
+"As used here, lapsed quantities refer to any reductions in permitted pumpage for a particular well."
+Use cases are a very important artifact of the initial phase of the project.
+"The stakeholders for the project are categorized into four categories: Executive Staff, Technical Staff, Science Business Staff, and Regulatory Staff."
+Workshops were held for each of these groups with follow-up one-on-one interviews to clarify or refine requirements.
+The agenda for each of these workshops was tailored to each of these groups.
+"For example, the Executive Staff meeting is more focused on the Vision of the project."
+The Technical Staff meeting is more focused on the technical requirements of the project.
+"The remaining two groups, mostly made up of the power?users of the system, concentrated on the actual requirements of the system."
+An additional workshop was held to outline specific requirements needed for the system to support the SWUCA Recovery Plan.
+A summary was produced for each of the workshops and distributed to the participants for reView.
+Feedback was received through the reView process and the summaries were updated to re?ect these comments.
+3.2 Requirements Traceability Matrix All the requirements gathered during the requirement workshops were reViewed and consolidated into the Requirements Traceability Matrix (RTM).
+The purpose of the WUT RTM is to document and manage the business and functional requirements for the WUT Project.
+"The WUT RTM provides a master list of business and functional requirements organized into a number of meaningful features, each of which is a set of logically related requirements."
+"Within the matrix, each requirement is mapped to one or more use cases within the WUT Use Case Model that supports the requirement."
+"Once all requirements are mapped to a use case, SWFWMD is guaranteed that all business and functional requirements will be supported by the WUT software system."
+"For purposes of requirements management and traceability, the requestor(s) of each requirement is included in the matrix."
+This allows the project development team to easily know whom to contact if questions or concerns arise during the development of the system regarding a certain requirement.
+Keeping the WUT RTM updated is a critical success factor because it provides one of the primary mechanisms for measuring and ensuring the success of the WUT Project.
+"3.3 Use Case Model and Use Cases The use case model primarily sets the functional requirements on the system, and is used as an essential input to analysis and architectural design."
+"In essence, the use case model and use cases are a contract between the proj ect development team and the stakeholders with regards to the functionality of the system."
+The initial release of the model in the inception phase is used to outline the scope of the system.
+The use case model is refined by more detailed ?ows of events during the elaboration and construction phases.
+The use case model is continuously kept consistent with the design model.
+The use case model consists of use case packages.
+"A use case package is a collection of use cases, actors, relationships, diagrams, and other packages."
+It is used to structure the model by dividing it into smaller parts.
+The WUT Use Case Model consists of two packages: .
+Maintain Water Use Tracking Information .
+"View Water Use Permit Information The functionality of a system is defined by use cases, each of which represents a specific ?ow of events."
+The description of a use case defines what happens in the system when the use case is performed.
+All functional requirements must be able to be linked to at least one use case.
+This ensures all required functionality is being included in the system to be built.
+Use cases contain several key items: 0 Business Context ? A description of the business need of the use case.
+0 Flow of Events ? The sequence of events that can take place during the execution of the use case.
+"This includes the Primary Flow, or basic path, Alternate Flows, Warning Flows, and Exception Flows."
+"o Post?Conditions ? A list of conditions that can be expected after the use cases ends, dependent on the ?ow of events executed."
+0 Special Requirements ? A list of any special requirements for a particular use case.
+This is a ?catch-all? section where any information regarding a use case can be captured and stored.
+The users and any other system that may interact with the system are the actors.
+Use cases are developed on the basis of the actors' needs.
+This ensures that the system will turn out to be what the users expected.
+Also included in the use case model are the use case diagrams.
+These diagrams illustrate the use cases and the actors and the interaction between the two.
+Use case diagrams can also be organized by use case packages to show only what is relevant within a particular package.
+The WUT Use Case Model was created and is currently stored in the Enterprise Architect modeling tool.
+The model also has all use cases that will be developed for the WUT System.
+All requirements are linked within the model to one or more use cases.
+All the actors identi?ed for the project are also in the model.
+The use case diagrams show the interaction between the actors and the use cases.
+"In general, there are two types of non-functional requirements, qualitative and general systems."
+No specific general systems requirements were gathered during the requirement workshops for the W UT Project.
+"Rather, non-functional requirements are documented and managed through a separate deliverable called a Supplementary Specification."
+These requirements were collected during the Requirement Workshops held during the Inception Phase of the project.
+This Supplementary Specification will be managed and iteratively refined as appropriate throughout the life of the WUT Project.
+The Supplementary Specification will be a valuable aid to all members of the WUT Project Development Team.
+This specification will be used as a communication medium between the development team and the Project Stakeholders with regards to both qualitative and general systems requirements.
+"Finally, the supplementary specification will be used to verify compliance of the non-functional requirements during the testing of the WUT software."
+"Within each section, the requirements are organized into a number of features, each of which is a logically related set of requirements."
+View Use Of Lapsed SR23 0 Why the quantities are lapsed (i.e.
+"expired, Quantities cancelled, retired)."
+o What MFL zone the lapsed quantities are in.
+EW11a Track the relocation of active water use within the View Net Bene?t SR18 SWUCA.
+What MFL zone the lapsed quantities are in.
+"Know who View Report uses them and who has accumulated them, and be able to report on an individual basis, by a geographic area, or aggregate the data."
+"Also include application View Report and permit data on-line, either with scarmed documents or access to database."
+"The historical data should also be available, but Viewing restrictions for certain legal documents has to be followed."
+Be able to query by geographic area or permit number.
+"RW30a Create heat map indicating who was over?pumping, View Map who was not over-pumping, or who was using their water credits."
+RW3 0b Heat map for water quality.
+Add the District WUPnet View Map sentinel wells on this map - those are the District wells that have been in existence the longest time and we have the best data with.
+So if we bring them up in an area we know we have reliable data.
+"In particular, compare the affects of the new or Summary SR26a modified use to the actual ?ow and level of the water View Change in Use EW12 body or aquifer to make sure the actual level will not Type or Owner go below the MFL level."
+"Types of things to check View Use of Lapsed are: Quantities 0 New applications, renewals, or modifications."
+View Water 0 Relocated uses.
+Withdrawal Credit 0 Change of use type.
+View Land Use 0 Lapsed quantities.
+Informanon o Retired permits (some are lapsed - some are not).
+VleW Lapsed :?Hld Pl?OjeCt Quant1t1es Summary SR14 Track net benefit changes.
+Informatlon 0 New pernnts that came from an older pernnt due .
+"It is kind-of-like ?leasing? the water, Withdrawal Credit but can be taken away)."
+SR29 Report on how much water was made available View Mitigation of SR9 through the District's water resource development MFL Impacts projects.
+Elements of the report should be: View Use of 0 Source of benefit (aquifer or surface water).
+Quantities Associated o The locations of the alternative sources.
+"With DiStiiCt Projects 0 What permits are using the quantities generated by View Map the proj ects, and what proj ect they are getting the water from."
+SR3 Report on the permit duration (To track expiration View Report dates for those looking for someone to compete with).
+View Water Use Permit Search SR31 Should allow comparison to adjacent districts GIS View Map layers to permit GIS layer to access adjacent data.
+Maintain Quicklinks SR33 Report compliance on a permit (not wells).
+Crop View Report reports on permits (not wells).
+SR5 Report on competing applications (including ones that View Report are in modification or expiring).
+0 Need the historic and current levels so applicant knows how much to mitigate or what is available.
+"TW9 Be able to determine the availability of alternative use View Map supplies, such as reclaimed water and desalination."
+SR2 Report the Reservation from use amounts allocated to View Water Use certain participants.
+"Quantities that are Permit relocated will have certain restrictions placed on them, as well as any quantities that remain on the original permit."
+"For permits that have multiple withdrawal points, we need the ability to track ownership of specific withdrawal points over time."
+View Water Use Permit JY1 Identify when a standby permit is reactivated due to View Net Bene?t the loss of alternative quantities.
+Summary View Water Withdrawal Credit RW19 Have a heat map that shows permit information for View Map specific time periods.
+"If you click on it, bring up the permit details, such as name, permit number, issue date, expire date, use type, wuca, and average quantities."
+"The majority of request are related to Permit permitted and pumpage quantities, both at the permit View Report level and well level."
+They are usually sorted View Withdrawal temporally or geographically.
+"They will need to View the use type (interested mainly in agricultural and mining), owned acres, and the current permittee's contact information."
+RW37 Analyze pennits using a soils type GIS layer.
+Have a View Map TW4 second soils layer based on the soil types indicated on the permittees compliance to conditions.
+RW46b Need to know how water use changes when land use View Report changes.
+"The data would include wells, land elevation, aquifer, and total and cased depths."
+"SW24 The ability to associate permitted quantities, pumpage View Water Use SW25 quantities, and use code data at the well level."
+Permit View Withdrawal Pumpage Information TW12 Track changes in land use and how it affects water View Report availability.
+EW4 Ability to track water use over time and negotiate View Withdrawal EW5 reasonable new water use based on water use Pumpage Information EW7 pumpage trends.
+View Report RW15 Track by withdrawal source ? what aquifer or USGS View Water Use water body are general and Individual permits Permit Search pumping from.
+View Map RW33 Have map be able to show quantity of pumpage.
+"View Report Hover over or click a point in the map and see the average rolling 12, peak month, and max month compared to the pumpage of the well."
+Also get the cumulative quantities for an area you enter manually.
+"The region would be the area that fell within the buffer distance entered, and the time of interest would also be entered."
+"There are permitting constraints in ETB MIA that no additional water from the Floridan Aquifer can be pumped, but it is allowed from Intermediate aquifer."
+"View Withdrawal Pumpage Information SW15 SW9 Select water use data temporally or with geographic overlays, which can be from another layer or graphics on the page."
+Also be able to place it in an Excel spreadsheet.
+"View Map SW21 Select water use based on predominant use, use types, and regions they fall in."
+"The predominant use would be agricultural, industrial, mining & dewatering, public supply, and recreational."
+"Each predominate use is further broken down into more detailed categories, such as melons or citrus for the agricultural predominate use."
+This needs historical data for trend analysis.
+View Report TW10 TW11 Show the intensity of water use in a geographic area on a color-coded map.
+"View Map TW15 Identify different types of water use, such as groundwater, surface water, and re-use."
+View Water Use Permit TW8 Know how much water has been permitted and how much has been used based on land use over time.
+The ability to aggregate the data must be there and any type of polygon should be able to be used.
+"RW22 Track aquifer level changes, lake level changes, View Report RW23 rainfall level changes, and stream ?ow changes by RW24 area over time (i.e."
+RW48 RW25 Create layer that shows the Developments of Regional View Map Impacts (DRI) and their status.
+This layer will be plugged into the new model for population projections and water supply demand projections.
+"RW45 Identify what lakes are stressed, when they became View Report stressed, and if/when they came off stressed list."
+View Map 4.1.1.5 Compliance Req ID Requirement Statement Use Case RW10 Track pumpage oddities.
+Two examples are: View Report RW9b A. Permittees that have consistent pumpage readings View Withdrawal even when some of the data is missing.
+Use this information to predict whether they are in compliance Pumpage Information View Compliance in spite of the missing data.
+Information B. Permittees that enter zero on their pumpage View Resource reports.
+"Information View Water Use Permit Search RW34 Track permittees not submitting conditional/pumpage View Map RW9a reports, and generate a map showing their locations."
+View Compliance Information View Resource Information TW13 Obtain report of those out of compliance of permit View Map TW14 conditions by over?pumping their allowable quantities.
+"View Report Show how much over pumping is done, and have View Compliance option to select by time period or by area."
+"Need to Information break down to a permit-by-permit basis, but also show the whole thing on a map."
+The MFL is not met when the 10-year moving AF L in the reference wells is below the MFL for two consecutive years.
+0 Minimum ?ows on the upper Peace River - The MFL is met when the MFL's are at or above the established MFL for three consecutive years.
+"Once the MFL has been considered met, if it is followed by two years where the MFL is not met within a rolling ten-year period, then the AF L shall be considered below the MFL."
+"A determination of whether AFL's are meeting the established MFL is made at each one of the established minimums (Bartow, Ft. Meade and Zolfo Springs)."

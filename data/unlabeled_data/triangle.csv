@@ -1,0 +1,137 @@
+The system also functions as a platform for defining new types of triangulation games. 
+Games on Triangulations? [1]. 2.2 Product Features
+2 Overall Description 2.1 Product Perspective Triangular Games is a stand-alone software application that is meant to realize games described in the article ?
+"The software makes it possible to play multiple triangulation games (see [1], for more information on triangular games)."
+"The games may be played alone or against another person, depending on the type of game."
+A graphical user interface will be shown to the user.
+New games may be added to the software easily without the need to modify the code of the original application.
+The main user class is player.
+This is the most important user class and the user interface design will be geared towards serving the player.
+"The software is however designed mostly for research oriented people coming from areas such as mathematics, social sciences and computer sciences."
+"Although all research people have an academic background, the technical level of experience may vary greatly."
+This means that no assumptions about highly experienced users can be made.
+"The user interface will be designed to serve the needs of inexperienced players. Since adding new games to the software will also be possible, one user class is the game developer."
+People from this user class will have experience in playing the games and the scientific background behind creating new games.
+This user class is not as important as the player class and users of this class are mostly interested in the ease of defining new games. 2.4 Operating Environment
+The software will be implemented using the Java-platform.
+This makes it possible to run the application on multiple different environments without any modification to the code.
+"The client has requested the use of the Java environment, so the platform has been chosen before design."
+"Because of the cross-platform requirement, the software cannot be dependent on platform-specific libraries."
+The software should run well on any computer which has Java 2 (version 1.4 or later) Runtime Environment (JRE)[3] installed.
+"There are going to be two end user documentations: - User manual, for end users."
+"It will describe how to use the system for playing. - Maintenance manual, for end users and new developers."
+It will describe how to specify new games for the system.
+"It will also contain the design documents and interfaces of the system, as well as the source code."
+This software will be released under the GPL-license. 3 System Features 3.1 System has a graphical user interface 3.1.1 Description and Priority
+The system has an easy to use graphical user interface which supports both a mouse and a keyboard.
+This feature is essential for the system. 3.1.2 Use Case UC - 001
+The user starts the application V 1.0 Description Pre-condition Post-condition Normal Sequence
+This is a system initiation process. The System has been correctly installed in the computer. The System is running and shows a graphical interface to the user.
+The user is able to use the system.
+The user activates the application.
+The System starts and shows the graphical interface to the user.
+The system uses a graphical user interface to display data to the user
+"The system supports multiple games, and new games can be added by the end user."
+"By default, the system will implement three games."
+The priorities of the triangulation games are described in the following table: This use case describes the steps that are required to start a new game. The System is running and is not busy.
+"A new game, a starting position and an artificial intelligence has been selected in the game menu."
+The user starts a new game with the menu.
+"If the user accepts, the UC-003 is executed."
+"Otherwise, a random starting position is selected. The system offers the user the possibility of select an artificial intelligence for each player of the game."
+"If the user accepts, the UC-004 is executed."
+"If not, human player is selected for the first player, and the random artificial intelligence is selected for the second."
+The system loads the selected game.
+Condition: There is no game available. Action: The System shows an empty list.
+No possibility except canceling to run a game.
+After selecting the game the player selects the opening position for the game.
+Different types of opening positions are available for different game categories.
+"Further information about this can be found in the article ""Games on Triangulations"" [1]."
+The player can also start the game from a random position.
+A game has been selected. The Game starts with the selected opening position.
+"The user starts a new game. The System displays a list with the opening position available, and the random opening position. The Game User selects one of them."
+MultipleOpeningPositions
+The user selects the nature of the players for the current game so that the game can be played by having both players as human or both players as computers or one player computer and the other human. -
+The nature of the players has been changed. The System offers the Game User to select between a human player or an artificial intelligence.
+"If the user selects artificial intelligence, the UC-005 is executed."
+A random artificial intelligence plays a game by choosing at random one of the legal movements at any moment in the game.
+Having a random artificial intelligence is must for the system.
+This feature is of high priority. 3.5.2 Use Case UC - 005
+The user selects an artificial intelligence V 1.0 Description:
+The system must always provide the artificial intelligence that can play using random moves. Precondition: - Post-condition:
+An artificial intelligence has been selected. Normal Sequence: Exceptions:
+The System offers the user a list with all the different artificial intelligences available. The Game User selects one from the list. 1. Condition: No external artificial intelligence could be found.
+Action: The random artificial intelligence is always available.
+It will be the only option of the list.
+The system has an artificial intelligence that the player may play against.
+The game continues with the new selection of players.
+"If during the game a player wishes to leave, there should be the possibility to assign an AI to take over from that position."
+A game is already running.
+The System shows a list of all the players that can support the substitution. One of the players is selected. UC-005 is executed.
+"In a solitaire game, only one player can be changed."
+The user will then be able to select from them as players while playing a game.
+The system will load these files and show the available artificial intelligences when the user is selecting the types of player. Precondition: - Post-condition:
+The AI Developer designs a new AI for a game.
+"The AI Developer installs the AI in the System, as described in the manual."
+The user starts a new game. The system loads the new AI from the implemented file. 1.
+This Use Case is a general one with a high level of abstraction. 2.
+The definition for a game has to be simple and understandable by a non-programmer.
+This can be achieved for example with an XML file or a text document.
+"The file has to contain certain attributes, such as the game type, the ending conditions and the starting point or points."
+The games can be loaded from a predefined directory or runtime with a load file dialog.
+A new game is specified in a file V 1.0 Description:
+The system loads all the different types of games from separate files. Precondition: - Post-condition:
+A new game has been added Normal Sequence: Comments:
+This Use Case is a general one with a high level of abstraction. 2.
+"When this condition is carried out, the game ends."
+The system then proceeds to calculate the winner and shows the points for each player.
+"All the games end on a pre-defined condition V 1.0 Description: When the winning condition of a game is achieved, the game ends and the scores of the players are displayed. Precondition: A game is being played."
+"If the ending condition has not been defined, the game may never end. 3.9.3 Functional Requirements Game."
+All the games end on a pre-defined condition 3.10 Game saving feature 3.10.1 Description and Priority
+The user will be able to save the game and continue when the game is loaded.
+This feature has a low priority. 3.10.2
+The game has been saved in a file.
+"The game has been loaded from a file, and is currently being played. Normal Sequence:"
+The system saves the game in a file.
+The system loads the game from a file. 3.11
+This feature has a medium priority. 3.11.2
+The help function makes it possible for a user to search for solutions to basic problems related to the different aspects of the triangulation game.
+The user has a problem with starting the games or with the rules of the games.
+The problem has been solved.
+The user wants to search the help file for a solution or a hint.
+The system should be executed without problems in a machine that fulfills the requirements of the Java runtime environment [2].
+The basic artificial intelligence must operate fast enough.
+The next move should be calculated within 10 seconds. 5.2 Safety Requirements
+The system does not use or receive network connections and is used locally.
+This means that no network safety requirements exist.
+Overwriting an existing file on the file system has to be confirmed from the user to prevent accidental loss of data. 5.3 Security Requirements
+No personal information is stored by the system so no specific security requirements need to be defined. 5.4 Software Quality Attributes
+The system is playable with the minimum setup defined earlier in Hardware Requirements.
+SQA-1: The system shall run well on both Linux and Windows and should be playable with the mouse or the keyboard or both. 6 Traceability
+Most of the requirements in this document are based on the initial interviews with Timo Poranen (the client) and brainstorming meetings of project group.
+"This document refers to the article Games on triangulations, which specifies the theoretical basis for the triangulation games. References [1] Games on triangulations, Oswin Aichholzer, David Bremner, et al."
+A triangulation game defined in the article [1] GPL General Public License.
+The starting position of a game.
+Coordinates for the point which defines the graph.
+"While playing, a person or an artificial intelligence machine can both play the role of a player."
+"Since a player can be also an AI, it?s necessary not to confuse a ?player? (concept) with an ?end user?"
+An opening position made by the system with random starting parameters. The triangular game application that this document describes. Appendix B: Requirements List Functional Requirements AI Game.
+The system has an artificial intelligence that the player may play against.
+The artificial intelligence supports every two player game
+The system has an embedded help file that contains basic solutions and hints for problematic situations
+The system loads the game from a file Game.
+MultipleOpeningPositi ons Game.
+"Save The system supports multiple games, and can load them from an external source."
+The system has support for multiple opening positions that can be applied to all the games.
+The system saves the game in a file Game.
+SaveOpeningPosition
+The system saves all the defined opening positions so that they are available after a restart.
+The system has support for solitaire games Game.
+TwoPlayerSupport GUI
+The system shall support two player turn- based gaming. The system uses a graphical user interface to display data to the user GUI.keyboardInput
+The system can be used fully with a keyboard GUI.mouseInput
+The system can be used fully with a mouse Non-Functional Requirements All the user interfaces will be designed following common usability guidelines.
+The system requires a working Java-environment [2] and a graphical user interface supported by the Java Swing-library.
+The games should be playable on a 450 MHz or higher class computer.
+The artificial intelligence must operate fast enough.
+The next move should be calculated within 10 seconds.
+The system shall run well on both Linux and Windows and should be playable with the mouse or the keyboard or both.
