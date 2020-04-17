@@ -24,6 +24,9 @@
 #### Sprint 4
 ![Sprint 4 Burndown](/images/sprint4-burndown.png)
 
+#### Sprint 5
+![Sprint 5 Burndown](/images/sprint5-burndown.png)
+
 #### Evaluation
 ![](https://docs.google.com/spreadsheets/d/e/2PACX-1vSHDLY6gFINy8nBgLJb81mLj9IkczivmAyML4zdw_dxAN6vNRxIOuSpkBkKgUA4ixQG_P8MFCwEXwbY/pubchart?oid=821744637&format=image[])
 
